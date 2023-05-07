@@ -4137,7 +4137,7 @@ adblock2 "Disable" <<<EOT  EOT;
         width: 15px;
         position: absolute;
         left: -30px;
-        top: calc(50% - 10px);
+        top: calc(50% - 5px);
         background: linear-gradient(to bottom, var(--energy-one) 0%,var(--energy-two) 80%);
         box-shadow: 0 0 2px var(--shadow)
     }
