@@ -440,6 +440,16 @@ adblock2 "Disable" <<<EOT  EOT;
         font-family: var(--font-family);
         font-size: var(--font-size);
     }
+    *::-webkit-scrollbar {
+        background: var(--section)
+    }
+    *::-webkit-scrollbar-thumb {
+        background: var(--widget-light);
+        border: 2px solid var(--widget-med)
+    }
+    body, html {
+        scrollbar-color: var(--widget-light) var(--section)
+    }
     .main .content {
         min-height: 1000px;
     }
@@ -4297,24 +4307,24 @@ adblock2 "Disable" <<<EOT  EOT;
         width: 701px;
     }
     .post-text .expand-quotes {
-        background-color: #22262a;
-        border-top: 0px solid #31393f !important;
-        border: 1px solid #31393f;
-        color: #a2bfd0;
+        background-color: var(--widget);
+        border-top: 0px solid var(--borders) !important;
+        border: 1px solid var(--borders);
+        color: var(--text);
         border-radius: 0px 0px 7px 7px;
     }
     #topic-preview-text {
         font-size: 12px;
     }
     #mbnew #topicbody {
-        background-color: #363e44 !important;
+        background-color: var(--widget-med) !important;
         border: none;
     }
     span#controls {
-        border-color: #363e44 !important;
+        border-color: var(--borders) !important;
     }
     #mbnew #header {
-        background-color: #032d54 !important;
+        background-color: var(--tooltip-bg) !important;
         border: none !important;
     }
     #mbnew #cancel {
