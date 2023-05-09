@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.0.0
-@description    A new userstyle
+@version        1.0.1
+@description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
 
@@ -460,7 +460,7 @@ adblock2 "Disable" <<<EOT  EOT;
     td, th, .common-hub-item-description, #registration h1, #error-404 div, .common-bubble-byline {
         color: var(--text);
     }
-    strong, b, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span {
+    strong, b, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span {
         color: var(--strong);
     }
     span[style*="color:"][style*="#6F1111"], .pinkerton-text-footer span[style*="color"] {
@@ -4260,7 +4260,10 @@ adblock2 "Disable" <<<EOT  EOT;
     #topic-header strong {
         color: var(--strong);
     }
-    .post-edited em {
+    .main[style*="/404/"] span[style*="731d08"] {
+        color: var(--strong) !important;
+    }
+    .post-edited em, .search-results-description-subtext {
         color: var(--text-med);
     }
     span.posttext .forummsg {
