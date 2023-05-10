@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.0.1
+@version        1.0.2
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -550,7 +550,9 @@ adblock2 "Disable" <<<EOT  EOT;
     #alertwin .alert-v2-date, #alertlist .alert-v2-date {
         color: var(--text-med)
     }
-    #alertlist div.alert-v2.alert-v2-unread::after, #alertwin div.alert-v2.alert-v2-unread::after,  #alertlist a[href$="/trading/archaeology/dig-sites"] div.alert-v2::after {
+    #alertlist div.alert-v2.alert-v2-unread::after, #alertwin div.alert-v2.alert-v2-unread::after,  #alertlist a[href$="/trading/archaeology/dig-sites"] div.alert-v2::after,
+    #alertlist a[href*="/auction-house/activity/"] div.alert-v2::after,
+    #alertwin a[href*="/auction-house/activity/"] div.alert-v2::after {
         content: '⟡ NEW';
         font-weight: bold;
         color: var(--text);
@@ -563,7 +565,11 @@ adblock2 "Disable" <<<EOT  EOT;
         font-size: 8px;
     }
     #alertlist a[href$="/trading/baldwin/transmute"] div.alert-v2.alert-v2-unread::after, #alertwin  a[href$="/trading/baldwin/transmute"] div.alert-v2.alert-v2-unread::after,
-    #alertlist a[href$="/trading/archaeology/dig-sites"] div.alert-v2::after, #alertwin a[href$="/trading/archaeology/dig-sites"] div.alert-v2::after {
+    #alertlist a[href$="/trading/archaeology/dig-sites"] div.alert-v2::after, #alertwin a[href$="/trading/archaeology/dig-sites"] div.alert-v2::after,
+    #alertlist a[href*="/auction-house/activity/"] div.alert-v2.alert-v2-unread::after,
+    #alertwin a[href*="/auction-house/activity/"] div.alert-v2.alert-v2-unread::after,
+    #alertlist a[href*="/auction-house/activity/"] div.alert-v2::after,
+    #alertwin a[href*="/auction-house/activity/"] div.alert-v2::after {
         content: '⟡';
     }
     #alertlist > a, #alertwin > a {
@@ -1132,7 +1138,7 @@ adblock2 "Disable" <<<EOT  EOT;
         background: var(--section);
         color: var(--em);
     }
-    span.item-attachment span, #attachments .insert_item span, #msg-items #items .itemicon span {
+    span.item-attachment span, #attachments .insert_item span, #msg-items #items .itemicon span, .itemicon.itemicon-small span {
         background: var(--section);
         color: var(--em);
         padding: 2px 3px;
@@ -2222,9 +2228,7 @@ adblock2 "Disable" <<<EOT  EOT;
         border: 1px solid var(--energy-full-border);
     }
     .dragon-profile-familiar-meter-frame[data-level="7"] .dragon-profile-familiar-meter-full:before {
-        background: url(https://i.imgur.com/X2yN3Ek.png);
-        background-repeat: no-repeat;
-        background-position: center 2px;
+        filter: sepia(100%) hue-rotate(var(--hue)) contrast(120%);
     }
     .dragon-profile-familiar-meter-full {
         background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
@@ -3869,7 +3873,8 @@ adblock2 "Disable" <<<EOT  EOT;
         background: var(--borders-light)
     }
     .ah-listing-sold-checkmark {
-        background-image: url(https://i.imgur.com/8ciBKYp.png);
+        border-radius: 12px;
+        filter: invert(100%) hue-rotate(190deg) brightness(400%) contrast(120%);
     }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/hoard.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/vault.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/game-database.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search.*") {
