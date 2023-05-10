@@ -1,5 +1,7 @@
 # Flight Rising - Simple Dark Redux
 Flight Rising userstyle. a rewrite of the [simple dark theme](https://userstyles.org/styles/150521/simple-dark-theme-for-flight-rising).
+Install directly via [Github](https://github.com/dragonjpg/simple-dark-redux/raw/main/simple-dark-redux.user.css) or through the [Userstyles.World mirror.](https://userstyles.world/style/9725/simple-dark-redux-for-flight-rising)
+You will need [Stylus](https://github.com/openstyles/stylus#readme) enabled, and then when you click either link above it will prompt you to install the style. When you install, leave 'Check for Updates' checked. View [these](https://github.com/openstyles/stylus/wiki/Usercss#how-do-i-customize-usercss) [pages](https://github.com/openstyles/stylus/wiki/Popup#interface) to see how to change the style's settings.
 
 ## Preview
 
