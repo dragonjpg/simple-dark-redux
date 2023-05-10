@@ -3874,7 +3874,7 @@ adblock2 "Disable" <<<EOT  EOT;
     }
     .ah-listing-sold-checkmark {
         border-radius: 12px;
-        filter: invert(100%) hue-rotate(190deg) brightness(400%) contrast(120%);
+        filter: invert(100%) var(--filter) hue-rotate(var(--hue)) brightness(400%) contrast(120%);
     }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/hoard.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/vault.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/game-database.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search.*") {
