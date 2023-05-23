@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.0.3
+@version        1.0.4
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -2492,6 +2492,7 @@ adblock2 "Disable" <<<EOT  EOT;
     /*water*/
     #dragon-profile-scene[style*="background-image:url(/static/layout/profile/backgrounds/4.jpg)"] {
         background-image: url('https://www1.flightrising.com/static/layout/exalted/exalted-4.jpg') !important;
+        background-position: 0% 120%;
     }
     /*lightning*/
     #dragon-profile-scene[style*="background-image:url(/static/layout/profile/backgrounds/5.jpg)"] {
