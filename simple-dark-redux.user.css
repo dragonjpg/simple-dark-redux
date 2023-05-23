@@ -3457,10 +3457,11 @@ adblock2 "Disable" <<<EOT  EOT;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        padding: 0 90px;
+        padding: 100px 70px 0;
         box-sizing: border-box;
         align-items: flex-end;
-        margin: 45px auto 0;
+        margin: 75px auto 0;
+        height: auto;
     }
     #assay-container::before {
         content: '';
@@ -3475,34 +3476,34 @@ adblock2 "Disable" <<<EOT  EOT;
         filter: var(--filter) hue-rotate(var(--hue)) brightness(50%);
     }
     #assay-preview-1, #assay-preview-2 {
+        position: static;
+        margin: 15px auto 0;
+        display: block;
         border: 2px solid var(--borders);
         background: linear-gradient(to top, var(--widget-light) 0%, var(--widget-med) 100%);
+        order: 2;
+        opacity: 0;
+    }
+    #assay-preview-1[style], #assay-preview-2[style] {
+        opacity: 1;
     }
     #assay-container > div:nth-child(3) {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
         padding-top: 0 !important;
         width: 100%;
     }
     #assay-container #id10t-confirm {
-        order: 2;
-        margin: 12px auto 0;
-        width: calc(100% - 15px);
+        width: calc(20% - 15px);
+    }
+    #assay-container #id10t1 {
+        text-align: right;
     }
     #assay-container #id10t1, #assay-container #id10t2 {
-        width: calc(50% - 15px);
-        text-align: center;
+        width: calc(40% - 15px);
         margin: 0 auto;
-    }
-    #assay-preview-1, #assay-preview-2 {
-        position: static;
-        margin: auto;
-        display: block;
-        opacity: 0;
-    }
-    #assay-preview-1[style], #assay-preview-2[style] {
-        opacity: 1;
     }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/alerts.*") {
