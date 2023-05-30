@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.0.5
+@version        1.0.6
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -3682,8 +3682,32 @@ adblock2 "Disable" <<<EOT  EOT;
     #xroad-metadata span:first-child,
     #trademsgs .msgauthor,
     #confirm-delivery p span,
-    #tradecaptions p span:first-child {
+    #tradecaptions p span:first-child,
+    #confirm-trade span:first-child {
         color: var(--strong);
+    }
+    form#trade, form#deliver {
+        display: flex;
+        justify-content: space-between;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+    }
+    form #xroad-attach, form #xroad-metadata {
+        float: none;
+    }
+    #xroad-metadata textarea {
+        max-width: 100%;
+    }
+    p#tradeawait {
+        color: var(--warning-text);
+        margin-top: 15px;
+        background: rgba(var(--warning),0.1);
+        padding: 0.8em;
+        width: calc(100% - 160px);
+        border-radius: 5px;
+        box-sizing: border-box;
+        border: 1px solid rgb(var(--warning));
     }
     #trademsgs .msgstamp, #trademsglimits {
         color: var(--text-med);
@@ -3698,11 +3722,14 @@ adblock2 "Disable" <<<EOT  EOT;
         border-radius: 4px;
     }
     img[src="/static/layout/button_senddelivery.png"],
-    img[src="/static/layout/button_senddelivery_disabled.png"] {
+    img[src="/static/layout/button_senddelivery_disabled.png"],
+    img[src="/static/layout/button_requesttrade.png"],
+    img[src="/static/layout/button_requesttrade_disabled.png"] {
         border-radius: 12px;
     }
-    img[src="/static/layout/button_senddelivery_disabled.png"] {
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(40%) contrast(200%);
+    img[src="/static/layout/button_senddelivery_disabled.png"],
+    img[src="/static/layout/button_requesttrade_disabled.png"] {
+        filter: var(--filter) hue-rotate(var(--hue)) brightness(45%) contrast(250%);
         border-radius: 12px;
     }
 }
@@ -5405,6 +5432,7 @@ adblock2 "Disable" <<<EOT  EOT;
     img[src="/static/layout/bestiary/buttons/filter.png"], img[src="/static/layout/lair/buttons/filter.png"],
     img[src="/static/layout/button_canceltradesmall.png"],
     img[src="/static/layout/button_senddelivery.png"],
+    img[src="/static/layout/button_requesttrade.png"],
     .ah-listing-buy-button, img[src="/static/layout/auctionhouse/button_ah_buy.png"],
     img[src="static/layout/slick/slick-arrow-left.png"], img[src="static/layout/slick/slick-arrow-right.png"],
     img[src="/static/layout/scryer/button_load_scry.png"],
