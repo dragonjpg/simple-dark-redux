@@ -3687,17 +3687,15 @@ adblock2 "Disable" <<<EOT  EOT;
         color: var(--strong);
     }
     form#trade, form#deliver {
-        display: flex;
-        justify-content: space-between;
         max-width: 100%;
         box-sizing: border-box;
         padding-left: 20px;
     }
-    form #xroad-attach, form #xroad-metadata {
-        float: none;
-    }
     #xroad-metadata textarea {
         max-width: 100%;
+    }
+    .inner-content > #xroad-attach {
+        padding-left: 10px;
     }
     p#tradeawait {
         color: var(--warning-text);
