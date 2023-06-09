@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.0.6
+@version        1.0.7
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -283,10 +283,18 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 .dragon-picker-preview-buttons, #ah-sell-submit-container button {
     width: 85%;
 }
-#raffle-button, #add-skin-box input, .ah-dlg-submit, #authorized input, #validity button,
+#raffle-button, #add-skin-box input, #authorized input, #validity button,
 #confirm-delivery button, #save-outfit input {
     width: 100%;
     box-sizing: border-box;
+}
+.ah-dlg-submit, .ah-dlg-dismiss {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 50px;
+}
+#ah-save-search-dlg p:last-child {
+    display: flex;
 }
 #ah-sell-submit-container {
     left: 0;
@@ -333,7 +341,7 @@ div#purchase.ui-dialog-content > div:last-child button + button {
     flex-grow: 1;
     padding: 0 15px;
 }
-.dragon-picker-preview-buttons > input, .dialog-button-tray > input, .dialog-button-tray > button, #swipp-preview-button-tray input, #baldwin-preview-container #baldwin-preview-button-tray input, .market-purchase-buttons button, #name-dragon-start-dialog .common-dialog-section:last-child input, #ah-cancel-verify-dlg p:last-child input, #ah-sell-verify-dlg p:last-child input, div#confirm-trade button, #confirm-approve button {
+.dragon-picker-preview-buttons > input, .dialog-button-tray > input, .dialog-button-tray > button, #swipp-preview-button-tray input, #baldwin-preview-container #baldwin-preview-button-tray input, .market-purchase-buttons button, #name-dragon-start-dialog .common-dialog-section:last-child input, #ah-cancel-verify-dlg p:last-child input, #ah-sell-verify-dlg p:last-child input, div#confirm-trade button, #confirm-approve button, #ah-save-search-dlg p:last-child input {
     flex-grow: 1;
     min-height: 50px;
     max-width: 50%;
@@ -463,7 +471,7 @@ adblock2 "Disable" <<<EOT  EOT;
     td, th, .common-hub-item-description, #registration h1, #noauth-container h2, #error-404 div, .common-bubble-byline {
         color: var(--text);
     }
-    strong, b, .common-red-text, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown {
+    strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown {
         color: var(--strong);
     }
     span[style*="color:"][style*="#6F1111"], .pinkerton-text-footer span[style*="color"] {
@@ -472,10 +480,10 @@ adblock2 "Disable" <<<EOT  EOT;
     em, i, span.whos-online-subtitle em, h4, h5, h6, .settings-hub-category-header, .dragon-profile-customize-category-header {
         color: var(--em);
     }
-    a, a.link, .rotating-item a, #menucontainer a, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a {
+    a, a.link, .rotating-item a, #menucontainer a, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a {
         color: var(--link);
     }
-    a:hover, a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a {
+    a:hover, a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover  {
         color: var(--link-hover);
     }
     /*dividers*/
@@ -511,6 +519,12 @@ adblock2 "Disable" <<<EOT  EOT;
         background-image: linear-gradient(to bottom, var(--energy-two) 0%, var(--energy-one) 100%);
         border-radius: 2px;
         z-index: -1;
+    }
+    .common-tab-indicator {
+        color: var(--button-text) !important;
+        text-shadow: -1px 0 0 var(--shadow), 1px 0 0 var(--shadow), -1px 1px 0 var(--shadow), 1px 1px 0 var(--shadow), -1px 2px 0 var(--shadow), 1px 2px 0 var(--shadow), -1px -1px 0 var(--shadow), 1px -1px 0 var(--shadow), 0 -1px 0 var(--shadow);
+        border: 1px solid var(--energy-border);
+        background-image: linear-gradient(to bottom, var(--energy-two) 0%, var(--energy-one) 100%);
     }
     .common-hub-item-alert, .archaeology-dig-site-index-row-badge, .ah-alert-badge {
         color: var(--button-text);
@@ -650,29 +664,12 @@ adblock2 "Disable" <<<EOT  EOT;
     div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/faded-background.jpg"],
     div.contentcontainer div.main[style*="/static/layout/hoard/internal_bg.jpg"],
     div.contentcontainer div.main[style*="/static/layout/hoard/vault_bg.jpg"],
-    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/faded-background.jpg"],
     div.contentcontainer .main[style*="/static/layout/dressingroom/bg_gathering.jpg"] {
         position: relative;
         z-index: 2;
     }
-    /*shop*/
-     div.contentcontainer div.main[style*="/market/internal_bg.jpg"]::before {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        z-index: -1;
-        background-image: url('https://www1.flightrising.com/static/cms/custom-shop/backgrounds/custom-shop-background-6426414b66b23.png') !important;
-        filter: var(--filter) hue-rotate(var(--hue));
-        top: 0;
-        left: 0;
-        background-repeat: no-repeat;
-        opacity: 0.15;
-         background-position: 330px -245px;
-    }
     /*bestiary*/
-    div.contentcontainer div.main[style*="/bestiary/internal_bg.jpg"]::before,
-    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/faded-background.jpg"]::before {
+    div.contentcontainer div.main[style*="/bestiary/internal_bg.jpg"]::before {
         content: '';
         position: absolute;
         height: 100%;
@@ -693,7 +690,9 @@ adblock2 "Disable" <<<EOT  EOT;
     div.contentcontainer div.main[style*="/static/layout/dressingroom/bg_dressingroom.jpg"]::after,
     div.contentcontainer div.main[style*="/static/layout/wiki/internal_bg.jpg"]::after,
     div.contentcontainer div.main[style*="/static/layout/scryer/internal_bg.jpg"]::after,
-    div.contentcontainer .main[style*="/static/layout/dressingroom/bg_gathering.jpg"]::after {
+    div.contentcontainer .main[style*="/static/layout/dressingroom/bg_gathering.jpg"]::after,
+    div.contentcontainer div.main[style*="/market/internal_bg.jpg"]::after,
+    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/faded-background.jpg"]::after {
         content: '';
         position: absolute;
         height: 525px;
@@ -704,6 +703,12 @@ adblock2 "Disable" <<<EOT  EOT;
         left: 0;
         background-repeat: no-repeat;
         opacity: 0.1;
+    }
+    /*marketplace & grand exchange*/
+    div.contentcontainer div.main[style*="/market/internal_bg.jpg"]::after {
+        background-image: url('https://www1.flightrising.com/static/cms/scene/50695.png') !important;
+        filter: var(--filter) hue-rotate(var(--hue)) brightness(110%) contrast(150%);
+        background-position: top right;
     }
     /*gathering*/
     div.contentcontainer .main[style*="/static/layout/dressingroom/bg_gathering.jpg"]::after {
@@ -735,15 +740,17 @@ adblock2 "Disable" <<<EOT  EOT;
     }
     /*familiar faded bg*/
     div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/faded-background.jpg"]::after {
-        background-image: url('https://www1.flightrising.com/static/layout/fantastic-familiar/faded-background.jpg') !important;
-        opacity: 0.1;
+        background-image: url('https://www1.flightrising.com/static/cms/scene/50694.png') !important;
+        background-position: top right;
     }
     div.contentcontainer div.main[style*="/static/layout/dressingroom/bg_dressingroom.jpg"]::before,
     div.contentcontainer div.main[style*="/static/layout/wiki/internal_bg.jpg"]::before,
     div.contentcontainer div.main[style*="/static/layout/scryer/internal_bg.jpg"]::before,
     div.contentcontainer div.main[style*="/static/layout/hoard/internal_bg.jpg"]::before,
     div.contentcontainer div.main[style*="/static/layout/hoard/vault_bg.jpg"]::before,
-    div.contentcontainer .main[style*="/static/layout/dressingroom/bg_gathering.jpg"]::before {
+    div.contentcontainer .main[style*="/static/layout/dressingroom/bg_gathering.jpg"]::before,
+    div.contentcontainer div.main[style*="/market/internal_bg.jpg"]::before,
+    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/faded-background.jpg"]::before {
         content: '';
         position: absolute;
         height: 525px;
@@ -793,9 +800,12 @@ adblock2 "Disable" <<<EOT  EOT;
     div.cluetip-inner.ui-cluetip-content, .cluetip.ui-widget {
         background: var(--tooltip-bg);
     }
-    .common-dialog .common-dialog-diagram, .common-currency-box-treasure, .common-currency-box-gems, .common-currency-box-treasure-discount {
+    .common-dialog .common-dialog-diagram, .common-currency-box-treasure, .common-currency-box-treasure-discount, .common-currency-box-gems, .common-currency-box-achievement-tokens, .common-currency-box-achievement-points, .common-currency-box-pursuit-points {
         background-color: var(--widget-med);
         color: var(--text)
+    }
+    .common-bulletin-text {
+        background: rgba(var(--widget-rgb),0.95);
     }
     /*tables*/
     .common-plain-table thead th, .common-plain-table thead td {
@@ -1047,6 +1057,12 @@ adblock2 "Disable" <<<EOT  EOT;
         background: linear-gradient(to bottom, var(--red-button-one) 0%, var(--red-button-two) 100%);
         border-color: var(--borders);
     }
+    .common-bulletin-dot {
+        background: linear-gradient(to bottom, var(--button-one) 0%, var(--button-two) 100%);
+    }
+    .common-bulletin-dot[data-active="true"] {
+        background: var(--accent-five)
+    }
     /*more buttons*/
     .common-ui-button, .lair-pagination .lair-pagination-page, .common-pagination .common-pagination-page,
     .common-ui-vertical-button-group {
@@ -1220,15 +1236,33 @@ adblock2 "Disable" <<<EOT  EOT;
         border-color: rgb(var(--warning));
         background-color: rgba(var(--warning),0.08);
     }
+    .common-message-info a {
+        color: rgb(var(--warning));
+    }
+    .common-message-info a:hover, .common-message-info a:hover > * {
+        color: var(--warning-text);
+    }
     .common-message-error {
         color: var(--error-text);
         border-color: rgb(var(--error));
         background-color: rgba(var(--error),0.08);
     }
+    .common-message-error a {
+        color: rgb(var(--error));
+    }
+    .common-message-error a:hover, .common-message-error a:hover > * {
+        color: var(--error-text);
+    }
     .common-message-success {
         color: var(--success-text);
         border-color: rgb(var(--success));
         background-color: rgba(var(--success),0.08);
+    }
+    .common-message-success a {
+        color: rgb(var(--success));
+    }
+    .common-message-success a:hover, .common-message-success a:hover > * {
+        color: var(--success-text);
     }
     #noauth-container h1, #noauth-container h3 {
         color: rgb(var(--error));
@@ -1409,12 +1443,17 @@ adblock2 "Disable" <<<EOT  EOT;
     #dragon-search-filters,
     .ah-search-options,
     .dragon-picker-filters, .morphology-picker-filters,
-    #editor-emoji-dialog .editor-emoji-dialog-filter, #editor-emoji-dialog .editor-emoji-dialog-emoji-item,
+    #editor-emoji-dialog .editor-emoji-dialog-filter,
     #lair-icons-dialog .lair-page-icon-filter, #lair-icons-dialog .lair-icons-dialog-icon,
     .settings-hub-category, .common-fieldset, .common-fieldset legend,
-    #lair-edit-page .lair-page-filters {
+    #lair-edit-page .lair-page-filters, #lair-view-page .lair-page-filters {
         border: 2px solid var(--borders-light);
         outline: 2px solid var(--borders);
+        background: var(--widget-med);
+    }
+    #editor-emoji-dialog .editor-emoji-dialog-emoji-item {
+        border: 2px solid var(--borders);
+        outline: 1px solid var(--borders-light);
         background: var(--widget-med);
     }
     #dragon-search-filters .dragon-search-filters-footer {
@@ -1429,6 +1468,9 @@ adblock2 "Disable" <<<EOT  EOT;
         color: var(--strong);
     }
     /*emoji picker*/
+    #editor-emoji-dialog .editor-emoji-dialog-emoji-item[data-size="2"] {
+        margin: 5px;
+    }
     #editor-emoji-dialog .editor-emoji-dialog-emoji-item:hover, #lair-icons-dialog .lair-icons-dialog-icon:hover {
         background: var(--widget-light);
     }
@@ -1918,11 +1960,18 @@ adblock2 "Disable" <<<EOT  EOT;
     
     img#internal_bg[src="/images/layout/scrying/internal_bg.jpg"],
     img#internal_bg[src="/images/layout/wiki/internal_bg.jpg"],
-    img#internal_bg[src="/images/layout/search/internal_bg.jpg"]
+    img#internal_bg[src="/images/layout/search/internal_bg.jpg"],
+    img#internal_bg[src="/images/layout/faire/internal_bg.jpg"]
     {
         display: none !important;
     }
-    
+    .main {
+        min-height: 700px;
+    }
+    #luckystreak {
+        font-size: 10px !important;
+        color: #000 !important;
+    }
     *[style*="color:#731d08"]:not(input), *[style*="color: #731d08"]:not(input) {
         color: var(--strong) !important;
     }
@@ -2033,8 +2082,8 @@ adblock2 "Disable" <<<EOT  EOT;
     /* Clan Profiles & Friends Page  */
     
     .clan-profile-header {
-        color: var(--strong);
-        text-shadow: 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow);
+        color: var(--accent-four);
+text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
     }
     .clan-profile-username.clan-profile-header, .clan-profile-icon {
         text-shadow: var(--stroke);
@@ -2070,11 +2119,18 @@ adblock2 "Disable" <<<EOT  EOT;
     }
     .clan-profile-forum-post,
     .clan-profile-forum-post-empty,
+    .clan-profile-activity,
     .clan-profile-activity-empty,
     .clan-profile-friends-footer,
-    .clan-profile-activity,
+    .clan-profile-achievement,
+    .clan-profile-achievement-empty,
     .clan-profile-comments-buttons {
         border-color: var(--borders-med);
+    }
+    .clan-profile-forum-posts-footer a::after, .clan-profile-activities-footer a::after {
+        content: ' ...';
+        font-weight: normal;
+        font-size: 0.5em;
     }
     .clan-profile-vista,
     #clan-profile-comments-frame {
@@ -2088,8 +2144,8 @@ adblock2 "Disable" <<<EOT  EOT;
         box-sizing:border-box;
         padding: 0 5px;
     }
-    .clan-profile-forum-post-empty-timestamp, .clan-profile-activity-empty-timestamp,
-    .clan-profile-forum-post-empty-text, .clan-profile-activity-empty-text,
+    .clan-profile-forum-post-empty-timestamp, .clan-profile-activity-empty-timestamp, .clan-profile-achievement-empty-timestamp,
+    .clan-profile-forum-post-empty-text, .clan-profile-activity-empty-text, .clan-profile-achievement-empty-text,
     .clan-profile-comment-empty-avatar,
     .clan-profile-comment-empty-text,
     .clan-profile-friend-empty
@@ -2311,6 +2367,13 @@ adblock2 "Disable" <<<EOT  EOT;
         border: 2px solid var(--borders-med);
         outline: 2px solid var(--borders);
         background: rgba(var(--widget-rgb),0.8);
+    }
+    #choose-familiar-preview-remove {
+        box-sizing: border-box;
+        width: 100%;
+    }
+    #choose-vista-remove {
+        width: 134px;
     }
     .choose-familiar-dragon {
         opacity: 1;
@@ -2575,10 +2638,6 @@ adblock2 "Disable" <<<EOT  EOT;
     #den-slot-unlock .den-slot-unlock-item.trade-in-icon-obtained .den-slot-unlock-item-inventory, #den-slot-unlock-list .den-slot-unlock-item.trade-in-icon-obtained .den-slot-unlock-item-inventory {
         color: rgb(var(--success));
     }
-    .lair-tab-selected, .lair-tab-selected:hover {
-        border-color: var(--accent-five) !important;
-        background: var(--tab-hover) !important;
-    }
     .lair-tab-description {
         background: var(--section);
         border: none;
@@ -2605,12 +2664,22 @@ adblock2 "Disable" <<<EOT  EOT;
         background: var(--tab);
         border-radius: 5px;
     }
+    .lair-tab .lair-tab-move, .lair-tab:hover .lair-tab-move {
+        border-color: var(--borders-light)
+    }
     .lair-tab:hover {
         border: 2px solid var(--borders-light);
         background: var(--widget);
     }
     .lair-tab-selected a, .lair-tab-selected:hover a {
         color: var(--strong);
+    }
+    .lair-tab-selected, .lair-tab-selected:hover {
+        border-color: var(--accent-five);
+        background: var(--tab-hover);
+    }
+    .lair-tab-selected:hover .lair-tab-move {
+        border-color: var(--accent-five)
     }
     #lair-edit-page .lair-tabs {
         margin-top: 50px
@@ -2633,6 +2702,9 @@ adblock2 "Disable" <<<EOT  EOT;
     #lair-edit-page .lair-page .lair-page-move, #lair-edit-page .lair-page-dragon .lair-page-dragon-box .lair-page-dragon-move, .lair-tab-selected .lair-tab-default, .lair-tab-selected .lair-tab-move {
         color: var(--text);
         border-color: var(--borders)
+    }
+    .lair-tab-selected .lair-tab-move {
+        border-color: var(--accent-five)
     }
     #lair-edit-page .lair-page .lair-page-header {
         border-color: var(--tooltip-bg);
@@ -2794,6 +2866,56 @@ adblock2 "Disable" <<<EOT  EOT;
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/dragon.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/fantastic-familiars.*") {
     /* Familiar Bonding & Fantastic Familiars */
+    
+    /*cottage bg on ff page*/
+    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/background.png"], div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/background.png"] div.content {
+        position: relative;
+        z-index: 2;
+    }
+    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/background.png"] {
+        background: none !important;
+    }
+    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/background.png"]::after {
+        background-image: url('https://www1.flightrising.com/static/cms/scene/50694.png') !important;
+        content: '';
+        position: absolute;
+        height: 525px;
+        width: 100%;
+        z-index: -2;
+        filter: var(--filter) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        opacity: 0.1;
+        background-position: top right;
+    }
+    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/background.png"] div.content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/background.png"] div.content::before {
+        background-image: url('https://www1.flightrising.com/static/layout/fantastic-familiar/background.png') !important;
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background-repeat: no-repeat;
+    }
+    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/background.png"]::before {
+        content: '';
+        position: absolute;
+        height: 525px;
+        width: 100%;
+        z-index: -1;
+        background-image: linear-gradient(to bottom, rgb(34, 40, 43, 0) 0%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 70%, var(--main) 100%) !important;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+    }
+    
     #bonding-dialog-familiar, .bonding-dialog-familiar {
         background: var(--widget-med);
         border: none;
@@ -3174,6 +3296,11 @@ adblock2 "Disable" <<<EOT  EOT;
         color: var(--text);
         border: 2px solid var(--borders-light);
     }
+    #recipe-no-results {
+        background: rgba(var(--warning),0.1);
+        border-color: rgb(var(--warning));
+        color: var(--warning-text);
+    }
     .baldwin-xptext, .baldwin-xptext b {
         color: rgb(var(--success))
     }
@@ -3424,6 +3551,138 @@ adblock2 "Disable" <<<EOT  EOT;
     }
     #raffle-timer .raffle-timer-value {
         color: var(--accent-three)
+    }
+}
+
+@-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/achievements.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/game-database.*") {
+    /* Achievements */
+    
+    .achievements-header {
+        color: var(--text);
+text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
+    }
+    .achievement-item {
+        background: linear-gradient(to top, var(--section) 0%, var(--widget) 50%, var(--widget-med) 100%);
+        border: 1px solid var(--borders-light);
+    }
+    #achievements-page .common-pagination-arrow {
+        min-width: 77px;
+        width: auto;
+        min-height: 33px;
+        height: auto;
+    }
+    
+    .achievement-item[data-progress="1"], #achievements-recent-list .achievement-item {
+        border-color: rgb(var(--success));
+        background: linear-gradient(to bottom, var(--widget) 20%, var(--widget-med) 50%, rgba(var(--success),0.15) 100%);
+    }
+    .achievement-item-rewards-box {
+        background: var(--widget-med);
+        color: var(--text);
+        border-color: var(--borders);
+    }
+    #pursuits-rewards-meter {
+        padding: 25px 21px 5px 21px;
+        background: var(--widget);
+        border: 2px solid var(--widget-med);
+        outline: 2px solid var(--borders);
+    }
+    .pursuits-rewards-meter-action button {
+        width: 100%;
+    }
+    .meter-expiration, .pursuits-expiration {
+        color: var(--text);
+        margin-top: -12px;
+    }
+    .pursuits-expiration {
+        margin-top: -22px;
+    }
+    .pursuits-list {
+        background: var(--widget);
+        border: 2px solid var(--widget-med);
+        outline: 2px solid var(--borders);
+    }
+    .pursuit-item {
+        margin: 10px 8px;
+        background: var(--section);
+        border-color: var(--borders);
+    }
+    .pursuit-item-reward, .achievement-item-reward, .achievement-item-name {
+        color: var(--strong)
+    }
+    .achievement-item-category {
+        color: var(--text-med);
+    }
+    .achievement-item-rewards-heading {
+        color: var(--text);
+        padding-bottom: 3px;
+    }
+    .achievement-meter-bigtext.common-meter-text, .pursuit-meter-text, .achievement-meter-text.achievement-meter-text {
+        color: var(--text);
+        text-shadow: -1px 0 0 var(--shadow), 1px 0 0 var(--shadow), -1px 1px 0 var(--shadow), 1px 1px 0 var(--shadow), -1px 2px 0 var(--shadow), 1px 2px 0 var(--shadow), -1px -1px 0 var(--shadow), 1px -1px 0 var(--shadow), 0 -1px 0 var(--shadow);
+    }
+    #achievements-token-count {
+        border: 2px solid var(--borders);
+    }
+    #achievements-token-count:hover {
+        color: var(--text);
+        background-color: var(--widget);
+    }
+    .achievement-meter-text.achievement-meter-text {
+        font-weight: bold;
+    }
+    .achievement-meter-bigtext.common-meter-text strong, .achievement-meter-text.achievement-meter-text strong {
+        color: inherit;
+    }
+    .pursuit-item-meter-full, .achievement-meter-full.common-meter-full {
+        background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
+        border: 1px solid var(--energy-border);
+        box-sizing: border-box;
+    }
+    
+    /*pursuit rewards meter, rework later*/
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="1"] .common-meter-full,
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="2"] .common-meter-full,
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="3"] .common-meter-full,
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="4"] .common-meter-full,
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="5"] .common-meter-full,
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="6"] .common-meter-full {
+        border: 1px solid var(--energy-border);
+        box-sizing: border-box;
+    }
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="1"] .common-meter-full,
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="6"] .common-meter-full {
+        background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 40%, var(--energy-full-one) 60%, var(--energy-full-two) 100%);
+    }
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="1"] .common-meter-full[style*="100%"] {
+        background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
+    }
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="2"] .common-meter-full {
+        background: linear-gradient(to right, var(--energy-two) 0%, var(--energy-full-one) 50%, var(--energy-full-two) 100%);
+    }
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="3"] .common-meter-full,
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="4"] .common-meter-full {
+        background: linear-gradient(to right, var(--energy-full-one) 0%, var(--energy-full-two) 100%);
+    }
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="5"] .common-meter-full {
+        background: linear-gradient(to right, var(--energy-full-one) 0%, var(--energy-full-two) 100%);
+    }
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="2"] .common-meter-full[style*="100%"] {
+        background: linear-gradient(to right, var(--energy-two) 0%, var(--energy-full-one) 100%);
+    }
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="3"] .common-meter-full[style*="100%"],
+    #pursuits-rewards-meter .pursuits-rewards-meter-segment[data-index="4"] .common-meter-full[style*="100%"] {
+        background: var(--energy-full-one);
+    }
+    .pursuit-item-meter-full[style*="100%"], .achievement-meter-full.common-meter-full[style*="100%"] {
+        background: linear-gradient(to right, var(--energy-full-one) 0%, var(--energy-full-two) 100%);
+        border: 1px solid var(--energy-full-border);
+    }
+    .pursuit-item-meter-checkmark {
+        filter: sepia(100%) hue-rotate(75deg) brightness(150%) saturate(250%);
+    }
+    img[src="/static/layout/achievements/badge-complete.png"] {
+        filter: sepia(100%) hue-rotate(75deg) brightness(110%) saturate(200%);
     }
 }
 
@@ -3740,7 +3999,7 @@ adblock2 "Disable" <<<EOT  EOT;
         z-index: 2;
     }
     div.contentcontainer div.main::after {
-        background-image: url('https://www1.flightrising.com/static/cms/scene/42685.png') !important;
+        background-image: url('https://www1.flightrising.com/static/cms/scene/50697.png') !important;
         content: '';
         position: absolute;
         height: 525px;
@@ -3851,6 +4110,12 @@ adblock2 "Disable" <<<EOT  EOT;
     .ah-search-option-name {
         font-weight: bold;
         color: var(--em)
+    }
+    .ah-search-submit-container #ah-search-submit {
+        width: 33%;
+    }
+    .ah-search-submit-container .ah-reset-to-defaults {
+        margin-left: 10px;
     }
     /*~~*/
     input#paypal_submit1, input#paypal_submit2, input#paypal_submit3, input#paypal_submit4, input#paypal_submit5 {
@@ -4025,6 +4290,12 @@ adblock2 "Disable" <<<EOT  EOT;
         margin-top: 3px;
         outline: 3px solid var(--borders);
     }
+    .game-database-record-sidebar-value {
+        border-color: var(--text-med)
+    }
+    #game-database hr.game-database-subdivider {
+        border-color: var(--divider)
+    }
     #game-database-open-tooltip {
         color: var(--text);
         background: var(--tooltip-bg);
@@ -4102,6 +4373,9 @@ adblock2 "Disable" <<<EOT  EOT;
     .game-db-item-pill:hover {
         background: var(--section);
         border-color: var(--borders);
+    }
+    #game-database-report-instructions a, #game-database-suggestion-instructions a, #game-database-comment-instructions a {
+        color: rgb(var(--warning))
     }
     .user-hoard-dialog-item-frame-error {
         background: linear-gradient(to bottom, rgba(var(--error),0.5) 0%, rgba(var(--error),0.2) 100%);
@@ -4196,7 +4470,38 @@ adblock2 "Disable" <<<EOT  EOT;
     #game-database-search input {
         border: 2px solid var(--borders)
     }
-    
+    #game-database-search-results {
+        background: var(--tooltip-bg);
+        border-color: var(--borders);
+    }
+    #game-database-search-results .game-database-search-result .game-database-search-result-link:hover {
+        background: var(--widget-med)
+    }
+    .game-database-search-result-name > strong, .game-database-search-loading {
+        color: var(--text) !important
+    }
+    .game-database-achievement-result-description {
+        color: var(--text);
+    }
+    .game-database-achievement-result-category {
+        color: var(--text-med);
+    }
+    .game-database-achievement-result-name {
+        color: var(--link)
+    }
+    .game-database-achievement-result-name:hover {
+        color: var(--link-hover)
+    }
+    #game-database-achievement-results .game-database-achievement-result {
+        background: var(--widget);
+        border-color: var(--divider);
+    }
+    #game-database-achievement-results .game-database-achievement-result:nth-child(2n+1) {
+        background: var(--widget-med)
+    }
+    #game-database-achievement-results .game-database-achievement-result:hover {
+        background: var(--tooltip-header);
+    }
 }
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/site\\/dev-tracker.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/msgs.*") {
@@ -5056,6 +5361,24 @@ adblock2 "Disable" <<<EOT  EOT;
         --flash-bg-three: #695124;
         --flash-border: #b36f27;
     }
+    /*bg*/
+     div.contentcontainer div.main[style*="/market/internal_bg.jpg"]::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background-image: url('https://www1.flightrising.com/static/cms/custom-shop/backgrounds/custom-shop-background-6426414b66b23.png') !important;
+        filter: var(--filter) hue-rotate(var(--hue));
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        opacity: 0.15;
+         background-position: 330px -245px;
+    }
+    div.contentcontainer div.main[style*="/market/internal_bg.jpg"]::after {
+        display: none;
+    }
     .flash_sale_tab_icon img {
         filter: drop-shadow(1px 1px 3px rgba(255, 174, 125, .569)) drop-shadow(-1px -1px 3px rgba(255, 186, 54, .459));
     }
@@ -5129,6 +5452,10 @@ adblock2 "Disable" <<<EOT  EOT;
         color: var(--text);
         font-weight: bold;
     }
+    .custom-shops-divider {
+        border-color: var(--divider);
+    }
+    
     /*add bg to shop currency for easy reading*/
     #custom-shop-currency {
         color: var(--strong);
@@ -5203,10 +5530,17 @@ adblock2 "Disable" <<<EOT  EOT;
     .custom-shop-trade-requirement[data-owned="0"] img {
         filter: saturate(0)
     }
-    /*slightly less bright treasure box*/
+    /*treasure box*/
     .custom-shop-trade-currency-treasure {
         color: var(--warning-text);
         background-color: rgba(var(--warning),0.2);
+        border-color: rgb(var(--warning));
+    }
+    /*ap box*/
+    .custom-shop-trade-currency-achievement-tokens {
+        color: var(--error-text);
+        background-color: rgba(var(--error),0.15);
+        border-color: rgb(var(--error));
     }
 }
 
@@ -5227,6 +5561,84 @@ adblock2 "Disable" <<<EOT  EOT;
     }
     #sitewide-effort-page > table td {
         color: var(--text) !important;
+    }
+}
+@-moz-document regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/wiki\\/skins\\/.*") {
+    /* Skins */
+    /*set bg*/
+    div.contentcontainer .main {
+        position: relative;
+        z-index: 2;
+    }
+    div.contentcontainer .main::after {
+        content: '';
+        position: absolute;
+        height: 525px;
+        width: 100%;
+        z-index: -2;
+        filter: var(--filter) hue-rotate(var(--hue)) brightness(50%) contrast(150%);
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        opacity: 0.1;
+    }
+    div.contentcontainer div.main::after {
+        background-image: url('https://www1.flightrising.com/static/cms/scene/50696.png') !important;
+    }
+    div.contentcontainer .main::before {
+        content: '';
+        position: absolute;
+        height: 525px;
+        width: 100%;
+        z-index: -1;
+        background-image: linear-gradient(to bottom, rgb(34, 40, 43, 0) 0%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 70%, var(--main) 100%) !important;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+    }
+    a[style*="#731d08"] {
+        color: var(--link) !important;
+    }
+    a[style*="#731d08"]:hover {
+        color: var(--link-hover) !important
+    }
+    div[style*="#731d08"] {
+        color: var(--accent-five) !important;
+    }
+    div[style*="#731d08"], #buybp-container h2 {
+text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
+    }
+    .submitcontrol {
+        border: 2px solid var(--borders-med);
+        outline: 2px solid var(--borders);
+        background: linear-gradient(to top, var(--widget-light) 0%, var(--widget-med) 100%);
+    }
+    .submitcontrol #blueprintlist, .submitcontrol #insert_item, .submitcontrol .infocontainer {
+        background: var(--widget);
+        border-color: var(--borders);
+        border-radius: 4px;
+    }
+    .submitcontrol h1, .skininfo {
+        color: var(--strong)
+    }
+    .submitcontrol label select[disabled]{
+        background-color:var(--section);
+        color: var(--text-med);
+    }
+    #skinname-preview-skin[data-warning="true"], #skinname-preview-accent[data-warning="true"] {
+        color:rgb(var(--error))
+    }
+    .mb_button {
+        border-color: var(--borders)
+    }
+    .skinbuyitem {
+        background: linear-gradient(to top, var(--section) 0%, var(--widget) 50%, var(--widget-med) 100%);
+        border: 2px solid var(--borders-light);
+    }
+    .skinbuyprice {
+        background: var(--widget-light);
+        color: var(--text);
+        border-color: var(--borders);
     }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/world-map.*") {
@@ -5252,6 +5664,39 @@ adblock2 "Disable" <<<EOT  EOT;
     #world-map-frame .world-map-poi-description {
         background: var(--widget);
         border-color: var(--borders);
+    }
+}
+
+@-moz-document regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/play\\/.*") {
+    /*Fairgrounds*/
+    
+    #higher-lower-card-description {
+        z-index: 2;
+    }
+    #higher-lower-card-description::before {
+        content: '';
+        position: absolute;
+        width: calc(100% + 20px);
+        height: calc(100% + 20px);
+        top: -10px;
+        left: -10px;
+        background: var(--widget);
+        z-index: -1;
+        box-sizing: border-box;
+        border-radius: 10px;
+        border: 2px solid var(--borders)
+    }
+    #higher-lower-card-treasure {
+        color: var(--strong)
+    }
+    #higher-lower-button-retry {
+        color: transparent;
+    }
+    #higher-lower-turns {
+        color: var(--accent-four)
+    }
+    #higher-lower-turns strong {
+        color: var(--accent-five)
     }
 }
 
@@ -5397,6 +5842,7 @@ adblock2 "Disable" <<<EOT  EOT;
     img[src="/static/layout/game-database/button-items.png"],
     img[src="/static/layout/game-database/button-monsters.png"],
     img[src="/static/layout/game-database/button-stages.png"],
+    img[src="/static/layout/game-database/button-achievements.png"],
     #coli-organize-abilities-stats-btn,
     img[src="/content/battle/images/spr_button_back.png"],
     img[src="/content/battle/images/equip/spr_button_organize.png"],
@@ -5506,6 +5952,9 @@ adblock2 "Disable" <<<EOT  EOT;
     }
     img[src="/static/layout/hoard/buttons/mode-vault.png"],
     img[src="/static/layout/hoard/buttons/mode-hoard.png"],
+    img[src="/static/layout/achievements/buttons/button-achievements.png"],
+    img[src="/static/layout/achievements/buttons/button-pursuits.png"],
+    img[src="/static/layout/achievements/badge-in-progress.png"],
     img[src="/static/layout/lair/buttons/mode-den.png"],
     img[src="/static/layout/lair/buttons/mode-lair.png"],
     img[src="/static/layout/market/buttons/mode-treasure.png"],
