@@ -3572,7 +3572,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         height: auto;
     }
     
-    .achievement-item[data-progress="1"], .achievement-item[data-progress="100"], #achievements-recent-list .achievement-item {
+    .achievement-item[data-progress="100"], #achievements-recent-list .achievement-item {
         border-color: rgb(var(--success));
         background: linear-gradient(to bottom, var(--widget) 20%, var(--widget-med) 50%, rgba(var(--success),0.15) 100%);
     }
