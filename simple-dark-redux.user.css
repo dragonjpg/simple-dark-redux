@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.0.7
+@version        1.0.8
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -3572,7 +3572,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         height: auto;
     }
     
-    .achievement-item[data-progress="1"], #achievements-recent-list .achievement-item {
+    .achievement-item[data-progress="1"], .achievement-item[data-progress="100"], #achievements-recent-list .achievement-item {
         border-color: rgb(var(--success));
         background: linear-gradient(to bottom, var(--widget) 20%, var(--widget-med) 50%, rgba(var(--success),0.15) 100%);
     }
@@ -4982,6 +4982,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #ajaxbody tr > * {
         border: none !important;
     }
+    #ajaxbody tr a.unread {
+        color: var(--strong)
+    }
     td.msgtopic {
         flex-grow: 1;
         max-width: 510px;
@@ -5821,6 +5824,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src="/static/layout/hoard/buttons/multi-function-convert-food.png"],
     img[src="/static/layout/hoard/buttons/stack-function-convert-food.png"],
     img[src="/static/layout/hoard/buttons/stack-function-transmute.png"],
+    img[src="/static/layout/hoard/buttons/stack-function-hatch-egg.png"],
     img[src="/static/layout/hoard/buttons/stack-function-sell.png"],
     img[src="/static/layout/hoard/buttons/stack-function-sell-duplicates.png"],
     img[src="/static/layout/hoard/buttons/stack-function-ah.png"],
