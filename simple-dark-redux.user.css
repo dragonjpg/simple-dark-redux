@@ -168,7 +168,7 @@ EOT;
 theme3 "Copper" <<<EOT
 
         --hue: -35deg;
-	    --filter: sepia(100%) saturate(60%);
+	--filter: sepia(100%) saturate(60%);
         --selection-bg: #130509;
         --selection-text: #56c1b7;
 
@@ -206,7 +206,7 @@ theme3 "Copper" <<<EOT
         --shadow: #060f12;
         
         --strong: #ca9a71;
-	    --em: #eab992;
+	--em: #edddac;
         --link: #7ad3da;
         --link-hover: #fae2c3;
 
