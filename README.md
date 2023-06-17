@@ -12,6 +12,7 @@ You will need [Stylus](https://github.com/openstyles/stylus#readme) enabled, and
 ## Preview Images
 
 **Sidebar settings demonstration:**
+
 https://user-images.githubusercontent.com/132804271/236664072-bb251847-dde5-4f62-83e6-116eda37cc66.mp4
 
 **Theme Previews:**\
