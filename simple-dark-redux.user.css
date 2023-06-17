@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.0.8
+@version        1.1.0
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -163,6 +163,164 @@ theme2 "Gray" <<<EOT
         --energy-full-one: #ffd016;
         --energy-full-two: #dc2562;
         --energy-full-border: #9c2116;
+
+EOT;
+theme3 "Copper" <<<EOT
+
+        --hue: -35deg;
+	    --filter: sepia(100%) saturate(60%);
+        --selection-bg: #130509;
+        --selection-text: #56c1b7;
+
+        --background: #000;
+        --main: #201c1a;
+        --columns: #080e10;
+        --bar: #4a2216;
+
+        --widget: #1d120e;
+        --widget-rgb: 29, 18, 14;
+        --widget-med: #2c2521;
+        --widget-light: #374047;
+        --section: #0f0909;
+        
+        --tab: #29221c;
+        --tab-hover: #423323;
+        --textarea: #373330;
+
+        --warning: 254, 193, 110;
+        --warning-text: #fde9bd;
+        --error: 255, 130, 158;
+        --error-text: #fac9d4;
+        --success: 152, 231, 100;
+        --success-text: #e2fac9;
+        
+        --borders: #0e0904;
+        --borders-med: #3a342a;
+        --borders-light: #a28b7a;
+        
+        --text: #ebdcc9;/\*#d6ccc4;*\/
+        --text-med: #ab9c91;
+        --text-dark: #3a342e;
+        --text-disabled: #575452;
+        --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
+        --shadow: #060f12;
+        
+        --strong: #ca9a71;
+	    --em: #eab992;
+        --link: #7ad3da;
+        --link-hover: #fae2c3;
+
+        --accent-one: #998975;
+        --accent-two: #c6c5a8;
+        --accent-three: #f27c4e;
+        --accent-four: #b2c4b3;
+        --accent-five: #767067;
+        
+        --button-text: #fefdf2;
+        --button-text-dark: #080e10;
+        --button-one: #f0e1d6;
+	    --button-two: #a2b6b6;
+        --beige-button-one: #c5795c;
+        --beige-button-two: #3d574f;
+        --red-button-one: #ddbb85;
+        --red-button-two: #4e2f20;
+        --button-disabled-one: #2e3145;
+        --button-disabled-two: #27201c;
+        
+        --selected: #df4c0c;
+        --selected-text: #000;
+        
+        --divider: #534740;
+        
+        --tooltip-bg: #0f0909;
+        --tooltip-header: #080e10;
+        
+        --energy-one: #96d7de;
+        --energy-two: #c49a70;
+        --energy-border: #884210;
+        
+        --energy-full-one: #ed8a4c;
+        --energy-full-two: #3d998d;
+        --energy-full-border: #9c2116;
+
+EOT;
+theme4 "Dracula" <<<EOT
+
+        --hue: 205deg;
+        --filter: sepia(100%);
+        --selection-bg: #ff79c6;
+        --selection-text: #000;
+
+        --background: #000;
+        --main: #22242e;
+        --columns: #1b1c24;
+        --bar: #1b1c24;
+        
+        --widget: #282a36;
+        --widget-rgb: 49, 50, 65;
+        --widget-med: #343643;
+        --widget-light: #42455d;
+        --section: #1b1c24;
+        
+        --tab: #1b1c24;
+        --tab-hover: #343643;
+        --textarea: #343643;
+
+        --warning: 255, 184, 108;
+        --warning-text: #ffd4a5;
+        --error: 255, 85, 85;
+        --error-text: #ffb7b7;
+        --success: 80, 250, 123;
+        --success-text: #caffd8;
+        
+        --borders: #111217;
+        --borders-med: #44475a;
+        --borders-light: #596191;
+        
+        --text: #f8f8f2;
+        --text-med: #8498d7;
+        --text-dark: #6272a4;
+        --text-disabled: #6272a4;
+        --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
+        --shadow: #000;
+        
+        --strong: #8be9fd;
+        --em: #f1fa8c;
+        --link: #ff79c6;
+        --link-hover: #bd93f9;
+        
+        --accent-one: #ff79c6;
+        --accent-two: #50fa7b;
+        --accent-three: #ffb86c;
+        --accent-four: #94a4d7;
+        --accent-five: #bd93f9;
+        
+        --button-text: #f8f8f2;
+        --button-text-dark: #000;
+        --button-one: #f2f2f2;
+        --button-two: #a396d2;
+        --beige-button-one: #6272a4;
+        --beige-button-two: #44475a;
+        --red-button-one: #4a4177;
+        --red-button-two: #24222d;
+        --button-disabled-one: #6272a4;
+        --button-disabled-two: #24222d;
+        
+        --selected: #50fa7b;
+        --selected-text: #000;
+        
+        --divider: #44475a;
+        
+        --tooltip-bg: #282a36;
+        --tooltip-header: #1b1c24;
+        
+        --energy-one: #8be9fd;
+        --energy-two: #bd93f9;
+        --energy-border: #6272a4;
+        
+        --energy-full-one: #bd93f9;
+        --energy-full-two: #ff79c6;
+        --energy-full-border: #6272a4;
 
 EOT;
 }
@@ -1287,7 +1445,7 @@ adblock2 "Disable" <<<EOT  EOT;
         padding: 0px !important;
     }
     /*general tables*/
-    table:not(.bbcode_columns):not([id]) thead {
+    table:not(.bbcode_columns):not([id]) thead, table#userlist thead {
         background: var(--tooltip-header);
     }
     table#userlist {
@@ -3143,6 +3301,14 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #bestiary-familiars[data-display="compact"] .bestiary-familiar[data-description="1"] .bestiary-familiar-box {
         box-shadow: 0px 0px 10px var(--text-med);
     }
+    #bestiary-footer .bestiary-results-count {
+        background: var(--section);
+        color: var(--accent-two);
+        margin-top: 5px;
+    }
+    #bestiary-footer .bestiary-results-count strong {
+        color: var(--accent-three) !important;
+    }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/dominance.*") {
     /* Dominance */
@@ -3678,7 +3844,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background: linear-gradient(to right, var(--energy-full-one) 0%, var(--energy-full-two) 100%);
         border: 1px solid var(--energy-full-border);
     }
-    .pursuit-item-meter-checkmark {
+    .pursuit-item-meter-checkmark, #pursuits-rewards-meter .pursuits-meter-checkmark {
         filter: sepia(100%) hue-rotate(75deg) brightness(150%) saturate(250%);
     }
     img[src="/static/layout/achievements/badge-complete.png"] {
@@ -3956,7 +4122,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .inner-content > #xroad-attach {
         padding-left: 10px;
     }
-    p#tradeawait {
+    p#tradeawait, #divapprovetrade {
         color: var(--warning-text);
         margin-top: 15px;
         background: rgba(var(--warning),0.1);
@@ -3965,6 +4131,15 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border-radius: 5px;
         box-sizing: border-box;
         border: 1px solid rgb(var(--warning));
+    }
+    #divapprovetrade {
+        margin-left: 0;
+    }
+    #divapprovetrade p {
+        color: inherit;
+    }
+    #divcanceltrade:hover, #trade-chat img:hover {
+        cursor: pointer;
     }
     #trademsgs .msgstamp, #trademsglimits {
         color: var(--text-med);
@@ -4345,12 +4520,12 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background: rgba(var(--widget-rgb), 0.95);
     }
     .common-table tbody tr:nth-child(odd) {
-        background-color: #171c21;
+        background-color: var(--widget);
     }
     .common-table tr {
         border-bottom: none;
     }
-    .game-database-item-result-name, #dragon-search-filters-blurb {
+    .game-database-item-result-name, #dragon-search-filters-blurb, .game-database-monster-result-name {
         color: var(--text);
     }
     .game-database-item-result[data-favorite="true"] .game-database-item-result-name {
@@ -4380,19 +4555,24 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .user-hoard-dialog-item-frame-error {
         background: linear-gradient(to bottom, rgba(var(--error),0.5) 0%, rgba(var(--error),0.2) 100%);
     }
+    /*nts: not sure where these appear now?*/
     .dragon-picker-preview-bubble {
-            background: linear-gradient(to bottom, #456c93 0%, #001937 100%);
-        border: 1px solid #031224 !important;
+        background: linear-gradient(to bottom, var(--widget-med) 0%, var(--widget) 100%);
+        border: 1px solid var(--borders);
     }
     .dragon-picker-preview-bubble-from {
-        color: #6e889b;
+        color: var(--text);
     }
     .dragon-picker-preview-bubble-title {
-        color: #75cddd;
+        color: var(--strong);
     }
     .dragon-picker-preview-bubble-to {
-        color: #00c2ff;
+        color: var(--accent-four);
         font-weight: bold;
+    }
+    /*nts end*/
+    div.search-results-nada {
+        color: var(--text-med)
     }
     /*dragon search*/
     .dragon-search-result-energy-value {
@@ -4507,8 +4687,11 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/site\\/dev-tracker.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/msgs.*") {
     /* Forums & PMs */
     :root {
-        --admin-text: #ffa58f;
+        --admin-text: #ffa3a3;
+        --admin-strong: #ffc391;
+        --admin-em: #dfc1a4;
         --admin-link: #ffed80;
+        --admin-link-hover: #fffad9;
         --widget-med-alt: rgba(var(--widget-rgb),0.35);
     }
     
@@ -4585,8 +4768,17 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .post-admin .post-text-content, .post-admin .post-text-content li, .post-admin .post-text-content li span {
         color: var(--admin-text) !important;
     }
-    .post-admin .post-text-content a {
+    .post-admin .post-text-content a, .post-admin .post-text-content a > *, .post-admin .post-text-content ul li::marker {
         color: var(--admin-link) !important;
+    }
+    .post-admin .post-text-content a:hover, .post-admin .post-text-content a:focus, .post-admin .post-text-content a:hover > *, .post-admin .post-text-content a:focus > * {
+        color: var(--admin-link-hover) !important;
+    }
+    .post-admin .post-text-content b, .post-admin .post-text-content strong {
+        color: var(--admin-strong)
+    }
+    .post-admin .post-text-content i, .post-admin .post-text-content em {
+        color: var(--admin-em)
     }
     .common-message-forum.common-message-info, .common-message-forum.common-message-info b, .common-message-forum.common-message-info i {
         color: var(--warning-text);
@@ -4694,6 +4886,13 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         max-width: 90%;
         line-height: 110%;
         text-shadow: var(--stroke);
+    }
+    .post-author-title:not(:empty) {
+        color: var(--text);
+        font-weight: bold;
+        text-shadow: var(--stroke);
+        padding-top:3px;
+        font-size: 0.8em;
     }
     #forum-content div#postsheader {
         background-color: var(--section);
@@ -5941,6 +6140,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src="/static/layout/arrow_right.png"], img[src="/images/layout/arrow_right.png"],
     img[src="/static/layout/arrow_left.png"], img[src="/images/layout/arrow_left.png"],
     img[src="/static/layout/admin_post_first.png"], img[src="/static/layout/admin_post_last.png"],
+    img[src="/static/layout/admin_post_previous.png"], img[src="/static/layout/admin_post_next.png"],
     #coli-organize-up, #coli-organize-down, #coli-equip-inventory-up-image, #coli-equip-inventory-down-image,
     img[src="/static/layout/bestiary/buttons/show-description.png"],
     img[src="/static/layout/bestiary/buttons/hide-description.png"] {
