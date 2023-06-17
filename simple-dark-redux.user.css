@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.1.0
+@version        1.0.9
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -257,7 +257,7 @@ theme4 "Dracula" <<<EOT
         --bar: #1b1c24;
         
         --widget: #282a36;
-        --widget-rgb: 49, 50, 65;
+        --widget-rgb: 40, 42, 54;
         --widget-med: #343643;
         --widget-light: #42455d;
         --section: #1b1c24;
