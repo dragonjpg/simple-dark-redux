@@ -5956,7 +5956,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         color: var(--text-med);
     }
     /*clan*/
-    .menu_content a[href^="https://www1.flightrising.com/nesting"]::after {
+    .menu_content a[href^="https://www1.flightrising.com/nest"]::after {
         content: 'Breed your dragons and incubate their eggs.'
     }
     .menu_content a[href="https://www1.flightrising.com/lair"]::after {
