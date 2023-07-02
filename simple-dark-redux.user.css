@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.1.0
+@version        1.1.1
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -168,7 +168,7 @@ EOT;
 theme3 "Copper" <<<EOT
 
         --hue: -35deg;
-	--filter: sepia(100%) saturate(60%);
+        --filter: sepia(100%) saturate(60%);
         --selection-bg: #130509;
         --selection-text: #56c1b7;
 
@@ -198,7 +198,7 @@ theme3 "Copper" <<<EOT
         --borders-med: #3a342a;
         --borders-light: #a28b7a;
         
-        --text: #ebdcc9;/\*#d6ccc4;*\/
+        --text: #ebdcc9;
         --text-med: #ab9c91;
         --text-dark: #3a342e;
         --text-disabled: #575452;
@@ -206,7 +206,7 @@ theme3 "Copper" <<<EOT
         --shadow: #060f12;
         
         --strong: #ca9a71;
-	--em: #edddac;
+	    --em: #edddac;
         --link: #7ad3da;
         --link-hover: #fae2c3;
 
@@ -446,6 +446,9 @@ div#purchase.ui-dialog-content > div:last-child button + button {
     width: 100%;
     box-sizing: border-box;
 }
+#save-outfit-ok + #save-outfit-cancel {
+    margin-top: 10px;
+}
 .ah-dlg-submit, .ah-dlg-dismiss {
     width: 100%;
     box-sizing: border-box;
@@ -473,7 +476,8 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 #deleting-dialog > div,
 #block-dialog > div,
 #rep_box > form > div > div:last-child,
-#dressing-outfit-loader > div:last-child {
+#dressing-outfit-loader > div:last-child,
+#forum-block-dialog > div {
     display: flex;
     justify-content: space-between;
 }
@@ -482,7 +486,8 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 #block-dialog > div button,
 #rep_box > form > div > div:last-child input,
 #dressing-outfit-loader > div:last-child input,
-#delete-confirm > div button {
+#delete-confirm > div button,
+#forum-block-dialog > div button {
     width: 48%;
 }
 #swipp-preview-button-tray, #baldwin-preview-container #baldwin-preview-button-tray, #newitem #pinkerton-button-tray, #pinkerton-button-tray, #name-dragon-start-dialog .common-dialog-section:last-child, #ah-cancel-verify-dlg p:last-child, #ah-cancel-ok-dlg p:last-child, #ah-sell-verify-dlg p:last-child, #ah-sell-ok-dlg p:last-child, #ah-sell-submit-container, .raffle-window-buttons, #blocked-by-user-close {
@@ -1389,6 +1394,10 @@ adblock2 "Disable" <<<EOT  EOT;
         border: 2px solid rgb(var(--warning));
         background-position: 5px 50%;
     }
+    .common-message {
+        background: var(--widget-med);
+        border-color: var(--borders)
+    }
     .common-message-info, .dgnres-select .info-box {
         color: var(--warning-text);
         border-color: rgb(var(--warning));
@@ -1624,6 +1633,14 @@ adblock2 "Disable" <<<EOT  EOT;
         border-color: var(--borders-light);
         background: var(--tooltip-bg);
         color: var(--strong);
+    }
+    .common-multiselect-pill, .ah-multi-option {
+        background-color: var(--widget);
+        color: var(--text);
+    }
+    .common-multiselect-pill:hover, .ah-multi-option:hover {
+        background-color: var(--section);
+        color: var(--text);
     }
     /*emoji picker*/
     #editor-emoji-dialog .editor-emoji-dialog-emoji-item[data-size="2"] {
@@ -1884,7 +1901,8 @@ adblock2 "Disable" <<<EOT  EOT;
     }
     
     #gather_success_bg {
-        filter: brightness(30%) contrast(160%) var(--filter) hue-rotate(150deg);
+        filter: brightness(60%) contrast(180%);
+        mix-blend-mode: overlay;
         box-shadow: 0px 0px 15px #fff, 0px 0px 10px #fff, 0px 0px 5px #fff;
         border-radius: 20px;
         overflow: hidden;
@@ -3272,6 +3290,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-image: url('https://www1.flightrising.com/static/cms/scene/46543.png') !important;
         background-position: top right;
     }
+    form[action*="/trading/gift/receive"] input {
+        width: 98%;
+    }
 }
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/bestiary.*") {
@@ -3526,20 +3547,24 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background: var(--section);
         border-color: var(--borders);
     }
-    /* correct/incorrect labels for tomo answers */
-    .tomo-answer-correct {
-        color: rgb(var(--success));
-        font-weight: bold;
-    }
     #tomo-reward, #tomo-remaining {
         color: var(--accent-four);
     }
     #tomo-remaining-count {
 	color: var(--accent-three);
     }
+    /* correct/incorrect labels for tomo answers */
+    .tomo-answer {
+        font-weight: bold;
+    }
+    .tomo-answer-correct {
+        color: rgb(var(--success));
+    }
     .tomo-answer-incorrect {
         color: rgb(var(--error));
-        font-weight: bold;
+    }
+    .tomo-answer-neutral {
+        color: var(--text-med);
     }
     .tomo-next .beigebutton, #raffle-button {
         width: 100%;
@@ -5931,7 +5956,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         color: var(--text-med);
     }
     /*clan*/
-    .menu_content a[href="https://www1.flightrising.com/nest"]::after {
+    .menu_content a[href^="https://www1.flightrising.com/nesting"]::after {
         content: 'Breed your dragons and incubate their eggs.'
     }
     .menu_content a[href="https://www1.flightrising.com/lair"]::after {
