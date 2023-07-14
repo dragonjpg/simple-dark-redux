@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.1.1
+@version        1.1.2
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -367,9 +367,6 @@ body[style*="/layout/none/background.jpg"]::before {
 #footer > #bottom-banner {
     width: 100% !important;
 }
-body > #bottom-banner {
-    background: none !important;
-}
 body > #bottom-banner #bottom-banner-center {
     width: 100%;
 }
@@ -487,14 +484,21 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 #rep_box > form > div > div:last-child input,
 #dressing-outfit-loader > div:last-child input,
 #delete-confirm > div button,
-#forum-block-dialog > div button {
+#forum-block-dialog > div button,
+.vista-options ~ div:last-of-type > input {
     width: 48%;
 }
-#swipp-preview-button-tray, #baldwin-preview-container #baldwin-preview-button-tray, #newitem #pinkerton-button-tray, #pinkerton-button-tray, #name-dragon-start-dialog .common-dialog-section:last-child, #ah-cancel-verify-dlg p:last-child, #ah-cancel-ok-dlg p:last-child, #ah-sell-verify-dlg p:last-child, #ah-sell-ok-dlg p:last-child, #ah-sell-submit-container, .raffle-window-buttons, #blocked-by-user-close {
+#swipp-preview-button-tray, #baldwin-preview-container #baldwin-preview-button-tray, #newitem #pinkerton-button-tray, #pinkerton-button-tray, #name-dragon-start-dialog .common-dialog-section:last-child, #ah-cancel-verify-dlg p:last-child, #ah-cancel-ok-dlg p:last-child, #ah-sell-verify-dlg p:last-child, #ah-sell-ok-dlg p:last-child, #ah-sell-submit-container, .raffle-window-buttons, #blocked-by-user-close,
+.vista-options ~ div:last-of-type {
     display: flex;
     justify-content: center;
     width: 100%;
     margin: 10px auto;
+}
+.vista-options ~ div:last-of-type {
+    margin: 10px auto !important;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
 #swipp-preview-button-tray form, #baldwin-preview-container #baldwin-preview-button-tray form, .market-purchase-buttons,
 .ui-dialog #tutorial div:last-child {
@@ -634,7 +638,7 @@ adblock2 "Disable" <<<EOT  EOT;
     td, th, .common-hub-item-description, #registration h1, #noauth-container h2, #error-404 div, .common-bubble-byline {
         color: var(--text);
     }
-    strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown {
+    strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown, .hoard-sale-buyback-item-name {
         color: var(--strong);
     }
     span[style*="color:"][style*="#6F1111"], .pinkerton-text-footer span[style*="color"] {
@@ -643,10 +647,10 @@ adblock2 "Disable" <<<EOT  EOT;
     em, i, span.whos-online-subtitle em, h4, h5, h6, .settings-hub-category-header, .dragon-profile-customize-category-header {
         color: var(--em);
     }
-    a, a.link, .rotating-item a, #menucontainer a, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a {
+    a, a.link, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a {
         color: var(--link);
     }
-    a:hover, a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover  {
+    a:hover, a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover  {
         color: var(--link-hover);
     }
     /*dividers*/
@@ -655,7 +659,7 @@ adblock2 "Disable" <<<EOT  EOT;
         color: var(--divider) !important;
     }
     .dgnres-index .common-column:nth-child(2) .common-column-content,
-    .dgnres-table tr {
+    .dgnres-table tr, .common-table tr {
         border-color: var(--divider)
     }
     img[src*="/images/layout/graydot.gif"], img[src*="/static/layout/graydot.gif"], img.divider {
@@ -727,7 +731,7 @@ adblock2 "Disable" <<<EOT  EOT;
         background-image: none;
         color: var(--em)
     }
-    #alertwin .alert-v2-date, #alertlist .alert-v2-date {
+    #alertwin .alert-v2-date, #alertlist .alert-v2-date, #status-box .status-author time {
         color: var(--text-med)
     }
     #alertlist div.alert-v2.alert-v2-unread::after,
@@ -2128,6 +2132,34 @@ adblock2 "Disable" <<<EOT  EOT;
         border: 2px solid rgb(var(--success)) !important;
         border-radius: 3px;
         margin-bottom: 2px;
+    }
+    .vista-options {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .vista-option {
+        border-color: var(--borders);
+        background: var(--widget);
+    }
+    .vista-option[data-id="0"] {
+        background: linear-gradient(to bottom, var(--section) 0%, var(--widget) 50%);
+    }
+    .vista-option-avatar {
+        background: var(--widget);
+        border: 2px solid var(--borders-med);
+        outline: 2px solid var(--borders);
+        border-radius: 10px;
+    }
+    .vista-option-avatar:hover {
+        background: var(--widget);
+        border: 2px solid var(--borders-light);
+        border-radius: 10px;
+    }
+    .vista-option-name {
+        font-weight: bold;
+    }
+    .vista-option[data-selected="true"] {
+        border-color: var(--strong);
     }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/main\\.php.*") {
@@ -3955,7 +3987,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #assay-container #id10t-confirm {
         width: calc(20% - 15px);
     }
-    #assay-container #id10t1 {
+    #assay-container #id10t1, #foresee-progeny-container #id10t1 {
         text-align: right;
     }
     #assay-container #id10t1, #assay-container #id10t2 {
@@ -4316,6 +4348,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     .ah-search-submit-container .ah-reset-to-defaults {
         margin-left: 10px;
+    }
+    .ah-listing-buy-button, .ah-listing-relist-button, .ah-listing-clear-button, .ah-listing-cancel-button {
+        border-radius: 11px;
+        outline: 2px solid var(--borders);
     }
     /*~~*/
     input#paypal_submit1, input#paypal_submit2, input#paypal_submit3, input#paypal_submit4, input#paypal_submit5 {
