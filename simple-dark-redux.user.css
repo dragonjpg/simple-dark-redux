@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.1.2
+@version        1.1.3
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -264,7 +264,7 @@ theme4 "Dracula" <<<EOT
         
         --tab: #1b1c24;
         --tab-hover: #343643;
-        --textarea: #343643;
+        --textarea: #3c3f53;
 
         --warning: 255, 184, 108;
         --warning-text: #ffd4a5;
@@ -1413,6 +1413,12 @@ adblock2 "Disable" <<<EOT  EOT;
     .common-message-info a:hover, .common-message-info a:hover > * {
         color: var(--warning-text);
     }
+    .common-message-info a[style*="color"] {
+         color: rgb(var(--warning)) !important;
+    }
+    .common-message-info a[style*="color"]:hover {
+         color: var(--warning-text) !important;
+    }
     .common-message-error {
         color: var(--error-text);
         border-color: rgb(var(--error));
@@ -1452,6 +1458,9 @@ adblock2 "Disable" <<<EOT  EOT;
         border: 1px solid var(--borders);
         padding: 0.15em;
         border-radius: 5px;
+    }
+    .input_reg {
+        font-weight: normal;
     }
     input#paypal_submit1, input#paypal_submit2, input#paypal_submit3, input#paypal_submit4, input#paypal_submit5 {
         background: none !important;
@@ -4182,20 +4191,19 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     p#tradeawait, #divapprovetrade {
         color: var(--warning-text);
         margin-top: 15px;
+        margin-left: 0;
+        width: calc(100% - 160px);
+        box-sizing: border-box;
+    }
+    #divapprovetrade p, p#tradeawait {
         background: rgba(var(--warning),0.1);
         padding: 0.8em;
-        width: calc(100% - 160px);
-        border-radius: 5px;
+        color: var(--warning-text);
         box-sizing: border-box;
+        border-radius: 5px;
         border: 1px solid rgb(var(--warning));
     }
-    #divapprovetrade {
-        margin-left: 0;
-    }
-    #divapprovetrade p {
-        color: inherit;
-    }
-    #divcanceltrade:hover, #trade-chat img:hover {
+    #divcanceltrade:hover, #trade-chat img:hover, #divapprovetrade img:hover {
         cursor: pointer;
     }
     #trademsgs .msgstamp, #trademsglimits {
@@ -6287,6 +6295,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/layout/button_hatch.png"],
     img[src$="/layout/button_nest_breed.png"],
     img[src$="/layout/button_incubate.png"],
+    img[src$="/static/layout/button_boon.png"],
     img[src$="/layout/eggtimer_0.png"],
     img[src$="/layout/eggtimer_1.png"],
     img[src$="/layout/eggtimer_2.png"],
