@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.1.4
+@version        1.1.5
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -635,7 +635,7 @@ adblock2 "Disable" <<<EOT  EOT;
         font-size: 11px;
     }
     /*set misc. text color*/
-    td, th, .common-hub-item-description, #registration h1, #noauth-container h2, #error-404 div, .common-bubble-byline {
+    td, th, .common-hub-item-description, #registration h1, #noauth-container h2, #error-404 div, .common-bubble-byline, .cc-color-override-603568657.cc-window {
         color: var(--text);
     }
     strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown, .hoard-sale-buyback-item-name, .dgnres-index .cooldown .label {
@@ -647,10 +647,10 @@ adblock2 "Disable" <<<EOT  EOT;
     em, i, span.whos-online-subtitle em, h4, h5, h6, .settings-hub-category-header, .dragon-profile-customize-category-header {
         color: var(--em);
     }
-    a, a.link, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a {
+    a, a.link, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited {
         color: var(--link);
     }
-    a:hover, a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover  {
+    a:hover, a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover  {
         color: var(--link-hover);
     }
     /*dividers*/
@@ -1165,9 +1165,12 @@ adblock2 "Disable" <<<EOT  EOT;
         background-color: var(--widget);
     }
     a.cc-btn.cc-dismiss {
-        background-color: var(--widget);
+        background-color: var(--widget-light);
         color: var(--text) !important;
         border-radius: 7px !important;
+    }
+    .cc-color-override-603568657 .cc-btn:hover, .cc-color-override-603568657 .cc-btn:focus {
+        background-color: var(--section);
     }
     a.clock-tooltip {
         color: var(--text) !important;
@@ -1286,7 +1289,7 @@ adblock2 "Disable" <<<EOT  EOT;
         color: var(--text)
     }
     /*tooltips*/
-    .itemtip .itemdesc, .itemtip .skindesc, .itemtip .tooltip-itemid, #form-header {
+    .itemtip .itemdesc, .itemtip .skindesc, .itemtip .tooltip-itemid, #form-header, .itemtip .tooltip-level {
         color: var(--text)
     }
     .itemtip .sellval {
@@ -1415,6 +1418,11 @@ adblock2 "Disable" <<<EOT  EOT;
         color: var(--warning-text);
         border-color: rgb(var(--warning));
         background-color: rgba(var(--warning),0.08);
+    }
+    #wikitext div[style*="url(/images/layout/message_icons/information.png)"] {
+        color: var(--warning-text) !important;
+        border-color: rgb(var(--warning)) !important;
+        background-color: rgba(var(--warning),0.08) !important;
     }
     .common-message-info a {
         color: rgb(var(--warning));
@@ -1848,6 +1856,9 @@ adblock2 "Disable" <<<EOT  EOT;
         background-color: var(--widget-med);
         border-radius: 5px;
     }
+    img#preview-image:not([src]) {
+        background: var(--widget-med);
+    }
     
     /*npc speech bubbles*/
     .common-npc-dialog {
@@ -1909,7 +1920,7 @@ adblock2 "Disable" <<<EOT  EOT;
     .common-bubble-subject {
         color: var(--text);
     }
-    .content-header-sub, #pl_headerSmall {
+    .content-header-sub, #pl_headerSmall, p.subheader {
         color: var(--accent-four);
     }
     .content-header-sub strong {
@@ -3125,6 +3136,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-color: var(--section) !important;
         color: var(--text) !important;
     }
+    .nest-image-button {
+        background:none;
+    }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/dragon.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/fantastic-familiars.*") {
     /* Familiar Bonding & Fantastic Familiars */
@@ -3887,6 +3901,18 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .pursuit-item-reward, .achievement-item-reward, .achievement-item-name {
         color: var(--strong)
     }
+    .achievement-item-requirement {
+        color: var(--link) !important;
+    }
+    .achievement-item-requirement:hover {
+        color: var(--link-hover) !important;
+        background-color: transparent;
+        box-shadow: none;
+        text-shadow: 0 0 5px var(--shadow);
+    }
+    .achievement-item-requirement-status-complete {
+        color: rgba(var(--success));
+    }
     .achievement-item-category {
         color: var(--text-med);
     }
@@ -4063,6 +4089,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     #nesting-page fieldset[style*="#dedacf"] > div:last-child input:first-of-type {
         margin-right: 15px;
+    }
+    #nesting-page h1#main-content {
+        color: var(--strong) !important;
     }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/alerts.*") {
@@ -4793,7 +4822,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     game-database-search-result-name, .game-database-search-result-name > strong {
         color: inherit !important
     }
-    .game-database-search-loading {
+    .game-database-search-loading, #game-database-search-results .game-database-search-no-results {
         color: var(--text) !important
     }
     .game-database-achievement-result-description {
@@ -4817,6 +4846,25 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     #game-database-achievement-results .game-database-achievement-result:hover {
         background: var(--tooltip-header);
+    }
+    .game-database-venue-result {
+        background: linear-gradient(to bottom, var(--widget-light) 0%, var(--widget-med) 100%);
+        background-position: bottom;
+        background-size: 100% 40%;
+        border: 2px solid var(--borders-med);
+        outline: 2px solid var(--borders);
+    }
+    .game-database-venue-result-thumbnail {
+        border-width: 2px;
+        border-color: var(--borders-med);
+    }
+    .game-database-venue-result-name {
+        color: var(--text);
+        font-weight: bold;
+    }
+    .game-database-venue-frame {
+        border: 2px solid var(--borders-med);
+        outline: 2px solid var(--borders);
     }
 }
 
@@ -5769,6 +5817,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 @-moz-document url-prefix("https://www1.flightrising.com/exchange") {
     
     /* Grand Exchange */
+    :root {
+        --gems: 138, 195, 237;
+        --gems-text: 178, 222, 255;
+    }
     
     /*grand exchange intro*/
     .common-message.custom-shops-common-message {
@@ -5873,6 +5925,11 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         color: var(--warning-text);
         background-color: rgba(var(--warning),0.2);
         border-color: rgb(var(--warning));
+    }
+    .custom-shop-trade-currency-gems {
+        color: rgb(var(--gems-text));
+        background-color: rgba(var(--gems),0.2);
+        border-color: rgb(var(--gems));
     }
     /*ap box*/
     .custom-shop-trade-currency-achievement-tokens {
