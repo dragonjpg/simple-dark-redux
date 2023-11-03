@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.1.5
+@version        1.1.6
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -439,7 +439,7 @@ div#purchase.ui-dialog-content > div:last-child button + button {
     width: 85%;
 }
 #raffle-button, #add-skin-box input, #authorized input, #validity button,
-#confirm-delivery button, #save-outfit input {
+#confirm-delivery button, #save-outfit input, #remove-all-alerts-dialog .common-dialog-section {
     width: 100%;
     box-sizing: border-box;
 }
@@ -731,7 +731,7 @@ adblock2 "Disable" <<<EOT  EOT;
         background-image: none;
         color: var(--em)
     }
-    #alertwin .alert-v2-date, #alertlist .alert-v2-date, #status-box .status-author time {
+    #alertwin .alert-v2-date, #alertlist .alert-v2-date, #status-box .status-author time, .pinglist-ping-demo {
         color: var(--text-med)
     }
     #alertlist div.alert-v2.alert-v2-unread::after,
@@ -1071,7 +1071,7 @@ adblock2 "Disable" <<<EOT  EOT;
         color: var(--text);
         text-shadow: -1px 0 0 var(--shadow), 1px 0 0 var(--shadow), -1px 1px 0 var(--shadow), 1px 1px 0 var(--shadow), -1px 2px 0 var(--shadow), 1px 2px 0 var(--shadow), -1px -1px 0 var(--shadow), 1px -1px 0 var(--shadow), 0 -1px 0 var(--shadow)
     }
-     #namespan a span {
+     #namespan a span, #usertab a[href*="userpage"] span {
         color: var(--link) !important;
     }
     div#userdata a, .loginarea, .loginlinks, .loginlinks.loginbar, #logwin a[style*="color"], #usertab .loginlinks.loginbar:hover {
@@ -1087,12 +1087,16 @@ adblock2 "Disable" <<<EOT  EOT;
         border-radius: 10px;
         z-index: 3;
     }
+    #ltavtr[style] {
+        background: var(--widget) !important;
+    }
     div#avatars div#avtable img:hover, .friends-page-avatar img:hover {
         border-color: var(--borders-light)
     }
     #ltavtr img, .clan-profile-avatar img {
-        border: none;
+        border: none !important;
         border-radius: 10px;
+        box-sizing: border-box;
     }
     #energybar div:first-child {
         height: 18px;
@@ -1414,6 +1418,9 @@ adblock2 "Disable" <<<EOT  EOT;
         background: var(--widget-med);
         border-color: var(--borders)
     }
+    .common-message li::marker, div.search-errors li::marker {
+        color: inherit;
+    }
     .common-message-info, .dgnres-select .info-box {
         color: var(--warning-text);
         border-color: rgb(var(--warning));
@@ -1423,6 +1430,9 @@ adblock2 "Disable" <<<EOT  EOT;
         color: var(--warning-text) !important;
         border-color: rgb(var(--warning)) !important;
         background-color: rgba(var(--warning),0.08) !important;
+    }
+    div.search-errors {
+        border: 1px solid;
     }
     .common-message-info a {
         color: rgb(var(--warning));
@@ -1436,15 +1446,15 @@ adblock2 "Disable" <<<EOT  EOT;
     .common-message-info a[style*="color"]:hover {
          color: var(--warning-text) !important;
     }
-    .common-message-error {
+    .common-message-error, div.search-errors {
         color: var(--error-text);
         border-color: rgb(var(--error));
         background-color: rgba(var(--error),0.08);
     }
-    .common-message-error a {
+    .common-message-error a, div.search-errors a {
         color: rgb(var(--error));
     }
-    .common-message-error a:hover, .common-message-error a:hover > * {
+    .common-message-error a:hover, .common-message-error a:hover > *, div.search-errors a:hover, div.search-errors a:hover > * {
         color: var(--error-text);
     }
     .common-message-success {
@@ -1648,11 +1658,6 @@ adblock2 "Disable" <<<EOT  EOT;
         outline: 2px solid var(--borders);
         background: var(--widget-med);
     }
-    #editor-emoji-dialog .editor-emoji-dialog-emoji-item {
-        border: 2px solid var(--borders);
-        outline: 1px solid var(--borders-light);
-        background: var(--widget-med);
-    }
     #dragon-search-filters .dragon-search-filters-footer {
         border-color: var(--borders-light)
     }
@@ -1673,8 +1678,16 @@ adblock2 "Disable" <<<EOT  EOT;
         color: var(--text);
     }
     /*emoji picker*/
+    #editor-emoji-dialog .editor-emoji-dialog-emoji-item, .pinglist-emoji-list-item {
+        border: 2px solid var(--borders);
+        outline: 1px solid var(--borders-light);
+        background: var(--widget-med);
+    }
     #editor-emoji-dialog .editor-emoji-dialog-emoji-item[data-size="2"] {
         margin: 5px;
+    }
+    .pinglist-emoji-list-item {
+        margin: 5px auto;
     }
     #editor-emoji-dialog .editor-emoji-dialog-emoji-item:hover, #lair-icons-dialog .lair-icons-dialog-icon:hover {
         background: var(--widget-light);
@@ -1933,21 +1946,6 @@ adblock2 "Disable" <<<EOT  EOT;
         border-color: var(--borders);
     }
     
-    #gather_success_bg {
-        filter: brightness(60%) contrast(180%);
-        mix-blend-mode: overlay;
-        box-shadow: 0px 0px 15px #fff, 0px 0px 10px #fff, 0px 0px 5px #fff;
-        border-radius: 20px;
-        overflow: hidden;
-    }
-    #gather_success_bg img {
-        min-width: 450px;
-        min-height: 315px;
-    }
-    .gatherblurb {
-        margin-top: 30px;
-    }
-    
     #trading-post-content .common-hub-item-button-image {
         opacity: 0.75;
         transition: opacity 0.3s;
@@ -1986,8 +1984,8 @@ adblock2 "Disable" <<<EOT  EOT;
         width: 95%;
     }
 
-    /*dark scry share widget & outfit widget*/
-    .scry-image .scry-image-rear, .outfit-image-rear {
+    /*dark scry share widget & outfit widget & pinglist widget*/
+    .scry-image .scry-image-rear, .outfit-image-rear, .pinglist-button, .pinglist-button-demo {
         background: none;
         position: relative;
         z-index: 2;
@@ -1995,7 +1993,7 @@ adblock2 "Disable" <<<EOT  EOT;
     .scry-image .scry-buttons, .outfit-image .outfit-buttons {
         z-index: 3;
     }
-    .scry-image .scry-image-rear::before, .outfit-image-rear::before {    
+    .scry-image .scry-image-rear::before, .outfit-image-rear::before, .pinglist-button::before, .pinglist-button-demo::before {    
         content: "";
         background-image: url('https://www1.flightrising.com//static/layout/scryer/bg_scrywidget.png');
         background-size: cover;
@@ -2012,7 +2010,10 @@ adblock2 "Disable" <<<EOT  EOT;
     .outfit-image-rear::before {
         background-image: url('https://www1.flightrising.com/static/layout/dressingroom/bg_outfitwidget.png');
     }
-    .scry-image .scry-name, .forum-map-widget-frame .forum-map-widget-button-text, .settings-hub-radio-control[data-selected="0"], .outfit-name {
+    .pinglist-button::before, .pinglist-button-demo::before {
+        background-image: url(https://www1.flightrising.com/static/layout/pinglist/bbcode-background.png);
+    }
+    .scry-image .scry-name, .forum-map-widget-frame .forum-map-widget-button-text, .settings-hub-radio-control[data-selected="0"], .outfit-name, .pinglist-button-title, .pinglist-button-subscribers {
         color: var(--text) !important;
     }
     /*dark map poi share widget*/
@@ -3677,6 +3678,66 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
 }
 
+@-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/gathering.*") {
+    /* Gathering */
+    .onecol .main {
+        z-index: 2;
+    }
+    div.contentcontainer .main[style*="background-image"]::after {
+        content: '';
+        background-image: url('https://www1.flightrising.com/static/cms/scene/43921.png') !important;
+        position: absolute;
+        height: 525px;
+        width: 100%;
+        z-index: -2;
+        filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(150%);
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        opacity: 0.2;
+    }
+    div.contentcontainer div.main::before {
+        content: '';
+        position: absolute;
+        height: 525px;
+        width: 100%;
+        z-index: -1;
+        background-image: linear-gradient(to bottom, rgb(34, 40, 43, 0) 0%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 70%, var(--main) 100%) !important;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+    }
+    #gather_success_bg {
+        left: 145px;
+    }
+    
+    #gather_success_bg img {
+        filter: brightness(60%) contrast(180%);
+        mix-blend-mode: overlay;
+        border-radius: 20px;
+        overflow: hidden;
+        min-width: 450px;
+        min-height: 315px;
+        background: #fff;
+        padding: 5px 5px 20px;
+    }
+    .gatherblurb {
+        margin-top: 30px;
+    }
+    #gather_success_bg::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--main);
+        z-index: -1;
+        box-shadow: 0px 0px 15px var(--main), 0px 0px 10px var(--main), 0px 0px 5px var(--main);
+        border-radius: 18px;
+    }
+}
+
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/crim.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/pinkpile.*") {
     /* Crim & Pinkerton */
     
@@ -3984,7 +4045,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .pursuit-item-meter-checkmark, #pursuits-rewards-meter .pursuits-meter-checkmark {
         filter: sepia(100%) hue-rotate(75deg) brightness(150%) saturate(250%);
     }
-    img[src="/static/layout/achievements/badge-complete.png"] {
+    img[src$="/static/layout/achievements/badge-complete.png"] {
         filter: sepia(100%) hue-rotate(75deg) brightness(110%) saturate(200%);
     }
 }
@@ -4017,7 +4078,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border: 2px solid var(--borders);
         background: linear-gradient(to top, var(--widget-light) 0%, var(--widget-med) 100%);
     }
-    img[src="/static/layout/scryer/bg_foreseeprogeny.png"] {
+    img[src$="/static/layout/scryer/bg_foreseeprogeny.png"] {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(50%)
     }
     #assay-container {
@@ -4291,14 +4352,14 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         box-sizing: border-box;
         border-radius: 4px;
     }
-    img[src="/static/layout/button_senddelivery.png"],
-    img[src="/static/layout/button_senddelivery_disabled.png"],
-    img[src="/static/layout/button_requesttrade.png"],
-    img[src="/static/layout/button_requesttrade_disabled.png"] {
+    img[src$="/static/layout/button_senddelivery.png"],
+    img[src$="/static/layout/button_senddelivery_disabled.png"],
+    img[src$="/static/layout/button_requesttrade.png"],
+    img[src$="/static/layout/button_requesttrade_disabled.png"] {
         border-radius: 12px;
     }
-    img[src="/static/layout/button_senddelivery_disabled.png"],
-    img[src="/static/layout/button_requesttrade_disabled.png"] {
+    img[src$="/static/layout/button_senddelivery_disabled.png"],
+    img[src$="/static/layout/button_requesttrade_disabled.png"] {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(45%) contrast(250%);
         border-radius: 12px;
     }
@@ -4463,15 +4524,15 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-image: none !important;
     }
     #region-info fieldset h1, #subregions h1, .region_text div:first-child, #region-title span {
-        color: #bddbff !important;
+        color: var(--strong) !important;
     }
     .region_element {
-        border: #1e2634 solid 1px !important;
+        border: var(--borders) solid 1px !important;
         border-radius: 7px !important;
-        background-color: #1e2634 !important;
+        background-color: var(--widget) !important;
     }
     .dr-dragon-mannequin-name {
-        color: #ff0080 !important;
+        color: var(--accent-two) !important;
     }
     .ah-house-dropdown {
         background-color: var(--tooltip-bg);
@@ -4765,9 +4826,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         -moz-border-radius: 5px;
         border-radius: 5px;
     }
-    img[src="/static/layout/hoard/tooltip-lock.png"],
-    img[src="/static/layout/hoard/tooltip-like.png"],
-    img[src="/static/layout/hoard/tooltip-unlock.png"] {
+    img[src$="/static/layout/hoard/tooltip-lock.png"],
+    img[src$="/static/layout/hoard/tooltip-like.png"],
+    img[src$="/static/layout/hoard/tooltip-unlock.png"] {
         filter: brightness(80%)
     }
 }
@@ -4880,7 +4941,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     
     /*fix dev tracker*/
-    #dev-tracker-content .dev-tracker-search-result-timestamp {
+    #dev-tracker-content .dev-tracker-search-result-timestamp, .pinglist-widget-code, .pinglist-ping-code {
         color: var(--text-med)
     }
     #dev-tracker-content .dev-tracker-search-option-label, #dev-tracker-content .dev-tracker-search-option-label  {
@@ -5037,7 +5098,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .main[style*="/404/"] span[style*="731d08"] {
         color: var(--strong) !important;
     }
-    .post-edited em, .search-results-description-subtext {
+    .post-edited em, .search-results-description-subtext, .pinglist-no-results {
         color: var(--text-med);
     }
     span.posttext .forummsg {
@@ -5306,6 +5367,16 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     #postlist .blocked-by-user, #postlist .blocking-user, .blocked-post .post-text-content {
         color: rgb(var(--warning)) !important;
+    }
+    
+    /*pinglists*/
+    .pinglist-header {
+        border-color: var(--borders);
+        color: var(--strong);
+    }
+    .pinglist-emoji-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 40px);
     }
     
     /*~~~~~~~~~~~~~~~~~~~~*/
@@ -5612,7 +5683,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background: url(https://flightrising.com/content/battle/images/equip/bg_stones_interface_new.png);
     }
     #coli-equip-inventory-bg,
-    img[src="/content/battle/images/organize/spr_organize_unit_frame_02.png"],
+    img[src$="/content/battle/images/organize/spr_organize_unit_frame_02.png"],
     #coli-equip-stats {
         filter: invert(100) var(--filter) hue-rotate(var(--hue));
     }
@@ -6204,217 +6275,220 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #login-signup-container, #big-login-form-button,
     #coli-organize-save-party,
     #coli-organize-load-party,
-    img[src="/static/layout/hoard/buttons/stack-function-apply-to-nest.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-name-dragon.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-vista.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-chest-open.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-chest-open-multiple.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-apply-to-dragon.png"],
-    img[src="/static/layout/hoard/buttons/multi-function-vault.png"],
-    img[src="/static/layout/hoard/buttons/multi-function-hoard.png"],
-    img[src="/static/layout/hoard/buttons/multi-function-sell.png"],
-    img[src="/static/layout/hoard/buttons/multi-function-convert-food.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-convert-food.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-transmute.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-hatch-egg.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-sell.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-sell-duplicates.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-ah.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-vault.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-hoard.png"],
-    img[src="/static/layout/hoard/locked-disabled.png"],
-    img[src="/images/layout/loading.gif"], img[src="/static/layout/loading.gif"],
-    img[src="/static/layout/hoard/buttons/stack-function-locked.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-preview-item.png"],
-    img[src="/static/layout/hoard/stored-gems.png"],
-    img[src="/static/layout/hoard/stored-treasure.png"],
-    img[src="/static/layout/lair/buttons/edit.png"],
-    img[src="/static/layout/lair/buttons/feed.png"],
-    img[src="/static/layout/revamp/left_clan_small.png"], img[src="/images/layout/revamp/left_clan_small.png"],
-    img[src="/static/layout/revamp/left_shop_small.png"], img[src="/images/layout/revamp/left_shop_small.png"],
-    img[src="/static/layout/revamp/left_play_small.png"], img[src="/images/layout/revamp/left_play_small.png"],
-    img[src="/static/layout/revamp/left_library_small.png"], img[src="/images/layout/revamp/left_library_small.png"],
-    img[src="/static/layout/fantastic-familiar/bonding-heart.png"],
-    img[src="/static/layout/game-database/button-items.png"],
-    img[src="/static/layout/game-database/button-monsters.png"],
-    img[src="/static/layout/game-database/button-stages.png"],
-    img[src="/static/layout/game-database/button-achievements.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-apply-to-nest.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-name-dragon.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-vista.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-chest-open.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-chest-open-multiple.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-apply-to-dragon.png"],
+    img[src$="/static/layout/hoard/buttons/multi-function-vault.png"],
+    img[src$="/static/layout/hoard/buttons/multi-function-hoard.png"],
+    img[src$="/static/layout/hoard/buttons/multi-function-sell.png"],
+    img[src$="/static/layout/hoard/buttons/multi-function-convert-food.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-convert-food.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-transmute.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-hatch-egg.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-sell.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-sell-duplicates.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-ah.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-vault.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-hoard.png"],
+    img[src$="/static/layout/hoard/locked-disabled.png"],
+    img[src$="/images/layout/loading.gif"], img[src$="/static/layout/loading.gif"],
+    img[src$="/static/layout/hoard/buttons/stack-function-locked.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-preview-item.png"],
+    img[src$="/static/layout/hoard/stored-gems.png"],
+    img[src$="/static/layout/hoard/stored-treasure.png"],
+    img[src$="/static/layout/lair/buttons/edit.png"],
+    img[src$="/static/layout/lair/buttons/feed.png"],
+    img[src$="/static/layout/revamp/left_clan_small.png"], img[src$="/images/layout/revamp/left_clan_small.png"],
+    img[src$="/static/layout/revamp/left_shop_small.png"], img[src$="/images/layout/revamp/left_shop_small.png"],
+    img[src$="/static/layout/revamp/left_play_small.png"], img[src$="/images/layout/revamp/left_play_small.png"],
+    img[src$="/static/layout/revamp/left_library_small.png"], img[src$="/images/layout/revamp/left_library_small.png"],
+    img[src$="/static/layout/fantastic-familiar/bonding-heart.png"],
+    img[src$="/static/layout/game-database/button-items.png"],
+    img[src$="/static/layout/game-database/button-monsters.png"],
+    img[src$="/static/layout/game-database/button-stages.png"],
+    img[src$="/static/layout/game-database/button-achievements.png"],
     #coli-organize-abilities-stats-btn,
-    img[src="/content/battle/images/spr_button_back.png"],
-    img[src="/content/battle/images/equip/spr_button_organize.png"],
-    img[src="/static/layout/common/button-save-30.png"],
-    img[src="/static/layout/common/button-close-30.png"],
-    img[src="/static/layout/profile/button-collapse.png"],
-    img[src="/static/layout/profile/button-expand.png"],
-    img[src="/static/layout/profile/button-scenic-mode.png"],
-    img[src="/static/layout/profile/button-sell.png"],
-    img[src="/static/layout/profile/button-exalt.png"],
-    img[src="/static/layout/profile/button-customize.png"],
-    img[src="/static/layout/profile/button-feed.png"],
-    img[src="/static/layout/profile/button-breed.png"],
-    img[src="/static/layout/profile/button-bond.png"],
-    img[src="/static/layout/common/button-add-35.png"],
-    img[src="/static/layout/profile/button-switch-familiar.png"],
-    img[src="/static/layout/profile/button-edit-bio.png"],
-    img[src="/static/layout/profile/button-share.png"],
-    img[src="/static/layout/profile/button-predict-morphology.png"],
-    img[src="/static/layout/profile/button-cancel-sale.png"],
-    img[src="/static/layout/game-database/button-recent-comments.png"],
-    img[src="/static/layout/archaeology/button-dig-sites.png"],
-    img[src="/static/layout/archaeology/button-muster-resources.png"],
-    img[src="/static/layout/archaeology/button-assist-a-friend.png"],
-    img[src="/static/layout/archaeology/button-share-with-colleagues.png"], 
-    img[src="/static/layout/archaeology/button-donate-to-the-guild.png"],
+    img[src$="/content/battle/images/spr_button_back.png"],
+    img[src$="/content/battle/images/equip/spr_button_organize.png"],
+    img[src$="/static/layout/common/button-save-30.png"],
+    img[src$="/static/layout/common/button-close-30.png"],
+    img[src$="/static/layout/profile/button-collapse.png"],
+    img[src$="/static/layout/profile/button-expand.png"],
+    img[src$="/static/layout/profile/button-scenic-mode.png"],
+    img[src$="/static/layout/profile/button-sell.png"],
+    img[src$="/static/layout/profile/button-exalt.png"],
+    img[src$="/static/layout/profile/button-customize.png"],
+    img[src$="/static/layout/profile/button-feed.png"],
+    img[src$="/static/layout/profile/button-breed.png"],
+    img[src$="/static/layout/profile/button-bond.png"],
+    img[src$="/static/layout/common/button-add-35.png"],
+    img[src$="/static/layout/profile/button-switch-familiar.png"],
+    img[src$="/static/layout/profile/button-edit-bio.png"],
+    img[src$="/static/layout/profile/button-share.png"],
+    img[src$="/static/layout/profile/button-predict-morphology.png"],
+    img[src$="/static/layout/profile/button-cancel-sale.png"],
+    img[src$="/static/layout/game-database/button-recent-comments.png"],
+    img[src$="/static/layout/archaeology/button-dig-sites.png"],
+    img[src$="/static/layout/archaeology/button-muster-resources.png"],
+    img[src$="/static/layout/archaeology/button-assist-a-friend.png"],
+    img[src$="/static/layout/archaeology/button-share-with-colleagues.png"], 
+    img[src$="/static/layout/archaeology/button-donate-to-the-guild.png"],
     #archaeology-dig-site-header-left > div > img,
     .archaeology-dig-plot img[src*="/static/layout/archaeology/button-precise-work.png"],
-    img[src="/static/layout/lair/buttons/pagination-next.png"], img[src="/images/layout/pagination/pagination-next.png"], img[src="/static/layout/pagination/pagination-next.png"],
-    img[src="/static/layout/lair/buttons/pagination-previous.png"], img[src="/images/layout/pagination/pagination-previous.png"], img[src="/static/layout/pagination/pagination-previous.png"],
-    img[src="/static/layout/bestiary/buttons/filter.png"], img[src="/static/layout/lair/buttons/filter.png"],
-    img[src="/static/layout/button_canceltradesmall.png"],
-    img[src="/static/layout/button_senddelivery.png"],
-    img[src="/static/layout/button_requesttrade.png"],
-    .ah-listing-buy-button, img[src="/static/layout/auctionhouse/button_ah_buy.png"],
-    img[src="static/layout/slick/slick-arrow-left.png"], img[src="static/layout/slick/slick-arrow-right.png"],
-    img[src="/static/layout/scryer/button_load_scry.png"],
-    img[src="/static/layout/swipp/button-catalog.png"],
-    img[src="/static/layout/swipp/button_swipptrade.png"],
-    img[src="/static/layout/baldwin/button_baldwincreate.png"],
-    img[src="/static/layout/button_newtopic.png"],
-    img[src="/static/layout/buttton_unsubscribed.png"],
-    img[src="/static/layout/button_tradedetails.png"],
-    img[src="/static/layout/button_search.png"],
-    img[src="/static/layout/fullscreen.png"],
+    img[src$="/static/layout/lair/buttons/pagination-next.png"], img[src$="/images/layout/pagination/pagination-next.png"], img[src$="/static/layout/pagination/pagination-next.png"],
+    img[src$="/static/layout/lair/buttons/pagination-previous.png"], img[src$="/images/layout/pagination/pagination-previous.png"], img[src$="/static/layout/pagination/pagination-previous.png"],
+    img[src$="/static/layout/bestiary/buttons/filter.png"], img[src$="/static/layout/lair/buttons/filter.png"],
+    img[src$="/static/layout/button_canceltradesmall.png"],
+    img[src$="/static/layout/button_senddelivery.png"],
+    img[src$="/static/layout/button_requesttrade.png"],
+    .ah-listing-buy-button, img[src$="/static/layout/auctionhouse/button_ah_buy.png"],
+    img[src$="static/layout/slick/slick-arrow-left.png"], img[src$="static/layout/slick/slick-arrow-right.png"],
+    img[src$="/static/layout/scryer/button_load_scry.png"],
+    img[src$="/static/layout/swipp/button-catalog.png"],
+    img[src$="/static/layout/swipp/button_swipptrade.png"],
+    img[src$="/static/layout/baldwin/button_baldwincreate.png"],
+    img[src$="/static/layout/button_newtopic.png"],
+    img[src$="/static/layout/buttton_unsubscribed.png"],
+    img[src$="/static/layout/button_tradedetails.png"],
+    img[src$="/static/layout/button_search.png"],
+    img[src$="/static/layout/forum/forum-button-pinglists.png"],
+    img[src$="/static/layout/forum/forum-button-search.png"],
+    img[src$="/static/layout/fullscreen.png"],
     #coli-equip-rearrange-btn, #coli-equip-prev-dragon-btn, #coli-equip-next-dragon-btn,
     #coli-equip-statdlg-tincture-btn.coli-equip-disabled, #coli-equip-lock-btn, #coli-equip-clear-btn,
     #dragon-profile-likes[data-active="false"] .dragon-profile-likes-icon,
-    img[src="/static/layout/game-database/icon-magnifying-glass.png"],
-    #action-pick-tab-icon::after, img[src="/static/layout/lair/buttons/move-to-lair.png"],
-    img[src="/static/layout/lair/buttons/move-to-den.png"],
-    img[src="/static/layout/lair/buttons/move-to-tab.png"],
-    img[src="/static/layout/lair/buttons/add-slots.png"],
-    img[src="/static/layout/lair/buttons/add-tabs.png"],
-    img[src="/static/layout/lair/buttons/exit.png"],
-    img[src="/static/layout/lair/buttons/den-slot-unlock.png"],
-    img[src="/static/layout/profile/tab-apparel.png"],
-    img[src="/static/layout/profile/tab-skin.png"],
-    img[src="/static/layout/profile/hub-button-apparel.png"],
-    img[src="/static/layout/profile/hub-button-familiar.png"],
-    img[src="/static/layout/profile/hub-button-scene.png"],
-    img[src="/static/layout/profile/hub-button-vista.png"],
-    img[src="/static/layout/profile/button-remove.png"],
-    img[src="/static/layout/profile/button-export-outfit.png"],
-    img[src="/static/layout/button_completetrade.png"],
-    img[src="/images/layout/button_back.png"],
-    img[src="/static/layout/button_msg_write.png"],
-    img[src="/static/layout/fantastic-familiar/feat-catalog-button.png"],
-    img[src="/static/layout/profile/button-buy.png"],
-    img[src="/static/layout/pagination/pagination-check.png"],
-    img[src="/static/layout/lair/buttons/pagination-next.png"], img[src="/static/layout/lair/buttons/pagination-previous.png"],
-    img[src="/static/layout/icon_help.png"], img[src="/static/layout/button_back.png"],
-    img[src="/static/layout/dressingroom/button_loadoutfit.png"],
-    img[src="/static/layout/dressingroom/button_saveoutfit.png"],
-    img[src="/static/layout/dressingroom/button_viewoutfit.png"],
-    img[src="/static/layout/dressingroom/button_importapparel.png"],
-    img[src="/static/layout/dressingroom/button_clearall.png"],
-    img[src="/static/layout/dressingroom/button_shareoutfit.png"],
+    img[src$="/static/layout/game-database/icon-magnifying-glass.png"],
+    #action-pick-tab-icon::after, img[src$="/static/layout/lair/buttons/move-to-lair.png"],
+    img[src$="/static/layout/lair/buttons/move-to-den.png"],
+    img[src$="/static/layout/lair/buttons/move-to-tab.png"],
+    img[src$="/static/layout/lair/buttons/add-slots.png"],
+    img[src$="/static/layout/lair/buttons/add-tabs.png"],
+    img[src$="/static/layout/lair/buttons/exit.png"],
+    img[src$="/static/layout/lair/buttons/den-slot-unlock.png"],
+    img[src$="/static/layout/profile/tab-apparel.png"],
+    img[src$="/static/layout/profile/tab-skin.png"],
+    img[src$="/static/layout/profile/hub-button-apparel.png"],
+    img[src$="/static/layout/profile/hub-button-familiar.png"],
+    img[src$="/static/layout/profile/hub-button-scene.png"],
+    img[src$="/static/layout/profile/hub-button-vista.png"],
+    img[src$="/static/layout/profile/button-remove.png"],
+    img[src$="/static/layout/profile/button-export-outfit.png"],
+    img[src$="/static/layout/button_completetrade.png"],
+    img[src$="/images/layout/button_back.png"],
+    img[src$="/static/layout/button_msg_write.png"],
+    img[src$="/static/layout/fantastic-familiar/feat-catalog-button.png"],
+    img[src$="/static/layout/profile/button-buy.png"],
+    img[src$="/static/layout/pagination/pagination-check.png"],
+    img[src$="/static/layout/lair/buttons/pagination-next.png"], img[src$="/static/layout/lair/buttons/pagination-previous.png"],
+    img[src$="/static/layout/icon_help.png"], img[src$="/static/layout/button_back.png"],
+    img[src$="/static/layout/dressingroom/button_loadoutfit.png"],
+    img[src$="/static/layout/dressingroom/button_saveoutfit.png"],
+    img[src$="/static/layout/dressingroom/button_viewoutfit.png"],
+    img[src$="/static/layout/dressingroom/button_importapparel.png"],
+    img[src$="/static/layout/dressingroom/button_clearall.png"],
+    img[src$="/static/layout/dressingroom/button_shareoutfit.png"],
     #ah-sell-middle,
-    img[src="/static/layout/scryer/button_loadmorphology.png"],
-    img[src="/static/layout/scryer/button_savemorphology.png"],
-    img[src="/static/layout/scryer/button_sharemorphology.png"],
-    img[src="/static/layout/game-database/button-auction-house.png"],
-    img[src="/static/layout/game-database/button-suggest.png"],
-    img[src="/static/layout/game-database/button-share.png"],
-    img[src="/static/icons/tidy-up.png"],
-    img[src="/static/layout/button_approvetrade.png"], img[src="/static/layout/button_canceltrade.png"]
+    img[src$="/static/layout/scryer/button_loadmorphology.png"],
+    img[src$="/static/layout/scryer/button_savemorphology.png"],
+    img[src$="/static/layout/scryer/button_sharemorphology.png"],
+    img[src$="/static/layout/game-database/button-auction-house.png"],
+    img[src$="/static/layout/game-database/button-suggest.png"],
+    img[src$="/static/layout/game-database/button-share.png"],
+    img[src$="/static/icons/tidy-up.png"],
+    img[src$="/static/layout/button_approvetrade.png"], img[src$="/static/layout/button_canceltrade.png"]
     {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
     }
     
-    img[src="/static/layout/arrow_right.png"], img[src="/images/layout/arrow_right.png"],
-    img[src="/static/layout/arrow_left.png"], img[src="/images/layout/arrow_left.png"],
-    img[src="/static/layout/admin_post_first.png"], img[src="/static/layout/admin_post_last.png"],
-    img[src="/static/layout/admin_post_previous.png"], img[src="/static/layout/admin_post_next.png"],
+    img[src$="/static/layout/arrow_right.png"], img[src$="/images/layout/arrow_right.png"],
+    img[src$="/static/layout/arrow_left.png"], img[src$="/images/layout/arrow_left.png"],
+    img[src$="/static/layout/admin_post_first.png"], img[src$="/static/layout/admin_post_last.png"],
+    img[src$="/static/layout/admin_post_previous.png"], img[src$="/static/layout/admin_post_next.png"],
     #coli-organize-up, #coli-organize-down, #coli-equip-inventory-up-image, #coli-equip-inventory-down-image,
-    img[src="/static/layout/bestiary/buttons/show-description.png"],
-    img[src="/static/layout/bestiary/buttons/hide-description.png"] {
+    img[src$="/static/layout/bestiary/buttons/show-description.png"],
+    img[src$="/static/layout/bestiary/buttons/hide-description.png"] {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(140%) contrast(180%);
     }
-    img[src="/static/layout/hoard/buttons/stack-function-unlocked.png"],
-    img[src="/static/layout/hoard/buttons/button-select-all.png"],
-    img[src="/static/layout/hoard/buttons/button-deselect-all.png"]{
+    img[src$="/static/layout/hoard/buttons/stack-function-unlocked.png"],
+    img[src$="/static/layout/hoard/buttons/button-select-all.png"],
+    img[src$="/static/layout/hoard/buttons/button-deselect-all.png"]{
         filter: var(--filter) hue-rotate(var(--hue)) brightness(70%) contrast(250%);
     }
-    img[src="/static/layout/game-database/button-favorite-off.png"] {
+    img[src$="/static/layout/game-database/button-favorite-off.png"] {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(70%) contrast(140%);
     }
-    img[src="/static/layout/hoard/buttons/mode-vault.png"],
-    img[src="/static/layout/hoard/buttons/mode-hoard.png"],
-    img[src="/static/layout/button_restore.png"],
-    img[src="/static/layout/achievements/buttons/button-achievements.png"],
-    img[src="/static/layout/achievements/buttons/button-pursuits.png"],
-    img[src="/static/layout/achievements/badge-in-progress.png"],
-    img[src="/static/layout/lair/buttons/mode-den.png"],
-    img[src="/static/layout/lair/buttons/mode-lair.png"],
-    img[src="/static/layout/market/buttons/mode-treasure.png"],
-    img[src="/static/layout/market/buttons/mode-gem.png"],
-    img[src="/static/layout/hoard/buttons/button-add-funds.png"],
-    img[src="/static/layout/hoard/buttons/button-remove-funds.png"]
+    img[src$="/static/layout/hoard/buttons/mode-vault.png"],
+    img[src$="/static/layout/hoard/buttons/mode-hoard.png"],
+    img[src$="/static/layout/button_restore.png"],
+    img[src$="/static/layout/achievements/buttons/button-achievements.png"],
+    img[src$="/static/layout/achievements/buttons/button-pursuits.png"],
+    img[src$="/static/layout/achievements/badge-in-progress.png"],
+    img[src$="/static/layout/lair/buttons/mode-den.png"],
+    img[src$="/static/layout/lair/buttons/mode-lair.png"],
+    img[src$="/static/layout/market/buttons/mode-treasure.png"],
+    img[src$="/static/layout/market/buttons/mode-gem.png"],
+    img[src$="/static/layout/hoard/buttons/button-add-funds.png"],
+    img[src$="/static/layout/hoard/buttons/button-remove-funds.png"]
     {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(75%) contrast(165%);
     }
-    img[src="/static/layout/hoard/locked-enabled.png"],
-    img[src="/static/layout/hoard/unlocked-enabled.png"],
+    img[src$="/static/layout/hoard/locked-enabled.png"],
+    img[src$="/static/layout/hoard/unlocked-enabled.png"],
     span.ui-icon.ui-icon-closethick,
-    img[src="/static/layout/x.gif"], img[src="/images/layout/x.gif"], img[src="/static/layout/auctionhouse/bigx.png"],
-    img[src="/content/battle/images/organize/bigx.png"],
-    img[src="/static/layout/auctionhouse/button_close.png"],
-    img[src="/static/icons/eye_open.png"], img[src="/static/icons/eye_close.png"],
+    img[src$="/static/layout/x.gif"], img[src$="/images/layout/x.gif"], img[src$="/static/layout/auctionhouse/bigx.png"],
+    img[src$="/content/battle/images/organize/bigx.png"],
+    img[src$="/static/layout/auctionhouse/button_close.png"],
+    img[src$="/static/icons/eye_open.png"], img[src$="/static/icons/eye_close.png"],
     li[data-visible="true"] .dr-apparel-visibility, li[data-visible="false"] .dr-apparel-visibility,
-    img[src="/static/layout/icon_lock.png"]   {
+    img[src$="/static/layout/icon_lock.png"]   {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(180%) contrast(120%) saturate(400%);
     }
-    img[src="/static/layout/icon_star.png"],
+    img[src$="/static/layout/icon_star.png"],
     .hoard-result-item-box[data-favorite="1"]:after,
     #dragon-profile-likes[data-active="true"] .dragon-profile-likes-icon,
-    img[src="/static/layout/game-database/button-favorite-on.png"],
-    img[src="/static/layout/buttton_subscribed.png"] {
+    img[src$="/static/layout/game-database/button-favorite-on.png"],
+    img[src$="/static/layout/pinglist/bbcode-subscribed.png"],
+    img[src$="/static/layout/buttton_subscribed.png"] {
         filter: sepia(100%) hue-rotate(var(--hue)) brightness(75%) contrast(180%) saturate(400%);
     }
     img[src$="/layout/button_incubate_used.png"],
     img[src$="/layout/button_0boon.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-convert-food-disabled.png"],
-    img[src="/static/layout/profile/button-bond-disabled.png"],
-    img[src="/static/layout/common/button-add-35-disabled.png"],
-    img[src="/static/layout/profile/button-breed-disabled.png"],
-    img[src="/static/layout/profile/button-exalt-disabled.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-sell-disabled.png"],
-    img[src="/static/layout/hoard/buttons/stack-function-sell-duplicates-disabled.png"],
-    img[src="/static/layout/icon_star_disabled.png"],
-    img[src="/static/layout/baldwin/button_baldwincreate_disabled.png"],
-    img[src="/static/layout/lair/buttons/exit-disabled.png"],
-    img[src="/static/layout/lair/buttons/add-slots-disabled.png"],
-    img[src="/static/layout/lair/buttons/add-tabs-disabled.png"],
-    img[src="/static/layout/lair/buttons/pagination-next-disabled.png"],
-    img[src="/static/layout/lair/buttons/pagination-previous-disabled.png"],
-    img[src="/static/layout/lair/buttons/den-slot-unlock-disabled.png"],
-    img[src="/static/layout/lair/buttons/move-to-den-disabled.png"],
-    img[src="/static/layout/pagination/pagination-previous-disabled.png"], img[src="/images/layout/pagination/pagination-previous-disabled.png"],
-    img[src="/static/layout/pagination/pagination-next-disabled.png"], img[src="/images/layout/pagination/pagination-next-disabled.png"],
-    img[src="/static/layout/fantastic-familiar/bonding-heart-disabled.png"],
-    img[src="/static/layout/profile/button-scenic-mode-disabled.png"],
-    img[src="/static/layout/profile/button-sell-disabled.png"],
-    img[src="/static/layout/profile/button-exalt-disabled.png"],
-    img[src="/static/layout/profile/button-bond-disabled.png"],
-    img[src="/static/layout/profile/hub-button-apparel-disabled.png"],
-    img[src="/static/layout/profile/button-feed-disabled.png"],
-    img[src="/static/layout/profile/button-breed-disabled.png"],
-    img[src="/static/layout/archaeology/button-muster-resources-disabled.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-convert-food-disabled.png"],
+    img[src$="/static/layout/profile/button-bond-disabled.png"],
+    img[src$="/static/layout/common/button-add-35-disabled.png"],
+    img[src$="/static/layout/profile/button-breed-disabled.png"],
+    img[src$="/static/layout/profile/button-exalt-disabled.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-sell-disabled.png"],
+    img[src$="/static/layout/hoard/buttons/stack-function-sell-duplicates-disabled.png"],
+    img[src$="/static/layout/icon_star_disabled.png"],
+    img[src$="/static/layout/baldwin/button_baldwincreate_disabled.png"],
+    img[src$="/static/layout/lair/buttons/exit-disabled.png"],
+    img[src$="/static/layout/lair/buttons/add-slots-disabled.png"],
+    img[src$="/static/layout/lair/buttons/add-tabs-disabled.png"],
+    img[src$="/static/layout/lair/buttons/pagination-next-disabled.png"],
+    img[src$="/static/layout/lair/buttons/pagination-previous-disabled.png"],
+    img[src$="/static/layout/lair/buttons/den-slot-unlock-disabled.png"],
+    img[src$="/static/layout/lair/buttons/move-to-den-disabled.png"],
+    img[src$="/static/layout/pagination/pagination-previous-disabled.png"], img[src$="/images/layout/pagination/pagination-previous-disabled.png"],
+    img[src$="/static/layout/pagination/pagination-next-disabled.png"], img[src$="/images/layout/pagination/pagination-next-disabled.png"],
+    img[src$="/static/layout/fantastic-familiar/bonding-heart-disabled.png"],
+    img[src$="/static/layout/profile/button-scenic-mode-disabled.png"],
+    img[src$="/static/layout/profile/button-sell-disabled.png"],
+    img[src$="/static/layout/profile/button-exalt-disabled.png"],
+    img[src$="/static/layout/profile/button-bond-disabled.png"],
+    img[src$="/static/layout/profile/hub-button-apparel-disabled.png"],
+    img[src$="/static/layout/profile/button-feed-disabled.png"],
+    img[src$="/static/layout/profile/button-breed-disabled.png"],
+    img[src$="/static/layout/archaeology/button-muster-resources-disabled.png"],
     #archaeology-dig-site-header-left > div[class*="disabled"] > img,
     #coli-equip-lock-btn.coli-equip-disabled, #coli-equip-clear-btn.coli-equip-disabled {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(90%) contrast(140%);
     }
-    img[src="/static/layout/lair/backgrounds/male.png"],
-    img[src="/static/layout/lair/backgrounds/female.png"] {
+    img[src$="/static/layout/lair/backgrounds/male.png"],
+    img[src$="/static/layout/lair/backgrounds/female.png"] {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(65%) contrast(190%);
     }
     img[src$="/layout/button_hatch.png"],
@@ -6430,65 +6504,70 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .coli-equip-statdlg-plus-btn {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(75%) contrast(150%);
     }
-    img[src="http://www1.flightrising.com/static/layout/revamp/clock_large.png"], img[src="/images/layout/revamp/clock_large.png"], img[src="https://www1.flightrising.com/static/layout/revamp/clock_large.png"],
+    img[src$="http://www1.flightrising.com/static/layout/revamp/clock_large.png"], img[src$="/images/layout/revamp/clock_large.png"], img[src$="https://www1.flightrising.com/static/layout/revamp/clock_large.png"],
     #cluetip-waitimage,
     #frontpage-latest-news,
     .archaeology-dig-site-index-row-focus-toggle,
-    img[src="/static/layout/common/common-toggle-on.png"],
-    img[src="/static/layout/common/common-toggle-off.png"],
-    img[src="static/layout/toggle_on.png"],
-    img[src="static/layout/toggle_off.png"] {
+    img[src$="/static/layout/common/common-toggle-on.png"],
+    img[src$="/static/layout/common/common-toggle-off.png"],
+    img[src$="static/layout/toggle_on.png"],
+    img[src$="static/layout/toggle_off.png"] {
         filter: var(--filter) hue-rotate(var(--hue));
     }
-    img[src="/static/layout/profile/emblem-ancient.png"], img[src="/static/layout/profile/emblem-hatchling.png"] {
+    img[src$="/static/layout/profile/emblem-ancient.png"], img[src$="/static/layout/profile/emblem-hatchling.png"] {
         filter: invert(100) var(--filter) hue-rotate(var(--hue));
         opacity: 0.7;
     }
-    img[src="/static/layout/auctionhouse/searchtab_down.png"],
-    img[src="/static/layout/auctionhouse/searchtab_up.png"] {
+    img[src$="/static/layout/auctionhouse/searchtab_down.png"],
+    img[src$="/static/layout/auctionhouse/searchtab_up.png"] {
         filter: invert(100) var(--filter) hue-rotate(var(--hue)) brightness(200%) contrast(150%);
     }
-    img[src="/static/layout/swipp/swipp-arrow.png"],
-    img[src="/static/layout/baldwin/arrow.png"],
-    img[src="/static/layout/lair/buttons/page-expand.png"],
-    img[src="/static/layout/lair/buttons/page-collapse.png"],
-    img[src="/static/icons/close.png"],
-    img[src="/static/layout/copy.png"] {
+    img[src$="/static/layout/swipp/swipp-arrow.png"],
+    img[src$="/static/layout/baldwin/arrow.png"],
+    img[src$="/static/layout/lair/buttons/page-expand.png"],
+    img[src$="/static/layout/lair/buttons/page-collapse.png"],
+    img[src$="/static/icons/close.png"],
+    img[src$="/static/layout/copy.png"],
+    img[src$="/static/layout/pinglist/bbcode-no-icon.png"],
+    img[src$="/static/layout/pinglist/bbcode-not-subscribed.png"] {
         filter: invert(100) var(--filter) hue-rotate(var(--hue)) brightness(70%) saturate(200%);
     }
-    img[src="/static/layout/button_attachdragon.png"],
-    img[src="/static/layout/icon_itemnotattached.png"],
-    img[src="/static/layout/icon_currencynotattached.png"],
-    img[src="/static/layout/icon_dragonnotattached.png"] {
+    img[src$="/static/layout/button_attachdragon.png"],
+    img[src$="/static/layout/icon_itemnotattached.png"],
+    img[src$="/static/layout/icon_currencynotattached.png"],
+    img[src$="/static/layout/icon_dragonnotattached.png"] {
         filter: invert(100%) var(--filter) hue-rotate(var(--hue)) brightness(100%) contrast(100%)
     }
     #coli-equip-statpoints-btn, .coli-equip-statdlg-plus-btn.coli-equip-disabled {
         filter: invert(100) var(--filter) hue-rotate(var(--hue)) brightness(110%) saturate(200%);
     }
-    img[src="/static/layout/baldwin/arrow.png"] {
+    img[src$="/static/layout/baldwin/arrow.png"] {
         content: url(https://www1.flightrising.com/static/layout/swipp/swipp-arrow.png) !important
     }
-    img[src="/static/layout/lair/icons/male.png"],
-    img[src="/static/layout/lair/icons/female.png"] {
+    img[src$="/static/layout/lair/icons/male.png"],
+    img[src$="/static/layout/lair/icons/female.png"] {
         filter: brightness(200%);
     }
     #trading-post-content {
         background-image: url(https://i.postimg.cc/664pFy8Z/tradingpost.png);
     }
-    img[src="/static/layout/revamp/right_status_top_green_small.png"] {
+    img[src$="/static/layout/revamp/right_status_top_green_small.png"] {
         content: url(https://i.postimg.cc/3rvP4J3j/right-status-top-green-small.png) !important;
     }
-    img[src="/static/layout/revamp/right_status_top_yellow_small.png"] {
+    img[src$="/static/layout/revamp/right_status_top_yellow_small.png"] {
         content: url(https://i.postimg.cc/PxB930Q8/right-status-top-yellow-small.png) !important;
     }
     #raffle-background {
         background-image: url('https://i.postimg.cc/1zBGXFjC/roundsey.png');
     }
-    img[src="/static/layout/baldwin/cauldron_loading.gif"] {
+    img[src$="/static/layout/baldwin/cauldron_loading.gif"] {
         content: url(https://i.postimg.cc/50VjKSbn/cauldronloading.gif) !important;
     }
-    img[src="/static/layout/html5/coming_soon_ticket.jpg"] {
+    img[src$="/static/layout/html5/coming_soon_ticket.jpg"] {
         content: url(https://i.postimg.cc/CLG0mpzT/ticket.png) !important;
+    }
+    img[src$="/static/layout/common/common-checkmark.png"] {
+        filter: sepia(100%) hue-rotate(75deg) brightness(150%) saturate(250%);
     }
     
 }
