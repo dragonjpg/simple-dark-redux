@@ -6398,7 +6398,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/game-database/button-suggest.png"],
     img[src$="/static/layout/game-database/button-share.png"],
     img[src$="/static/icons/tidy-up.png"],
-    img[src$="/static/layout/button_approvetrade.png"], img[src$="/static/layout/button_canceltrade.png"]
+    img[src$="/static/layout/button_approvetrade.png"], img[src$="/static/layout/button_canceltrade.png"],
+    img[src$="/static/layout/forum/forum-icon-link.png"]
     {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
     }
@@ -6535,7 +6536,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/button_attachdragon.png"],
     img[src$="/static/layout/icon_itemnotattached.png"],
     img[src$="/static/layout/icon_currencynotattached.png"],
-    img[src$="/static/layout/icon_dragonnotattached.png"] {
+    img[src$="/static/layout/icon_dragonnotattached.png"],
+    img[src$="/static/icons/question.png"] {
         filter: invert(100%) var(--filter) hue-rotate(var(--hue)) brightness(100%) contrast(100%)
     }
     #coli-equip-statpoints-btn, .coli-equip-statdlg-plus-btn.coli-equip-disabled {
