@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.1.6
+@version        1.1.7
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -554,7 +554,7 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 .dragon-picker-preview-buttons > .dragon-picker-preview-back + .dragon-picker-preview-confirm, .dialog-button-tray > input + input, .dialog-button-tray > a + input, .dialog-button-tray > button + button, #swipp-preview-button-tray > .dialog-submit + .dialog-dismiss, .market-purchase-buttons button + button, #name-dragon-start-dialog .common-dialog-section:last-child > input + input, #dialog-dad + img + #dialog-mom + div + div button + button, .raffle-window-buttons input + input, div#confirm-trade button + button, div#confirm-approve button + button  {
     margin-left: 20px;
 }
-#mannequin-confirm-ok, #name-dragon-confirm-dialog .common-dialog-section:last-child input, #breed_mod #close, #tutclose, #closeprev, #skin-no, #share-outfit-cancel, #overwriteMorphology, #saveNewMorphology {
+#mannequin-confirm-ok, #name-dragon-confirm-dialog .common-dialog-section:last-child input, #breed_mod #close, #tutclose, #closeprev, #skin-no, #share-outfit-cancel, #overwriteMorphology, #saveNewMorphology, #take-confirm button {
     width: 100%;
     min-height: 50px;
 }
@@ -1661,6 +1661,9 @@ adblock2 "Disable" <<<EOT  EOT;
     #dragon-search-filters .dragon-search-filters-footer {
         border-color: var(--borders-light)
     }
+    #dragon-search-filters .dragon-search-filters-footer button[type="submit"] {
+        width: 100%;
+    }
     .common-fieldset {
         outline: none;
     }
@@ -1930,7 +1933,8 @@ adblock2 "Disable" <<<EOT  EOT;
     }
 
     #gather_turn_count,
-    .common-bubble-subject {
+    .common-bubble-subject,
+    .dragon-search-filters-reset, .dragon-search-filters-keep-expanded {
         color: var(--text);
     }
     .content-header-sub, #pl_headerSmall, p.subheader {
@@ -2066,13 +2070,13 @@ adblock2 "Disable" <<<EOT  EOT;
     div.copybar a {
         color: var(--link) !important;
     }
-    /*game db widget*/
-    .gamedb-bbcode {
+    /*game db widget & pinglist widget */
+    .gamedb-bbcode, .pinglist-bbcode {
         color: var(--link) !important;
     }
-    .gamedb-bbcode:hover {
+    .gamedb-bbcode:hover, .pinglist-bbcode:hover {
         color: var(--link-hover) !important;
-        background: none;
+        background-color: transparent;
         box-shadow: none;
         text-shadow: 0 0 5px var(--shadow);
     }
@@ -3250,7 +3254,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .feat-description, .feat-rewards-header em {
         color: var(--text-med);
     }
-    .feat-description strong {
+    .feat-description strong, .feat-timestamp strong {
         color: var(--accent-four)
     }
     .feat {
@@ -4485,8 +4489,22 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         font-weight: bold;
         color: var(--em)
     }
-    .ah-search-submit-container #ah-search-submit {
-        width: 33%;
+    .ah-search-submit-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .ah-search-submit-container hr {
+        width: 100%
+    }
+    .ah-search-submit-container #ah-search-submit, .ah-search-submit-container-left, .ah-search-submit-container-right {
+        position: static;
+        width: 33%; box-sizing: border-box;
+    }
+    .ah-search-submit-container-right {
+        padding: 0 0 10px 10px;
+        align-self: flex-end;
+        order: 2;
     }
     .ah-search-submit-container .ah-reset-to-defaults {
         margin-left: 10px;
@@ -4626,6 +4644,14 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border-radius: 12px;
         filter: invert(100%) var(--filter) hue-rotate(var(--hue)) brightness(400%) contrast(120%);
     }
+    .dragon-profile-energy-meter-full {
+        background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
+        border: 1px solid var(--energy-border);
+    }
+    .dragon-profile-energy-meter-full[style*="100%"], .dragon-profile-familiar-meter-frame[data-level="7"] .dragon-profile-familiar-meter-full {
+        background: linear-gradient(to right, var(--energy-full-one) 0%, var(--energy-full-two) 100%);
+        border: 1px solid var(--energy-full-border);
+    }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/hoard.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/vault.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/game-database.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search.*") {
     /* Hoard & Vault & GameDB & Search */
@@ -4679,6 +4705,22 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background: linear-gradient(to bottom, var(--widget-light) 0%, var(--widget-med) 100%);
         border: 2px solid var(--borders-med);
         outline: 2px solid var(--borders);
+    }
+    .hoard-apply-attribute-result {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hoard-apply-attribute-result .dragon-picker-preview-image {
+        order: -1;
+        margin: auto;
+    }
+    .hoard-apply-attribute-result-box {
+        position: static;
+        border: 2px solid var(--borders);
+        background: var(--widget-med);
+        border-radius: 10px;
+        min-width: 350px;
     }
     .dragon-search-result-box {
         border: 2px solid var(--borders);
