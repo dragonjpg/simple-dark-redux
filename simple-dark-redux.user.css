@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.1.7
+@version        1.1.8
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -647,10 +647,10 @@ adblock2 "Disable" <<<EOT  EOT;
     em, i, span.whos-online-subtitle em, h4, h5, h6, .settings-hub-category-header, .dragon-profile-customize-category-header {
         color: var(--em);
     }
-    a, a.link, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited {
+    a, a.link, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a {
         color: var(--link);
     }
-    a:hover, a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover  {
+    a:hover, a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover, #export-outfit-dialog-confirm a:hover  {
         color: var(--link-hover);
     }
     /*dividers*/
@@ -3026,7 +3026,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .lair-counter strong,
     #den-slot-unlock-list .den-slot-unlock-timestamp strong,
     #dialog-dad, #dialog-mom,
-    #nest_potentials_text, .nest_dragon_name {
+    #nest_potentials_text,
+    .nest_dragon_name,
+    .nest-breed-parent-name {
         color: var(--strong);
     }
     .lair-counter,
@@ -6057,7 +6059,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #sitewide-effort-details {
         background: none !important;
     }
-    .sitewide-effort-milestone-contribution {
+    .sitewide-effort-milestone-contribution,
+    .sitewide-effort-turn-in {
         color: var(--text) !important;
     }
     .sitewide-effort-turn-in strong, #sitewide-effort-current-milestone-title, .sitewide-effort-milestone-contribution strong, #sitewide-effort-current-milestone-status, .sitewide-effort-npc-dialog-name {
@@ -6069,6 +6072,18 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     #sitewide-effort-page > table td {
         color: var(--text) !important;
+    }
+    #sitewide-effort-current-milestone-status strong,
+    #sitewide-effort-current-milestone-status em {
+        color: inherit;
+    }
+    .sitewide-effort-status-meter-meter-full {
+        background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
+        border: 1px solid var(--energy-border);
+    }
+    .sitewide-effort-status-meter-meter-full[style*="100%"] {
+        background: linear-gradient(to right, var(--energy-full-one) 0%, var(--energy-full-two) 100%);
+        border: 1px solid var(--energy-full-border);
     }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/wiki\\/skins\\/.*") {
@@ -6367,6 +6382,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/profile/button-breed.png"],
     img[src$="/static/layout/profile/button-bond.png"],
     img[src$="/static/layout/common/button-add-35.png"],
+    img[src$="/static/layout/common/button-subtract-35.png"],
     img[src$="/static/layout/profile/button-switch-familiar.png"],
     img[src$="/static/layout/profile/button-edit-bio.png"],
     img[src$="/static/layout/profile/button-share.png"],
