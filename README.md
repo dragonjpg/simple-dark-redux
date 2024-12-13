@@ -8,6 +8,7 @@ You will need [Stylus](https://github.com/openstyles/stylus#readme) enabled, and
 - **Gray** - Your bog-standard gray, with warm accents.
 - **Copper** - Deep browns inspired by the FR color wheel.
 - **Dracula** - A pale [popular dark theme](https://github.com/dracula/dracula-theme)
+- **Custom** - Fully customizable theme. Default settings are for the Blue theme. There are a LOT of colors you can adjust (mostly because FR loves gradients). Go nuts.
 
 ## Preview Images
 
