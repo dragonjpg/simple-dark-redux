@@ -1,10 +1,9 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        1.1.8
+@version        2.0.0
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
-
 
 @advanced dropdown theme "Theme" {
 theme1 "Blue" <<<EOT 
@@ -43,7 +42,7 @@ theme1 "Blue" <<<EOT
         --text: #dae0e7;
         --text-med: #8495a8;
         --text-dark: #2a3d49;
-        --text-disabled: #505d6a;
+        --text-disabled: var(--text-med);
         --shadow: #000;
         --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
         
@@ -122,7 +121,7 @@ theme2 "Gray" <<<EOT
         --text: #e0e0e0;
         --text-med: #adadad;
         --text-dark: #3b3b3b;
-        --text-disabled: #5c5c5c;
+        --text-disabled: var(--text-med);
         --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
         --shadow: #000;
         
@@ -201,7 +200,7 @@ theme3 "Copper" <<<EOT
         --text: #ebdcc9;
         --text-med: #ab9c91;
         --text-dark: #3a342e;
-        --text-disabled: #575452;
+        --text-disabled: var(--text-med);
         --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
         --shadow: #060f12;
         
@@ -280,7 +279,7 @@ theme4 "Dracula" <<<EOT
         --text: #f8f8f2;
         --text-med: #8498d7;
         --text-dark: #6272a4;
-        --text-disabled: #6272a4;
+        --text-disabled: var(--text-med);
         --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
         --shadow: #000;
         
@@ -322,6 +321,153 @@ theme4 "Dracula" <<<EOT
         --energy-full-two: #ff79c6;
         --energy-full-border: #6272a4;
 
+EOT;
+
+theme99 "Custom" <<<EOT
+        --hue: /*[[hue]]*\/;
+        --filter: /*[[filter]]*\/;
+        --selection-bg: /*[[selection-bg]]*\/;
+        --selection-text: /*[[selection-text]]*\/;
+        
+        --background: #000;
+        --main: /*[[main]]*\/;
+        --columns: /*[[columns]]*\/;
+        --bar: /*[[bar]]*\/;
+        
+        --widget: /*[[widget]]*\/;
+        --widget-rgb: /*[[widget-rgb]]*\/;
+        --widget-med: /*[[widget-med]]*\/;
+        --widget-light: /*[[widget-light]]*\/;
+        --section: /*[[section]]*\/;
+        
+        --tab: /*[[tab]]*\/;
+        --tab-hover: /*[[tab-hover]]*\/;
+        --textarea: /*[[textarea]]*\/;
+        
+        --warning: /*[[warning-rgb]]*\/;
+        --warning-text: /*[[warning-text]]*\/;
+        --error: /*[[error-rgb]]*\/;
+        --error-text: /*[[error-text]]*\/;
+        --success: /*[[success-rgb]]*\/;
+        --success-text: /*[[success-text]]*\/;
+        
+        --borders: /*[[borders]]*\/;
+        --borders-med: /*[[borders-med]]*\/;
+        --borders-light: /*[[borders-light]]*\/;
+        
+        --text: /*[[text]]*\/;
+        --text-med: /*[[text-med]]*\/;
+        --text-dark: /*[[text-dark]]*\/;
+        --text-disabled: var(--text-med);
+        --shadow: /*[[shadow]]*\/;
+        --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
+        
+        --strong: /*[[strong]]*\/;
+        --em: /*[[em]]*\/;
+        --link: /*[[link]]*\/;
+        --link-hover: /*[[link-hover]]*\/;
+        
+        --accent-one: /*[[accent-one]]*\/;
+        --accent-two: /*[[accent-two]]*\/;
+        --accent-three: /*[[accent-three]]*\/;
+        --accent-four: /*[[accent-four]]*\/;
+        --accent-five: /*[[accent-five]]*\/;
+        
+        --button-text: /*[[button-text]]*\/;
+        --button-text-dark: /*[[button-text-dark]]*\/;
+        --button-one: /*[[button-one]]*\/;
+        --button-two: /*[[button-two]]*\/;
+        --beige-button-one: /*[[beige-button-one]]*\/;
+        --beige-button-two: /*[[beige-button-two]]*\/;
+        --red-button-one: /*[[red-button-one]]*\/;
+        --red-button-two: /*[[red-button-two]]*\/;
+        --button-disabled-one: /*[[button-disabled-one]]*\/;
+        --button-disabled-two: /*[[button-disabled-two]]*\/;
+        
+        --selected: #4df0f0;
+        --selected-text: #000;
+        
+        --divider: /*[[divider]]*\/;
+        
+        --tooltip-bg: /*[[tooltip-bg]]*\/;
+        --tooltip-header: /*[[tooltip-header]]*\/;
+        
+        --energy-one: /*[[energy-one]]*\/;
+        --energy-two: /*[[energy-two]]*\/;
+        --energy-border: /*[[energy-border]]*\/;
+        
+        --energy-full-one: /*[[energy-full-one]]*\/;
+        --energy-full-two: /*[[energy-full-two]]*\/;
+        --energy-full-border: /*[[energy-full-border]]*\/;
+EOT;
+}
+
+@advanced dropdown usertabbg "Usertab BG" {
+usertabbg1 "Clouds" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/layout/scryer/predictmorphology_bg.png');
+    background-size: 600px;
+    background-position: -10% 4%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(500%);
+    opacity: 0.3;
+EOT;
+usertabbg3 "Treasure" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/layout/tooltips/description-5.png');
+    background-size: 244px;
+    background-position: 100% -10%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(65%) contrast(180%);
+EOT;
+usertabbg4 "Alchemist" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/layout/baldwin/baldwin-background.png');
+    background-size: 450px;
+    background-position: 10% 80%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(150%);
+    opacity: 0.2;
+EOT;
+usertabbg5 "Spooky" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/cms/custom-shop/backgrounds/custom-shop-background-639d4d075d8d8.png');
+    background-size: 700px;
+    background-position: 56% 11%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(300%);
+    opacity: 0.25;
+EOT;
+usertabbg6 "Scribe" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/cms/familiar/art/48163.png');
+    background-size: 180px;
+    background-position: -10% 19%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(150%);
+    opacity: 0.3;
+    transform: scaleX(-1);
+EOT;
+usertabbg7 "Warrior" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/cms/custom-shop/backgrounds/custom-shop-background-62f1ff9567e81.png');
+    background-size: 700px;
+    background-position: 8% 76%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(200%);
+    opacity: 0.3;
+EOT;
+usertabbg9 "Mushroom" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/cms/familiar/art/36303.png');
+    background-size: 180px;
+    background-position: -15% 15%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(150%);
+    opacity: 0.3;
+    transform: scaleX(-1);
+EOT;
+usertabbg10 "Stormy" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/cms/scene/52963.png');
+    background-size: 375px;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(350%);
+    opacity: 0.2;
+    transform: scaleX(-1);
 EOT;
 }
 
@@ -575,16 +721,57 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 EOT;
 modal-buttons-2 "Disable" <<<EOT  EOT;
 }
+@advanced dropdown clan-color-text "User-set Color Text in Clan Bios" {
+clan-color-text-1 "Remove" <<<EOT
+.clan-profile-bio span[style*="color:"]:not([style*="transparent"]) {
+            color: inherit !important;
+        }
+EOT;
+clan-color-text-2 "Allow" <<<EOT EOT;
+}
+@advanced dropdown bio-color-text "User-set Color Text in Dragon Bios" {
+bio-color-text-1 "Remove" <<<EOT
+.dragon-profile-bio-text span:not([style*="transparent"]) {
+    color: var(--text) !important;
+}
+.dragon-profile-bio-text b {
+    color: var(--strong) !important;
+}
+a.bbcode_url {
+    color: var(--link) !important;
+}
+.dragon-profile-bio-text a.bbcode_url span {
+    color: inherit !important;
+}
+a.bbcode_url:hover, a.bbcode_url:focus {
+    color: var(--link-hover) !important;
+}
+EOT;
+bio-color-text-2 "Allow" <<<EOT
+.dragon-profile-bio-text span:not([style*="transparent"]) {
+    color: var(--text);
+}
+.dragon-profile-bio-text b {
+    color: var(--strong);
+}
+a.bbcode_url {
+    color: var(--link);
+}
+a.bbcode_url:hover, a.bbcode_url:focus {
+    color: var(--link-hover);
+}
+EOT;
+}
 
-@advanced dropdown forum-color-text "Remove Color Text in Forums" {
-forum-color-text-1 "Enable" <<<EOT
+@advanced dropdown forum-color-text "User-set Color Text in Forums" {
+forum-color-text-1 "Remove" <<<EOT
 #topic-preview-text span[style*="color:"]:not(span[style*="transparent"]),
 .post-text span[style*="color:"]:not(span[style*="transparent"]) {
     color: var(--accent-four) !important;
 }
 
 EOT;
-forum-color-text-2 "Disable" <<<EOT EOT;
+forum-color-text-2 "Allow" <<<EOT EOT;
 }
 @advanced dropdown adblock "Hide Ad Containers" {
 adblock1 "Enable" <<<EOT /*byebye bottom & nav ad banners*\/
@@ -594,8 +781,83 @@ adblock1 "Enable" <<<EOT /*byebye bottom & nav ad banners*\/
 EOT;
 adblock2 "Disable" <<<EOT  EOT;
 }
+@var checkbox filler "Custom Theme Settings & Colors ↓" 1
+@var select filter "Buttons & Default Site BG" {
+    "Color (Changes w/ Hue)":"sepia(100%)",
+    "Grayscale":"grayscale(100%)"
+}
+@var range hue "Button & Default Site BG Hue" [175, -360, 360, 5, 'deg']
+
+@var color main "Main Page BG" #22282b
+@var color columns "Left/Right Columns" #15191e
+@var color bar "Top Bar" #364650
+
+@var color text "Text (Primary/Tooltips)" #dae0e7
+@var color text-med "Text (Medium/Disabled)" #8495a8
+@var color text-dark "Text (Dark)" #2a3d49
+@var color shadow "Text Outline" #000
+
+@var color selection-bg "Text Select BG" #050613
+@var color selection-text "Text Select Color" #ffb1e4
+
+@var color strong "Bold Text" #70d2ff
+@var color em "Italic Text" #a6dbda
+@var color link "Links" #c6b7ff
+@var color link-hover "Links Hover" #f194ff
+
+@var color tooltip-bg "Tooltip BG" #0C171D
+@var color tooltip-header "Tooltip Headings BG" #1b354d
+@var color textarea "Textarea BG" #364650
+
+@var color widget "Widgets (Dark)" #192429
+@var color widget-med "Widgets (Medium)" #293036
+@var color widget-light "Widgets (Light)" #415362
+@var color section "Sections" #0e131a
+
+@var color borders "Borders (Dark)" #060d12
+@var color borders-med "Borders (Medium)" #343b40
+@var color borders-light "Borders (Light)" #527488
+@var color divider "Dividers/Separators" #4b5763
+
+@var color accent-one "Accent One" #568fb8
+@var color accent-two "Accent Two" #7ce4f7
+@var color accent-three "Accent Three" #00ffe1
+@var color accent-four "Accent Four" #97d4d9
+@var color accent-five "Accent Five" #00faff
+
+@var color button-text "Button Text (Light)" #fff
+@var color button-text-dark "Button Text (Dark)" #000
+@var color button-one "Lair/Hoard Buttons Gradient 1" #eef3f9
+@var color button-two "Lair/Hoard Buttons Gradient 2" #bacbdf
+@var color beige-button-one "Beige Buttons Gradient 1" #488fad
+@var color beige-button-two "Beige Buttons Gradient 2" #7d5f88
+@var color red-button-one "Red Button Gradient 1" #31527a
+@var color red-button-two "Red Button Gradient 1" #1f3c5f
+@var color button-disabled-one "Disabled Buttons Gradient 1" #7f8d9f
+@var color button-disabled-two "Disabled Buttons Gradient 2" #444f5b
+
+@var color tab "Lair Tab" #17222d
+@var color tab-hover "Active Lair Tab" #163a59
+
+@var color energy-one "Energy/Progress Bars <100%/In-Progress Gradient 1" #235e96
+@var color energy-two "Energy/Progress Bars <100%/In-Progress Gradient 2" #80efbd
+@var color energy-border "Energy/Progress Bars <100%/In-Progress Border" #70d2ff
+        
+@var color energy-full-one "Energy/Progress Bars 100%/Complete Gradient 1" #86d2cb
+@var color energy-full-two "Energy/Progress Bars 100%/Complete Gradient 2" #b75db7
+@var color energy-full-border "Energy/Progress Bars 100%/Complete Border" #5a489b
+        
+@var color warning "Warning Message Links & BG (semi-transparent)" #fec16e
+@var color warning-text "Warning Message Text" #fde9bd
+@var color error "Error Message Links & BG  BG  (semi-transparent)" #ff829e
+@var color error-text "Error Message Text" #fac9d4
+@var color success "Success Message Links & BG  BG  (semi-transparent)" #98e764
+@var color success-text "Success Message Text" #e2fac9
+  
+        
 
 ==/UserStyle== */
+
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com.*") {
     /* Global Styles */
@@ -638,7 +900,7 @@ adblock2 "Disable" <<<EOT  EOT;
     td, th, .common-hub-item-description, #registration h1, #noauth-container h2, #error-404 div, .common-bubble-byline, .cc-color-override-603568657.cc-window {
         color: var(--text);
     }
-    strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown, .hoard-sale-buyback-item-name, .dgnres-index .cooldown .label {
+    strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown, .hoard-sale-buyback-item-name, .dgnres-index .cooldown .label, .wws-description h2 {
         color: var(--strong);
     }
     span[style*="color:"][style*="#6F1111"], .pinkerton-text-footer span[style*="color"] {
@@ -646,6 +908,9 @@ adblock2 "Disable" <<<EOT  EOT;
     }
     em, i, span.whos-online-subtitle em, h4, h5, h6, .settings-hub-category-header, .dragon-profile-customize-category-header {
         color: var(--em);
+    }
+    .wws-toggle-label {
+        color: var(--text-disabled);
     }
     a, a.link, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a {
         color: var(--link);
@@ -659,7 +924,7 @@ adblock2 "Disable" <<<EOT  EOT;
         color: var(--divider) !important;
     }
     .dgnres-index .common-column:nth-child(2) .common-column-content,
-    .dgnres-table tr, .common-table tr {
+    .dgnres-table tr, .common-table tr, hr.skin-system-hr {
         border-color: var(--divider)
     }
     img[src*="/images/layout/graydot.gif"], img[src*="/static/layout/graydot.gif"], img.divider {
@@ -972,6 +1237,9 @@ adblock2 "Disable" <<<EOT  EOT;
         border-radius: 10px;
         box-shadow: none;
     }
+    .ui-widget.item-tooltip {
+        background: var(--tooltip-bg);
+    }
     div.cluetip-inner.ui-cluetip-content, .cluetip.ui-widget {
         background: var(--tooltip-bg);
     }
@@ -1051,18 +1319,13 @@ adblock2 "Disable" <<<EOT  EOT;
     }
     #usertab::before {
         content: '';
-        background-image: url('https://www1.flightrising.com/static/layout/scryer/predictmorphology_bg.png');
         position: absolute;
         z-index: 1;
         width: 100%;
         height: 100%;
         top: 0px;
         left: 0px;
-        background-size: 600px;
-        background-position: -10% 4%;
-        background-repeat: no-repeat;
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(500%);
-        opacity: 0.3;
+        /*[[usertabbg]]*/
     }
     #usertab > * {
         z-index: 2;
@@ -1199,7 +1462,7 @@ adblock2 "Disable" <<<EOT  EOT;
         color: var(--link-hover) !important;
     }
     /*buttons*/
-    .beigebutton.thingbutton, .thingbutton {
+    .beigebutton.thingbutton, .thingbutton, .skin-system-order-action {
         color: var(--button-text);
         text-shadow: 0 1px 1px var(--shadow), 0 1px 1px var(--shadow), 0 1px 1px var(--shadow), 0 1px 2px var(--shadow);
         padding: 10px;
@@ -1211,24 +1474,28 @@ adblock2 "Disable" <<<EOT  EOT;
         align-items: center;
         flex-wrap: wrap;
     }
-    a.beigebutton.thingbutton:not([disabled]):hover, .thingbutton:not([disabled]):hover {
+    .common-ui-button::after, .common-ui-button-disabled::after, .common-ui-button-accept::after {
+        display: none !important;
+    }
+    a.beigebutton.thingbutton:not([disabled]):hover, .thingbutton:not([disabled]):hover, .skin-system-order-action:not([disabled]):hover {
         color: var(--button-text);
         background: linear-gradient(to top, var(--beige-button-one) 0%, var(--beige-button-two) 100%);
     }
-    .redbutton, .redbutton.anybutton, .mb_button {
+    .redbutton, .redbutton.anybutton, .mb_button, .skin-system-order-action.skin-system-cancel-order {
         background: linear-gradient(to bottom, var(--red-button-one) 0%, var(--red-button-two) 100%);
         color: var(--button-text);
         text-shadow: 0 1px 1px var(--shadow), 0 1px 1px var(--shadow), 0 1px 1px var(--shadow), 0 1px 2px var(--shadow);
         -webkit-box-shadow: 0 2px 3px var(--shadow);
         font-weight: bold;
     }
-    .redbutton:not([disabled]):hover, .redbutton.anybutton:not([disabled]):hover, .mb_button:not([disabled]):hover {
+    .redbutton:not([disabled]):hover, .redbutton.anybutton:not([disabled]):hover, .mb_button:not([disabled]):hover, .skin-system-order-action.skin-system-cancel-order:not([disabled]):hover {
+        color: var(--button-text);
         background: linear-gradient(to top, var(--red-button-one) 0%, var(--red-button-two) 100%);
     }
     .redbutton, .redbutton.anybutton {
         padding: 10px;
     }
-    .redbutton.anybutton:disabled, .mb_button, .beigebutton.thingbutton:disabled {
+    .redbutton.anybutton:disabled, .mb_button, .beigebutton.thingbutton:disabled, .skin-system-order-action.skin-system-cancel-order:disabled {
         color: var(--button-text) !important;
     }
     /*dot pagination*/
@@ -1247,7 +1514,8 @@ adblock2 "Disable" <<<EOT  EOT;
     }
     /*more buttons*/
     .common-ui-button, .lair-pagination .lair-pagination-page, .common-pagination .common-pagination-page,
-    .common-ui-vertical-button-group {
+    .common-ui-vertical-button-group, .common-js-pagination .common-pagination-page, .wws-carousel-navigation-status,
+    .sitewide-effort-navigation-item {
         color: var(--button-text-dark);
         border: 2px solid var(--borders-med);
         background: linear-gradient(to bottom, var(--button-one) 0%, var(--button-two) 100%);
@@ -1270,24 +1538,26 @@ adblock2 "Disable" <<<EOT  EOT;
         width: auto;
         min-width: 30px;
         font-weight: bold;
+        margin: auto 0.15em
     }
     .common-pagination-page.common-pagination-page-counter, .common-pagination-page.common-pagination-page-counter:hover {
         padding: 0 0.5em;
         min-width: 100px;
         width: auto;
     }
-    .common-pagination .common-pagination-page, .common-js-pagination .common-pagination-page {
+    /*.common-pagination .common-pagination-page, .common-js-pagination .common-pagination-page {
         color: var(--borders-med);
-    }
-    .common-pagination .common-pagination-page:hover, .common-js-pagination .common-pagination-page:hover, .common-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover, .common-js-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover {
+    }*/
+    .common-pagination .common-pagination-page:hover, .common-js-pagination .common-pagination-page:hover, .common-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover, .common-js-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover,
+    .sitewide-effort-navigation-item:not(.sitewide-effort-navigation-item-current):hover {
         border-color: var(--borders-light);
-        color: var(--main);
+        color: var(--button-text-dark);
         background: linear-gradient(to bottom, var(--button-two) 0%, var(--button-one) 100%);
     }
-    .common-pagination .common-pagination-page-active, .common-pagination .common-pagination-page-active:hover, .common-js-pagination .common-pagination-page-active, .common-js-pagination .common-pagination-page-active:hover, .recipe-pagination .common-pagination-page[data-enabled="false"], .recipe-pagination .common-pagination-page[data-enabled="false"]:hover, .lair-pagination .lair-pagination-page-active, .lair-pagination .lair-pagination-page-active:hover {
+    .common-pagination .common-pagination-page-active, .common-pagination .common-pagination-page-active:hover, .common-js-pagination .common-pagination-page-active, .common-js-pagination .common-pagination-page-active:hover, .recipe-pagination .common-pagination-page[data-enabled="false"], .recipe-pagination .common-pagination-page[data-enabled="false"]:hover, .lair-pagination .lair-pagination-page-active, .lair-pagination .lair-pagination-page-active:hover, .sitewide-effort-navigation-item.sitewide-effort-navigation-item-current, .sitewide-effort-navigation-item.sitewide-effort-navigation-item-current:hover {
         border-color: var(--borders);
     }
-    .common-pagination .common-pagination-page-active, .common-pagination .common-pagination-page-active:hover, .common-js-pagination .common-pagination-page-active, .common-js-pagination .common-pagination-page-active:hover, .recipe-pagination .common-pagination-page[data-enabled="false"], .recipe-pagination .common-pagination-page[data-enabled="false"]:hover, .lair-pagination .lair-pagination-page-active, .lair-pagination .lair-pagination-page-active:hover {
+    .common-pagination .common-pagination-page-active, .common-pagination .common-pagination-page-active:hover, .common-js-pagination .common-pagination-page-active, .common-js-pagination .common-pagination-page-active:hover, .recipe-pagination .common-pagination-page[data-enabled="false"], .recipe-pagination .common-pagination-page[data-enabled="false"]:hover, .lair-pagination .lair-pagination-page-active, .lair-pagination .lair-pagination-page-active:hover, .sitewide-effort-navigation-item.sitewide-effort-navigation-item-current, .sitewide-effort-navigation-item.sitewide-effort-navigation-item-current:hover {
         background: linear-gradient(to bottom, var(--beige-button-one) 0%, var(--beige-button-two) 100%);
         text-shadow: 0 1px 1px var(--shadow);
         color: var(--text)
@@ -1414,7 +1684,7 @@ adblock2 "Disable" <<<EOT  EOT;
         border: 2px solid rgb(var(--warning));
         background-position: 5px 50%;
     }
-    .common-message:not(.common-message-info) {
+    .common-message:not(.common-message-info):not(.common-message-success):not(.skin-system-message-buy-blueprints) {
         background: var(--widget-med);
         border-color: var(--borders)
     }
@@ -1477,6 +1747,7 @@ adblock2 "Disable" <<<EOT  EOT;
     /*dark text inputs*/
     input, select, .common-filter input[type="text"],
     .common-filter input[type="number"],
+    .common-filter input[type="date"],
     .common-filter input[type="datetime-local"],
     .common-filter select,
     .input_reg, .input_reg:hover, .input_reg:focus {
@@ -1786,7 +2057,7 @@ adblock2 "Disable" <<<EOT  EOT;
     #statusboxcontext::after {
         content: '';
         background: var(--widget-med);
-        width: 275px;
+        width: 100%;
         height: 15px;
         border-radius: 12px 12px 0 0;
         bottom:0px;
@@ -2384,9 +2655,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .common-limited-textarea-footer {
         color: var(--text);
     }
-    .clan-profile-bio span[style*="color:"]:not([style*="transparent"]) {
-        color: inherit !important;
-    }
+    /*[[clan-color-text]]*/
     .common-limited-textarea-footer strong {
         color: var(--strong) !important;
     }
@@ -2570,7 +2839,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
         border: 1px solid var(--energy-border);
     }
-        .dragon-profile-energy-meter-full[style*="100%"], .dragon-profile-familiar-meter-frame[data-level="7"] .dragon-profile-familiar-meter-full {
+    .dragon-profile-energy-meter-full[style*="100%"], .dragon-profile-familiar-meter-frame[data-level="7"] .dragon-profile-familiar-meter-full {
         background: linear-gradient(to right, var(--energy-full-one) 0%, var(--energy-full-two) 100%);
         border: 1px solid var(--energy-full-border);
     }
@@ -2591,18 +2860,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border-right: 2px solid var(--borders-med);
         background-repeat: no-repeat;
     }
-    .dragon-profile-bio-text span:not([style*="transparent"]) {
-        color: var(--text) !important;
-    }
-    .dragon-profile-bio-text b {
-        color: var(--strong) !important;
-    }
-    a.bbcode_url {
-        color: var(--link) !important;
-    }
-        a.bbcode_url:hover, a.bbcode_url:focus {
-        color: var(--link-hover) !important;
-    }
+    /*[[bio-color-text]]*/
     .dragon-profile-ability-item-empty {
         border: 1px solid var(--borders);
         background: linear-gradient(to bottom, var(--widget-med) 0%, var(--widget-light) 100%);
@@ -2617,7 +2875,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         outline: 2px solid var(--borders);
     }
     #dragon-profile-likes .dragon-profile-likes-count {
-        color: var(--main)
+        color: var(--button-text-dark)
     }
     .dragon-profile-bio-vista-avatar img {
         border-radius: 10px !important;
@@ -5054,7 +5312,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .post-text-content span[style*="font-family"], .post-text-signature span[style*="font-family"] {
         font-family: var(--font-family) !important;
     }
-    .post-admin .post-text-content, .post-admin .post-text-content li, .post-admin .post-text-content li span {
+    .post-admin .post-text-content, .post-admin .post-text-content li, .post-admin .post-text-content li span, .search-result-body.adminpost {
         color: var(--admin-text) !important;
     }
     .post-admin .post-text-content a, .post-admin .post-text-content a > *, .post-admin .post-text-content ul li::marker {
@@ -5936,6 +6194,75 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         --gems: 138, 195, 237;
         --gems-text: 178, 222, 255;
     }
+    /*shared bg stuff
+    div.contentcontainer div.main[style*="/custom-shop/"] {
+        position: relative;
+        z-index: 2;
+        transform-style: preserve-3d;
+        background-image: none !important;
+    }
+    div.contentcontainer div.main[style*="/custom-shop/"] .content {
+        margin: 0;
+        padding: 10px;
+        background-image: var(--shop-bg);
+        width: inherit;
+        background-repeat: no-repeat;
+    }
+    div.contentcontainer div.main[style*="/custom-shop/"] .content::after {
+        content: '';
+        position: absolute;
+        height: 455px;
+        width: 100%;
+        z-index: -2;
+        filter: var(--filter) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        opacity: 0.1;
+        background-position: top right;
+        transform: translateZ(-2px);
+    }
+    div.contentcontainer div.main[style*="/custom-shop/"] .content::before {
+        content: '';
+        position: absolute;
+        height: 455px;
+        width: 100%;
+        z-index: -1;
+        background-image: linear-gradient(to bottom, rgb(34, 40, 43, 0) 0%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 70%, var(--main) 100%) !important;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        transform: translateZ(-1px);
+    }
+    
+    /*gloss*//*
+    div.contentcontainer div.main[style*="url(/static/cms/custom-shop/backgrounds/custom-shop-background-64d6ec1fe93f6.png)"] .content::after {
+        background-image: url('https://www1.flightrising.com/static/cms/scene/39684.png') !important;
+        filter: var(--filter) hue-rotate(var(--hue)) brightness(110%) contrast(150%);
+        background-position: top center;
+        background-size: 130%;
+    }
+    div.contentcontainer div.main[style*="url(/static/cms/custom-shop/backgrounds/custom-shop-background-64d6ec1fe93f6.png)"] .content {
+        --shop-bg: url(/static/cms/custom-shop/backgrounds/custom-shop-background-64d6ec1fe93f6.png);
+    }
+    
+    /*susie*//*
+    div.contentcontainer div.main[style*="url(/static/cms/custom-shop/backgrounds/custom-shop-background-63f21b07f1413.png)"]::after {
+        background-image: url('https://www1.flightrising.com/static/cms/scene/43382.png') !important;
+        filter: var(--filter) hue-rotate(var(--hue)) brightness(110%) contrast(150%);
+        background-position: center;
+        background-size: 120%;
+    }
+    div.contentcontainer div.main[style*="url(/static/cms/custom-shop/backgrounds/custom-shop-background-63f21b07f1413.png)"] .content {
+        --shop-bg: url(/static/cms/custom-shop/backgrounds/custom-shop-background-63f21b07f1413.png);
+    }
+    /*higgins*
+    div.contentcontainer div.main[style*="url(/static/cms/custom-shop/backgrounds/custom-shop-background-639d4d075d8d8.png)"]::after {
+        background-image: url('https://www1.flightrising.com/static/cms/scene/37361.png') !important;
+        filter: var(--filter) hue-rotate(var(--hue)) brightness(110%) contrast(150%);
+        background-position: bottom left;
+        background-size: 145%;
+    }*/
     
     /*grand exchange intro*/
     .common-message.custom-shops-common-message {
@@ -6059,8 +6386,13 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #sitewide-effort-details {
         background: none !important;
     }
+    #sitewide-effort-reward-collection h2 {
+        color: var(--strong)
+    }
     .sitewide-effort-milestone-contribution,
-    .sitewide-effort-turn-in {
+    .sitewide-effort-turn-in,
+    #sitewide-effort-reward-collection p,
+    #sitewide-effort-page > table td {
         color: var(--text) !important;
     }
     .sitewide-effort-turn-in strong, #sitewide-effort-current-milestone-title, .sitewide-effort-milestone-contribution strong, #sitewide-effort-current-milestone-status, .sitewide-effort-npc-dialog-name {
@@ -6069,9 +6401,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #sitewide-effort-current-milestone-title {
         border-color: var(--borders-light);
         padding-bottom: 0.5em;
-    }
-    #sitewide-effort-page > table td {
-        color: var(--text) !important;
     }
     #sitewide-effort-current-milestone-status strong,
     #sitewide-effort-current-milestone-status em {
@@ -6085,13 +6414,30 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background: linear-gradient(to right, var(--energy-full-one) 0%, var(--energy-full-two) 100%);
         border: 1px solid var(--energy-full-border);
     }
+    .sitewide-effort-navigation-item {
+        position: relative;
+    }
+    .sitewide-effort-navigation-item::after {
+        background-image: url("https://www1.flightrising.com/static/layout/effort/archive-milestone-inactive.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;left:0;
+    }
+    .sitewide-effort-navigation-item.sitewide-effort-navigation-item-current::after {
+        background-image: url("https://www1.flightrising.com/static/layout/effort/archive-milestone-active.png");
+    }
 }
-@-moz-document regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/wiki\\/skins\\/.*") {
+@-moz-document regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/wiki\\/skins\\/.*"), regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/skins.*") {
     /* Skins */
     /*set bg*/
     div.contentcontainer .main {
         position: relative;
         z-index: 2;
+        background: none !important;
     }
     div.contentcontainer .main::after {
         content: '';
@@ -6119,6 +6465,137 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         left: 0;
         background-repeat: no-repeat;
     }
+    .skin-system-status-bar {
+        color: var(--strong);
+        border-color: var(--divider)
+    }
+    .skin-system-status-meter-item {
+        border-color: var(--borders);
+        background: var(--widget-light)
+    }
+    .skin-system-status-meter-item-active {
+        background-color: rgb(var(--success))
+    }
+    .skin-system-status-meter-item-active:not(:has(~ .skin-system-status-meter-item-active)){
+        background-color: rgb(var(--warning))
+    }
+    .skin-system-upload input {
+        border-color: var(--borders)
+    }
+    .skin-system-styled-list li[data-pop="0"] {
+        background: var(--widget);
+        color: var(--text);
+        border-color: var(--borders)
+    }
+    .skin-system-hoard-item {
+        border: 1px solid var(--borders)
+    }
+    #skin-system-open-tooltip {
+        color: var(--text);
+        background: var(--tooltip-bg);
+        border-color: var(--borders);
+    }
+    #skin-system-open-tooltip .itemname {
+        background: linear-gradient(to right, var(--tooltip-bg) 0%,var(--tooltip-header) 100%)
+    }
+    #skin-system-currency-preview {
+        background-color: var(--widget-light);
+        border: 1px solid var(--borders)
+    }
+    /*pass*/
+    .skin-system-styled-list li[data-result="pass"][data-pop="1"],
+    .skin-system-hoard-item:not([data-valid="0"]),
+    .skin-system-order[data-status="completed"] {
+        color: var(--success-text);
+        border-color: rgb(var(--success));
+        background-color: rgba(var(--success),0.08);
+    }
+    .skin-system-styled-list li.skin-system-styled-list-item[data-result="pass"] a,
+    .skin-system-order[data-status="completed"] strong,
+    .skin-system-order[data-status="completed"] .skin-system-order-name,
+    .skin-system-order[data-status="completed"] a:not(.skin-system-order-action) {
+        color: rgb(var(--success));
+    }
+    .skin-system-styled-list li.skin-system-styled-list-item[data-result="pass"] a:hover,
+    .skin-system-styled-list li.skin-system-styled-list-item[data-result="pass"] a:hover *,
+    .skin-system-order[data-status="completed"] a:not(.skin-system-order-action):hover,
+    .skin-system-order[data-status="completed"] a:not(.skin-system-order-action):hover *,
+    .skin-system-order[data-status="completed"] em {
+        color: var(--success-text) !important;
+    }
+    /*fail*/
+    .skin-system-styled-list li[data-result="fail"][data-pop="1"],
+    .skin-system-order[data-status="needs_revision"]{
+        color: var(--error-text);
+        background-color: rgba(var(--error),0.15);
+        border-color: rgb(var(--error));
+    }
+    .skin-system-styled-list li.skin-system-styled-list-item[data-result="fail"] a,
+    .skin-system-order[data-status="needs_revision"] strong,
+    .skin-system-order[data-status="needs_revision"] .skin-system-order-name,
+    .skin-system-order[data-status="needs_revision"] a:not(.skin-system-order-action)  {
+        color: rgb(var(--error));
+    }
+    .skin-system-styled-list li.skin-system-styled-list-item[data-result="fail"] a:hover,
+    .skin-system-styled-list li.skin-system-styled-list-item[data-result="fail"] a:hover *,
+    .skin-system-order[data-status="needs_revision"] a:not(.skin-system-order-action):hover,
+    .skin-system-order[data-status="needs_revision"] a:not(.skin-system-order-action):hover *,
+    .skin-system-order[data-status="needs_revision"] em {
+        color: var(--error-text) !important;
+    }
+    /*warning*/
+    .skin-system-styled-list li[data-result="warning"][data-pop="1"],
+    .skin-system-message-buy-blueprints,
+    .skin-system-order[data-status="in_queue"],
+    .skin-system-order[data-status="in_progress"] {
+        color: var(--warning-text);
+        border-color: rgb(var(--warning));
+        background-color: rgba(var(--warning),0.08);
+    }
+    .skin-system-styled-list li.skin-system-styled-list-item[data-result="warning"] a,
+    .skin-system-message-buy-blueprints a,
+    .skin-system-order[data-status="in_queue"] .skin-system-order-name,
+    .skin-system-order[data-status="in_progress"] .skin-system-order-name,
+    .skin-system-order[data-status="in_queue"] strong,
+    .skin-system-order[data-status="in_progress"] strong,
+    .skin-system-order[data-status="in_queue"] a:not(.skin-system-order-action),
+    .skin-system-order[data-status="in_progress"] a:not(.skin-system-order-action) {
+        color: rgb(var(--warning));
+    }
+    .skin-system-styled-list li.skin-system-styled-list-item[data-result="warning"] a:hover,
+    .skin-system-styled-list li.skin-system-styled-list-item[data-result="warning"] a:hover *,
+    .skin-system-message-buy-blueprints a:hover,
+    .skin-system-message-buy-blueprints a:hover *,
+    .skin-system-order[data-status="in_queue"] em,
+    .skin-system-order[data-status="in_progress"] em,
+    .skin-system-order[data-status="in_queue"] a:not(.skin-system-order-action):hover,
+    .skin-system-order[data-status="in_progress"] a:not(.skin-system-order-action):hover,
+    .skin-system-order[data-status="in_queue"] a:not(.skin-system-order-action):hover *,
+    .skin-system-order[data-status="in_progress"] a:not(.skin-system-order-action):hover *  {
+        color: var(--warning-text) !important;
+    }
+    /*misc color resetting*/
+    .skin-system-warning-details, .skin-system-pass-details, .skin-system-fail-details,
+    .skin-system-styled-list-item strong, .skin-system-styled-list-item em,
+    .skin-system-hoard-item-owned {
+        color: inherit
+    }
+    span[style*="#76240f"], .skin-system-hoard-item-owned strong {
+        color: rgb(var(--success)) !important;
+    }
+    .skin-system-hoard-item[data-valid="0"] {
+        background: var(--widget);
+        color: var(--text)
+        filter: none
+    }
+    .skin-system-hoard-item[data-valid="0"] img {
+        filter: saturate(0%)
+    }
+    .skin-system-orders-footer {
+        color: var(--text-med)
+    }
+    
+    /*LEGACY and/or applies to wiki*/
     a[style*="#731d08"] {
         color: var(--link) !important;
     }
