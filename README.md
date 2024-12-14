@@ -33,3 +33,6 @@ Dracula\
 ![Screenshot of the home page in the Dracula theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/dracula1.png)\
 ![Screenshot of the Lair page in the Dracula theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/dracula2.png)
 
+Custom Example
+![Screenshot of a custom theme I threw together.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/custom.png)
+
