@@ -5867,6 +5867,16 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         width: 100%;
         padding: 10px 5px;
     }
+
+    .dragon-effect-controls {
+        background-color: var(--widget);
+        border: 1px solid var(--borders)
+    }
+    .dragon-effect-controls-inset {
+        background-color: var(--widget-med);
+        border: 1px solid var(--borders);
+        color: var(--text)
+    }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/main\\.php\\?p=battle.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/coliseum.*") {
     /* Coliseum */
@@ -6931,6 +6941,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/lair/buttons/pagination-next.png"], img[src$="/static/layout/lair/buttons/pagination-previous.png"],
     img[src$="/static/layout/icon_help.png"], img[src$="/static/layout/button_back.png"],
     img[src$="/static/effects/widget-pause.png"], img[src$="/static/effects/widget-play.png"],
+    img[src$="/static/effects/widget-link.png"],
     img[src$="/static/layout/dressingroom/button_loadoutfit.png"],
     img[src$="/static/layout/dressingroom/button_saveoutfit.png"],
     img[src$="/static/layout/dressingroom/button_viewoutfit.png"],
