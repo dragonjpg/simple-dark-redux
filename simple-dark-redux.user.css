@@ -5352,10 +5352,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .post-admin .post-text-content, .post-admin .post-text-content li, .post-admin .post-text-content li span, .search-result-body.adminpost {
         color: var(--admin-text) !important;
     }
-    .post-admin .post-text-content a, .post-admin .post-text-content a > *, .post-admin .post-text-content ul li::marker {
+    .post-admin .post-text-content a:not(.dragon-effect-controls-item), .post-admin .post-text-content a:not(.dragon-effect-controls-item) > *, .post-admin .post-text-content ul li::marker {
         color: var(--admin-link) !important;
     }
-    .post-admin .post-text-content a:hover, .post-admin .post-text-content a:focus, .post-admin .post-text-content a:hover > *, .post-admin .post-text-content a:focus > * {
+    .post-admin .post-text-content a:not(.dragon-effect-controls-item):hover, .post-admin .post-text-content a:not(.dragon-effect-controls-item):focus, .post-admin .post-text-content a:not(.dragon-effect-controls-item):hover > *, .post-admin .post-text-content a:not(.dragon-effect-controls-item):focus > * {
         color: var(--admin-link-hover) !important;
     }
     .post-admin .post-text-content b, .post-admin .post-text-content strong {
@@ -5893,16 +5893,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     button#preclose {
         width: 100%;
         padding: 10px 5px;
-    }
-
-    .dragon-effect-controls {
-        background-color: var(--widget);
-        border: 1px solid var(--borders)
-    }
-    .dragon-effect-controls-inset {
-        background-color: var(--widget-med);
-        border: 1px solid var(--borders);
-        color: var(--text)
     }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/main\\.php\\?p=battle.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/coliseum.*") {
