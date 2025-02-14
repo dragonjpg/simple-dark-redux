@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        2.0.0
+@version        2.0.1
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -912,7 +912,7 @@ adblock2 "Disable" <<<EOT  EOT;
     .wws-toggle-label {
         color: var(--text-disabled);
     }
-    a, a.link, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a {
+    a, a.link, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a, .dragon-effect-controls a {
         color: var(--link);
     }
     a:hover, a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover, #export-outfit-dialog-confirm a:hover  {
@@ -2387,6 +2387,25 @@ adblock2 "Disable" <<<EOT  EOT;
     div#bbcode-tag-bar {
         padding: 5px !important;
     }
+    /*effects widgets*/
+    .dragon-effect-controls {
+        background: none;
+        border: none;
+    }
+    .dragon-effect-controls[data-layout="bbcode"], .dragon-effect-controls[data-layout="gamedb"] {
+        background-color: var(--widget);
+        border: 1px solid var(--borders);
+    }
+    .dragon-effect-controls-inset {
+        background-color: var(--widget-med);
+        border: 1px solid var(--borders);
+    }
+    .dragon-effect-controls-inset-text {
+        color: var(--text);
+    }
+    .dragon-effect-controls-inset-text strong {
+        color: var(--strong);
+    }
 
     /*[[adblock]]*/
     
@@ -2612,6 +2631,11 @@ adblock2 "Disable" <<<EOT  EOT;
     div#dialog.ui-dialog-content.ui-widget-content div[style*="background-color:#dedacf;"] span {
         color: var(--text) !important;
     }
+    
+    /*prevents icon from showing up on full screen jigsaw puzzle*/
+    .main:has(#luckystreak) {
+        z-index: 4;
+    }
 }
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/clan\\/activity\\/.*") {
@@ -2829,6 +2853,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #dragon-profile-dragon-frame, #dragon-profile-familiar-frame, .dragon-profile-scene-scenic-dragon, .common-animated-familiar {
         filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, .5));
     }
+    #dragon-profile-dragon-frame .dragon-effect-fallback {
+        padding: 25px 0 0 25px;
+    }
     .dragon-profile-scene-custom::after {
         background: linear-gradient(to bottom, var(--main) 0%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 70%, var(--main) 100%) !important;
     }
@@ -2861,7 +2888,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-repeat: no-repeat;
     }
     /*[[bio-color-text]]*/
-    .dragon-profile-ability-item-empty {
+    .dragon-profile-ability-item-empty, .dragon-profile-item-blank {
         border: 1px solid var(--borders);
         background: linear-gradient(to bottom, var(--widget-med) 0%, var(--widget-light) 100%);
     }
@@ -2885,7 +2912,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background: var(--widget-med);
         padding-left: 45px;
     }
-    .choose-scene-options, #choose-familiar-options, #choose-dragon-apparel-apparel-results .choose-dragon-apparel-scrollable-results, #choose-dragon-apparel-skin-results .choose-dragon-apparel-scrollable-results {
+    .choose-scene-options, #choose-familiar-options, #choose-dragon-apparel-apparel-results .choose-dragon-apparel-scrollable-results, #choose-dragon-apparel-skin-results .choose-dragon-apparel-scrollable-results, #choose-effect-page .choose-effect-list, #choose-effect-page .dragon-effect-current {
         border: 2px solid var(--borders-med);
         outline: 2px solid var(--borders);
         background: var(--widget-med);
@@ -2985,6 +3012,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border: 2px solid var(--borders);
         border-bottom: none;
         border-radius: 10px 10px 0px 0px;
+    }
+    .common-tab[data-coverage] {
+        border-bottom: 2px solid var(--borders) !important;
     }
     .common-tab-center {
         font-weight: bold !important;
@@ -3153,7 +3183,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         top: 0;
         left: 0;
         z-index: -1;
-    }
+    }    
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/lair.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/den.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/nesting\\/.*") {
     /* Lair, Den, & Nesting Grounds  */
@@ -5229,6 +5259,13 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border: 2px solid var(--borders-med);
         outline: 2px solid var(--borders);
     }
+    /*fix fallback image display issues*/
+    #game-database-record-sidebar .dragon-effect-fallback img {
+        max-width: 100% !important;
+        height: auto;
+        padding: 15px;
+        box-sizing: border-box;
+    }
 }
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/site\\/dev-tracker.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/msgs.*") {
@@ -5315,10 +5352,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .post-admin .post-text-content, .post-admin .post-text-content li, .post-admin .post-text-content li span, .search-result-body.adminpost {
         color: var(--admin-text) !important;
     }
-    .post-admin .post-text-content a, .post-admin .post-text-content a > *, .post-admin .post-text-content ul li::marker {
+    .post-admin .post-text-content a:not(.dragon-effect-controls-item), .post-admin .post-text-content a:not(.dragon-effect-controls-item) > *, .post-admin .post-text-content ul li::marker {
         color: var(--admin-link) !important;
     }
-    .post-admin .post-text-content a:hover, .post-admin .post-text-content a:focus, .post-admin .post-text-content a:hover > *, .post-admin .post-text-content a:focus > * {
+    .post-admin .post-text-content a:not(.dragon-effect-controls-item):hover, .post-admin .post-text-content a:not(.dragon-effect-controls-item):focus, .post-admin .post-text-content a:not(.dragon-effect-controls-item):hover > *, .post-admin .post-text-content a:not(.dragon-effect-controls-item):focus > * {
         color: var(--admin-link-hover) !important;
     }
     .post-admin .post-text-content b, .post-admin .post-text-content strong {
@@ -6106,6 +6143,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         width: 100%;
         height: 100%;
         z-index: -1;
+    }
+    /*fix weird z-index issue with back button. only occurs with arlo?*/
+    img[src$="/static/layout/button_back.png"] {
+        z-index: 1;
     }
 }
 
@@ -6909,6 +6950,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/profile/hub-button-familiar.png"],
     img[src$="/static/layout/profile/hub-button-scene.png"],
     img[src$="/static/layout/profile/hub-button-vista.png"],
+    img[src$="/static/layout/profile/hub-button-effect.png"],
+    img[src$="/static/effects/widget-preview.png"],
     img[src$="/static/layout/profile/button-remove.png"],
     img[src$="/static/layout/profile/button-export-outfit.png"],
     img[src$="/static/layout/button_completetrade.png"],
@@ -6919,6 +6962,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/pagination/pagination-check.png"],
     img[src$="/static/layout/lair/buttons/pagination-next.png"], img[src$="/static/layout/lair/buttons/pagination-previous.png"],
     img[src$="/static/layout/icon_help.png"], img[src$="/static/layout/button_back.png"],
+    img[src$="/static/effects/widget-pause.png"], img[src$="/static/effects/widget-play.png"],
+    img[src$="/static/effects/widget-link.png"],
     img[src$="/static/layout/dressingroom/button_loadoutfit.png"],
     img[src$="/static/layout/dressingroom/button_saveoutfit.png"],
     img[src$="/static/layout/dressingroom/button_viewoutfit.png"],
