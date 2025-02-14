@@ -2798,6 +2798,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #dragon-profile-details-misc .common-tab {
         width: 153px;
     }
+    .dragon-profile-item-blank {
+        background: var(--widget);
+        border: 1px solid var(--borders);
+    }
     .common-tab-center {
         font-size: 11px;
     }
@@ -3162,6 +3166,12 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         left: 0;
         z-index: -1;
     }
+
+    /*effects*/
+    .dragon-effect-controls {
+        background: none;
+        border: none;
+      }      
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/lair.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/den.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/nesting\\/.*") {
     /* Lair, Den, & Nesting Grounds  */
@@ -4319,6 +4329,22 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     img[src$="/static/layout/achievements/badge-complete.png"] {
         filter: sepia(100%) hue-rotate(75deg) brightness(110%) saturate(200%);
+    }
+
+    /* Game database preview */
+    .dragon-effect-controls {
+        background-color: var(--widget);
+        border: 1px solid var(--borders);
+    }
+    .dragon-effect-controls-inset {
+        background-color: var(--widget-med);
+        border: 1px solid var(--borders);
+    }
+    .dragon-effect-controls-inset-text {
+        color: var(--text);
+    }
+    .dragon-effect-controls-inset-text strong {
+        color: var(--strong);
     }
 }
 
@@ -5872,6 +5898,16 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         width: 100%;
         padding: 10px 5px;
     }
+
+    .dragon-effect-controls {
+        background-color: var(--widget);
+        border: 1px solid var(--borders)
+    }
+    .dragon-effect-controls-inset {
+        background-color: var(--widget-med);
+        border: 1px solid var(--borders);
+        color: var(--text)
+    }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/main\\.php\\?p=battle.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/coliseum.*") {
     /* Coliseum */
@@ -6929,6 +6965,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/profile/hub-button-scene.png"],
     img[src$="/static/layout/profile/hub-button-vista.png"],
     img[src$="/static/layout/profile/hub-button-effect.png"],
+    img[src$="/static/effects/widget-preview.png"],
     img[src$="/static/layout/profile/button-remove.png"],
     img[src$="/static/layout/profile/button-export-outfit.png"],
     img[src$="/static/layout/button_completetrade.png"],
@@ -6939,6 +6976,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/pagination/pagination-check.png"],
     img[src$="/static/layout/lair/buttons/pagination-next.png"], img[src$="/static/layout/lair/buttons/pagination-previous.png"],
     img[src$="/static/layout/icon_help.png"], img[src$="/static/layout/button_back.png"],
+    img[src$="/static/effects/widget-pause.png"], img[src$="/static/effects/widget-play.png"],
+    img[src$="/static/effects/widget-link.png"],
     img[src$="/static/layout/dressingroom/button_loadoutfit.png"],
     img[src$="/static/layout/dressingroom/button_saveoutfit.png"],
     img[src$="/static/layout/dressingroom/button_viewoutfit.png"],
