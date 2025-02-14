@@ -2392,7 +2392,7 @@ adblock2 "Disable" <<<EOT  EOT;
         background: none;
         border: none;
     }
-    .dragon-effect-controls[data-layout="bbcode"] {
+    .dragon-effect-controls[data-layout="bbcode"], .dragon-effect-controls[data-layout="gamedb"] {
         background-color: var(--widget);
         border: 1px solid var(--borders);
     }
@@ -2852,6 +2852,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     #dragon-profile-dragon-frame, #dragon-profile-familiar-frame, .dragon-profile-scene-scenic-dragon, .common-animated-familiar {
         filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, .5));
+    }
+    #dragon-profile-dragon-frame .dragon-effect-fallback {
+        padding: 25px 0 0 25px;
     }
     .dragon-profile-scene-custom::after {
         background: linear-gradient(to bottom, var(--main) 0%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 70%, var(--main) 100%) !important;
@@ -4338,22 +4341,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     img[src$="/static/layout/achievements/badge-complete.png"] {
         filter: sepia(100%) hue-rotate(75deg) brightness(110%) saturate(200%);
-    }
-
-    /* Game database preview */
-    .dragon-effect-controls {
-        background-color: var(--widget);
-        border: 1px solid var(--borders);
-    }
-    .dragon-effect-controls-inset {
-        background-color: var(--widget-med);
-        border: 1px solid var(--borders);
-    }
-    .dragon-effect-controls-inset-text {
-        color: var(--text);
-    }
-    .dragon-effect-controls-inset-text strong {
-        color: var(--strong);
     }
 }
 
