@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        2.0.1
+@version        2.0.2
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -2853,9 +2853,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #dragon-profile-dragon-frame, #dragon-profile-familiar-frame, .dragon-profile-scene-scenic-dragon, .common-animated-familiar {
         filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, .5));
     }
-    #dragon-profile-dragon-frame .dragon-effect-fallback {
-        padding: 25px 0 0 25px;
-    }
     .dragon-profile-scene-custom::after {
         background: linear-gradient(to bottom, var(--main) 0%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 70%, var(--main) 100%) !important;
     }
@@ -4991,7 +4988,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .hoard-result-item-box,
     .game-database-item-result,
     .game-database-monster-result,
-    #game-database-record-sidebar {
+    #game-database-record-sidebar,
+    .game-database-record-effect {
         background: linear-gradient(to bottom, var(--widget-light) 0%, var(--widget-med) 100%);
         border: 2px solid var(--borders-med);
         outline: 2px solid var(--borders);
@@ -5259,13 +5257,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border: 2px solid var(--borders-med);
         outline: 2px solid var(--borders);
     }
-    /*fix fallback image display issues*/
-    #game-database-record-sidebar .dragon-effect-fallback img {
-        max-width: 100% !important;
-        height: auto;
-        padding: 15px;
-        box-sizing: border-box;
-    }
+    
 }
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/site\\/dev-tracker.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/msgs.*") {
