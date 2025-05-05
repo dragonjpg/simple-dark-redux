@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        2.0.2
+@version        2.0.3
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -84,6 +84,12 @@ theme1 "Blue" <<<EOT
         --energy-full-two: #b75db7;
         --energy-full-border: #5a489b;
 
+        --admin-text: #ffa3a3;
+        --admin-strong: #ffc391;
+        --admin-em: #dfc1a4;
+        --admin-link: #ffed80;
+        --admin-link-hover: #fffad9;
+
 EOT;
 theme2 "Gray" <<<EOT
 
@@ -162,6 +168,12 @@ theme2 "Gray" <<<EOT
         --energy-full-one: #ffd016;
         --energy-full-two: #dc2562;
         --energy-full-border: #9c2116;
+
+        --admin-text: #ffa3a3;
+        --admin-strong: #ffc391;
+        --admin-em: #dfc1a4;
+        --admin-link: #ffed80;
+        --admin-link-hover: #fffad9;
 
 EOT;
 theme3 "Copper" <<<EOT
@@ -242,6 +254,12 @@ theme3 "Copper" <<<EOT
         --energy-full-two: #3d998d;
         --energy-full-border: #9c2116;
 
+        --admin-text: #ffa3a3;
+        --admin-strong: #ffc391;
+        --admin-em: #dfc1a4;
+        --admin-link: #ffed80;
+        --admin-link-hover: #fffad9;
+
 EOT;
 theme4 "Dracula" <<<EOT
 
@@ -320,6 +338,12 @@ theme4 "Dracula" <<<EOT
         --energy-full-one: #bd93f9;
         --energy-full-two: #ff79c6;
         --energy-full-border: #6272a4;
+        
+        --admin-text: #ffa3a3;
+        --admin-strong: #ffc391;
+        --admin-em: #dfc1a4;
+        --admin-link: #ffed80;
+        --admin-link-hover: #fffad9;
 
 EOT;
 
@@ -384,8 +408,8 @@ theme99 "Custom" <<<EOT
         --button-disabled-one: /*[[button-disabled-one]]*\/;
         --button-disabled-two: /*[[button-disabled-two]]*\/;
         
-        --selected: #4df0f0;
-        --selected-text: #000;
+        --selected: var(--beige-button-one);
+        --selected-text: var(--button-text-dark);
         
         --divider: /*[[divider]]*\/;
         
@@ -399,6 +423,13 @@ theme99 "Custom" <<<EOT
         --energy-full-one: /*[[energy-full-one]]*\/;
         --energy-full-two: /*[[energy-full-two]]*\/;
         --energy-full-border: /*[[energy-full-border]]*\/;
+
+
+        --admin-text: /*[[admin-text]]*\/;
+        --admin-link: /*[[admin-link]]*\/;
+        --admin-strong: /*[[admin-strong]]*\/;
+        --admin-em: /*[[admin-em]]*\/;
+        --admin-link-hover: /*[[admin-link-hover]]*\/;
 EOT;
 }
 
@@ -839,6 +870,12 @@ adblock2 "Disable" <<<EOT  EOT;
 @var color tab "Lair Tab" #17222d
 @var color tab-hover "Active Lair Tab" #163a59
 
+@var color admin-text "Admin Post Text" #ffa3a3
+@var color admin-strong "Admin Post Bold" #ffc391
+@var color admin-em "Admin Post Italic" #dfc1a4
+@var color admin-link "Admin Post Link" #ffed80
+@var color admin-link-hover "Admin Post Link Hover" #fffad9
+
 @var color energy-one "Energy/Progress Bars <100%/In-Progress Gradient 1" #235e96
 @var color energy-two "Energy/Progress Bars <100%/In-Progress Gradient 2" #80efbd
 @var color energy-border "Energy/Progress Bars <100%/In-Progress Border" #70d2ff
@@ -897,7 +934,7 @@ adblock2 "Disable" <<<EOT  EOT;
         font-size: 11px;
     }
     /*set misc. text color*/
-    td, th, .common-hub-item-description, #registration h1, #noauth-container h2, #error-404 div, .common-bubble-byline, .cc-color-override-603568657.cc-window {
+    td, th, .common-hub-item-description, #registration h1, #noauth-container h2, #error-404 div, .common-bubble-byline, .cc-color-override-603568657.cc-window, .friend-requests-page-details-main {
         color: var(--text);
     }
     strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown, .hoard-sale-buyback-item-name, .dgnres-index .cooldown .label, .wws-description h2 {
@@ -909,13 +946,13 @@ adblock2 "Disable" <<<EOT  EOT;
     em, i, span.whos-online-subtitle em, h4, h5, h6, .settings-hub-category-header, .dragon-profile-customize-category-header {
         color: var(--em);
     }
-    .wws-toggle-label {
+    .wws-toggle-label, .friend-requests-page-details-sub {
         color: var(--text-disabled);
     }
-    a, a.link, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a, .dragon-effect-controls a {
+    a, a.link, .message span a, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a, .dragon-effect-controls a, .friend-requests-page-details a {
         color: var(--link);
     }
-    a:hover, a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover, #export-outfit-dialog-confirm a:hover  {
+    a:hover, a:focus, .message span a:hover, .message span a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover, #export-outfit-dialog-confirm a:hover, .friend-requests-page-details a:hover, .friend-requests-page-details a:focus  {
         color: var(--link-hover);
     }
     /*dividers*/
@@ -924,7 +961,7 @@ adblock2 "Disable" <<<EOT  EOT;
         color: var(--divider) !important;
     }
     .dgnres-index .common-column:nth-child(2) .common-column-content,
-    .dgnres-table tr, .common-table tr, hr.skin-system-hr {
+    .dgnres-table tr, .common-table tr, hr.skin-system-hr, .friend-request {
         border-color: var(--divider)
     }
     img[src*="/images/layout/graydot.gif"], img[src*="/static/layout/graydot.gif"], img.divider {
@@ -1777,10 +1814,10 @@ adblock2 "Disable" <<<EOT  EOT;
     table#userlist tbody tr:last-child td {
         border-bottom: none;
     }
-    table:not(.bbcode_columns):not([id]) tbody tr {
+    table:not(.bbcode_columns):not([id]) tbody tr, .friend-request {
         background: var(--widget)
     }
-    table:not(.bbcode_columns):not([id]) tbody tr:nth-child(2n+1) {
+    table:not(.bbcode_columns):not([id]) tbody tr:nth-child(2n+1), .friend-request:nth-child(2n+1) {
         background: var(--widget-med)
     }
     table#userlist tbody tr[bgcolor] {
@@ -5263,11 +5300,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/site\\/dev-tracker.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/msgs.*") {
     /* Forums & PMs */
     :root {
-        --admin-text: #ffa3a3;
-        --admin-strong: #ffc391;
-        --admin-em: #dfc1a4;
-        --admin-link: #ffed80;
-        --admin-link-hover: #fffad9;
         --widget-med-alt: rgba(var(--widget-rgb),0.35);
     }
     
@@ -7142,6 +7174,15 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     img[src$="/static/layout/common/common-checkmark.png"] {
         filter: sepia(100%) hue-rotate(75deg) brightness(150%) saturate(250%);
+    }
+    
+    img[src$="/static/layout/accept.png"],
+    img[src$="/static/layout/friend/accept-request.png"] {
+        filter: sepia(100%) hue-rotate(75deg) brightness(90%) saturate(200%);
+    }
+    img[src$="/static/layout/reject.png"],
+    img[src$="/static/layout/friend/reject-request.png"] {
+        filter: sepia(100%) hue-rotate(295deg) brightness(85%) saturate(200%);
     }
     
 }
