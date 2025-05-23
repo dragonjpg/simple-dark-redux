@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        2.0.3
+@version        2.1.0
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -581,6 +581,43 @@ body > .copybar, body > #bottom-banner {
 EOT;
 }
 
+@advanced dropdown linkstyle "BBCode Link Styling" {
+linkstyle0 "Default" <<<EOT
+EOT;
+linkstyle1 "Underlines + Bold" <<<EOT
+    .bbcode_url, .post-edited a {
+        font-weight: bold;
+    }
+linkstyle2 "No Underlines" <<<EOT
+    .bbcode_url, .post-edited a {
+        text-decoration: none !important
+    }
+EOT;
+linkstyle3 "No Underlines + Bold" <<<EOT
+    .bbcode_url, .post-edited a {
+        text-decoration: none !important;
+        font-weight: bold;
+    }
+EOT;
+linkstyle4 "Underline on Hover" <<<EOT
+    .bbcode_url, .post-edited a {
+        text-decoration: none !important
+    }
+    .bbcode_url:hover, .bbcode_url:focus, .post-edited a:hover, .post-edited a:focus {
+        text-decoration: underline !important
+    }
+EOT;
+linkstyle5 "Underline on Hover + Bold" <<<EOT
+    .bbcode_url, .post-edited a {
+        text-decoration: none !important;
+        font-weight: bold;
+    }
+    .bbcode_url:hover, .bbcode_url:focus, .post-edited a:hover, .post-edited a:focus {
+        text-decoration: underline !important
+    }
+EOT;
+}
+
 @advanced dropdown stickymenu "Sticky Navigation" {
 stickymenu1 "Enable" <<<EOT /* sticky navigation *\/
 div.leftcolumn > div.content {
@@ -934,10 +971,10 @@ adblock2 "Disable" <<<EOT  EOT;
         font-size: 11px;
     }
     /*set misc. text color*/
-    td, th, .common-hub-item-description, #registration h1, #noauth-container h2, #error-404 div, .common-bubble-byline, .cc-color-override-603568657.cc-window, .friend-requests-page-details-main {
+    td, th, .common-hub-item-description, #registration h1, #noauth-container h2, #error-404 div, .common-bubble-byline, .cc-color-override-603568657.cc-window, .friend-requests-page-details-main, #postsheader {
         color: var(--text);
     }
-    strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown, .hoard-sale-buyback-item-name, .dgnres-index .cooldown .label, .wws-description h2 {
+    strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown, .hoard-sale-buyback-item-name, .dgnres-index .cooldown .label, .wws-description h2, #nrgavg div:first-child, #nrgavg div:last-child {
         color: var(--strong);
     }
     span[style*="color:"][style*="#6F1111"], .pinkerton-text-footer span[style*="color"] {
@@ -949,12 +986,13 @@ adblock2 "Disable" <<<EOT  EOT;
     .wws-toggle-label, .friend-requests-page-details-sub {
         color: var(--text-disabled);
     }
-    a, a.link, .message span a, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a, .dragon-effect-controls a, .friend-requests-page-details a {
+    a, a.link, .message span a, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a, .dragon-effect-controls a, .friend-requests-page-details a, #status-box .status-author a, .bbcode_url {
         color: var(--link);
     }
-    a:hover, a:focus, .message span a:hover, .message span a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover, #export-outfit-dialog-confirm a:hover, .friend-requests-page-details a:hover, .friend-requests-page-details a:focus  {
+    a:hover, a:focus, .message span a:hover, .message span a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover, #export-outfit-dialog-confirm a:hover, .friend-requests-page-details a:hover, .friend-requests-page-details a:focus, #status-box .status-author a:hover, #status-box .status-author a:focus, .bbcode_url:hover, .bbcode_url:focus  {
         color: var(--link-hover);
     }
+    /*[[linkstyle]]*/
     /*dividers*/
     hr, hr.announce-separator, .ah-search-submit-container hr {
         background-color: var(--divider) !important;
@@ -1044,11 +1082,11 @@ adblock2 "Disable" <<<EOT  EOT;
     #alertwin a[href*="/auction-house/activity/"] div.alert-v2::after {
         content: '⟡ NEW';
         font-weight: bold;
-        color: var(--text);
+        color: var(--success-text);
         position: absolute;
         bottom: 4px;
         left: 3px;
-        background: var(--text-dark);
+        background: rgba(var(--success),0.2);
         padding: 2px 4px;
         border-radius: 3px;
         font-size: 8px;
@@ -1279,6 +1317,7 @@ adblock2 "Disable" <<<EOT  EOT;
     }
     div.cluetip-inner.ui-cluetip-content, .cluetip.ui-widget {
         background: var(--tooltip-bg);
+        color: var(--tooltip-text);
     }
     .common-dialog .common-dialog-diagram, .common-currency-box-treasure, .common-currency-box-treasure-discount, .common-currency-box-gems, .common-currency-box-achievement-tokens, .common-currency-box-achievement-points, .common-currency-box-pursuit-points {
         background-color: var(--widget-med);
