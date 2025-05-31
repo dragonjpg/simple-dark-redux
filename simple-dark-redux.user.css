@@ -1,10 +1,11 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        2.1.0
+@version        2.2.0
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
+@var checkbox filler1 "─── ↓ Theme Selection & Customization ↓ ───" 1
 @advanced dropdown theme "Theme" {
 theme1 "Blue" <<<EOT 
 
@@ -21,6 +22,7 @@ theme1 "Blue" <<<EOT
         --widget: #192429;
         --widget-rgb: 23, 36, 43;
         --widget-med: #293036;
+        --widget-med-rgb: 41, 48, 54;
         --widget-light: #415362;
         --section: #0e131a;
         
@@ -106,6 +108,7 @@ theme2 "Gray" <<<EOT
         --widget: #212121;
         --widget-rgb: 33, 33, 33;
         --widget-med: #2e2e2e;
+        --widget-med-rgb: 46, 46, 46;
         --widget-light: #525252;
         --section: #141414;
         
@@ -191,6 +194,7 @@ theme3 "Copper" <<<EOT
         --widget: #1d120e;
         --widget-rgb: 29, 18, 14;
         --widget-med: #2c2521;
+        --widget-med-rgb: 44, 37, 33;
         --widget-light: #374047;
         --section: #0f0909;
         
@@ -276,6 +280,7 @@ theme4 "Dracula" <<<EOT
         --widget: #282a36;
         --widget-rgb: 40, 42, 54;
         --widget-med: #343643;
+        --widget-med-rgb: 52, 54, 67;
         --widget-light: #42455d;
         --section: #1b1c24;
         
@@ -361,6 +366,7 @@ theme99 "Custom" <<<EOT
         --widget: /*[[widget]]*\/;
         --widget-rgb: /*[[widget-rgb]]*\/;
         --widget-med: /*[[widget-med]]*\/;
+        --widget-med-rgb: /*[[widget-med-rgb]]*\/;
         --widget-light: /*[[widget-light]]*\/;
         --section: /*[[section]]*\/;
         
@@ -502,7 +508,7 @@ usertabbg10 "Stormy" <<<EOT
 EOT;
 }
 
-@advanced dropdown leftcol "Navigation" {
+@advanced dropdown leftcol "Navigation Position" {
 leftcol1 "Default" <<<EOT  EOT;
 leftcol2 "On Right" <<<EOT /* move column to right *\/
 div.contentcontainer {
@@ -581,43 +587,6 @@ body > .copybar, body > #bottom-banner {
 EOT;
 }
 
-@advanced dropdown linkstyle "BBCode Link Styling" {
-linkstyle0 "Default" <<<EOT
-EOT;
-linkstyle1 "Underlines + Bold" <<<EOT
-    .bbcode_url, .post-edited a {
-        font-weight: bold;
-    }
-linkstyle2 "No Underlines" <<<EOT
-    .bbcode_url, .post-edited a {
-        text-decoration: none !important
-    }
-EOT;
-linkstyle3 "No Underlines + Bold" <<<EOT
-    .bbcode_url, .post-edited a {
-        text-decoration: none !important;
-        font-weight: bold;
-    }
-EOT;
-linkstyle4 "Underline on Hover" <<<EOT
-    .bbcode_url, .post-edited a {
-        text-decoration: none !important
-    }
-    .bbcode_url:hover, .bbcode_url:focus, .post-edited a:hover, .post-edited a:focus {
-        text-decoration: underline !important
-    }
-EOT;
-linkstyle5 "Underline on Hover + Bold" <<<EOT
-    .bbcode_url, .post-edited a {
-        text-decoration: none !important;
-        font-weight: bold;
-    }
-    .bbcode_url:hover, .bbcode_url:focus, .post-edited a:hover, .post-edited a:focus {
-        text-decoration: underline !important
-    }
-EOT;
-}
-
 @advanced dropdown stickymenu "Sticky Navigation" {
 stickymenu1 "Enable" <<<EOT /* sticky navigation *\/
 div.leftcolumn > div.content {
@@ -632,6 +601,16 @@ EOT;
 stickymenu2 "Disable" <<<EOT  EOT;
 }
 
+@advanced dropdown adblock "Hide Ad Containers" {
+adblock1 "Enable" <<<EOT /*byebye bottom & nav ad banners*\/
+#bottom-banner, #skybanner {
+    display: none !important;
+}
+EOT;
+adblock2 "Disable" <<<EOT  EOT;
+}
+
+@var checkbox filler2 "────── ↓ Accessibility Settings ↓ ───────" 1
 @advanced dropdown modal-buttons "Larger Modal Buttons" {
 modal-buttons-1 "Enable" <<<EOT /*larger modal buttons*\/
 .dialog-button-tray, .dragon-picker-preview-buttons, div#confirm-trade > div:last-child, #confirm-approve > div:last-child,
@@ -789,11 +768,97 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 EOT;
 modal-buttons-2 "Disable" <<<EOT  EOT;
 }
+@advanced dropdown linkstyle "BBCode Link Styling" {
+linkstyle0 "Normal + Underline" <<<EOT
+EOT;
+linkstyle2 "Normal + No Underline" <<<EOT
+    .bbcode_url, .post-edited a, .post-text-content a {
+        text-decoration: none !important
+    }
+EOT;
+linkstyle4 "Normal + Underline on Hover" <<<EOT
+    .bbcode_url, .post-edited a, .post-text-content a {
+        text-decoration: none !important
+    }
+    .bbcode_url:hover, .bbcode_url:focus, .post-edited a:hover, .post-edited a:focus, .post-text-content a:hover, .post-text-content a:focus {
+        text-decoration: underline !important
+    }
+EOT;
+linkstyle1 "Bold + Underline" <<<EOT
+    .bbcode_url, .post-edited a, .post-text-content a {
+        font-weight: bold !important;
+    }
+EOT;
+linkstyle3 "Bold + No Underline" <<<EOT
+    .bbcode_url, .post-edited a, .post-text-content a {
+        text-decoration: none !important;
+        font-weight: bold !important;
+    }
+EOT;
+linkstyle5 "Bold + Underline on Hover" <<<EOT
+    .bbcode_url, .post-edited a, .post-text-content a {
+        text-decoration: none !important;
+        font-weight: bold !important;
+    }
+    .bbcode_url:hover, .bbcode_url:focus, .post-edited a:hover, .post-edited a:focus, .post-text-content a:hover, .post-text-content a:focus {
+        text-decoration: underline !important
+    }
+EOT;
+}
+@advanced dropdown colorquotes "Emphasize Nested Quotes & Hiddens" {
+colorquote1 "Disabled "<<<EOT EOT;
+colorquote2 "Enabled" <<<EOT
+    /*adds a colored border that alternates based on nesting depth
+        https://codepen.io/Miragecraft/pen/BabYmQV
+    *\/
+    :root {
+      /* space toggles *\/
+      --on: initial;
+      --off: /*!*\/;
+      /* initialize toggle cache *\/
+      --_1: var(--on);
+      --_2: var(--off);
+      --_3: var(--off);
+      --_4: var(--off);
+    }
+    .forum-hidden:has(.forum-hidden),
+    .forum-hidden:has(.forum-hidden) > .forum-hidden-header,
+    .forum-hidden .forum-hidden,
+    .forum-hidden .forum-hidden > .forum-hidden-header,
+    div.bbcode_quote:has(.bbcode_quote),
+    div.bbcode_quote div.bbcode_quote  {
+      /* promote cache *\/
+      --1: var(--_1);
+      --2: var(--_2);
+      --3: var(--_3);
+      --4: var(--_4);
+      border-left: 2px solid
+        var(--1, var(--strong))
+        var(--2, var(--link-hover))
+        var(--3, var(--link))
+        var(--4, var(--em));
+    }
+    /* rotate cache *\/
+    div.bbcode_quote > *, .forum-hidden > .forum-hidden-content {
+      --_1: var(--4);
+      --_2: var(--1);
+      --_3: var(--2);
+      --_4: var(--3);
+    }
+EOT;
+}
+@var range forum-font-size "Forum Posts Font Size" [12, 12, 20, 1, 'px']
+@var range forum-line-height "Forum Posts Line Height" [120, 100, 250, 10, '%']
+@var range msg-font-size "Private Message Font Size" [12, 12, 20, 1, 'px']
+@var range msg-line-height "Private Message Line Height" [120, 100, 250, 10, '%']
 @advanced dropdown clan-color-text "User-set Color Text in Clan Bios" {
 clan-color-text-1 "Remove" <<<EOT
 .clan-profile-bio span[style*="color:"]:not([style*="transparent"]) {
-            color: inherit !important;
-        }
+    color: inherit !important;
+}
+.clan-profile-bio a span[style*="color:"]:not([style*="transparent"]) {
+    color: inherit !important;
+}
 EOT;
 clan-color-text-2 "Allow" <<<EOT EOT;
 }
@@ -835,21 +900,43 @@ EOT;
 forum-color-text-1 "Remove" <<<EOT
 #topic-preview-text span[style*="color:"]:not(span[style*="transparent"]),
 .post-text span[style*="color:"]:not(span[style*="transparent"]) {
-    color: var(--accent-four) !important;
+    color: var(--text) !important;
 }
-
+#topic-preview-text a span[style*="color:"]:not(span[style*="transparent"]),
+.post-text a span[style*="color:"]:not(span[style*="transparent"]) {
+    color: inherit !important;
+}
 EOT;
 forum-color-text-2 "Allow" <<<EOT EOT;
 }
-@advanced dropdown adblock "Hide Ad Containers" {
-adblock1 "Enable" <<<EOT /*byebye bottom & nav ad banners*\/
-#bottom-banner, #skybanner {
-    display: none !important;
+
+@advanced dropdown clan-override-fonts "User-set Fonts in Clan Bios" {
+clan-override-fonts-2 "Allow" <<<EOT EOT;
+clan-override-fonts-1 "Remove" <<<EOT
+.clan-profile-bio span[style*="font-family:"] {
+	font-family: var(--font-family) !important;
 }
 EOT;
-adblock2 "Disable" <<<EOT  EOT;
 }
-@var checkbox filler "Custom Theme Settings & Colors ↓" 1
+
+@advanced dropdown bio-override-fonts "User-set Fonts in Dragon Bios" {
+bio-override-fonts-2 "Allow" <<<EOT EOT;
+bio-override-fonts-1 "Remove" <<<EOT
+.dragon-profile-bio span[style*="font-family:"] {
+	font-family: var(--font-family) !important;
+}
+EOT;
+}
+@advanced dropdown forum-override-fonts "User-set Fonts in Forum" {
+forum-override-fonts-1 "Remove" <<<EOT
+.post-text-content span[style*="font-family"], .post-text-signature span[style*="font-family"] {
+    font-family: var(--font-family) !important;
+}
+EOT;
+forum-override-fonts-2 "Allow" <<<EOT EOT;
+}
+
+@var checkbox filler0 "─── ↓ Custom Theme Settings & Colors ↓ ───" 1
 @var select filter "Buttons & Default Site BG" {
     "Color (Changes w/ Hue)":"sepia(100%)",
     "Grayscale":"grayscale(100%)"
@@ -923,9 +1010,9 @@ adblock2 "Disable" <<<EOT  EOT;
         
 @var color warning "Warning Message Links & BG (semi-transparent)" #fec16e
 @var color warning-text "Warning Message Text" #fde9bd
-@var color error "Error Message Links & BG  BG  (semi-transparent)" #ff829e
+@var color error "Error Message Links & BG (semi-transparent)" #ff829e
 @var color error-text "Error Message Text" #fac9d4
-@var color success "Success Message Links & BG  BG  (semi-transparent)" #98e764
+@var color success "Success Message Links & BG (semi-transparent)" #98e764
 @var color success-text "Success Message Text" #e2fac9
   
         
@@ -940,6 +1027,11 @@ adblock2 "Disable" <<<EOT  EOT;
         /*[[theme]]*/
         --font-family: Verdana, Geneva, sans-serif;
         --font-size: 12px;
+        --forum-font-size: /*[[forum-font-size]]*/;
+        --forum-line-height: /*[[forum-line-height]]*/;
+        --messaging-font-size: /*[[msg-font-size]]*/;
+        --messaging-line-height: /*[[msg-line-height]]*/;
+        
     }
     /*main*/
     ::selection, *::selection {
@@ -971,7 +1063,7 @@ adblock2 "Disable" <<<EOT  EOT;
         font-size: 11px;
     }
     /*set misc. text color*/
-    td, th, .common-hub-item-description, #registration h1, #noauth-container h2, #error-404 div, .common-bubble-byline, .cc-color-override-603568657.cc-window, .friend-requests-page-details-main, #postsheader {
+    td, th, .common-hub-item-description, #registration h1, #noauth-container h2, #error-404 div, .common-bubble-byline, .cc-color-override-603568657.cc-window, .friend-requests-page-details-main, #postsheader, .forum-hidden-header {
         color: var(--text);
     }
     strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown, .hoard-sale-buyback-item-name, .dgnres-index .cooldown .label, .wws-description h2, #nrgavg div:first-child, #nrgavg div:last-child {
@@ -2463,6 +2555,23 @@ adblock2 "Disable" <<<EOT  EOT;
     div#bbcode-tag-bar {
         padding: 5px !important;
     }
+    
+    .forum-hidden {
+        background: rgba(var(--widget-rgb), 0.7);
+        border-color: var(--borders);
+    }
+    .forum-hidden-header {
+        background: var(--section);
+        color: var(--strong);
+        border: 1px solid var(--borders);
+        font-weight: bold;
+        display: grid;
+        grid-template-columns: 20px auto;
+        align-items: center;
+    }
+    .forum-hidden-header:has(img[src="/static/svg_icons/eye-solid.svg"][style=""]) {
+        border-radius: 8px 8px 0 0;
+    }
     /*effects widgets*/
     .dragon-effect-controls {
         background: none;
@@ -2486,6 +2595,8 @@ adblock2 "Disable" <<<EOT  EOT;
     /*[[adblock]]*/
     
     /*[[modal-buttons]]*/
+    
+    /*[[colorquotes]]*/
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.)flightrising\\.com/main\\.php\\?p=settings.*") {
     /* Settings */
@@ -2756,6 +2867,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         color: var(--text);
     }
     /*[[clan-color-text]]*/
+    /*[[clan-override-fonts]]*/
     .common-limited-textarea-footer strong {
         color: var(--strong) !important;
     }
@@ -2961,6 +3073,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-repeat: no-repeat;
     }
     /*[[bio-color-text]]*/
+    /*[[bio-override-fonts]]*/
     .dragon-profile-ability-item-empty, .dragon-profile-item-blank {
         border: 1px solid var(--borders);
         background: linear-gradient(to bottom, var(--widget-med) 0%, var(--widget-light) 100%);
@@ -5339,7 +5452,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/site\\/dev-tracker.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/msgs.*") {
     /* Forums & PMs */
     :root {
-        --widget-med-alt: rgba(var(--widget-rgb),0.35);
+        --widget-med-alt: rgba(var(--widget-med-rgb),0.75);
     }
     
     /*fix dev tracker*/
@@ -5384,6 +5497,49 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border-color: var(--energy-full-border)
     }
     
+    /*font size accessibility option*/
+    .post-text-content,
+    .post-text-content .bbcode_columns,
+    #topic-preview-text {
+        font-size: var(--forum-font-size);
+        line-height: var(--forum-line-height);
+    }
+    #msg-text,
+    #msg-preview-text {
+        font-size: var(--messaging-font-size);
+        line-height: var(--messaging-line-height);
+    }
+    /*reset some widget styles to work with added font size accessibility*/
+    .post-text-content .pinglist-button,
+    #topic-preview-text .pinglist-button,
+    #msg-text .pinglist-button,
+    #msg-preview-text .pinglist-button {
+        line-height: 120%;
+        font-size: 11px;
+    }
+    .post-text-content .forum-map-widget-button-text,
+    .post-text-content .outfit-name,
+    #topic-preview-text .forum-map-widget-button-text, 
+    #topic-preview-text .outfit-name,
+    #msg-text .forum-map-widget-button-text, 
+    #msg-text .outfit-name,
+    #msg-preview-text .forum-map-widget-button-text, 
+    #msg-preview-text .outfit-name {
+        line-height: 120%;
+        font-size: 12px;
+    }
+    .post-text-content .gamedb-bbcode-icon,
+    #topic-preview-text .gamedb-bbcode-icon,
+    #msg-text .gamedb-bbcode-icon,
+    #msg-preview-text .gamedb-bbcode-icon {
+        top: calc(50% - 15px/2);
+    }
+    .post-text-content .dragon-effect-frame[data-layout="bbcode"] .dragon-effect-controls-inset-text,
+    #topic-preview-text .dragon-effect-frame[data-layout="bbcode"] .dragon-effect-controls-inset-text,
+    #msg-text .dragon-effect-frame[data-layout="bbcode"] .dragon-effect-controls-inset-text,
+    #msg-preview-text .dragon-effect-frame[data-layout="bbcode"] .dragon-effect-controls-inset-text {
+        line-height: 120%;
+    }
     /*forums*/
     .forumname {
         color: var(--link)
@@ -5391,10 +5547,20 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .forumlink {
         color: var(--text)
     }
+    .post-text-content td, .post-text-content th {
+        font-size: 0.83em;
+        line-height: var(--forum-line-height);
+    }
+    .post-text-content span[style*="font-size:"] {
+        line-height: var(--forum-line-height);
+    }
     .post-text[data-style="0"] .post-text-content, .post-text[data-style="0"] .post-text-content span,
     .post-text[data-style="0"] .post-text-content b, .post-text[data-style="0"] .post-text-content i, .post-text[data-style="0"] .post-text-content u, .post-text[data-style="0"] .post-text-content strike, .post-text[data-style="0"] .post-text-content span, .post-text[data-style="0"] .post-text-content td, .post-text[data-style="0"] .post-text-content sub, .post-text[data-style="0"] .post-text-content sup {
         color: var(--text) !important;
+        font-size: var(--forum-font-size) !important;
+        font-family: var(--font-family) !important;
     }
+    
     .post-text[data-style="0"] span.bbcode_spoiler {
         color: var(--section) !important;
         background: var(--section) !important;
@@ -5406,11 +5572,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .bbcode_spoiler:hover {
         color: var(--accent-two);
     }
+    /*[[forum-override-fonts]]*/
     .post-text[data-style="0"] span.bbcode_spoiler:hover {
         color: var(--accent-two) !important;
-    }
-    .post-text-content span[style*="font-family"], .post-text-signature span[style*="font-family"] {
-        font-family: var(--font-family) !important;
     }
     .post-admin .post-text-content, .post-admin .post-text-content li, .post-admin .post-text-content li span, .search-result-body.adminpost {
         color: var(--admin-text) !important;
@@ -5559,9 +5723,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border: 1px solid var(--borders);
         color: var(--text);
         border-radius: 0px 0px 7px 7px;
-    }
-    #topic-preview-text {
-        font-size: 12px;
     }
     #mbnew #topicbody {
         background-color: var(--widget-med) !important;
@@ -5946,7 +6107,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     #msg-preview-text {
         color: var(--text);
-        font-size: 13px;
         word-wrap: break-word;
     }
     #msg-preview #closediv {
@@ -7180,7 +7340,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/icon_itemnotattached.png"],
     img[src$="/static/layout/icon_currencynotattached.png"],
     img[src$="/static/layout/icon_dragonnotattached.png"],
-    img[src$="/static/icons/question.png"] {
+    img[src$="/static/icons/question.png"],
+    .forum-hidden-icon {
         filter: invert(100%) var(--filter) hue-rotate(var(--hue)) brightness(100%) contrast(100%)
     }
     #coli-equip-statpoints-btn, .coli-equip-statdlg-plus-btn.coli-equip-disabled {
