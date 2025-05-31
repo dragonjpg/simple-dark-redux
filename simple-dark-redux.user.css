@@ -22,6 +22,7 @@ theme1 "Blue" <<<EOT
         --widget: #192429;
         --widget-rgb: 23, 36, 43;
         --widget-med: #293036;
+        --widget-med-rgb: 41, 48, 54;
         --widget-light: #415362;
         --section: #0e131a;
         
@@ -107,6 +108,7 @@ theme2 "Gray" <<<EOT
         --widget: #212121;
         --widget-rgb: 33, 33, 33;
         --widget-med: #2e2e2e;
+        --widget-med-rgb: 46, 46, 46;
         --widget-light: #525252;
         --section: #141414;
         
@@ -192,6 +194,7 @@ theme3 "Copper" <<<EOT
         --widget: #1d120e;
         --widget-rgb: 29, 18, 14;
         --widget-med: #2c2521;
+        --widget-med-rgb: 44, 37, 33;
         --widget-light: #374047;
         --section: #0f0909;
         
@@ -277,6 +280,7 @@ theme4 "Dracula" <<<EOT
         --widget: #282a36;
         --widget-rgb: 40, 42, 54;
         --widget-med: #343643;
+        --widget-med-rgb: 52, 54, 67;
         --widget-light: #42455d;
         --section: #1b1c24;
         
@@ -362,6 +366,7 @@ theme99 "Custom" <<<EOT
         --widget: /*[[widget]]*\/;
         --widget-rgb: /*[[widget-rgb]]*\/;
         --widget-med: /*[[widget-med]]*\/;
+        --widget-med-rgb: /*[[widget-med-rgb]]*\/;
         --widget-light: /*[[widget-light]]*\/;
         --section: /*[[section]]*\/;
         
@@ -5447,7 +5452,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/site\\/dev-tracker.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/msgs.*") {
     /* Forums & PMs */
     :root {
-        --widget-med-alt: rgba(var(--widget-rgb),0.35);
+        --widget-med-alt: rgba(var(--widget-med-rgb),0.75);
     }
     
     /*fix dev tracker*/
