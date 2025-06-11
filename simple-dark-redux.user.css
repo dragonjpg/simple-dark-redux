@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        2.2.0
+@version        2.3.0
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -1918,6 +1918,11 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     .common-filter input[type="date"],
     .common-filter input[type="datetime-local"],
     .common-filter select,
+    .item-picker-filters input[type="text"],
+    .item-picker-filters input[type="number"],
+    .item-picker-filters input[type="date"],
+    .item-picker-filters input[type="datetime-local"],
+    .item-picker-filters select,
     .input_reg, .input_reg:hover, .input_reg:focus {
         background-color: var(--columns);
         color: var(--text);
@@ -2042,6 +2047,19 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     .common-checkbox[data-selected="1"]::after {
         filter: brightness(0);
     }
+    /*common meters*/
+    .common-meter-text, #crafter-meter .common-meter-text {
+        color: var(--button-text);
+        text-shadow: -1px 0 0 var(--shadow), 1px 0 0 var(--shadow), -1px 1px 0 var(--shadow), 1px 1px 0 var(--shadow), -1px 2px 0 var(--shadow), 1px 2px 0 var(--shadow), -1px -1px 0 var(--shadow), 1px -1px 0 var(--shadow), 0 -1px 0 var(--shadow);
+    }
+    .common-meter-full {
+        background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
+        border: 1px solid var(--energy-border);
+    }
+    .common-meter-full[style*="100%"] {
+        background: linear-gradient(to right, var(--energy-full-one) 0%, var(--energy-full-two) 100%);
+        border: 1px solid var(--energy-full-border);
+    }
     /*change text stroke to black*/
     .common-text-stroke-white {
         text-shadow: var(--stroke);
@@ -2086,6 +2104,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     }
     /*filter box*/
     .common-filters,
+    .item-picker-filters,
     #dragon-search-filters,
     .ah-search-options,
     .dragon-picker-filters, .morphology-picker-filters,
@@ -3625,9 +3644,15 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     /* Familiar Bonding & Fantastic Familiars */
     
     /*cottage bg on ff page*/
+    div.main[style*="/static/layout/fantastic-familiar/background.png"] div.content {
+        margin-left: 0;
+    }
     div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/background.png"], div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/background.png"] div.content {
         position: relative;
         z-index: 2;
+    }
+    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/background.png"] .inner-content {
+        padding-left: 0;
     }
     div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/background.png"] {
         background: none !important;
@@ -3655,7 +3680,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         content: '';
         position: absolute;
         top: -10px;
-        left: -10px;
         height: 100%;
         width: 100%;
         z-index: -1;
@@ -4045,11 +4069,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         top: 60px;
         transform: scale(1.05, 0.85) rotate(135deg);
     }
-    .common-npc-dialog {
-        background: linear-gradient(to bottom, var(--widget) 0%, var(--widget-med) 100%);
-        color: var(--text);
-        border-color: var(--borders);
-    }
     #baldwin-timer-value, .baldwin-timer-completed {
         color: var(--accent-three)
     }
@@ -4084,7 +4103,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border-color: rgb(var(--success));
         border-radius: 5px;
     }
-    #baldwin #plus-button::before {
+    
+    #baldwin #plus-button::before{
         content: '+';
         font-weight: bold;
         display: block;
@@ -4098,7 +4118,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         top: calc(50% - 24px);
         left: calc(50% - 24px);
         border-radius: 5px;
+        text-align: center;
     }
+        
     .baldwin-divider {
         background: none;
         position: relative;
@@ -4119,7 +4141,206 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         z-index: 2;
     }
 }
-
+@-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/sophie.*") {
+    /* Crafter NPCs General*/
+    
+    /*background stuff*/
+    div.contentcontainer div.main, div.contentcontainer div.main div.content {
+        position: relative;
+        z-index: 2;
+        margin-left: 0;
+    }
+    div.contentcontainer div.main {
+        background: none !important;
+    }
+    div.contentcontainer div.main::after {
+        /*scene bg of page*/
+        content: '';
+        position: absolute;
+        height: 525px;
+        width: 100%;
+        z-index: -2;
+        filter: var(--filter) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        opacity: 0.1;
+        background-position: top right;
+    }
+    div.contentcontainer div.main div.content {
+        width: calc(100% - 10px);
+        box-sizing: border-box;
+    }
+    div.contentcontainer div.main div.content::before {
+        /*npc bg*/
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        height: 100%;
+        width: calc(100% + 10px);
+        z-index: -1;
+        background-repeat: no-repeat;
+    }
+    div.contentcontainer div.main::before {
+        /*scene bg fade*/
+        content: '';
+        position: absolute;
+        height: 525px;
+        width: 100%;
+        z-index: -1;
+        background-image: linear-gradient(to bottom, rgb(34, 40, 43, 0) 0%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 70%, var(--main) 100%) !important;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+    }
+    .crafter-status-description a {
+        color: var(--link);
+    }
+    .crafter-meter-header, .crafter-recipe-reward-name, .crafter-recipe-ingredient {
+        color: var(--strong)
+    }
+    .crafter-recipe-footer-item {
+        color: var(--text);
+    }
+    #crafter-timer-countdown, #crafter-timer-subtitle {
+	    color: var(--accent-three);
+    }
+    #crafter-status-claim {
+        width: 100%;
+    }
+    .crafter-page-index {
+        padding-top: 10px;
+    }
+    .crafter-page-index #crafter-status {
+        background: linear-gradient(to bottom, var(--widget-light) 0%, var(--widget-med) 100%);
+        border: 2px solid var(--borders-med);
+        outline: 2px solid var(--borders);
+    }
+    #crafter-reduce-item {
+        background: rgba(var(--success),0.1);
+        border-color: rgb(var(--success));
+        border-radius: 5px;
+    }
+    #crafter-reduce-item::before {
+        /*standardize add button, match baldwin*/
+        content: '+';
+        font-weight: bold;
+        display: block;
+        background: rgb(var(--success));
+        color: var(--shadow);
+        font-size: 36px;
+        height: 48px;
+        width: 48px;
+        font-family: monospace;
+        position: relative;
+        top: calc(50% - 24px);
+        left: calc(50% - 24px);
+        border-radius: 5px;
+        text-align: center;
+    }
+    .crafter-status-diagram:not(:has(button)) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .crafter-status-arrow {
+        margin: 0 0.5rem;
+    }
+    /*recipe*/
+    .crafter-recipe, .crafter-recipe[data-locked="1"] {
+        background: linear-gradient(to top, var(--section) 0%, var(--widget) 50%, var(--widget-med) 100%);
+        color: var(--text);
+        border: 2px solid var(--borders-light);
+    }
+    .crafter-recipe-ingredients {
+        background: var(--widget-med);
+        color: var(--text);
+        border-color: var(--borders);
+    }
+    .crafter-recipe-ingredient-empty {
+        background: none;
+        position: relative;
+        z-index: 2;
+    }
+    .crafter-recipe-ingredient-empty::before {
+        content: '';
+        height: 20px;
+        width: 20px;
+        background: var(--widget-light);
+        border-radius: 3px;
+        border: 1px solid var(--borders);
+        position: absolute;
+        top: calc(50% - (20px / 2));
+        left: 2px;
+        z-index: -1;
+        box-sizing: border-box;
+    }
+    .crafter-recipe-ingredient[data-requirement-met="0"] {
+        opacity: 1;
+        color: var(--error-text);
+        filter: none;
+    }
+    .crafter-recipe-currency-treasure {
+        color: var(--warning-text);
+        background-color: rgba(var(--warning),0.2);
+        border-color: rgb(var(--warning));
+    }
+    .crafter-recipe-footer {
+        background: var(--widget-med);
+    }
+    .crafter-recipe-footer-item {
+        border-color: var(--borders-light)
+    }
+    /*locked recipe*/
+    .crafter-recipe[data-locked="1"] {
+        border-color: rgb(var(--error));
+        position: relative;
+    }
+    .crafter-recipe[data-locked="1"]::before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to top, rgba(var(--error),0.35) 0%, rgba(var(--error),0.2) 50%, transparent);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .crafter-recipe[data-locked="1"] > * {
+        z-index: 2;
+        position: relative;
+    }
+    .crafter-recipe[data-locked="1"] > .crafter-recipe-footer {
+        position: absolute;
+    }
+    .crafter-recipe[data-locked="1"] .crafter-recipe-ingredients {
+        border-color: rgba(var(--error),0.5);
+    }
+    .crafter-recipe[data-locked="1"] .crafter-recipe-footer {
+        background: rgba(var(--error),0.1);
+    }
+    .crafter-recipe[data-locked="1"] .crafter-recipe-footer-item,
+    .crafter-recipe[data-locked="1"] .crafter-recipe-footer-item * {
+        color: var(--error-text);
+        border-color: rgba(var(--error),0.5);
+    }
+    /*img stuff*/
+    img[src$="/static/layout/sophie/add-item.png"] {
+       display: none;
+    }
+}
+@-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/sophie.*") {
+    /*Sophie*/
+    div.contentcontainer div.main::after {
+        background-image: url('https://www1.flightrising.com/static/cms/scene/37360.png') !important;
+    }
+    div.contentcontainer div.main[style*="static/layout/sophie/reduce-background.png"] div.content::before {
+        background-image: url('https://www1.flightrising.com/static/layout/sophie/reduce-background.png') !important;
+    }
+    div.contentcontainer div.main[style*="static/layout/sophie/create-background.png"] div.content::before {
+        background-image: url('https://www1.flightrising.com/static/layout/sophie/create-background.png') !important;
+    }
+}
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/trivia.*") {
     /* Tomo */
@@ -4132,7 +4353,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         color: var(--accent-four);
     }
     #tomo-remaining-count {
-	color: var(--accent-three);
+	    color: var(--accent-three);
     }
     /* correct/incorrect labels for tomo answers */
     .tomo-answer {
@@ -6372,7 +6593,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         z-index: 1;
     }
 }
-
 @-moz-document regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/market.*") {
     /* Marketplace */
     :root {
@@ -7202,7 +7422,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/game-database/button-share.png"],
     img[src$="/static/icons/tidy-up.png"],
     img[src$="/static/layout/button_approvetrade.png"], img[src$="/static/layout/button_canceltrade.png"],
-    img[src$="/static/layout/forum/forum-icon-link.png"]
+    img[src$="/static/layout/forum/forum-icon-link.png"],
+    .flattery-meter-frame[data-level="7"] .flattery-meter-full.common-meter-full::before
     {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
     }
@@ -7328,6 +7549,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     img[src$="/static/layout/swipp/swipp-arrow.png"],
     img[src$="/static/layout/baldwin/arrow.png"],
+    img[src$="/static/layout/crafter/arrow.png"],
     img[src$="/static/layout/lair/buttons/page-expand.png"],
     img[src$="/static/layout/lair/buttons/page-collapse.png"],
     img[src$="/static/icons/close.png"],
@@ -7347,7 +7569,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #coli-equip-statpoints-btn, .coli-equip-statdlg-plus-btn.coli-equip-disabled {
         filter: invert(100) var(--filter) hue-rotate(var(--hue)) brightness(110%) saturate(200%);
     }
-    img[src$="/static/layout/baldwin/arrow.png"] {
+    img[src$="/static/layout/baldwin/arrow.png"],
+    img[src$="/static/layout/crafter/arrow.png"] {
         content: url(https://www1.flightrising.com/static/layout/swipp/swipp-arrow.png) !important
     }
     img[src$="/static/layout/lair/icons/male.png"],
