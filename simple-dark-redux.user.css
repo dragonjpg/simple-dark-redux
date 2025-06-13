@@ -1,7 +1,9 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
-@version        2.3.0
+@homepageURL    https://github.com/dragonjpg/simple-dark-redux
+@supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
+@version        2.3.1
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -853,18 +855,36 @@ EOT;
 @var range msg-line-height "Private Message Line Height" [120, 100, 250, 10, '%']
 @advanced dropdown clan-color-text "User-set Color Text in Clan Bios" {
 clan-color-text-1 "Remove" <<<EOT
-.clan-profile-bio span[style*="color:"]:not([style*="transparent"]) {
+.clan-profile-bio span[style*="color:"]:not([style*="transparent"]):not(.bbcode_spoiler) {
     color: inherit !important;
 }
 .clan-profile-bio a span[style*="color:"]:not([style*="transparent"]) {
     color: inherit !important;
 }
 EOT;
-clan-color-text-2 "Allow" <<<EOT EOT;
+clan-color-text-2 "Allow" <<<EOT 
+.clan-profile-bio {
+    color: var(--text);
+}
+.clan-profile-bio span[style*="color:"] b,
+.clan-profile-bio span[style*="color:"] i,
+.clan-profile-bio span[style*="color:"] strong,
+.clan-profile-bio span[style*="color:"] em,
+.clan-profile-bio span[style*="color:"] u,
+.clan-profile-bio span[style*="color:"] a.bbcode_url {
+    color: inherit;
+}
+.clan-profile-bio a.bbcode_url {
+    color: var(--link);
+}
+.clan-profile-bio a.bbcode_url:hover, .clan-profile-bio a.bbcode_url:focus {
+    color: var(--link-hover);
+}
+EOT;
 }
 @advanced dropdown bio-color-text "User-set Color Text in Dragon Bios" {
 bio-color-text-1 "Remove" <<<EOT
-.dragon-profile-bio-text span:not([style*="transparent"]) {
+.dragon-profile-bio-text span:not([style*="transparent"]):not(.bbcode_spoiler) {
     color: var(--text) !important;
 }
 .dragon-profile-bio-text b {
@@ -881,16 +901,21 @@ a.bbcode_url:hover, a.bbcode_url:focus {
 }
 EOT;
 bio-color-text-2 "Allow" <<<EOT
-.dragon-profile-bio-text span:not([style*="transparent"]) {
+.dragon-profile-bio-text {
     color: var(--text);
 }
-.dragon-profile-bio-text b {
-    color: var(--strong);
+.dragon-profile-bio-text span[style*="color:"] b,
+.dragon-profile-bio-text span[style*="color:"] i,
+.dragon-profile-bio-text span[style*="color:"] strong,
+.dragon-profile-bio-text span[style*="color:"] em,
+.dragon-profile-bio-text span[style*="color:"] u,
+.dragon-profile-bio-text span[style*="color:"] a.bbcode_url {
+    color: inherit;
 }
-a.bbcode_url {
+.dragon-profile-bio-text a.bbcode_url {
     color: var(--link);
 }
-a.bbcode_url:hover, a.bbcode_url:focus {
+.dragon-profile-bio-text a.bbcode_url:hover, .dragon-profile-bio-text a.bbcode_url:focus {
     color: var(--link-hover);
 }
 EOT;
@@ -898,16 +923,43 @@ EOT;
 
 @advanced dropdown forum-color-text "User-set Color Text in Forums" {
 forum-color-text-1 "Remove" <<<EOT
-#topic-preview-text span[style*="color:"]:not(span[style*="transparent"]),
-.post-text span[style*="color:"]:not(span[style*="transparent"]) {
+#topic-preview-text span[style*="color:"]:not(span[style*="transparent"]):not(.bbcode_spoiler),
+.post-text span[style*="color:"]:not(span[style*="transparent"]):not(.bbcode_spoiler) {
     color: var(--text) !important;
 }
 #topic-preview-text a span[style*="color:"]:not(span[style*="transparent"]),
 .post-text a span[style*="color:"]:not(span[style*="transparent"]) {
     color: inherit !important;
 }
+
 EOT;
-forum-color-text-2 "Allow" <<<EOT EOT;
+forum-color-text-2 "Allow" <<<EOT
+#topic-preview-text, .post-text {
+    color: var(--text);
+}
+.post-text span[style*="color:"] b,
+.post-text span[style*="color:"] i,
+.post-text span[style*="color:"] strong,
+.post-text span[style*="color:"] em,
+.post-text span[style*="color:"] u,
+.post-text span[style*="color:"] a.bbcode_url,
+#topic-preview-text span[style*="color:"] b,
+#topic-preview-text span[style*="color:"] i,
+#topic-preview-text span[style*="color:"] strong,
+#topic-preview-text span[style*="color:"] em,
+#topic-preview-text span[style*="color:"] u,
+#topic-preview-text span[style*="color:"] a.bbcode_url {
+    color: inherit;
+}
+.post-text a.bbcode_url,
+#topic-preview-text a.bbcode_url {
+    color: var(--link);
+}
+.post-text a.bbcode_url:hover, .post-text a.bbcode_url:focus,
+#topic-preview-text a.bbcode_url:hover, #topic-preview-text a.bbcode_url:focus {
+    color: var(--link-hover);
+}
+EOT;
 }
 
 @advanced dropdown clan-override-fonts "User-set Fonts in Clan Bios" {
@@ -929,6 +981,7 @@ EOT;
 }
 @advanced dropdown forum-override-fonts "User-set Fonts in Forum" {
 forum-override-fonts-1 "Remove" <<<EOT
+#topic-preview-text span[style*="font-family"],
 .post-text-content span[style*="font-family"], .post-text-signature span[style*="font-family"] {
     font-family: var(--font-family) !important;
 }
@@ -1078,10 +1131,13 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     .wws-toggle-label, .friend-requests-page-details-sub {
         color: var(--text-disabled);
     }
-    a, a.link, .message span a, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a, .dragon-effect-controls a, .friend-requests-page-details a, #status-box .status-author a, .bbcode_url {
+    a, a.link, .message span a, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a, .dragon-effect-controls a, .friend-requests-page-details a, #status-box .status-author a, .bbcode_url, .bbcode_spoiler:hover .bbcode_url, .bbcode_spoiler:focus-within .bbcode_url {
         color: var(--link);
     }
-    a:hover, a:focus, .message span a:hover, .message span a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover, #export-outfit-dialog-confirm a:hover, .friend-requests-page-details a:hover, .friend-requests-page-details a:focus, #status-box .status-author a:hover, #status-box .status-author a:focus, .bbcode_url:hover, .bbcode_url:focus  {
+    .bbcode_spoiler .bbcode_url {
+        color: inherit;
+    }
+    a:hover, a:focus, .message span a:hover, .message span a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover, #export-outfit-dialog-confirm a:hover, .friend-requests-page-details a:hover, .friend-requests-page-details a:focus, #status-box .status-author a:hover, #status-box .status-author a:focus, .bbcode_url:hover, .bbcode_url:focus, .bbcode_spoiler .bbcode_url:hover, .bbcode_spoiler .bbcode_url:focus  {
         color: var(--link-hover);
     }
     /*[[linkstyle]]*/
@@ -2056,9 +2112,26 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
         background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
         border: 1px solid var(--energy-border);
     }
+    #crafter-frame[data-slug] .common-meter-full {
+        background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%) !important;
+        border: 1px solid var(--energy-border) !important;
+    }
     .common-meter-full[style*="100%"] {
         background: linear-gradient(to right, var(--energy-full-one) 0%, var(--energy-full-two) 100%);
         border: 1px solid var(--energy-full-border);
+    }
+    #crafter-frame[data-slug] .common-meter-full[style*="100%"] {
+        background: linear-gradient(to right, var(--energy-full-one) 0%, var(--energy-full-two) 100%) !important;
+        border: 1px solid var(--energy-full-border) !important;
+    }
+    /*spoilers*/
+    .bbcode_spoiler, .legacy-bbcode .bbcode_spoiler {
+        color: var(--section);
+        background: var(--section);
+    }
+    .bbcode_spoiler:hover, .legacy-bbcode .bbcode_spoiler:hover,
+    .bbcode_spoiler:focus-within, .legacy-bbcode .bbcode_spoiler:focus-within {
+        color: var(--text);
     }
     /*change text stroke to black*/
     .common-text-stroke-white {
@@ -5790,12 +5863,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         color: var(--section);
         background: var(--section);
     }
-    .bbcode_spoiler:hover {
-        color: var(--accent-two);
-    }
     /*[[forum-override-fonts]]*/
     .post-text[data-style="0"] span.bbcode_spoiler:hover {
-        color: var(--accent-two) !important;
+        color: var(--text) !important;
     }
     .post-admin .post-text-content, .post-admin .post-text-content li, .post-admin .post-text-content li span, .search-result-body.adminpost {
         color: var(--admin-text) !important;
@@ -6549,6 +6619,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     
     div.content {
         background: none !important;
+    }
+    #archaeology-xp-meter .common-meter-full {
+        border-color: #000;
     }
     #archaeology-xp-meter-label,
     #archaeology-xp-meter-amount,
