@@ -1,6 +1,8 @@
 /* ==UserStyle==
 @name           Simple Dark Redux for Flight Rising
 @namespace      userstyles.world/user/meow
+@homepageURL    https://github.com/dragonjpg/simple-dark-redux
+@supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @version        2.3.1
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
@@ -6617,6 +6619,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     
     div.content {
         background: none !important;
+    }
+    #archaeology-xp-meter .common-meter-full {
+        border-color: #000;
     }
     #archaeology-xp-meter-label,
     #archaeology-xp-meter-amount,
