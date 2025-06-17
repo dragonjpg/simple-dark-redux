@@ -3,7 +3,7 @@
 @namespace      userstyles.world/user/meow
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
-@version        2.3.1
+@version        2.3.2
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -1739,7 +1739,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     /*more buttons*/
     .common-ui-button, .lair-pagination .lair-pagination-page, .common-pagination .common-pagination-page,
     .common-ui-vertical-button-group, .common-js-pagination .common-pagination-page, .wws-carousel-navigation-status,
-    .sitewide-effort-navigation-item {
+    .sitewide-effort-navigation-item, .item-picker-pagination-pages {
         color: var(--button-text-dark);
         border: 2px solid var(--borders-med);
         background: linear-gradient(to bottom, var(--button-one) 0%, var(--button-two) 100%);
@@ -1769,11 +1769,9 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
         min-width: 100px;
         width: auto;
     }
-    /*.common-pagination .common-pagination-page, .common-js-pagination .common-pagination-page {
-        color: var(--borders-med);
-    }*/
     .common-pagination .common-pagination-page:hover, .common-js-pagination .common-pagination-page:hover, .common-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover, .common-js-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover,
-    .sitewide-effort-navigation-item:not(.sitewide-effort-navigation-item-current):hover {
+    .sitewide-effort-navigation-item:not(.sitewide-effort-navigation-item-current):hover,
+    .item-picker-pagination-pages:hover {
         border-color: var(--borders-light);
         color: var(--button-text-dark);
         background: linear-gradient(to bottom, var(--button-two) 0%, var(--button-one) 100%);
@@ -2288,10 +2286,10 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
         border-color: var(--accent-five);
         background: var(--tab-hover);
     }
-    .common-tab a {
+    .common-tab a, .common-tab > span {
         color: var(--link)
     }
-    .common-tab-selected a, .common-tab-selected:hover a {
+    .common-tab-selected a, .common-tab-selected:hover a, .common-tab-selected > span, .common-tab:hover > span {
         color: var(--link-hover)
     }
     /*fix issue w/ buttons being over alerts*/
