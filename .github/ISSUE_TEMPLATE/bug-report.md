@@ -2,7 +2,7 @@
 name: Bug Report
 about: Report a Bug
 title: "[BUG] "
-labels: bug
+labels: bug, enhancement
 assignees: dragonjpg
 
 ---
