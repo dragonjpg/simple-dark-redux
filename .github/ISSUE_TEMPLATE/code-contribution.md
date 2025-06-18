@@ -17,9 +17,11 @@ A clear and concise description of the problem you are aiming to address. If thi
 **Additional context / Screenshots:**
 Add any other context or screenshots about your code here.
 
-**Code:**
+**Code Snippet:**
 
 **Name of Affected Block:** eg. Global Styles, Settings, Dragon Profiles, etc...
 **Line to insert at or Lines to Replace:** ###
-**Snippet:**
-``code goes here``
+**Code:**
+```
+paste code here
+```
