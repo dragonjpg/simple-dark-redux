@@ -3,7 +3,7 @@
 @namespace      userstyles.world/user/meow
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
-@version        2.3.2
+@version        2.3.3
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -1739,7 +1739,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     /*more buttons*/
     .common-ui-button, .lair-pagination .lair-pagination-page, .common-pagination .common-pagination-page,
     .common-ui-vertical-button-group, .common-js-pagination .common-pagination-page, .wws-carousel-navigation-status,
-    .sitewide-effort-navigation-item, .item-picker-pagination-pages {
+    .sitewide-effort-navigation-item, .item-picker-pagination-pages, .dragon-picker-pagination-pages {
         color: var(--button-text-dark);
         border: 2px solid var(--borders-med);
         background: linear-gradient(to bottom, var(--button-one) 0%, var(--button-two) 100%);
@@ -1771,7 +1771,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     }
     .common-pagination .common-pagination-page:hover, .common-js-pagination .common-pagination-page:hover, .common-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover, .common-js-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover,
     .sitewide-effort-navigation-item:not(.sitewide-effort-navigation-item-current):hover,
-    .item-picker-pagination-pages:hover {
+    .item-picker-pagination-pages:hover, .dragon-picker-pagination-pages:hover {
         border-color: var(--borders-light);
         color: var(--button-text-dark);
         background: linear-gradient(to bottom, var(--button-two) 0%, var(--button-one) 100%);
@@ -4352,6 +4352,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         color: var(--error-text);
         filter: none;
     }
+    .crafter-recipe-ingredient[data-requirement-met="0"] img {
+        filter: saturate(0%);
+    }
     .crafter-recipe-currency-treasure {
         color: var(--warning-text);
         background-color: rgba(var(--warning),0.2);
@@ -6915,7 +6918,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     /*make it so only the image is grayscale*/
     .custom-shop-trade-requirement[data-owned="0"] img {
-        filter: saturate(0)
+        filter: saturate(0);
     }
     /*treasure box*/
     .custom-shop-trade-currency-treasure {
