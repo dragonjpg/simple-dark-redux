@@ -896,8 +896,8 @@ clan-color-text-3 "Light Mode" <<<EOT
     --shadow: #b0b0b0;
     --fr-red: #570f01;
     --quote-header: #874430;
-    --link-alt: #731d08;
-    --link-hover-alt: #96682C;
+    --link-hover-alt: #731d08;
+    --link-alt: #96682C;
 
     color: var(--text-alt);
     border: 2px solid var(--borders-med-alt);
@@ -1019,8 +1019,8 @@ bio-color-text-3 "Light Mode" <<<EOT
     --shadow: #b0b0b0;
     --fr-red: #570f01;
     --quote-header: #874430;
-    --link-alt: #731d08;
-    --link-hover-alt: #96682C;
+    --link-hover-alt: #731d08;
+    --link-alt: #96682C;
 
     color: var(--text-alt);
     border-color: var(--borders-med-alt);
@@ -1140,14 +1140,22 @@ forum-color-text-3 "Light Mode" <<<EOT
     --shadow: #b0b0b0;
     --fr-red: #570f01;
     --quote-header: #874430;
-    --link-alt: #731d08;
-    --link-hover-alt: #96682C;
+    --link-hover-alt: #731d08;
+    --link-alt: #96682C;
+
+    --admin-text: #340000;
+    --admin-strong: var(--admin-text);
+    --admin-em: var(--admin-text);
+    --admin-link: var(--link-alt);
+    --admin-link-hover: var(--link-hover-alt);
+
+    --warning-text: #986714;
 
     color: var(--text-alt);
 }
 .post-edited {
-    --link-alt: #731d08;
-    --link-hover-alt: #96682C;
+    --link-hover: #731d08;
+    --link: #96682C;
 }
 :is(.post-text-content, .post-text-signature, #topic-preview-text) li::marker {
     --accent-two: var(--text-alt);
@@ -1170,8 +1178,9 @@ forum-color-text-3 "Light Mode" <<<EOT
     color: var(--link-alt);
 }
 :is(.post-text-content, .post-text-signature, #topic-preview-text) a:hover,
-:is(.post-text-content, #topic-preview-text .post-text-signature,) a:focus,
-:is(.post-text-content, #topic-preview-text .post-text-signature,) a:focus-within {
+:is(.post-text-content, .post-text-signature, #topic-preview-text) a:focus,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) a:focus-within,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) a:hover :is(b, strong, i, em) {
     color: var(--link-hover-alt);
 }
 :is(.post-text-content, .post-text-signature, #topic-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a {
@@ -1188,10 +1197,11 @@ forum-color-text-3 "Light Mode" <<<EOT
     color: var(--text-alt);
 }
 /*colored text*\/
-:is(.post-text-content, .post-text-signature, #topic-preview-text) b,
-:is(.post-text-content, .post-text-signature, #topic-preview-text) i,
-:is(.post-text-content, .post-text-signature, #topic-preview-text) strong,
-:is(.post-text-content, .post-text-signature, #topic-preview-text) em,
+.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) b,
+.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) i,
+.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) strong,
+.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) em,
+.post-text-signature :is(b, i, strong, em),
 :is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] b,
 :is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] i,
 :is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] strong,
@@ -1400,13 +1410,13 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     .wws-toggle-label, .friend-requests-page-details-sub {
         color: var(--text-disabled);
     }
-    a, a.link, .message span a, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a, .dragon-effect-controls a, .friend-requests-page-details a, #status-box .status-author a, .bbcode_url, .bbcode_spoiler:hover .bbcode_url, .bbcode_spoiler:focus-within .bbcode_url {
+    a, a.link, .message span a, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a :is(b, strong, i, em), .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a, .dragon-effect-controls a, .friend-requests-page-details a, #status-box .status-author a, .bbcode_url, .bbcode_spoiler:hover .bbcode_url, .bbcode_spoiler:focus-within .bbcode_url {
         color: var(--link);
     }
     .bbcode_spoiler .bbcode_url {
         color: inherit;
     }
-    a:hover, a:focus, .message span a:hover, .message span a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover, #export-outfit-dialog-confirm a:hover, .friend-requests-page-details a:hover, .friend-requests-page-details a:focus, #status-box .status-author a:hover, #status-box .status-author a:focus, .bbcode_url:hover, .bbcode_url:focus, .bbcode_spoiler .bbcode_url:hover, .bbcode_spoiler .bbcode_url:focus  {
+    a:hover, a:focus, .message span a:hover, .message span a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover :is(b, strong, i, em), div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover, #export-outfit-dialog-confirm a:hover, .friend-requests-page-details a:hover, .friend-requests-page-details a:focus, #status-box .status-author a:hover, #status-box .status-author a:focus, .bbcode_url:hover, .bbcode_url:focus, .bbcode_spoiler .bbcode_url:hover, .bbcode_spoiler .bbcode_url:focus  {
         color: var(--link-hover);
     }
     /*[[linkstyle]]*/
