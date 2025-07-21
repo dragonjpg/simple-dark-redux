@@ -3,7 +3,7 @@
 @namespace      userstyles.world/user/meow
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
-@version        2.3.3
+@version        2.4.0
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -838,7 +838,7 @@ colorquote2 "Enabled" <<<EOT
         var(--1, var(--strong))
         var(--2, var(--link-hover))
         var(--3, var(--link))
-        var(--4, var(--em));
+        var(--4, var(--em)) !important;
     }
     /* rotate cache *\/
     div.bbcode_quote > *, .forum-hidden > .forum-hidden-content {
@@ -853,25 +853,23 @@ EOT;
 @var range forum-line-height "Forum Posts Line Height" [120, 100, 250, 10, '%']
 @var range msg-font-size "Private Message Font Size" [12, 12, 20, 1, 'px']
 @var range msg-line-height "Private Message Line Height" [120, 100, 250, 10, '%']
-@advanced dropdown clan-color-text "User-set Color Text in Clan Bios" {
-clan-color-text-1 "Remove" <<<EOT
-.clan-profile-bio span[style*="color:"]:not([style*="transparent"]):not(.bbcode_spoiler) {
+@advanced dropdown clan-color-text "Clan Bios" {
+clan-color-text-1 "Dark Mode (Disallow User-set Colors)" <<<EOT
+.clan-profile-bio span[style*="color:"]:not([style*="transparent"], .bbcode_spoiler) {
     color: inherit !important;
+}
+.clan-profile-bio span[style*="transparent"] * {
+    color: transparent !important;
 }
 .clan-profile-bio a span[style*="color:"]:not([style*="transparent"]) {
     color: inherit !important;
 }
 EOT;
-clan-color-text-2 "Allow" <<<EOT 
+clan-color-text-2 "Dark Mode (Allow User-set Colors)" <<<EOT 
 .clan-profile-bio {
     color: var(--text);
 }
-.clan-profile-bio span[style*="color:"] b,
-.clan-profile-bio span[style*="color:"] i,
-.clan-profile-bio span[style*="color:"] strong,
-.clan-profile-bio span[style*="color:"] em,
-.clan-profile-bio span[style*="color:"] u,
-.clan-profile-bio span[style*="color:"] a.bbcode_url {
+.clan-profile-bio span[style*="color:"] :is(b, i, strong, em, u) {
     color: inherit;
 }
 .clan-profile-bio a.bbcode_url {
@@ -881,11 +879,92 @@ clan-color-text-2 "Allow" <<<EOT
     color: var(--link-hover);
 }
 EOT;
+clan-color-text-3 "Light Mode" <<<EOT 
+/*general - we do not directly overwrite most vars to avoid breaking widgets *\/
+.clan-profile-bio {
+    --text-alt: #000;
+    --em: var(--text-alt);
+    --strong: var(--text-alt);
+    --widget-med-alt: #f9f9f9;
+    --widget-light-alt: #eee;
+    --borders-med-alt: #858179;
+    --shadow: #b0b0b0;
+    --fr-red: #570f01;
+    --quote-header: #874430;
+    --link-hover-alt: #731d08;
+    --link-alt: #96682C;
+
+    color: var(--text-alt);
+    border: 2px solid var(--borders-med-alt);
+    outline: 2px solid var(--borders);
+    padding: 0.2em;
+    background: linear-gradient(to bottom, var(--widget-med-alt) 0%, var(--widget-light-alt) 100%);
+    border-radius: 10px;
 }
-@advanced dropdown bio-color-text "User-set Color Text in Dragon Bios" {
-bio-color-text-1 "Remove" <<<EOT
-.dragon-profile-bio-text span:not([style*="transparent"]):not(.bbcode_spoiler) {
+.clan-profile-bio li::marker {
+    --accent-two: var(--text-alt);
+}
+/*link colors*\/
+.clan-profile-bio :is(.gamedb-bbcode, .pinglist-bbcode) {
+    --link: var(--link-alt);
+    --link-hover: var(--link-hover-alt);
+}
+.clan-profile-bio a {
+    color: var(--link-alt);
+}
+.clan-profile-bio a:hover,
+.clan-profile-bio a:focus,
+.clan-profile-bio a:focus-within {
+    color: var(--link-hover-alt);
+}
+.clan-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a {
+    color: var(--link);
+}
+.clan-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:hover,
+.clan-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus, 
+.clan-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus-within {
+    color: var(--link-hover);
+}
+/*columns*\/
+.clan-profile-bio td, .clan-profile-bio th {
+    color: var(--text-alt);
+}
+/*colored text*\/
+.clan-profile-bio span[style*="color:"] :is(b, i, strong, em, u) {
+    color: inherit;
+}
+/*bbcode quotes & code tags *\/
+.clan-profile-bio.legacy-bbcode :is(div.bbcode_quote, div.bbcode_code) {
+    border-color: var(--quote-header);
+}
+.clan-profile-bio.legacy-bbcode :is(div.bbcode_quote_head, div.bbcode_code_head) {
+    --tooltip-header: var(--quote-header);
+    --borders: --quote-header;
+    --text: #fff;
+}
+.clan-profile-bio.legacy-bbcode :is(div.bbcode_quote_body, div.bbcode_code_body) {
+    background-color: #f8f3d4;
+    color: var(--text-alt);
+}
+/*hiddens*\/
+.clan-profile-bio .forum-hidden-header {
+    --strong: #fff;
+    --section: var(--fr-red);
+    border-color: var(--fr-red);
+}
+.clan-profile-bio .forum-hidden {
+    background: #fff;
+    border-color: #cab1b1;
+}
+EOT;
+}
+@advanced dropdown bio-color-text "Dragon Bios" {
+bio-color-text-1 "Dark Mode (Disallow User-Set Colors)" <<<EOT
+.dragon-profile-bio-text span:not([style*="transparent"], .bbcode_spoiler) {
     color: var(--text) !important;
+}
+.dragon-profile-bio-text span[style*="transparent"] * {
+    color: transparent !important;
 }
 .dragon-profile-bio-text b {
     color: var(--strong) !important;
@@ -900,32 +979,119 @@ a.bbcode_url:hover, a.bbcode_url:focus {
     color: var(--link-hover) !important;
 }
 EOT;
-bio-color-text-2 "Allow" <<<EOT
+bio-color-text-2 "Dark Mode (Allow User-Set Colors)" <<<EOT
 .dragon-profile-bio-text {
     color: var(--text);
 }
-.dragon-profile-bio-text span[style*="color:"] b,
-.dragon-profile-bio-text span[style*="color:"] i,
-.dragon-profile-bio-text span[style*="color:"] strong,
-.dragon-profile-bio-text span[style*="color:"] em,
-.dragon-profile-bio-text span[style*="color:"] u,
-.dragon-profile-bio-text span[style*="color:"] a.bbcode_url {
+.dragon-profile-bio-text span[style*="color:"] :is(b, i, strong, em, u) {
     color: inherit;
 }
 .dragon-profile-bio-text a.bbcode_url {
     color: var(--link);
 }
-.dragon-profile-bio-text a.bbcode_url:hover, .dragon-profile-bio-text a.bbcode_url:focus {
+.dragon-profile-bio-text a.bbcode_url:hover,
+.dragon-profile-bio-text a.bbcode_url:focus {
     color: var(--link-hover);
+}
+EOT;
+bio-color-text-3 "Light Mode" <<<EOT
+/*general - we do not directly overwrite most vars to avoid breaking widgets *\/
+#dragon-profile-bio.dragon-profile-bio, #dragon-profile-bio.dragon-profile-vista-bio {
+    --text-alt: #000;
+    --em: var(--text-alt);
+    --strong: var(--text-alt);
+    --widget-med-alt: #f9f9f9;
+    --widget-light-alt: #eee;
+    --borders-med-alt: #858179;
+    --shadow: #b0b0b0;
+    --fr-red: #570f01;
+    --quote-header: #874430;
+    --link-hover-alt: #731d08;
+    --link-alt: #96682C;
+
+    color: var(--text-alt);
+    border-color: var(--borders-med-alt);
+    background: linear-gradient(to bottom, var(--widget-med-alt) 0%, var(--widget-light-alt) 100%)
+}
+#dragon-profile-bio li::marker {
+    --accent-two: var(--text-alt);
+}
+#dragon-profile-bio .dragon-profile-bio-text {
+    --em: inherit;
+    --strong: inherit;
+}
+#dragon-profile-bio.dragon-profile-vista-bio .dragon-profile-bio-vista {
+    border-right-width: 1px;
+    border-color: var(--borders-med-alt);
+}
+#dragon-profile-bio .dragon-profile-bio-vista {
+    --widget-med: #fff;
+}
+/*link colors*\/
+#dragon-profile-bio .gamedb-bbcode,
+#dragon-profile-bio .pinglist-bbcode {
+    --link: var(--link-alt);
+    --link-hover: var(--link-hover-alt);
+}
+#dragon-profile-bio a {
+    color: var(--link-alt);
+}
+#dragon-profile-bio a:hover,
+#dragon-profile-bio a:focus,
+#dragon-profile-bio a:focus-within {
+    color: var(--link-hover-alt);
+}
+#dragon-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a {
+    color: var(--link);
+}
+#dragon-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:hover,
+#dragon-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus, 
+#dragon-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus-within {
+    color: var(--link-hover);
+}
+/*columns*\/
+#dragon-profile-bio td, #dragon-profile-bio th {
+    color: var(--text-alt);
+}
+/*colored text*\/
+.dragon-profile-bio-text span[style*="color:"] :is(b, i, strong, em, u) {
+    color: inherit;
+}
+/*bbcode quotes*\/
+#dragon-profile-bio .bbcode_quote {
+    border-color: var(--quote-header);
+}
+#dragon-profile-bio div.bbcode_quote_head {
+    --tooltip-header: var(--quote-header);
+    --borders: --quote-header;
+    --text: #fff;
+    --link: #fff;
+    --link-hover: #fff;
+}
+#dragon-profile-bio div.bbcode_quote_body {
+    background-color: #f8f3d4;
+    color: var(--text-alt);
+}
+/*hiddens*\/
+#dragon-profile-bio .forum-hidden-header {
+    --strong: #fff;
+    --section: var(--fr-red);
+    border-color: var(--fr-red);
+}
+.dragon-profile-bio-text .forum-hidden {
+    background: #fff;
+    border-color: #cab1b1;
 }
 EOT;
 }
 
-@advanced dropdown forum-color-text "User-set Color Text in Forums" {
-forum-color-text-1 "Remove" <<<EOT
-#topic-preview-text span[style*="color:"]:not(span[style*="transparent"]):not(.bbcode_spoiler),
-.post-text span[style*="color:"]:not(span[style*="transparent"]):not(.bbcode_spoiler) {
+@advanced dropdown forum-color-text "Forum Post Content & Previewer" {
+forum-color-text-1 "Dark Mode (Disallow User-set Colors)" <<<EOT
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"]:not(span[style*="transparent"], .bbcode_spoiler) {
     color: var(--text) !important;
+}
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="transparent"] * {
+    color: transparent !important;
 }
 #topic-preview-text a span[style*="color:"]:not(span[style*="transparent"]),
 .post-text a span[style*="color:"]:not(span[style*="transparent"]) {
@@ -933,31 +1099,127 @@ forum-color-text-1 "Remove" <<<EOT
 }
 
 EOT;
-forum-color-text-2 "Allow" <<<EOT
+forum-color-text-2 "Dark Mode (Allow User-set Colors)" <<<EOT
 #topic-preview-text, .post-text {
     color: var(--text);
 }
-.post-text span[style*="color:"] b,
-.post-text span[style*="color:"] i,
-.post-text span[style*="color:"] strong,
-.post-text span[style*="color:"] em,
-.post-text span[style*="color:"] u,
-.post-text span[style*="color:"] a.bbcode_url,
-#topic-preview-text span[style*="color:"] b,
-#topic-preview-text span[style*="color:"] i,
-#topic-preview-text span[style*="color:"] strong,
-#topic-preview-text span[style*="color:"] em,
-#topic-preview-text span[style*="color:"] u,
-#topic-preview-text span[style*="color:"] a.bbcode_url {
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] b,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] i,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] strong,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] em,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] u {
     color: inherit;
 }
-.post-text a.bbcode_url,
-#topic-preview-text a.bbcode_url {
+EOT;
+forum-color-text-3 "Light Mode" <<<EOT
+/*general - we do not directly overwrite most vars to avoid breaking widgets *\/
+:is(.post-text-content, .post-text-signature, #topic-preview-text) {
+    --text-alt: #000;
+    --text-med: #555;
+    --em: inherit;
+    --strong: inherit;
+    --widget-med-alt: #faf9f7;
+    --borders-med-alt: #858179;
+    --shadow: #b0b0b0;
+    --fr-red: #570f01;
+    --quote-header: #874430;
+    --link-hover-alt: #731d08;
+    --link-alt: #96682C;
+
+    --admin-text: #340000;
+    --admin-strong: var(--admin-text);
+    --admin-em: var(--admin-text);
+    --admin-link: var(--link-alt);
+    --admin-link-hover: var(--link-hover-alt);
+
+    --warning-text: #986714;
+
+    color: var(--text-alt);
+}
+.post-edited {
+    --link-hover: #731d08;
+    --link: #96682C;
+}
+:is(.post-text-content, .post-text-signature, #topic-preview-text) li::marker {
+    --accent-two: var(--text-alt);
+}
+/*white bg*\/
+.post .post-frame {
+    background-color: #fff;
+    --widget-med-alt: #faf9f7;
+}
+#topic-preview-text {
+    background-color: #fff;
+}
+/*link colors*\/
+:is(.post-text-content, .post-text-signature, #topic-preview-text) .gamedb-bbcode,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) .pinglist-bbcode {
+    --link: var(--link-alt);
+    --link-hover: var(--link-hover-alt);
+}
+:is(.post-text-content, .post-text-signature, #topic-preview-text) a {
+    color: var(--link-alt);
+}
+:is(.post-text-content, .post-text-signature, #topic-preview-text) a:hover,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) a:focus,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) a:focus-within,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) a:hover :is(b, strong, i, em) {
+    color: var(--link-hover-alt);
+}
+:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a {
     color: var(--link);
 }
-.post-text a.bbcode_url:hover, .post-text a.bbcode_url:focus,
-#topic-preview-text a.bbcode_url:hover, #topic-preview-text a.bbcode_url:focus {
+:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:hover,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus, 
+:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus-within {
     color: var(--link-hover);
+}
+/*columns*\/
+:is(.post-text-content, .post-text-signature, #topic-preview-text) td,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) th {
+    color: var(--text-alt);
+}
+/*colored text*\/
+.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) b,
+.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) i,
+.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) strong,
+.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) em,
+.post-text-signature :is(b, i, strong, em),
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] b,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] i,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] strong,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] em,
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] u,
+.post-edited em {
+    color: inherit;
+}
+/*bbcode quotes & code tags*\/
+:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(.bbcode_quote, .bbcode_code) {
+    border-color: var(--quote-header);
+}
+:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(div.bbcode_quote_head, div.bbcode_code_head) {
+    --tooltip-header: var(--quote-header);
+    --borders: --quote-header;
+    --text: #fff;
+    --link: #fff;
+    --link-hover: #fff;
+}
+:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(div.bbcode_quote_head, div.bbcode_code_head) a {
+    color: inherit !important;
+}
+:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(div.bbcode_quote_body, div.bbcode_code_body) {
+    background-color: #f8f3d4;
+    color: var(--text-alt);
+}
+/*hiddens*\/
+:is(.post-text-content, .post-text-signature, #topic-preview-text) .forum-hidden-header {
+    --strong: #fff;
+    --section: var(--fr-red);
+    border-color: var(--fr-red);
+}
+:is(.post-text-content, .post-text-signature, #topic-preview-text) .forum-hidden {
+    background: #fff;
+    border-color: #cab1b1;
 }
 EOT;
 }
@@ -974,7 +1236,7 @@ EOT;
 @advanced dropdown bio-override-fonts "User-set Fonts in Dragon Bios" {
 bio-override-fonts-2 "Allow" <<<EOT EOT;
 bio-override-fonts-1 "Remove" <<<EOT
-.dragon-profile-bio span[style*="font-family:"] {
+#dragon-profile-bio span[style*="font-family:"] {
 	font-family: var(--font-family) !important;
 }
 EOT;
@@ -1040,7 +1302,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
 @var color beige-button-one "Beige Buttons Gradient 1" #488fad
 @var color beige-button-two "Beige Buttons Gradient 2" #7d5f88
 @var color red-button-one "Red Button Gradient 1" #31527a
-@var color red-button-two "Red Button Gradient 1" #1f3c5f
+@var color red-button-two "Red Button Gradient 2" #1f3c5f
 @var color button-disabled-one "Disabled Buttons Gradient 1" #7f8d9f
 @var color button-disabled-two "Disabled Buttons Gradient 2" #444f5b
 
@@ -1131,13 +1393,13 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     .wws-toggle-label, .friend-requests-page-details-sub {
         color: var(--text-disabled);
     }
-    a, a.link, .message span a, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a b, a strong, a i, a em, .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a, .dragon-effect-controls a, .friend-requests-page-details a, #status-box .status-author a, .bbcode_url, .bbcode_spoiler:hover .bbcode_url, .bbcode_spoiler:focus-within .bbcode_url {
+    a, a.link, .message span a, .rotating-item a, #menucontainer a, #friendchange #view a, #menucontainer button, #error-404 a, a :is(b, strong, i, em), .ui-widget-content a, div#random-dragon a, #forum-trade-dialog .forum-crossroads-trade-user, #msg-header a, .common-dialog .common-dialog-link, #braintree-form-text a, .ui-widget-content a.common-red-text, a.common-red-text, #skinuploadcontainer a, .cc-color-override-603568657 .cc-link, .cc-color-override-603568657 .cc-link:active, .cc-color-override-603568657 .cc-link:visited, #export-outfit-dialog-confirm a, .dragon-effect-controls a, .friend-requests-page-details a, #status-box .status-author a, .bbcode_url, .bbcode_spoiler:hover .bbcode_url, .bbcode_spoiler:focus-within .bbcode_url {
         color: var(--link);
     }
     .bbcode_spoiler .bbcode_url {
         color: inherit;
     }
-    a:hover, a:focus, .message span a:hover, .message span a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover b, a:hover strong, a:hover i, a:hover em, div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover, #export-outfit-dialog-confirm a:hover, .friend-requests-page-details a:hover, .friend-requests-page-details a:focus, #status-box .status-author a:hover, #status-box .status-author a:focus, .bbcode_url:hover, .bbcode_url:focus, .bbcode_spoiler .bbcode_url:hover, .bbcode_spoiler .bbcode_url:focus  {
+    a:hover, a:focus, .message span a:hover, .message span a:focus, #super-container a:hover, .main a:hover, .rotating-item a:hover, .breadcrumbs a:hover, .breadcrumbs a.lastlink:hover, .gamedb-bbcode:hover, #menucontainer a:hover, #menucontainer button:hover, #friendchange #view a:hover, #error-404 a:hover, a:hover :is(b, strong, i, em), div#random-dragon a:hover, #forum-trade-dialog .forum-crossroads-trade-user:hover, #msg-header a:hover, .common-dialog .common-dialog-link:hover, #braintree-form-text a:hover, .common-tab:hover a, .ui-widget-content a.common-red-text:hover, a.common-red-text:hover, #skinuploadcontainer a:hover, .cc-link:hover, #export-outfit-dialog-confirm a:hover, .friend-requests-page-details a:hover, .friend-requests-page-details a:focus, #status-box .status-author a:hover, #status-box .status-author a:focus, .bbcode_url:hover, .bbcode_url:focus, .bbcode_spoiler .bbcode_url:hover, .bbcode_spoiler .bbcode_url:focus  {
         color: var(--link-hover);
     }
     /*[[linkstyle]]*/
@@ -1701,7 +1963,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     .common-ui-button::after, .common-ui-button-disabled::after, .common-ui-button-accept::after {
         display: none !important;
     }
-    a.beigebutton.thingbutton:not([disabled]):hover, .thingbutton:not([disabled]):hover, .skin-system-order-action:not([disabled]):hover {
+    a.beigebutton.thingbutton:not([disabled]):hover, .thingbutton:not([disabled]):hover, .skin-system-order-action:not([disabled]):hover, .thingbutton:not(.inactivebutton):hover {
         color: var(--button-text);
         background: linear-gradient(to top, var(--beige-button-one) 0%, var(--beige-button-two) 100%);
     }
@@ -1719,7 +1981,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     .redbutton, .redbutton.anybutton {
         padding: 10px;
     }
-    .redbutton.anybutton:disabled, .mb_button, .beigebutton.thingbutton:disabled, .skin-system-order-action.skin-system-cancel-order:disabled {
+    .redbutton.anybutton:disabled, .mb_button, .beigebutton.thingbutton:disabled, .skin-system-order-action.skin-system-cancel-order:disabled, .inactivebutton {
         color: var(--button-text) !important;
     }
     /*dot pagination*/
@@ -1746,9 +2008,13 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     }
     .common-ui-button-disabled, .greybutton, .greybutton.stopbutton,
     .common-ui-vertical-button-group > .common-ui-button-disabled,
-    .common-ui-vertical-button-group .common-ui-button-group .common-ui-button-disabled, .beigebutton.thingbutton:disabled {
+    .common-ui-vertical-button-group .common-ui-button-group .common-ui-button-disabled,
+    .beigebutton.thingbutton:disabled,
+    .beigebutton.thingbutton.inactivebutton {
         background: linear-gradient(to bottom, var(--button-disabled-one) 0%, var(--button-disabled-two) 100%);
         border-color: var(--borders);
+        color: var(--button-text);
+        cursor: not-allowed !important;
     }
     .common-ui-vertical-button-group > .common-ui-button:last-child::after, .common-ui-vertical-button-group > .common-ui-button-disabled:last-child::after {
         opacity: 0.5;
@@ -1895,7 +2161,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     /* ui messages */
     .common-message strong, .common-message b, .common-message em, .common-message i,
     .common-dialog-message strong, .common-dialog-message b, .common-dialog-message em, .common-dialog-message i,
-    .info-box strong, .info-box b, .info-box em, .info-box i {
+    .info-box strong, .info-box b, .info-box em, .info-box i, .event_pack b, .event_pack strong {
         color: inherit;
     }
     .common-dialog-warning {
@@ -2445,13 +2711,19 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     }
 
     /*more obvious disabled buttons*/
-    #nonewoffer, button:disabled, *[type=button]:disabled, #notrade.mb_button {
+    #nonewoffer, button:disabled, *[type=button]:disabled, #notrade.mb_button, .inactivebutton {
         opacity: 0.45;
     }
 
-    /*lucky streak label fix*/
-    #lucky-streak {
+    /*lucky streak & special gem pack label fix*/
+    #lucky-streak, .event_pack {
         color: #000 !important;
+    }
+    .event_pack a {
+        color: #b0734f !important;
+    }
+    .event_pack a:hover, .event_pack a:focus, .event_pack a:hover strong {
+        color: #731d08 !important;
     }
     /*misc label fixes*/
     #gather_turns,
@@ -2548,6 +2820,20 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     }
     .scry-image .scry-name, .forum-map-widget-frame .forum-map-widget-button-text, .settings-hub-radio-control[data-selected="0"], .outfit-name, .pinglist-button-title, .pinglist-button-subscribers {
         color: var(--text) !important;
+    }
+    /*scry image smooth transition to match outfit widget*/
+    .scry-image .scry-buttons {
+        display: block;
+        pointer-events: none;
+        opacity: 0;
+        transition: 0.3s opacity;
+    }
+    .scry-image .scry-image-rear {
+        transition: 0.3s opacity;
+    }
+    .scry-image:hover .scry-buttons {
+        opacity: 1;
+        pointer-events: auto;
     }
     /*dark map poi share widget*/
     .forum-map-widget-frame {
