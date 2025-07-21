@@ -3,7 +3,7 @@
 @namespace      userstyles.world/user/meow
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
-@version        2.4.0
+@version        2.4.1
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -930,7 +930,8 @@ clan-color-text-3 "Light Mode" <<<EOT
     color: var(--text-alt);
 }
 /*colored text*\/
-.clan-profile-bio span[style*="color:"] :is(b, i, strong, em, u) {
+.clan-profile-bio span[style*="color:"] :is(b, i, strong, em, u),
+.clan-profile-bio a :is(b, i, strong, em, u) {
     color: inherit;
 }
 /*bbcode quotes & code tags *\/
@@ -1054,7 +1055,8 @@ bio-color-text-3 "Light Mode" <<<EOT
     color: var(--text-alt);
 }
 /*colored text*\/
-.dragon-profile-bio-text span[style*="color:"] :is(b, i, strong, em, u) {
+.dragon-profile-bio-text span[style*="color:"] :is(b, i, strong, em, u),
+.dragon-profile-bio-text a :is(b, i, strong, em, u) {
     color: inherit;
 }
 /*bbcode quotes*\/
@@ -1136,6 +1138,9 @@ forum-color-text-3 "Light Mode" <<<EOT
 
     color: var(--text-alt);
 }
+.post.blocked-post .post-text-content {
+    color: var(--text-alt) !important;
+}
 .post-edited {
     --link-hover: #731d08;
     --link: #96682C;
@@ -1180,16 +1185,10 @@ forum-color-text-3 "Light Mode" <<<EOT
     color: var(--text-alt);
 }
 /*colored text*\/
-.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) b,
-.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) i,
-.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) strong,
-.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) em,
+.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) :is(b, i, strong, em),
 .post-text-signature :is(b, i, strong, em),
-:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] b,
-:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] i,
-:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] strong,
-:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] em,
-:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] u,
+:is(.post-text-content, #topic-preview-text) a :is(b, i, strong, em),
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] :is(b, i, strong, em, u),
 .post-edited em {
     color: inherit;
 }
