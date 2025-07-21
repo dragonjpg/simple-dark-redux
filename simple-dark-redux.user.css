@@ -869,12 +869,7 @@ clan-color-text-2 "Dark Mode (Allow User-set Colors)" <<<EOT
 .clan-profile-bio {
     color: var(--text);
 }
-.clan-profile-bio span[style*="color:"] b,
-.clan-profile-bio span[style*="color:"] i,
-.clan-profile-bio span[style*="color:"] strong,
-.clan-profile-bio span[style*="color:"] em,
-.clan-profile-bio span[style*="color:"] u,
-.clan-profile-bio span[style*="color:"] a.bbcode_url {
+.clan-profile-bio span[style*="color:"] :is(b, i, strong, em, u) {
     color: inherit;
 }
 .clan-profile-bio a.bbcode_url {
@@ -935,11 +930,7 @@ clan-color-text-3 "Light Mode" <<<EOT
     color: var(--text-alt);
 }
 /*colored text*\/
-.clan-profile-bio span[style*="color:"] b,
-.clan-profile-bio span[style*="color:"] i,
-.clan-profile-bio span[style*="color:"] strong,
-.clan-profile-bio span[style*="color:"] em,
-.clan-profile-bio span[style*="color:"] u {
+.clan-profile-bio span[style*="color:"] :is(b, i, strong, em, u) {
     color: inherit;
 }
 /*bbcode quotes & code tags *\/
@@ -992,11 +983,7 @@ bio-color-text-2 "Dark Mode (Allow User-Set Colors)" <<<EOT
 .dragon-profile-bio-text {
     color: var(--text);
 }
-.dragon-profile-bio-text span[style*="color:"] b,
-.dragon-profile-bio-text span[style*="color:"] i,
-.dragon-profile-bio-text span[style*="color:"] strong,
-.dragon-profile-bio-text span[style*="color:"] em,
-.dragon-profile-bio-text span[style*="color:"] u {
+.dragon-profile-bio-text span[style*="color:"] :is(b, i, strong, em, u) {
     color: inherit;
 }
 .dragon-profile-bio-text a.bbcode_url {
@@ -1067,11 +1054,7 @@ bio-color-text-3 "Light Mode" <<<EOT
     color: var(--text-alt);
 }
 /*colored text*\/
-.dragon-profile-bio-text span[style*="color:"] b,
-.dragon-profile-bio-text span[style*="color:"] i,
-.dragon-profile-bio-text span[style*="color:"] strong,
-.dragon-profile-bio-text span[style*="color:"] em,
-.dragon-profile-bio-text span[style*="color:"] u {
+.dragon-profile-bio-text span[style*="color:"] :is(b, i, strong, em, u) {
     color: inherit;
 }
 /*bbcode quotes*\/
