@@ -3,7 +3,7 @@
 @namespace      userstyles.world/user/meow
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
-@version        2.4.1
+@version        2.5.0
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -603,6 +603,18 @@ EOT;
 stickymenu2 "Disable" <<<EOT  EOT;
 }
 
+@advanced dropdown stickyposter "Sticky Post Authors" {
+stickyposter1 "Enabled" <<<EOT /* sticky post author *\/
+div.post-author {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    min-height: 310px;
+}
+EOT;
+stickyposter2 "Disabled" <<<EOT  EOT;
+}
+
 @advanced dropdown adblock "Hide Ad Containers" {
 adblock1 "Enable" <<<EOT /*byebye bottom & nav ad banners*\/
 #bottom-banner, #skybanner {
@@ -1118,6 +1130,7 @@ forum-color-text-3 "Light Mode" <<<EOT
 :is(.post-text-content, .post-text-signature, #topic-preview-text) {
     --text-alt: #000;
     --text-med: #555;
+    --post-text: var(--text-alt);
     --em: inherit;
     --strong: inherit;
     --widget-med-alt: #faf9f7;
@@ -1150,7 +1163,7 @@ forum-color-text-3 "Light Mode" <<<EOT
 }
 /*white bg*\/
 .post .post-frame {
-    background-color: #fff;
+    --widget-med-bg: #fff;
     --widget-med-alt: #faf9f7;
 }
 #topic-preview-text {
@@ -1537,7 +1550,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     }
     /*adjust default site bg based on hue*/
     body[style*="/static/layout/none/bg.jpg"],
-     body[style*="/layout/none/background.jpg"]{
+     body[style*="/layout/none/background.jpg"] {
         background: none !important;
     }
     body[style*="/static/layout/none/bg.jpg"]::before,
@@ -1743,6 +1756,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     .container {
         border-radius: 0;
     }
+    
     .main, .contentcontainer {
         background-color: var(--main);
         color: var(--text);
@@ -2000,7 +2014,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     /*more buttons*/
     .common-ui-button, .lair-pagination .lair-pagination-page, .common-pagination .common-pagination-page,
     .common-ui-vertical-button-group, .common-js-pagination .common-pagination-page, .wws-carousel-navigation-status,
-    .sitewide-effort-navigation-item, .item-picker-pagination-pages, .dragon-picker-pagination-pages {
+    .sitewide-effort-navigation-item, .item-picker-pagination-pages, .dragon-picker-pagination-pages, .morphology-picker-pagination-pages {
         color: var(--button-text-dark);
         border: 2px solid var(--borders-med);
         background: linear-gradient(to bottom, var(--button-one) 0%, var(--button-two) 100%);
@@ -2036,7 +2050,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     }
     .common-pagination .common-pagination-page:hover, .common-js-pagination .common-pagination-page:hover, .common-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover, .common-js-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover,
     .sitewide-effort-navigation-item:not(.sitewide-effort-navigation-item-current):hover,
-    .item-picker-pagination-pages:hover, .dragon-picker-pagination-pages:hover {
+    .item-picker-pagination-pages:hover, .dragon-picker-pagination-pages:hover, .morphology-picker-pagination-pages:hover {
         border-color: var(--borders-light);
         color: var(--button-text-dark);
         background: linear-gradient(to bottom, var(--button-two) 0%, var(--button-one) 100%);
@@ -6032,6 +6046,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/site\\/dev-tracker.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/msgs.*") {
     /* Forums & PMs */
     :root {
+        --post-text: var(--text);
+        --widget-med-bg: var(--widget-med);
         --widget-med-alt: rgba(var(--widget-med-rgb),0.75);
     }
     
@@ -6134,13 +6150,15 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .post-text-content span[style*="font-size:"] {
         line-height: var(--forum-line-height);
     }
-    .post-text[data-style="0"] .post-text-content, .post-text[data-style="0"] .post-text-content span,
-    .post-text[data-style="0"] .post-text-content b, .post-text[data-style="0"] .post-text-content i, .post-text[data-style="0"] .post-text-content u, .post-text[data-style="0"] .post-text-content strike, .post-text[data-style="0"] .post-text-content span, .post-text[data-style="0"] .post-text-content td, .post-text[data-style="0"] .post-text-content sub, .post-text[data-style="0"] .post-text-content sup {
-        color: var(--text) !important;
+    .post-text[data-style="0"] .post-text-content,
+    .post-text[data-style="0"] .post-text-content :is(ul, li, b, i, u, strike, span, td, th, tr, table, sub, sup){
+        color: var(--post-text) !important;
         font-size: var(--forum-font-size) !important;
         font-family: var(--font-family) !important;
     }
-    
+    .post-text[data-style="0"] .post-text-content :is(ul, li, b, i, u, strike, span, td, th, tr, table, sub, sup) {
+        color: inherit !important;
+    }
     .post-text[data-style="0"] span.bbcode_spoiler {
         color: var(--section) !important;
         background: var(--section) !important;
@@ -6250,12 +6268,27 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #topic-footer {
         border-top: 1px solid var(--separator) !important;
     }
+    /*rework posts to use display flex*/
     .post .post-frame {
-        background-color: var(--widget-med);
         border: none;
         box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5) !important;
+        background-color: var(--widget);
+        display: flex;
+        justify-content: space-between;
     }
     .post:nth-child(2n) .post-frame {
+        background-color: var(--widget);
+    }
+    .post .post-text {
+        float: none;
+        margin-left: auto;
+        border-radius: 0 12px 12px 0;
+        padding-left: 3px;
+    }
+    .post-frame .post-text {
+        background-color: var(--widget-med-bg);
+    }
+    .post:nth-child(2n) .post-frame .post-text {
         background-color: var(--widget-med-alt);
     }
     div.post-author {
@@ -6382,6 +6415,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         color: var(--warning-text);
     }
     /*[[forum-color-text]]*/
+    
+    /*[[stickyposter]]*/
     
     div#postsheader span {
         position: static;
