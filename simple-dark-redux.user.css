@@ -603,7 +603,7 @@ EOT;
 stickymenu2 "Disable" <<<EOT  EOT;
 }
 
-@advanced dropdown stickyposter "Sticky Post Author" {
+@advanced dropdown stickyposter "Sticky Post Authors" {
 stickyposter1 "Enabled" <<<EOT /* sticky post author *\/
 div.post-author {
     position: sticky;
