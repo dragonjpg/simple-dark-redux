@@ -1130,6 +1130,7 @@ forum-color-text-3 "Light Mode" <<<EOT
 :is(.post-text-content, .post-text-signature, #topic-preview-text) {
     --text-alt: #000;
     --text-med: #555;
+    --post-text: var(--text-alt);
     --em: inherit;
     --strong: inherit;
     --widget-med-alt: #faf9f7;
@@ -6045,6 +6046,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/site\\/dev-tracker.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/msgs.*") {
     /* Forums & PMs */
     :root {
+        --post-text: var(--text);
         --widget-med-bg: var(--widget-med);
         --widget-med-alt: rgba(var(--widget-med-rgb),0.75);
     }
@@ -6148,13 +6150,15 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .post-text-content span[style*="font-size:"] {
         line-height: var(--forum-line-height);
     }
-    .post-text[data-style="0"] .post-text-content, .post-text[data-style="0"] .post-text-content span,
-    .post-text[data-style="0"] .post-text-content b, .post-text[data-style="0"] .post-text-content i, .post-text[data-style="0"] .post-text-content u, .post-text[data-style="0"] .post-text-content strike, .post-text[data-style="0"] .post-text-content span, .post-text[data-style="0"] .post-text-content td, .post-text[data-style="0"] .post-text-content sub, .post-text[data-style="0"] .post-text-content sup {
-        color: var(--text) !important;
+    .post-text[data-style="0"] .post-text-content,
+    .post-text[data-style="0"] .post-text-content :is(ul, li, b, i, u, strike, span, td, th, tr, table, sub, sup){
+        color: var(--post-text) !important;
         font-size: var(--forum-font-size) !important;
         font-family: var(--font-family) !important;
     }
-    
+    .post-text[data-style="0"] .post-text-content :is(ul, li, b, i, u, strike, span, td, th, tr, table, sub, sup) {
+        color: inherit !important;
+    }
     .post-text[data-style="0"] span.bbcode_spoiler {
         color: var(--section) !important;
         background: var(--section) !important;
