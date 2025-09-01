@@ -3,7 +3,7 @@
 @namespace      userstyles.world/user/meow
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
-@version        2.5.0
+@version        2.5.1
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 
@@ -909,7 +909,7 @@ clan-color-text-3 "Light Mode" <<<EOT
     color: var(--text-alt);
     border: 2px solid var(--borders-med-alt);
     outline: 2px solid var(--borders);
-    padding: 0.2em;
+    padding: 0.2em 0.2em 0.4em;
     background: linear-gradient(to bottom, var(--widget-med-alt) 0%, var(--widget-light-alt) 100%);
     border-radius: 10px;
 }
@@ -1198,7 +1198,8 @@ forum-color-text-3 "Light Mode" <<<EOT
     color: var(--text-alt);
 }
 /*colored text*\/
-.post:not(.post-admin) :is(.post-text-content, #topic-preview-text) :is(b, i, strong, em),
+.post:not(.post-admin) .post-text-content :is(b, i, strong, em),
+#topic-preview-text :is(b, i, strong, em),
 .post-text-signature :is(b, i, strong, em),
 :is(.post-text-content, #topic-preview-text) a :is(b, i, strong, em),
 :is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] :is(b, i, strong, em, u),
@@ -1755,6 +1756,8 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     /*main content bgs*/
     .container {
         border-radius: 0;
+        /*z-index: 1;
+        position: relative;*/
     }
     
     .main, .contentcontainer {
@@ -1815,6 +1818,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
         border: 5px solid var(--bar);
         border-bottom: none;
         width: 295px;
+        z-index: 2;
     }
     #usertab::before {
         content: '';
@@ -2012,14 +2016,13 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
         background: var(--accent-five)
     }
     /*more buttons*/
-    .common-ui-button, .lair-pagination .lair-pagination-page, .common-pagination .common-pagination-page,
-    .common-ui-vertical-button-group, .common-js-pagination .common-pagination-page, .wws-carousel-navigation-status,
+    .common-ui-button, a.common-ui-button, .lair-pagination .lair-pagination-page, .common-pagination .common-pagination-page, .common-ui-vertical-button-group, .common-js-pagination .common-pagination-page, .wws-carousel-navigation-status,
     .sitewide-effort-navigation-item, .item-picker-pagination-pages, .dragon-picker-pagination-pages, .morphology-picker-pagination-pages {
         color: var(--button-text-dark);
         border: 2px solid var(--borders-med);
         background: linear-gradient(to bottom, var(--button-one) 0%, var(--button-two) 100%);
     }
-    .common-ui-button-disabled, .greybutton, .greybutton.stopbutton,
+    .common-ui-button-disabled, a.common-ui-button-disabled, .greybutton, .greybutton.stopbutton,
     .common-ui-vertical-button-group > .common-ui-button-disabled,
     .common-ui-vertical-button-group .common-ui-button-group .common-ui-button-disabled,
     .beigebutton.thingbutton:disabled,
@@ -2048,7 +2051,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
         min-width: 100px;
         width: auto;
     }
-    .common-pagination .common-pagination-page:hover, .common-js-pagination .common-pagination-page:hover, .common-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover, .common-js-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover,
+    a[class="common-ui-button"]:hover, .common-pagination .common-pagination-page:hover, .common-js-pagination .common-pagination-page:hover, .common-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover, .common-js-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover,
     .sitewide-effort-navigation-item:not(.sitewide-effort-navigation-item-current):hover,
     .item-picker-pagination-pages:hover, .dragon-picker-pagination-pages:hover, .morphology-picker-pagination-pages:hover {
         border-color: var(--borders-light);
@@ -6174,10 +6177,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .post-admin .post-text-content, .post-admin .post-text-content li, .post-admin .post-text-content li span, .search-result-body.adminpost {
         color: var(--admin-text) !important;
     }
-    .post-admin .post-text-content a:not(.dragon-effect-controls-item), .post-admin .post-text-content a:not(.dragon-effect-controls-item) > *, .post-admin .post-text-content ul li::marker {
+    .post-admin .post-text-content a:not(.dragon-effect-controls-item, .pinglist-button-title), .post-admin .post-text-content a:not(.dragon-effect-controls-item, .pinglist-button-title) > *, .post-admin .post-text-content ul li::marker {
         color: var(--admin-link) !important;
     }
-    .post-admin .post-text-content a:not(.dragon-effect-controls-item):hover, .post-admin .post-text-content a:not(.dragon-effect-controls-item):focus, .post-admin .post-text-content a:not(.dragon-effect-controls-item):hover > *, .post-admin .post-text-content a:not(.dragon-effect-controls-item):focus > * {
+    .post-admin .post-text-content a:not(.dragon-effect-controls-item, .pinglist-button-title):hover, .post-admin .post-text-content a:not(.dragon-effect-controls-item, .pinglist-button-title):focus, .post-admin .post-text-content a:not(.dragon-effect-controls-item, .pinglist-button-title):hover > *, .post-admin .post-text-content a:not(.dragon-effect-controls-item, .pinglist-button-title):focus > * {
         color: var(--admin-link-hover) !important;
     }
     .post-admin .post-text-content b, .post-admin .post-text-content strong {
