@@ -7,8 +7,8 @@ A Flight Rising userstyle. A rewrite of [Zoga's Simple Dark Theme](https://users
 You will need [Stylus](https://github.com/openstyles/stylus#readme). When you install, leave 'Check for Updates' checked in order to get automatic updates. View [these](https://github.com/openstyles/stylus/wiki/Usercss#how-do-i-customize-usercss) [pages](https://github.com/openstyles/stylus/wiki/Popup#interface) to see how to change the style's settings directly in Stylus if it's your first time using it. Happy browsing!
 
 ### General Info
-**Last Updated:** Jul. 25, 2025\
-**Current Ver:** 2.5.0\
+**Last Updated:** Sep. 1, 2025\
+**Current Ver:** 2.5.1\
 **Full Changelog:** [View Here](https://github.com/dragonjpg/simple-dark-redux/pulls?q=is%3Apr+is%3Aclosed)\
 **Found a bug? Have a suggestion?** [Open an Issue](https://github.com/dragonjpg/simple-dark-redux/issues)
 
