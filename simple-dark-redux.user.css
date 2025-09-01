@@ -1099,16 +1099,15 @@ bio-color-text-3 "Light Mode" <<<EOT
 EOT;
 }
 
-@advanced dropdown forum-color-text "Forum Post Content & Previewer" {
+@advanced dropdown forum-color-text "PMs & Forum Posts" {
 forum-color-text-1 "Dark Mode (Disallow User-set Colors)" <<<EOT
-:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"]:not(span[style*="transparent"], .bbcode_spoiler) {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) span[style*="color:"]:not(span[style*="transparent"], .bbcode_spoiler) {
     color: var(--text) !important;
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="transparent"] * {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) span[style*="transparent"] * {
     color: transparent !important;
 }
-#topic-preview-text a span[style*="color:"]:not(span[style*="transparent"]),
-.post-text a span[style*="color:"]:not(span[style*="transparent"]) {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a span[style*="color:"]:not(span[style*="transparent"]) {
     color: inherit !important;
 }
 
@@ -1127,7 +1126,8 @@ forum-color-text-2 "Dark Mode (Allow User-set Colors)" <<<EOT
 EOT;
 forum-color-text-3 "Light Mode" <<<EOT
 /*general - we do not directly overwrite most vars to avoid breaking widgets *\/
-:is(.post-text-content, .post-text-signature, #topic-preview-text) {
+:is(.post-text-content, .post-text-signature, #topic-preview-text),
+#msg-preview-text, #msg-text {
     --text-alt: #000;
     --text-med: #555;
     --post-text: var(--text-alt);
@@ -1166,35 +1166,40 @@ forum-color-text-3 "Light Mode" <<<EOT
     --widget-med-bg: #fff;
     --widget-med-alt: #faf9f7;
 }
-#topic-preview-text {
+#topic-preview-text, #msg-preview-text, #msg-show {
     background-color: #fff;
 }
+/*fix pm attachments label*\/
+#msg-items > p {
+    --text-alt: #000;
+    color: var(--text-alt);
+}
 /*link colors*\/
-:is(.post-text-content, .post-text-signature, #topic-preview-text) .gamedb-bbcode,
-:is(.post-text-content, .post-text-signature, #topic-preview-text) .pinglist-bbcode {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) .gamedb-bbcode,
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) .pinglist-bbcode {
     --link: var(--link-alt);
     --link-hover: var(--link-hover-alt);
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text) a {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a {
     color: var(--link-alt);
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text) a:hover,
-:is(.post-text-content, .post-text-signature, #topic-preview-text) a:focus,
-:is(.post-text-content, .post-text-signature, #topic-preview-text) a:focus-within,
-:is(.post-text-content, .post-text-signature, #topic-preview-text) a:hover :is(b, strong, i, em) {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a:hover,
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a:focus,
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a:focus-within,
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a:hover :is(b, strong, i, em) {
     color: var(--link-hover-alt);
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a {
     color: var(--link);
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:hover,
-:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus, 
-:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus-within {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:hover,
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus, 
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus-within {
     color: var(--link-hover);
 }
 /*columns*\/
-:is(.post-text-content, .post-text-signature, #topic-preview-text) td,
-:is(.post-text-content, .post-text-signature, #topic-preview-text) th {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) td,
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) th {
     color: var(--text-alt);
 }
 /*colored text*\/
@@ -1202,35 +1207,35 @@ forum-color-text-3 "Light Mode" <<<EOT
 #topic-preview-text :is(b, i, strong, em),
 .post-text-signature :is(b, i, strong, em),
 :is(.post-text-content, #topic-preview-text) a :is(b, i, strong, em),
-:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] :is(b, i, strong, em, u),
-.post-edited em {
+:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] :is(b, i, strong, em, u), .post-edited em, #msg-text :is(b, i, strong, em), #msg-text a :is(b, i, strong, em),
+#msg-preview-text :is(b, i, strong, em), #msg-preview-text a :is(b, i, strong, em){
     color: inherit;
 }
 /*bbcode quotes & code tags*\/
-:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(.bbcode_quote, .bbcode_code) {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.bbcode_quote, .bbcode_code) {
     border-color: var(--quote-header);
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(div.bbcode_quote_head, div.bbcode_code_head) {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(div.bbcode_quote_head, div.bbcode_code_head) {
     --tooltip-header: var(--quote-header);
     --borders: --quote-header;
     --text: #fff;
     --link: #fff;
     --link-hover: #fff;
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(div.bbcode_quote_head, div.bbcode_code_head) a {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(div.bbcode_quote_head, div.bbcode_code_head) a {
     color: inherit !important;
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text) :is(div.bbcode_quote_body, div.bbcode_code_body) {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(div.bbcode_quote_body, div.bbcode_code_body) {
     background-color: #f8f3d4;
     color: var(--text-alt);
 }
 /*hiddens*\/
-:is(.post-text-content, .post-text-signature, #topic-preview-text) .forum-hidden-header {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) .forum-hidden-header {
     --strong: #fff;
     --section: var(--fr-red);
     border-color: var(--fr-red);
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text) .forum-hidden {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) .forum-hidden {
     background: #fff;
     border-color: #cab1b1;
 }
@@ -6417,7 +6422,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border: 1px solid rgb(var(--warning));
         color: var(--warning-text);
     }
-    /*[[forum-color-text]]*/
     
     /*[[stickyposter]]*/
     
@@ -6681,13 +6685,14 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         margin-bottom: 15px;
     }
     #msg-show span#msg-avatar,
-    #msg-preview #body span:first-child {
+    #msg-preview #body > span:first-child {
         background: linear-gradient(to bottom, var(--section) 0%, var(--widget) 50%);
         grid-row: 1 / 3;
     }
     #msg-editor > div[style*="margin-bottom:5px; position:relative; height:20px;"] {
         height: auto !important;
     }
+    /*man the message preview is messed up huh */
     #msg-preview #header {
         padding-left: 5px;
         box-sizing: border-box;
@@ -6700,19 +6705,31 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         grid-template-columns: 130px auto;
         overflow: hidden;
     }
-    #msg-preview #body span:first-child {
-        margin-top: 0;
-        padding-top: 15px;
-        box-sizing:border-box;
-    }
     #msg-preview #body #preview-header {
         width: 100%;
         margin: 0;
     }
     #msg-preview-text {
         width: 100%;
+        padding: 14px;
+        box-sizing: border-box;
+        min-height: 150px;
+    }
+    #msg-preview #body span:first-child {
+        margin: 0;
     }
     #msg-preview #body span:last-child {
+        background: none;
+        padding: 0;
+        width: auto;
+        min-height: unset;
+    }
+    #msg-preview #body > span:first-child {
+        margin-top: 0;
+        padding-top: 15px;
+        box-sizing:border-box;
+    }
+    #msg-preview #body > span:last-child {
         background-image: none;
         border-left: 1px solid var(--borders);
         box-sizing: border-box;
@@ -6732,6 +6749,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         width: 100%;
         padding: 10px 5px;
     }
+    
+    /*light mode*/
+    /*[[forum-color-text]]*/
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/main\\.php\\?p=battle.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/coliseum.*") {
     /* Coliseum */
