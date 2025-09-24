@@ -3,9 +3,10 @@
 @namespace      userstyles.world/user/meow
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
-@version        2.5.1
+@version        2.5.2
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
+@preprocessor   uso
 
 @var checkbox filler1 "─── ↓ Theme Selection & Customization ↓ ───" 1
 @advanced dropdown theme "Theme" {
@@ -681,7 +682,9 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 #block-dialog > div,
 #rep_box > form > div > div:last-child,
 #dressing-outfit-loader > div:last-child,
-#forum-block-dialog > div {
+#delete-outfit-box > div:last-child,
+#forum-block-dialog > div,
+#forum-friend-start-dialog > div:has(button) {
     display: flex;
     justify-content: space-between;
 }
@@ -690,8 +693,10 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 #block-dialog > div button,
 #rep_box > form > div > div:last-child input,
 #dressing-outfit-loader > div:last-child input,
+#delete-outfit-box > div:last-child input,
 #delete-confirm > div button,
 #forum-block-dialog > div button,
+#forum-friend-start-dialog > div button,
 .vista-options ~ div:last-of-type > input {
     width: 48%;
 }
@@ -751,7 +756,7 @@ div#purchase.ui-dialog-content > div:last-child button + button {
     justify-content: center;
     margin-top: 20px !important;
 }
-#dialog-dad + img + #dialog-mom + div + div button, .raffle-window-buttons input {
+#dialog-dad + img + #dialog-mom + div + div button, .raffle-window-buttons input, #delete-outfit-box input[value="Close"] {
     flex-grow: 1;
     max-width: 100%;
 }
@@ -2056,7 +2061,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
         min-width: 100px;
         width: auto;
     }
-    a[class="common-ui-button"]:hover, .common-pagination .common-pagination-page:hover, .common-js-pagination .common-pagination-page:hover, .common-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover, .common-js-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover,
+    .common-ui-vertical-button-group .common-ui-button:hover, .common-pagination .common-pagination-page:hover, .common-js-pagination .common-pagination-page:hover, .common-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover, .common-js-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover,
     .sitewide-effort-navigation-item:not(.sitewide-effort-navigation-item-current):hover,
     .item-picker-pagination-pages:hover, .dragon-picker-pagination-pages:hover, .morphology-picker-pagination-pages:hover {
         border-color: var(--borders-light);
@@ -2626,7 +2631,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
         margin-top: 2px;
         line-height: 1.4em;
     }
-    #status-box .status-author span, span.announce-timestamp, .search-result-timestamp {
+    #status-box .status-author span, span.announce-timestamp, .search-result-timestamp, .dragon-search-textresult, .dragon-search-textresult div {
         color: var(--text-med)
     }
     /*random dragon*/
@@ -6108,6 +6113,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         font-size: var(--forum-font-size);
         line-height: var(--forum-line-height);
     }
+    /* fix text getting slightly cut off in some cases due to overflow: hidden? this is a base site issue*/
+    .post-text-content {
+        padding-bottom: 0.5em;
+    }
     #msg-text,
     #msg-preview-text {
         font-size: var(--messaging-font-size);
@@ -7840,7 +7849,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/icons/tidy-up.png"],
     img[src$="/static/layout/button_approvetrade.png"], img[src$="/static/layout/button_canceltrade.png"],
     img[src$="/static/layout/forum/forum-icon-link.png"],
-    .flattery-meter-frame[data-level="7"] .flattery-meter-full.common-meter-full::before
+    .flattery-meter-frame[data-level="7"] .flattery-meter-full.common-meter-full::before,
+    .bbcode-button img
     {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
     }
