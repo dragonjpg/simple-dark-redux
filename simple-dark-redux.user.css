@@ -3,7 +3,7 @@
 @namespace      userstyles.world/user/meow
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
-@version        2.5.2
+@version        2.6.0
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 @preprocessor   uso
@@ -700,7 +700,7 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 .vista-options ~ div:last-of-type > input {
     width: 48%;
 }
-#swipp-preview-button-tray, #baldwin-preview-container #baldwin-preview-button-tray, #newitem #pinkerton-button-tray, #pinkerton-button-tray, #name-dragon-start-dialog .common-dialog-section:last-child, #ah-cancel-verify-dlg p:last-child, #ah-cancel-ok-dlg p:last-child, #ah-sell-verify-dlg p:last-child, #ah-sell-ok-dlg p:last-child, #ah-sell-submit-container, .raffle-window-buttons, #blocked-by-user-close,
+#baldwin-preview-container #baldwin-preview-button-tray, #newitem #pinkerton-button-tray, #pinkerton-button-tray, #name-dragon-start-dialog .common-dialog-section:last-child, #ah-cancel-verify-dlg p:last-child, #ah-cancel-ok-dlg p:last-child, #ah-sell-verify-dlg p:last-child, #ah-sell-ok-dlg p:last-child, #ah-sell-submit-container, .raffle-window-buttons, #blocked-by-user-close,
 .vista-options ~ div:last-of-type {
     display: flex;
     justify-content: center;
@@ -712,7 +712,7 @@ div#purchase.ui-dialog-content > div:last-child button + button {
     justify-content: space-between;
     box-sizing: border-box;
 }
-#swipp-preview-button-tray form, #baldwin-preview-container #baldwin-preview-button-tray form, .market-purchase-buttons,
+#baldwin-preview-container #baldwin-preview-button-tray form, .market-purchase-buttons,
 .ui-dialog #tutorial div:last-child {
     display: flex;
     box-sizing: border-box;
@@ -720,7 +720,7 @@ div#purchase.ui-dialog-content > div:last-child button + button {
     flex-grow: 1;
     padding: 0 15px;
 }
-.dragon-picker-preview-buttons > input, .dialog-button-tray > input, .dialog-button-tray > button, #swipp-preview-button-tray input, #baldwin-preview-container #baldwin-preview-button-tray input, .market-purchase-buttons button, #name-dragon-start-dialog .common-dialog-section:last-child input, #ah-cancel-verify-dlg p:last-child input, #ah-sell-verify-dlg p:last-child input, div#confirm-trade button, #confirm-approve button, #ah-save-search-dlg p:last-child input {
+.dragon-picker-preview-buttons > input, .dialog-button-tray > input, .dialog-button-tray > button, #baldwin-preview-container #baldwin-preview-button-tray input, .market-purchase-buttons button, #name-dragon-start-dialog .common-dialog-section:last-child input, #ah-cancel-verify-dlg p:last-child input, #ah-sell-verify-dlg p:last-child input, div#confirm-trade button, #confirm-approve button, #ah-save-search-dlg p:last-child input {
     flex-grow: 1;
     min-height: 50px;
     max-width: 50%;
@@ -739,13 +739,10 @@ div#purchase.ui-dialog-content > div:last-child button + button {
     width: 33%;
     min-height: 50px;
 }
-.dragon-picker-preview-buttons > input:only-child, .dialog-button-tray > input:only-child, .dialog-button-tray > button:only-child, #swipp-preview-button-tray input:only-child, #pinkerton-button-tray button, #ah-cancel-ok-dlg p:last-child input, #ah-sell-ok-dlg p:last-child input, #ah-buy-ok-dlg > p:last-child input, #ah-error-dlg > p:last-child input, #ah-relist-ok-dlg > p:last-child input {
+.dragon-picker-preview-buttons > input:only-child, .dialog-button-tray > input:only-child, .dialog-button-tray > button:only-child, #pinkerton-button-tray button, #ah-cancel-ok-dlg p:last-child input, #ah-sell-ok-dlg p:last-child input, #ah-buy-ok-dlg > p:last-child input, #ah-error-dlg > p:last-child input, #ah-relist-ok-dlg > p:last-child input {
     flex-grow: 1;
     min-height: 50px;
     max-width: 100%;
-}
-#swipp-preview-button-tray input:only-child {
-    margin-left: 0 !important;
 }
 #dialog-dad + img + #dialog-mom + div br {
     display: none;
@@ -763,7 +760,7 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 .dialog-button-tray input[type="button"] {
     margin-right: 0;
 }
-.dragon-picker-preview-buttons > .dragon-picker-preview-back + .dragon-picker-preview-confirm, .dialog-button-tray > input + input, .dialog-button-tray > a + input, .dialog-button-tray > button + button, #swipp-preview-button-tray > .dialog-submit + .dialog-dismiss, .market-purchase-buttons button + button, #name-dragon-start-dialog .common-dialog-section:last-child > input + input, #dialog-dad + img + #dialog-mom + div + div button + button, .raffle-window-buttons input + input, div#confirm-trade button + button, div#confirm-approve button + button  {
+.dragon-picker-preview-buttons > .dragon-picker-preview-back + .dragon-picker-preview-confirm, .dialog-button-tray > input + input, .dialog-button-tray > a + input, .dialog-button-tray > button + button, .market-purchase-buttons button + button, #name-dragon-start-dialog .common-dialog-section:last-child > input + input, #dialog-dad + img + #dialog-mom + div + div button + button, .raffle-window-buttons input + input, div#confirm-trade button + button, div#confirm-approve button + button  {
     margin-left: 20px;
 }
 #mannequin-confirm-ok, #name-dragon-confirm-dialog .common-dialog-section:last-child input, #breed_mod #close, #tutclose, #closeprev, #skin-no, #share-outfit-cancel, #overwriteMorphology, #saveNewMorphology, #take-confirm button {
@@ -783,6 +780,14 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 }
 .custom-shop-trade-modal-result-frame .dialog-button-tray .beigebutton:first-child {
     margin-right: 10px;
+}
+/*fix swipp trade dialog*\/
+.dialog-button-tray a.beigebutton.thingbutton:first-child,
+.dialog-button-tray a.beigebutton.thingbutton + br + br + input[type="button"]  {
+    width: 43%;
+}
+.dialog-button-tray a.beigebutton.thingbutton {
+    display: flex;
 }
 EOT;
 modal-buttons-2 "Disable" <<<EOT  EOT;
@@ -1404,7 +1409,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
     td, th, .common-hub-item-description, #registration h1, #noauth-container h2, #error-404 div, .common-bubble-byline, .cc-color-override-603568657.cc-window, .friend-requests-page-details-main, #postsheader, .forum-hidden-header {
         color: var(--text);
     }
-    strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .swipp-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown, .hoard-sale-buyback-item-name, .dgnres-index .cooldown .label, .wws-description h2, #nrgavg div:first-child, #nrgavg div:last-child {
+    strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown, .hoard-sale-buyback-item-name, .dgnres-index .cooldown .label, .wws-description h2, #nrgavg div:first-child, #nrgavg div:last-child {
         color: var(--strong);
     }
     span[style*="color:"][style*="#6F1111"], .pinkerton-text-footer span[style*="color"] {
@@ -2123,7 +2128,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
         color: #e6e6e6;
     }
     /*item count label*/
-    .itemicon span, .swipp-mini-item span, .swipp-fullsize-item span, .baldwin-mini-item span, .baldwin-fullsize-item span {
+    .itemicon span, .baldwin-mini-item span, .baldwin-fullsize-item span {
         background: var(--section);
         color: var(--em);
     }
@@ -4524,8 +4529,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         z-index: 2;
     }
 }
-@-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/sophie.*") {
-    /* Crafter NPCs General*/
+@-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/sophie.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/swap.*") {
+    /* Crafter & Trade NPCs General*/
     
     /*background stuff*/
     div.contentcontainer div.main, div.contentcontainer div.main div.content {
@@ -4580,13 +4585,14 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .crafter-status-description a {
         color: var(--link);
     }
-    .crafter-meter-header, .crafter-recipe-reward-name, .crafter-recipe-ingredient {
+    .crafter-meter-header, .crafter-recipe-reward-name, .crafter-recipe-ingredient,
+    .swap-offer-requirement, .swap-offer-output-name {
         color: var(--strong)
     }
     .crafter-recipe-footer-item {
         color: var(--text);
     }
-    #crafter-timer-countdown, #crafter-timer-subtitle {
+    #crafter-timer-countdown, #crafter-timer-subtitle, #swap-timer-countdown {
 	    color: var(--accent-three);
     }
     #crafter-status-claim {
@@ -4631,22 +4637,22 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         margin: 0 0.5rem;
     }
     /*recipe*/
-    .crafter-recipe, .crafter-recipe[data-locked="1"] {
+    .crafter-recipe, .crafter-recipe[data-locked="1"], .swap-offer {
         background: linear-gradient(to top, var(--section) 0%, var(--widget) 50%, var(--widget-med) 100%);
         color: var(--text);
         border: 2px solid var(--borders-light);
     }
-    .crafter-recipe-ingredients {
+    .crafter-recipe-ingredients, .swap-offer-requirements {
         background: var(--widget-med);
         color: var(--text);
         border-color: var(--borders);
     }
-    .crafter-recipe-ingredient-empty {
+    .crafter-recipe-ingredient-empty, .swap-offer-requirements-empty {
         background: none;
         position: relative;
         z-index: 2;
     }
-    .crafter-recipe-ingredient-empty::before {
+    .crafter-recipe-ingredient-empty::before, .swap-offer-requirements-empty::before {
         content: '';
         height: 20px;
         width: 20px;
@@ -4659,15 +4665,15 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         z-index: -1;
         box-sizing: border-box;
     }
-    .crafter-recipe-ingredient[data-requirement-met="0"] {
+    .crafter-recipe-ingredient[data-requirement-met="0"], .swap-offer-requirement[data-owned="0"] {
         opacity: 1;
         color: var(--error-text);
         filter: none;
     }
-    .crafter-recipe-ingredient[data-requirement-met="0"] img {
+    .crafter-recipe-ingredient[data-requirement-met="0"] img, .swap-offer-requirement[data-owned="0"] img {
         filter: saturate(0%);
     }
-    .crafter-recipe-currency-treasure {
+    .crafter-recipe-currency-treasure, .swap-offer-currency-treasure {
         color: var(--warning-text);
         background-color: rgba(var(--warning),0.2);
         border-color: rgb(var(--warning));
@@ -4710,7 +4716,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         color: var(--error-text);
         border-color: rgba(var(--error),0.5);
     }
-    /*img stuff*/
+    /*hide base crafter add item img*/
     img[src$="/static/layout/sophie/add-item.png"] {
        display: none;
     }
@@ -4725,6 +4731,15 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     div.contentcontainer div.main[style*="static/layout/sophie/create-background.png"] div.content::before {
         background-image: url('https://www1.flightrising.com/static/layout/sophie/create-background.png') !important;
+    }
+}
+@-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/swap.*") {
+    /*Swipp*/
+    div.contentcontainer div.main::after {
+        background-image: url('https://www1.flightrising.com/static/cms/scene/34843.png') !important;
+    }
+    div.contentcontainer div.main[style*="/static/layout/swap/background.png"] div.content::before {
+        background-image: url('https://i.postimg.cc/v8qTJGK3/swipp.png') !important;
     }
 }
 
@@ -4910,39 +4925,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     /*pinkerton*/
     .pinkerton-text-footer input {
         width: 100%;
-    }
-}
-
-@-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/swipp.*") {
-    /* Swipp */
-    .swipp-tradebox {
-        background: linear-gradient(to bottom, var(--widget) 0%, var(--widget-med) 100%);
-        color: var(--text);
-        border: 2px solid var(--borders-light);
-        border-radius: 10px;
-        width: 589px;
-        left: 77px;
-    }
-    .trade-output-item {
-        border: 3px solid var(--borders-med);
-        height: 100%;
-        box-sizing: border-box;
-        border-radius: 10px;
-    }
-    #swipp-timer .swipp-timer-header {
-        color: var(--text)
-    }
-    #swipp-timer-value, .swipp-timer-completed {
-        color: var(--accent-three)
-    }
-    .swipp-trade {
-        background: linear-gradient(to top, var(--section) 0%, var(--widget) 50%, var(--widget-med) 100%);
-        border: 2px solid var(--borders-light);
-    }
-    .swipp-trade-title {
-        background: var(--widget);
-        border-color: var(--section);
-        color: var(--link)
     }
 }
 
@@ -7097,7 +7079,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     
 }
-@-moz-document url-prefix("https://www1.flightrising.com/exchange") {
+@-moz-document regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/exchange.*") {
     
     /* Grand Exchange */
     :root {
@@ -7792,8 +7774,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .ah-listing-buy-button, img[src$="/static/layout/auctionhouse/button_ah_buy.png"],
     img[src$="static/layout/slick/slick-arrow-left.png"], img[src$="static/layout/slick/slick-arrow-right.png"],
     img[src$="/static/layout/scryer/button_load_scry.png"],
-    img[src$="/static/layout/swipp/button-catalog.png"],
-    img[src$="/static/layout/swipp/button_swipptrade.png"],
     img[src$="/static/layout/baldwin/button_baldwincreate.png"],
     img[src$="/static/layout/button_newtopic.png"],
     img[src$="/static/layout/buttton_unsubscribed.png"],
@@ -7883,7 +7863,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/market/buttons/mode-treasure.png"],
     img[src$="/static/layout/market/buttons/mode-gem.png"],
     img[src$="/static/layout/hoard/buttons/button-add-funds.png"],
-    img[src$="/static/layout/hoard/buttons/button-remove-funds.png"]
+    img[src$="/static/layout/hoard/buttons/button-remove-funds.png"],
+    img[src$="/static/layout/swap/swap_button.png"]
     {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(75%) contrast(165%);
     }
@@ -7974,7 +7955,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/auctionhouse/searchtab_up.png"] {
         filter: invert(100) var(--filter) hue-rotate(var(--hue)) brightness(200%) contrast(150%);
     }
-    img[src$="/static/layout/swipp/swipp-arrow.png"],
     img[src$="/static/layout/baldwin/arrow.png"],
     img[src$="/static/layout/crafter/arrow.png"],
     img[src$="/static/layout/lair/buttons/page-expand.png"],
@@ -7998,7 +7978,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     img[src$="/static/layout/baldwin/arrow.png"],
     img[src$="/static/layout/crafter/arrow.png"] {
-        content: url(https://www1.flightrising.com/static/layout/swipp/swipp-arrow.png) !important
+        content: url(https://i.postimg.cc/kgWPNdtx/arrow.png) !important
     }
     img[src$="/static/layout/lair/icons/male.png"],
     img[src$="/static/layout/lair/icons/female.png"] {
