@@ -1411,14 +1411,16 @@ bio-override-fonts-1 "Remove" <<<EOT
 }
 EOT;
 }
-@advanced dropdown forum-override-fonts "User-set Fonts in Forum" {
+@advanced dropdown forum-override-fonts "User-set Fonts in Forum/PMs" {
+forum-override-fonts-2 "Allow" <<<EOT EOT;
 forum-override-fonts-1 "Remove" <<<EOT
 #topic-preview-text span[style*="font-family"],
-.post-text-content span[style*="font-family"], .post-text-signature span[style*="font-family"] {
+.post-text-content span[style*="font-family"],
+.post-text-signature span[style*="font-family"],
+#msg-text span[style*="font-family"] {
     font-family: var(--font-family) !important;
 }
 EOT;
-forum-override-fonts-2 "Allow" <<<EOT EOT;
 }
 
 @var checkbox filler0 "─── ↓ Custom Theme Settings ↓ ───" 1
