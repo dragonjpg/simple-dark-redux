@@ -43,12 +43,12 @@ https://user-images.githubusercontent.com/132804271/236664072-bb251847-dde5-4f62
 
 ### **Theme Previews:**
 #### Classic Blue
-![Screenshot of the home page in the default Classic Blue theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/blue1.png)\
-![Screenshot of the Lair page in the default Classic Blue theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/blue2.png)
+![Screenshot of the home page in the default Classic Blue theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/classicblue1.png)\
+![Screenshot of the Lair page in the default Classic Blue theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/classicblue2.png)
 
 #### Rising Red
-![Screenshot of the home page in the Rising Red theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/red1.png)\
-![Screenshot of the Lair page in the Rising Red theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/red2.png)
+![Screenshot of the home page in the Rising Red theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/risingred1.png)\
+![Screenshot of the Lair page in the Rising Red theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/risingred2.png)
 
 #### Gray
 ![Screenshot of the home page in the Gray theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/gray1.png)\
