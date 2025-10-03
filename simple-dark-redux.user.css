@@ -767,7 +767,7 @@ adblock2 "Disable" <<<EOT  EOT;
     "No" : "--unused-",
     "Yes" : "--"
 }
-@var range preset-brightness "Preset Themes: Image Button Brightness Control" [95, 65, 100, 5, '%']
+@var range preset-brightness "Preset Themes: Button Images Brightness Filter" [95, 65, 100, 5, '%']
 @advanced dropdown modal-buttons "Larger Modal Buttons" {
 modal-buttons-1 "Enable" <<<EOT /*larger modal buttons*\/
 .dialog-button-tray, .dragon-picker-preview-buttons, div#confirm-trade > div:last-child, #confirm-approve > div:last-child,
