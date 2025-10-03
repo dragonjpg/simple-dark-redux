@@ -3,7 +3,7 @@
 @namespace      userstyles.world/user/meow
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
-@version        2.7.0
+@version        2.8.0
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 @preprocessor   uso
@@ -13,7 +13,8 @@
 theme1 "Classic Blue" <<<EOT 
 
         --hue: 175deg;
-        --filter: sepia(100%) brightness(95%);
+        --filter: sepia(100%);
+        --filter-brightness: brightness(/*[[preset-brightness]]*\/);
         --selection-bg: #050613;
         --selection-text: #ffb1e4;
         
@@ -72,6 +73,14 @@ theme1 "Classic Blue" <<<EOT
         --red-button-two: #1f3c5f;
         --button-disabled-one: #7f8d9f;
         --button-disabled-two: #444f5b;
+
+        /*[[preset-darker-buttons]]*\/button-one: #b4c2d4;
+        /*[[preset-darker-buttons]]*\/button-two: #5e7794;
+        /*[[preset-darker-buttons]]*\/beige-button-two: #6a4a76;
+        /*[[preset-darker-buttons]]*\/red-button-one: #294b74;
+        /*[[preset-darker-buttons]]*\/red-button-two: #0f1e30;
+        /*[[preset-darker-buttons]]*\/button-disabled-one: #4b5b70;
+        /*[[preset-darker-buttons]]*\/button-disabled-two: #192228;
         
         --selected: #4df0f0;
         --selected-text: #000;
@@ -99,14 +108,15 @@ EOT;
 theme5 "Rising Red" <<<EOT 
 
         --hue: -30deg;
-        --filter: sepia(100%) saturate(50%) brightness(95%);
+        --filter: sepia(100%);
+        --filter-brightness: saturate(50%) brightness(/*[[preset-brightness]]*\/);
         --selection-bg: #3f0a0a;
         --selection-text: #ffe595;
         
         --background: #000;
         --main: #2c211f;
         --columns: #190808;
-        --bar: #5C0203;
+        --bar: #3E0001;
         
         --widget: #291919;
         --widget-rgb: 41, 25, 25;
@@ -131,21 +141,21 @@ theme5 "Rising Red" <<<EOT
         --borders-light: #886152;
         
         --text: #e7e3da;
-        --text-med: #a89784;
-        --text-dark: #49312a;
+        --text-med: #a6a39c;
+        --text-dark: #726c69;
         --text-disabled: var(--text-med);
         --shadow: #000;
         --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
         
-        --strong: #ffb8b4;
-        --em: #fce8a2;
+        --strong: #dca095;
+        --em: #f9f1ab;
         --link: #FCB54A;
         --link-hover: #fde57f;
         
         --accent-one: #b85656;
         --accent-two: #f7c27c;
         --accent-three: #f1c827;
-        --accent-four: #f8f0bc;
+        --accent-four: #b0cfc5;
         --accent-five: #fbb04a;
         
         --button-text: #fff5e3;
@@ -158,6 +168,15 @@ theme5 "Rising Red" <<<EOT
         --red-button-two: #631919;
         --button-disabled-one: #9f7f7f;
         --button-disabled-two: #5b4444;
+
+        /*[[preset-darker-buttons]]*\/button-one: #c5a79b;
+        /*[[preset-darker-buttons]]*\/button-two: #78634d;
+        /*[[preset-darker-buttons]]*\/beige-button-one: #b27b34;
+        /*[[preset-darker-buttons]]*\/beige-button-two: #4c251f;
+        /*[[preset-darker-buttons]]*\/red-button-one: #901313;
+        /*[[preset-darker-buttons]]*\/red-button-two: #410f0f;
+        /*[[preset-darker-buttons]]*\/button-disabled-one: #895e5e;
+        /*[[preset-darker-buttons]]*\/button-disabled-two: #453131;
         
         --selected: #fcbe48;
         --selected-text: #000;
@@ -187,6 +206,7 @@ theme2 "Gray" <<<EOT
 
         --hue: -30deg;
         --filter: grayscale(100%);
+        --filter-brightness: brightness(/*[[preset-brightness]]*\/);
         --selection-bg: #130509;
         --selection-text: #f0b69a;
 
@@ -245,6 +265,15 @@ theme2 "Gray" <<<EOT
         --red-button-two: #8b0a40;
         --button-disabled-one: #585858;
         --button-disabled-two: #2c2121;
+
+        /*[[preset-darker-buttons]]*\/button-one: #b2b2b2;
+        /*[[preset-darker-buttons]]*\/button-two: #858585;
+        /*[[preset-darker-buttons]]*\/beige-button-one: #616161;
+        /*[[preset-darker-buttons]]*\/beige-button-two: #322f2f;
+        /*[[preset-darker-buttons]]*\/red-button-one: #a36c32;
+        /*[[preset-darker-buttons]]*\/red-button-two: #5b0629;
+        /*[[preset-darker-buttons]]*\/button-disabled-one: #3b3b3b;
+        /*[[preset-darker-buttons]]*\/button-disabled-two: #281818;
         
         --selected: #dc2562;
         --selected-text: #000;
@@ -272,7 +301,8 @@ EOT;
 theme3 "Copper" <<<EOT
 
         --hue: -35deg;
-        --filter: sepia(100%) saturate(60%) brightness(95%);
+        --filter: sepia(100%);
+        --filter-brightness: saturate(60%) brightness(/*[[preset-brightness]]*\/);
         --selection-bg: #130509;
         --selection-text: #56c1b7;
 
@@ -323,7 +353,7 @@ theme3 "Copper" <<<EOT
         
         --button-text: #fefdf2;
         --button-text-dark: #080e10;
-        --button-one: #f0e1d6;
+        --button-one: #dcbca5;
 	    --button-two: #a2b6b6;
         --beige-button-one: #c5795c;
         --beige-button-two: #3d574f;
@@ -331,6 +361,15 @@ theme3 "Copper" <<<EOT
         --red-button-two: #4e2f20;
         --button-disabled-one: #2e3145;
         --button-disabled-two: #27201c;
+
+        /*[[preset-darker-buttons]]*\/button-one: #a98973;
+        /*[[preset-darker-buttons]]*\/button-two: #537676;
+        /*[[preset-darker-buttons]]*\/beige-button-one: #b26041;
+        /*[[preset-darker-buttons]]*\/beige-button-two: #27473d;
+        /*[[preset-darker-buttons]]*\/red-button-one: #906c33;
+        /*[[preset-darker-buttons]]*\/red-button-two: #4e260e;
+        /*[[preset-darker-buttons]]*\/button-disabled-one: #2e3145;
+        /*[[preset-darker-buttons]]*\/button-disabled-two: #27201c;
         
         --selected: #df4c0c;
         --selected-text: #000;
@@ -359,6 +398,7 @@ theme4 "Dracula" <<<EOT
 
         --hue: 205deg;
         --filter: sepia(100%);
+        --filter-brightness: brightness(/*[[preset-brightness]]*\/);
         --selection-bg: #ff79c6;
         --selection-text: #000;
 
@@ -417,6 +457,15 @@ theme4 "Dracula" <<<EOT
         --red-button-two: #24222d;
         --button-disabled-one: #6272a4;
         --button-disabled-two: #24222d;
+
+        /*[[preset-darker-buttons]]*\/button-one: #b3b4c3;
+        /*[[preset-darker-buttons]]*\/button-two: #6a6187;
+        /*[[preset-darker-buttons]]*\/beige-button-one: #4b5985;
+        /*[[preset-darker-buttons]]*\/beige-button-two: #2b2e41;
+        /*[[preset-darker-buttons]]*\/red-button-one: #3d346c;
+        /*[[preset-darker-buttons]]*\/red-button-two: #191432;
+        /*[[preset-darker-buttons]]*\/button-disabled-one: #3a4770;
+        /*[[preset-darker-buttons]]*\/button-disabled-two: #15131f;
         
         --selected: #50fa7b;
         --selected-text: #000;
@@ -444,7 +493,8 @@ EOT;
 
 theme99 "Custom" <<<EOT
         --hue: /*[[hue]]*\/;
-        --filter: /*[[filter]]*\/ brightness(/*[[brightness]]*\/);
+        --filter: /*[[filter]]*\/;
+        --filter-brightness: brightness(/*[[brightness]]*\/);
         --selection-bg: /*[[selection-bg]]*\/;
         --selection-text: /*[[selection-text]]*\/;
         
@@ -713,6 +763,11 @@ adblock2 "Disable" <<<EOT  EOT;
 }
 
 @var checkbox filler2 "────── ↓ Accessibility Settings ↓ ───────" 1
+@var select preset-darker-buttons  "Preset Themes: Use Darker Button Color Scheme" {
+    "No" : "--unused-",
+    "Yes" : "--"
+}
+@var range preset-brightness "Preset Themes: Button Images Brightness Filter" [95, 65, 100, 5, '%']
 @advanced dropdown modal-buttons "Larger Modal Buttons" {
 modal-buttons-1 "Enable" <<<EOT /*larger modal buttons*\/
 .dialog-button-tray, .dragon-picker-preview-buttons, div#confirm-trade > div:last-child, #confirm-approve > div:last-child,
@@ -1356,23 +1411,25 @@ bio-override-fonts-1 "Remove" <<<EOT
 }
 EOT;
 }
-@advanced dropdown forum-override-fonts "User-set Fonts in Forum" {
+@advanced dropdown forum-override-fonts "User-set Fonts in Forum/PMs" {
+forum-override-fonts-2 "Allow" <<<EOT EOT;
 forum-override-fonts-1 "Remove" <<<EOT
 #topic-preview-text span[style*="font-family"],
-.post-text-content span[style*="font-family"], .post-text-signature span[style*="font-family"] {
+.post-text-content span[style*="font-family"],
+.post-text-signature span[style*="font-family"],
+#msg-text span[style*="font-family"] {
     font-family: var(--font-family) !important;
 }
 EOT;
-forum-override-fonts-2 "Allow" <<<EOT EOT;
 }
 
-@var checkbox filler0 "─── ↓ Custom Theme Settings & Colors ↓ ───" 1
+@var checkbox filler0 "─── ↓ Custom Theme Settings ↓ ───" 1
 @var select filter "Buttons & Default Site BG" {
     "Color (Changes w/ Hue)":"sepia(100%)",
     "Grayscale":"grayscale(100%)"
 }
 @var range hue "Button & Default Site BG Hue" [175, -360, 360, 5, 'deg']
-@var range brightness "Button & Default Site BG Brightness" [95, 65, 125, 5, '%']
+@var range brightness "Buttons Brightness" [95, 65, 125, 5, '%']
 
 @var color main "Main Page BG" #22282b
 @var color columns "Left/Right Columns" #15191e
@@ -3257,7 +3314,7 @@ forum-override-fonts-2 "Allow" <<<EOT EOT;
         position: absolute;
         background: url('https://www1.flightrising.com/static/bars/avg_energy.png');
         top: 0; left: 0;
-        filter: grayscale(100%);
+        filter: grayscale(100%) brightness(80%);
     }
     #usertab a.clue_nrg > div:first-child div[style*="url(images/bars/avg_energy.png)"] {
         position: relative;
@@ -5528,7 +5585,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     img[src$="/static/layout/button_senddelivery_disabled.png"],
     img[src$="/static/layout/button_requesttrade_disabled.png"] {
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(45%) contrast(250%);
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(45%) contrast(250%);
         border-radius: 12px;
     }
 }
@@ -5568,7 +5625,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .ah-collect-all-btn,
     .ah-listing-relist-button,
     .ah-listing-clear-button {
-        filter: var(--filter) hue-rotate(var(--hue));
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue));
     }
     .ah-pagenumbers a, .ah-item-name {
         color: var(--link-hover);
@@ -5688,7 +5745,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         height: 100%;
         top: 0;
         left: 0;
-        filter: invert(100%) var(--filter) hue-rotate(var(--hue)) brightness(105%) contrast(100%) saturate(250%);
+        filter: invert(100%) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(105%) contrast(100%) saturate(250%);
         z-index: 2;
     }
     .ah-listing-cancel-button::before {
@@ -5758,7 +5815,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         position: absolute;
         top: 0; left: 0;
         width: 100%; height: 100%;
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
     }
     #ah-topright-buy-button::before {
         background: url('https://www1.flightrising.com/static/layout/auctionhouse/ah_topright_buy.png') no-repeat;
@@ -5806,7 +5863,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     .ah-listing-sold-checkmark {
         border-radius: 12px;
-        filter: invert(100%) var(--filter) hue-rotate(var(--hue)) brightness(400%) contrast(120%);
+        filter: invert(100%) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(400%) contrast(120%);
     }
     .dragon-profile-energy-meter-full {
         background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
@@ -6960,7 +7017,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         width: 100%;
         height: 100%;
         display: block;
-        filter: invert(100) var(--filter) hue-rotate(var(--hue));
+        filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue));
         z-index:-1;
     }
     #organizeMain::before {
@@ -6972,7 +7029,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #coli-equip-inventory-bg,
     img[src$="/content/battle/images/organize/spr_organize_unit_frame_02.png"],
     #coli-equip-stats {
-        filter: invert(100) var(--filter) hue-rotate(var(--hue));
+        filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue));
     }
     #coli-equip-elemental-banner {
         background: var(--widget) !important
@@ -7935,7 +7992,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .flattery-meter-frame[data-level="7"] .flattery-meter-full.common-meter-full::before,
     .bbcode-button img
     {
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
     }
     
     img[src$="/static/layout/arrow_right.png"], img[src$="/images/layout/arrow_right.png"],
@@ -7945,15 +8002,15 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #coli-organize-up, #coli-organize-down, #coli-equip-inventory-up-image, #coli-equip-inventory-down-image,
     img[src$="/static/layout/bestiary/buttons/show-description.png"],
     img[src$="/static/layout/bestiary/buttons/hide-description.png"] {
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(140%) contrast(180%);
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(140%) contrast(180%);
     }
     img[src$="/static/layout/hoard/buttons/stack-function-unlocked.png"],
     img[src$="/static/layout/hoard/buttons/button-select-all.png"],
     img[src$="/static/layout/hoard/buttons/button-deselect-all.png"]{
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(70%) contrast(250%);
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(70%) contrast(250%);
     }
     img[src$="/static/layout/game-database/button-favorite-off.png"] {
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(70%) contrast(140%);
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(70%) contrast(140%);
     }
     img[src$="/static/layout/hoard/buttons/mode-vault.png"],
     img[src$="/static/layout/hoard/buttons/mode-hoard.png"],
@@ -7969,7 +8026,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/hoard/buttons/button-remove-funds.png"],
     img[src$="/static/layout/swap/swap_button.png"]
     {
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(75%) contrast(165%);
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(75%) contrast(165%);
     }
     img[src$="/static/layout/hoard/locked-enabled.png"],
     img[src$="/static/layout/hoard/unlocked-enabled.png"],
@@ -7980,7 +8037,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/icons/eye_open.png"], img[src$="/static/icons/eye_close.png"],
     li[data-visible="true"] .dr-apparel-visibility, li[data-visible="false"] .dr-apparel-visibility,
     img[src$="/static/layout/icon_lock.png"]   {
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(180%) contrast(120%) saturate(400%);
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(180%) contrast(120%) saturate(400%);
     }
     img[src$="/static/layout/icon_star.png"],
     .hoard-result-item-box[data-favorite="1"]:after,
@@ -8021,7 +8078,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/archaeology/button-muster-resources-disabled.png"],
     #archaeology-dig-site-header-left > div[class*="disabled"] > img,
     #coli-equip-lock-btn.coli-equip-disabled, #coli-equip-clear-btn.coli-equip-disabled {
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(90%) contrast(140%);
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(90%) contrast(140%);
     }
     img[src$="/static/layout/lair/backgrounds/male.png"],
     img[src$="/static/layout/lair/backgrounds/female.png"] {
@@ -8038,7 +8095,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/layout/eggtimer_4.png"],
     img[src$="/layout/eggtimer_5.png"],
     .coli-equip-statdlg-plus-btn {
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(75%) contrast(150%);
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(75%) contrast(150%);
     }
     img[src$="http://www1.flightrising.com/static/layout/revamp/clock_large.png"], img[src$="/images/layout/revamp/clock_large.png"], img[src$="https://www1.flightrising.com/static/layout/revamp/clock_large.png"],
     #cluetip-waitimage,
@@ -8048,7 +8105,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/common/common-toggle-off.png"],
     img[src$="static/layout/toggle_on.png"],
     img[src$="static/layout/toggle_off.png"] {
-        filter: var(--filter) hue-rotate(var(--hue));
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue));
     }
     img[src$="/static/layout/profile/emblem-ancient.png"], img[src$="/static/layout/profile/emblem-hatchling.png"] {
         filter: invert(100) var(--filter) hue-rotate(var(--hue));
@@ -8056,7 +8113,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     img[src$="/static/layout/auctionhouse/searchtab_down.png"],
     img[src$="/static/layout/auctionhouse/searchtab_up.png"] {
-        filter: invert(100) var(--filter) hue-rotate(var(--hue)) brightness(200%) contrast(150%);
+        filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(200%) contrast(150%);
     }
     img[src$="/static/layout/baldwin/arrow.png"],
     img[src$="/static/layout/crafter/arrow.png"],
@@ -8066,7 +8123,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/copy.png"],
     img[src$="/static/layout/pinglist/bbcode-no-icon.png"],
     img[src$="/static/layout/pinglist/bbcode-not-subscribed.png"] {
-        filter: invert(100) var(--filter) hue-rotate(var(--hue)) brightness(70%) saturate(200%);
+        filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(70%) saturate(200%);
     }
     img[src$="/static/layout/button_attachdragon.png"],
     img[src$="/static/layout/icon_itemnotattached.png"],
@@ -8074,10 +8131,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/icon_dragonnotattached.png"],
     img[src$="/static/icons/question.png"],
     .forum-hidden-icon {
-        filter: invert(100%) var(--filter) hue-rotate(var(--hue)) brightness(100%) contrast(100%)
+        filter: invert(100%) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(100%) contrast(100%)
     }
     #coli-equip-statpoints-btn, .coli-equip-statdlg-plus-btn.coli-equip-disabled {
-        filter: invert(100) var(--filter) hue-rotate(var(--hue)) brightness(110%) saturate(200%);
+        filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(110%) saturate(200%);
     }
     img[src$="/static/layout/baldwin/arrow.png"],
     img[src$="/static/layout/crafter/arrow.png"] {
