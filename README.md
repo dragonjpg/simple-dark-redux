@@ -13,7 +13,8 @@ You will need [Stylus](https://github.com/openstyles/stylus#readme). When you in
 **Found a bug? Have a suggestion?** [Open an Issue](https://github.com/dragonjpg/simple-dark-redux/issues)
 
 ### Themes Available:
-- **Blue** - Zoga's classic blue palette.
+- **Classic Blue** - Zoga's classic blue palette.
+- **Rising Red** - A Red and gold theme based on the site's logo.
 - **Gray** - Your bog-standard gray, with warm accents.
 - **Copper** - Deep browns inspired by the FR color wheel.
 - **Dracula** - A pale [popular dark theme](https://github.com/dracula/dracula-theme)
@@ -41,9 +42,13 @@ You will need [Stylus](https://github.com/openstyles/stylus#readme). When you in
 https://user-images.githubusercontent.com/132804271/236664072-bb251847-dde5-4f62-83e6-116eda37cc66.mp4
 
 ### **Theme Previews:**
-#### Blue
-![Screenshot of the home page in the default Blue theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/blue1.png)\
-![Screenshot of the Lair page in the default Blue theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/blue2.png)
+#### Classic Blue
+![Screenshot of the home page in the default Classic Blue theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/classicblue1.png)\
+![Screenshot of the Lair page in the default Classic Blue theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/classicblue2.png)
+
+#### Rising Red
+![Screenshot of the home page in the Rising Red theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/risingred1.png)\
+![Screenshot of the Lair page in the Rising Red theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/risingred2.png)
 
 #### Gray
 ![Screenshot of the home page in the Gray theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/gray1.png)\
