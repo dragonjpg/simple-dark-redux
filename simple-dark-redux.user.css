@@ -3,7 +3,7 @@
 @namespace      userstyles.world/user/meow
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
-@version        2.8.0
+@version        2.8.1
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 @preprocessor   uso
@@ -826,7 +826,8 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 #dressing-outfit-loader > div:last-child,
 #delete-outfit-box > div:last-child,
 #forum-block-dialog > div,
-#forum-friend-start-dialog > div:has(button) {
+#forum-friend-start-dialog > div:has(button),
+#gather_collect_buttons form {
     display: flex;
     justify-content: space-between;
 }
@@ -839,7 +840,8 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 #delete-confirm > div button,
 #forum-block-dialog > div button,
 #forum-friend-start-dialog > div button,
-.vista-options ~ div:last-of-type > input {
+.vista-options ~ div:last-of-type > input,
+#gather_collect_buttons input {
     width: 48%;
 }
 #baldwin-preview-container #baldwin-preview-button-tray, #newitem #pinkerton-button-tray, #pinkerton-button-tray, #name-dragon-start-dialog .common-dialog-section:last-child, #ah-cancel-verify-dlg p:last-child, #ah-cancel-ok-dlg p:last-child, #ah-sell-verify-dlg p:last-child, #ah-sell-ok-dlg p:last-child, #ah-sell-submit-container, .raffle-window-buttons, #blocked-by-user-close,
@@ -2797,7 +2799,7 @@ EOT;
     }
     div#random-dragon::before {
         content: '';
-        background: url('https://i.postimg.cc/766nh4JF/randomdragon.png') no-repeat;
+        background: url('https://file.garden/ad64HQx5M13uwGkq/SDR/randomdragon.png') no-repeat;
         background-size: 100%;
         width: 100%;
         height: 30px;
@@ -2811,7 +2813,7 @@ EOT;
     }
     div#bonus-ticker::before {
         content: '';
-        background: url('https://i.postimg.cc/yNnT7xxh/exaltbonus.png') no-repeat;
+        background: url('https://file.garden/ad64HQx5M13uwGkq/SDR/exaltbonus.png') no-repeat;
         background-size: 100%;
         width: 100%;
         height: 30px;
@@ -4097,7 +4099,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border: 2px dashed var(--borders-med) !important;
     }
     #lair-edit-page .lair-page-dragon[data-selected="true"] .lair-page-dragon-select, #lair-edit-page .lair-page-dragon[data-selected="true"] .lair-page-dragon-select {
-        background: url(https://i.postimg.cc/3wDDcwpJ/lairselected.png);
+        background: url('https://file.garden/ad64HQx5M13uwGkq/SDR/lairselected.png');
     }
     
     .lair-page-dragons .lair-page-dragon .lair-page-dragon-box, .dragoncard {
@@ -4514,7 +4516,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         color: var(--text)
     }
     #dominance-background-image {
-        content: url('https://i.postimg.cc/rMvBvxgg/dominance.png') !important;
+        content: url('https://file.garden/ad64HQx5M13uwGkq/SDR/dominance.png') !important;
     }
     #dominance-flavor-text > .flavor-black {
         color: var(--strong)
@@ -6256,7 +6258,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         padding-bottom: 0.5em;
     }
     #msg-text,
-    #msg-preview-text {
+    #msg-preview-text,
+    #msg-preview #body a {
         font-size: var(--messaging-font-size);
         line-height: var(--messaging-line-height);
     }
@@ -7081,7 +7084,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         top: 0;
         left: 0;
         background-repeat: no-repeat;
-        background-image: url('https://i.postimg.cc/cCXLc8Dk/arlo.png');
+        background-image: url('https://file.garden/ad64HQx5M13uwGkq/SDR/arlo.png');
     }
     div.contentcontainer div.main::after {
         content: '';
@@ -7990,7 +7993,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/button_approvetrade.png"], img[src$="/static/layout/button_canceltrade.png"],
     img[src$="/static/layout/forum/forum-icon-link.png"],
     .flattery-meter-frame[data-level="7"] .flattery-meter-full.common-meter-full::before,
-    .bbcode-button img
+    .bbcode-button img, .nobreed-button img
     {
         filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
     }
@@ -8050,6 +8053,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/layout/button_incubate_used.png"],
     img[src$="/layout/button_0boon.png"],
     img[src$="/static/layout/hoard/buttons/stack-function-convert-food-disabled.png"],
+	img[src$="/static/layout/hoard/buttons/stack-function-spin-disabled.png"],
     img[src$="/static/layout/profile/button-bond-disabled.png"],
     img[src$="/static/layout/common/button-add-35-disabled.png"],
     img[src$="/static/layout/profile/button-breed-disabled.png"],
@@ -8138,29 +8142,29 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     img[src$="/static/layout/baldwin/arrow.png"],
     img[src$="/static/layout/crafter/arrow.png"] {
-        content: url(https://i.postimg.cc/kgWPNdtx/arrow.png) !important
+        content: url('https://file.garden/ad64HQx5M13uwGkq/SDR/arrow.png') !important
     }
     img[src$="/static/layout/lair/icons/male.png"],
     img[src$="/static/layout/lair/icons/female.png"] {
         filter: brightness(200%);
     }
     #trading-post-content {
-        background-image: url(https://i.postimg.cc/664pFy8Z/tradingpost.png);
+        background-image: url('https://file.garden/ad64HQx5M13uwGkq/SDR/tradingpost.png');
     }
     img[src$="/static/layout/revamp/right_status_top_green_small.png"] {
-        content: url(https://i.postimg.cc/3rvP4J3j/right-status-top-green-small.png) !important;
+        content: url('https://file.garden/ad64HQx5M13uwGkq/SDR/right-status-top-green-small.png') !important;
     }
     img[src$="/static/layout/revamp/right_status_top_yellow_small.png"] {
-        content: url(https://i.postimg.cc/PxB930Q8/right-status-top-yellow-small.png) !important;
+        content: url('https://file.garden/ad64HQx5M13uwGkq/SDR/right-status-top-yellow-small.png') !important;
     }
     #raffle-background {
-        background-image: url('https://i.postimg.cc/1zBGXFjC/roundsey.png');
+        background-image: url('https://file.garden/ad64HQx5M13uwGkq/SDR/roundsey.png');
     }
     img[src$="/static/layout/baldwin/cauldron_loading.gif"] {
-        content: url(https://i.postimg.cc/50VjKSbn/cauldronloading.gif) !important;
+        content: url('https://file.garden/ad64HQx5M13uwGkq/SDR/cauldronloading.gif') !important;
     }
     img[src$="/static/layout/html5/coming_soon_ticket.jpg"] {
-        content: url(https://i.postimg.cc/CLG0mpzT/ticket.png) !important;
+        content: url('https://file.garden/ad64HQx5M13uwGkq/SDR/ticket.png') !important;
     }
     img[src$="/static/layout/common/common-checkmark.png"] {
         filter: sepia(100%) hue-rotate(75deg) brightness(150%) saturate(250%);
