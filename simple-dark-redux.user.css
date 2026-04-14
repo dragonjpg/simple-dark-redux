@@ -826,7 +826,8 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 #dressing-outfit-loader > div:last-child,
 #delete-outfit-box > div:last-child,
 #forum-block-dialog > div,
-#forum-friend-start-dialog > div:has(button) {
+#forum-friend-start-dialog > div:has(button),
+#gather_collect_buttons form {
     display: flex;
     justify-content: space-between;
 }
@@ -839,7 +840,8 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 #delete-confirm > div button,
 #forum-block-dialog > div button,
 #forum-friend-start-dialog > div button,
-.vista-options ~ div:last-of-type > input {
+.vista-options ~ div:last-of-type > input,
+#gather_collect_buttons input {
     width: 48%;
 }
 #baldwin-preview-container #baldwin-preview-button-tray, #newitem #pinkerton-button-tray, #pinkerton-button-tray, #name-dragon-start-dialog .common-dialog-section:last-child, #ah-cancel-verify-dlg p:last-child, #ah-cancel-ok-dlg p:last-child, #ah-sell-verify-dlg p:last-child, #ah-sell-ok-dlg p:last-child, #ah-sell-submit-container, .raffle-window-buttons, #blocked-by-user-close,
@@ -6256,7 +6258,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         padding-bottom: 0.5em;
     }
     #msg-text,
-    #msg-preview-text {
+    #msg-preview-text,
+    #msg-preview #body a {
         font-size: var(--messaging-font-size);
         line-height: var(--messaging-line-height);
     }
@@ -7990,7 +7993,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/button_approvetrade.png"], img[src$="/static/layout/button_canceltrade.png"],
     img[src$="/static/layout/forum/forum-icon-link.png"],
     .flattery-meter-frame[data-level="7"] .flattery-meter-full.common-meter-full::before,
-    .bbcode-button img
+    .bbcode-button img, .nobreed-button img
     {
         filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
     }
@@ -8050,6 +8053,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/layout/button_incubate_used.png"],
     img[src$="/layout/button_0boon.png"],
     img[src$="/static/layout/hoard/buttons/stack-function-convert-food-disabled.png"],
+	img[src$="/static/layout/hoard/buttons/stack-function-spin-disabled.png"],
     img[src$="/static/layout/profile/button-bond-disabled.png"],
     img[src$="/static/layout/common/button-add-35-disabled.png"],
     img[src$="/static/layout/profile/button-breed-disabled.png"],
