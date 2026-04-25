@@ -3352,8 +3352,6 @@ EOT;
     }
     /*buttons*/
     .beigebutton.thingbutton, .thingbutton, .skin-system-order-action {
-        color: var(--button-text-dark);
-        text-shadow: 0 1px 1px var(--shadow), 0 1px 1px var(--shadow), 0 1px 1px var(--shadow), 0 1px 2px var(--shadow);
         padding: 10px;
         -webkit-box-shadow: 0 2px 3px var(--shadow);
         border: 2px solid var(--borders-med);
@@ -3373,7 +3371,6 @@ EOT;
     .redbutton, .redbutton.anybutton, .mb_button, .skin-system-order-action.skin-system-cancel-order {
         background: linear-gradient(to bottom, var(--red-button-one) 0%, var(--red-button-two) 100%);
         color: var(--button-text-dark);
-        text-shadow: 0 1px 1px var(--shadow), 0 1px 1px var(--shadow), 0 1px 1px var(--shadow), 0 1px 2px var(--shadow);
         -webkit-box-shadow: 0 2px 3px var(--shadow);
         font-weight: bold;
     }
@@ -4423,81 +4420,6 @@ EOT;
     
     /*[[colorquotes]]*/
 }
-@-moz-document regexp("(http|https):\\/\\/(|www\\.)flightrising\\.com/main\\.php\\?p=settings.*") {
-    /* Settings */
-    img#internal_bg {
-        display: none;
-    }
-    #super-container > div:nth-child(3) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        height: auto !important;
-        min-height: 900px;
-        padding-bottom: 10px;
-    }
-    #super-container > div:nth-child(3) > img[src*="graydot"] {
-        display: none !important;
-    }
-    #super-container  > div:nth-child(3) > *,
-    #super-container div[style="position:absolute; width:280px; top:0px; left:20px;"] > *,
-    #super-container div[style="position:absolute; width:375px; top:0px; right:0px;"] > *,
-    #remove_referral_option > * {
-        position: static !important;
-    }
-    #super-container div[style="position:absolute; width:280px; top:0px; left:20px;"],
-    #super-container div[style="position:absolute; width:375px; top:0px; right:0px;"] {
-        display: grid;
-        grid-template-columns: auto auto;
-        column-gap: 10px;
-        row-gap: 3em;
-        width: auto !important;
-    }
-    #super-container div[style="position:absolute; width:375px; top:0px; right:0px;"] {
-        box-sizing: border-box;
-        margin-left: 10px;
-        padding-left: 10px;
-        border-left: 1px solid var(--borders);
-    }
-    #super-container div[style="position:absolute; width:280px; top:0px; left:20px;"] > div:nth-child(even) {
-        text-align: right;
-    }
-    div[style*="background-color:#CCFF88"] {
-        background-color: var(--section) !important;
-        color: var(--success-text) !important;
-        padding-bottom: 3px;
-        border: 2px solid rgb(var(--success)) !important;
-        border-radius: 3px;
-        margin-bottom: 2px;
-    }
-    .vista-options {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .vista-option {
-        border-color: var(--borders);
-        background: var(--widget);
-    }
-    .vista-option[data-id="0"] {
-        background: linear-gradient(to bottom, var(--section) 0%, var(--widget) 50%);
-    }
-    .vista-option-avatar {
-        background: var(--widget);
-        border: 2px solid var(--borders-med);
-        outline: 2px solid var(--borders);
-        border-radius: 10px;
-    }
-    .vista-option-avatar:hover {
-        background: var(--widget);
-        border: 2px solid var(--borders-light);
-        border-radius: 10px;
-    }
-    .vista-option-name {
-        font-weight: bold;
-    }
-    .vista-option[data-selected="true"] {
-        border-color: var(--strong);
-    }
-}
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/main\\.php.*") {
     /* Old Layout Fixes  */
     :root:has(div.container) {
@@ -4938,7 +4860,10 @@ EOT;
     .choose-vista-options {
         border: 2px solid var(--borders);
         background: var(--widget-med);
-        padding-left: 45px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        padding-left: 25px;
     }
     .choose-scene-options, #choose-familiar-options, #choose-dragon-apparel-apparel-results .choose-dragon-apparel-scrollable-results, #choose-dragon-apparel-skin-results .choose-dragon-apparel-scrollable-results, #choose-effect-page .choose-effect-list, #choose-effect-page .dragon-effect-current {
         border: 2px solid var(--borders-med);
@@ -8683,7 +8608,11 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-color: rgb(var(--warning))
     }
     .skin-system-upload input {
-        border-color: var(--borders)
+        border-color: var(--borders);
+        background: var(--columns);
+    }
+    .common-message {
+        color: var(--text)
     }
     .skin-system-styled-list li[data-pop="0"] {
         background: var(--widget);
