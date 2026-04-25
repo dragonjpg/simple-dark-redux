@@ -3,14 +3,15 @@
 @namespace      userstyles.world/user/meow
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
-@version        2.8.1
+@version        3.0.0
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
 @author         grr
 @preprocessor   uso
 
-@var checkbox filler1 "─── ↓ Theme Selection & Customization ↓ ───" 1
-@advanced dropdown theme "Theme" {
-theme1 "Classic Blue" <<<EOT 
+@var checkbox filler2 "I have enabled 'Experimental: Force theme settings on pages still in development.' in my account settings." 0
+@var checkbox filler1 "─ Theme Selection & Customization ─" 1
+@advanced dropdown dark "Dark Theme Replacement" {
+dark1 "Classic Blue" <<<EOT 
 
         --hue: 175deg;
         --filter: sepia(100%);
@@ -63,8 +64,8 @@ theme1 "Classic Blue" <<<EOT
         --accent-four: #97d4d9;
         --accent-five: #00faff;
         
-        --button-text: #fff;
-        --button-text-dark: #000;
+        --button-text: #000;
+        --button-text-dark: #fff;
         --button-one: #eef3f9;
         --button-two: #bacbdf;
         --beige-button-one: #488fad;
@@ -73,14 +74,6 @@ theme1 "Classic Blue" <<<EOT
         --red-button-two: #1f3c5f;
         --button-disabled-one: #7f8d9f;
         --button-disabled-two: #444f5b;
-
-        /*[[preset-darker-buttons]]*\/button-one: #b4c2d4;
-        /*[[preset-darker-buttons]]*\/button-two: #5e7794;
-        /*[[preset-darker-buttons]]*\/beige-button-two: #6a4a76;
-        /*[[preset-darker-buttons]]*\/red-button-one: #294b74;
-        /*[[preset-darker-buttons]]*\/red-button-two: #0f1e30;
-        /*[[preset-darker-buttons]]*\/button-disabled-one: #4b5b70;
-        /*[[preset-darker-buttons]]*\/button-disabled-two: #192228;
         
         --selected: #4df0f0;
         --selected-text: #000;
@@ -98,14 +91,45 @@ theme1 "Classic Blue" <<<EOT
         --energy-full-two: #b75db7;
         --energy-full-border: #5a489b;
 
-        --admin-text: #ffa3a3;
-        --admin-strong: #ffc391;
-        --admin-em: #dfc1a4;
-        --admin-link: #ffed80;
-        --admin-link-hover: #fffad9;
+        /*NEW VARS FOR REFACTOR*\/
+        --bar-border: var(--borders);
+        --nav-button-bg: var(--widget-med);
+
+        --text-accent: var(--accent-four);
+        --text-subtle: var(--text-med);
+
+        --alt-one: var(--widget);
+        --alt-two: var(--widget-med);
+        --alt-three: var(--widget-light);
+
+        --border-one: var(--borders);
+        --border-two: var(--borders-med);
+        --border-three: var(--borders-light);
+
+        --button-icon: #4D6586;
+        --button-icon-text: #20275a;
+        --button-disabled-text: #33365C;
+        --button-stroke: #DDDFF1;
+        --button-disabled-stroke: var(--text-med);
+
+        --sidebar-one: var(--columns);
+        --sidebar-two: var(--columns);
+
+        /*[[preset-darker-buttons]]*\/button-one: #4f5b69;
+        /*[[preset-darker-buttons]]*\/button-two: #162e39;
+        /*[[preset-darker-buttons]]*\/button-text: #fff;
+        /*[[preset-darker-buttons]]*\/button-text-dark: #fff;
+        /*[[preset-darker-buttons]]*\/beige-button-two: #6a4a76;
+        /*[[preset-darker-buttons]]*\/red-button-one: #1eaebd;
+        /*[[preset-darker-buttons]]*\/red-button-two: #041326;
+        /*[[preset-darker-buttons]]*\/button-disabled-one: #14325a;
+        /*[[preset-darker-buttons]]*\/button-disabled-two: #1e2224;
+        /*[[preset-darker-buttons]]*\/button-stroke: #A7BFD5;
+        /*[[preset-darker-buttons]]*\/button-disabled-stroke: #495C6D;
+        /*[[preset-darker-buttons]]*\/button-disabled-text: var(--section);
 
 EOT;
-theme5 "Rising Red" <<<EOT 
+dark5 "Rising Red" <<<EOT 
 
         --hue: -30deg;
         --filter: sepia(100%);
@@ -158,8 +182,8 @@ theme5 "Rising Red" <<<EOT
         --accent-four: #b0cfc5;
         --accent-five: #fbb04a;
         
-        --button-text: #fff5e3;
-        --button-text-dark: #240303;
+        --button-text: #240303;
+        --button-text-dark: #fff5e3;
         --button-one: #efe4e0;
         --button-two: #dabe9f;
         --beige-button-one: #dc963c;
@@ -168,15 +192,6 @@ theme5 "Rising Red" <<<EOT
         --red-button-two: #631919;
         --button-disabled-one: #9f7f7f;
         --button-disabled-two: #5b4444;
-
-        /*[[preset-darker-buttons]]*\/button-one: #c5a79b;
-        /*[[preset-darker-buttons]]*\/button-two: #78634d;
-        /*[[preset-darker-buttons]]*\/beige-button-one: #b27b34;
-        /*[[preset-darker-buttons]]*\/beige-button-two: #4c251f;
-        /*[[preset-darker-buttons]]*\/red-button-one: #901313;
-        /*[[preset-darker-buttons]]*\/red-button-two: #410f0f;
-        /*[[preset-darker-buttons]]*\/button-disabled-one: #895e5e;
-        /*[[preset-darker-buttons]]*\/button-disabled-two: #453131;
         
         --selected: #fcbe48;
         --selected-text: #000;
@@ -194,15 +209,46 @@ theme5 "Rising Red" <<<EOT
         --energy-full-two: #eda701;
         --energy-full-border: #895600;
 
-        --admin-text: #ffa3a3;
-        --admin-strong: #ffc391;
-        --admin-em: #dfc1a4;
-        --admin-link: #ffed80;
-        --admin-link-hover: #fffad9;
+        /*NEW VARS FOR REFACTOR*\/
+        --bar-border: var(--borders);
+        --nav-button-bg: var(--widget-med);
 
+        --text-accent: var(--accent-four);
+        --text-subtle: var(--text-med);
+
+        --alt-one: var(--widget);
+        --alt-two: var(--widget-med);
+        --alt-three: var(--widget-light);
+
+        --border-one: var(--borders);
+        --border-two: var(--borders-med);
+        --border-three: var(--borders-light);
+
+        --button-icon: #745F58;
+        --button-icon-text: #240303;
+        --button-disabled-text: var(--widget-med);
+        --button-stroke: #F1EDE7;
+        --button-disabled-stroke: #A67F7F;
+
+        --sidebar-one: var(--columns);
+        --sidebar-two: var(--columns);
+
+        /*[[preset-darker-buttons]]*\/button-text: #fff5e3;
+        /*[[preset-darker-buttons]]*\/button-text-dark: #fff5e3;
+        /*[[preset-darker-buttons]]*\/button-one: #8c685a;
+        /*[[preset-darker-buttons]]*\/button-two: #2a1a18;
+        /*[[preset-darker-buttons]]*\/beige-button-one: #b27b34;
+        /*[[preset-darker-buttons]]*\/beige-button-two: #4c251f;
+        /*[[preset-darker-buttons]]*\/red-button-one: #901313;
+        /*[[preset-darker-buttons]]*\/red-button-two: #410f0f;
+        /*[[preset-darker-buttons]]*\/button-disabled-one: #6b4646;
+        /*[[preset-darker-buttons]]*\/button-disabled-two: #2a1111;
+        /*[[preset-darker-buttons]]*\/button-stroke: #D5C3A7;
+        /*[[preset-darker-buttons]]*\/button-disabled-stroke: #7C5353;
+        /*[[preset-darker-buttons]]*\/button-disabled-text: var(--section);
 
 EOT;
-theme2 "Gray" <<<EOT
+dark2 "Gray" <<<EOT
 
         --hue: -30deg;
         --filter: grayscale(100%);
@@ -255,8 +301,8 @@ theme2 "Gray" <<<EOT
         --accent-four: #b8b8b8;
         --accent-five: #808080;
         
-        --button-text: #fff;
-        --button-text-dark: #000;
+        --button-text: #000;
+        --button-text-dark: #fff;
         --button-one: #f2f2f2;
         --button-two: #ccc;
         --beige-button-one: #8f8f8f;
@@ -266,14 +312,6 @@ theme2 "Gray" <<<EOT
         --button-disabled-one: #585858;
         --button-disabled-two: #2c2121;
 
-        /*[[preset-darker-buttons]]*\/button-one: #b2b2b2;
-        /*[[preset-darker-buttons]]*\/button-two: #858585;
-        /*[[preset-darker-buttons]]*\/beige-button-one: #616161;
-        /*[[preset-darker-buttons]]*\/beige-button-two: #322f2f;
-        /*[[preset-darker-buttons]]*\/red-button-one: #a36c32;
-        /*[[preset-darker-buttons]]*\/red-button-two: #5b0629;
-        /*[[preset-darker-buttons]]*\/button-disabled-one: #3b3b3b;
-        /*[[preset-darker-buttons]]*\/button-disabled-two: #281818;
         
         --selected: #dc2562;
         --selected-text: #000;
@@ -291,14 +329,46 @@ theme2 "Gray" <<<EOT
         --energy-full-two: #dc2562;
         --energy-full-border: #9c2116;
 
-        --admin-text: #ffa3a3;
-        --admin-strong: #ffc391;
-        --admin-em: #dfc1a4;
-        --admin-link: #ffed80;
-        --admin-link-hover: #fffad9;
+        /*NEW VARS FOR REFACTOR*\/
+        --bar-border: var(--borders);
+        --nav-button-bg: var(--widget-med);
+
+        --text-accent: var(--accent-four);
+        --text-subtle: var(--text-med);
+
+        --alt-one: var(--widget);
+        --alt-two: var(--widget-med);
+        --alt-three: var(--widget-light);
+
+        --border-one: var(--borders);
+        --border-two: var(--borders-med);
+        --border-three: var(--borders-light);
+
+        --button-icon: #706B68;
+        --button-icon-text: #222;
+        --button-disabled-text: #3E3534;
+        --button-stroke: #FEF7ED;
+        --button-disabled-stroke: #969696;
+
+        --sidebar-one: var(--columns);
+        --sidebar-two: var(--columns);
+
+        /*[[preset-darker-buttons]]*\/button-one: #656565;
+        /*[[preset-darker-buttons]]*\/button-two: #262626;
+        /*[[preset-darker-buttons]]*\/button-text: #fff;
+        /*[[preset-darker-buttons]]*\/button-text-dark: #fff;
+        /*[[preset-darker-buttons]]*\/beige-button-one: #3e3737;
+        /*[[preset-darker-buttons]]*\/beige-button-two: #222;
+        /*[[preset-darker-buttons]]*\/red-button-one: #a36c32;
+        /*[[preset-darker-buttons]]*\/red-button-two: #5b0629;
+        /*[[preset-darker-buttons]]*\/button-disabled-one: #3b3b3b;
+        /*[[preset-darker-buttons]]*\/button-disabled-two: #281818;
+        /*[[preset-darker-buttons]]*\/button-stroke: #B9B4AF;
+        /*[[preset-darker-buttons]]*\/button-disabled-stroke: #6B6B6B;
+        /*[[preset-darker-buttons]]*\/button-disabled-text: var(--section);
 
 EOT;
-theme3 "Copper" <<<EOT
+dark3 "Copper" <<<EOT
 
         --hue: -35deg;
         --filter: sepia(100%);
@@ -351,8 +421,8 @@ theme3 "Copper" <<<EOT
         --accent-four: #b2c4b3;
         --accent-five: #767067;
         
-        --button-text: #fefdf2;
-        --button-text-dark: #080e10;
+        --button-text: #080e10;
+        --button-text-dark: #fefdf2;
         --button-one: #dcbca5;
 	    --button-two: #a2b6b6;
         --beige-button-one: #c5795c;
@@ -361,15 +431,6 @@ theme3 "Copper" <<<EOT
         --red-button-two: #4e2f20;
         --button-disabled-one: #2e3145;
         --button-disabled-two: #27201c;
-
-        /*[[preset-darker-buttons]]*\/button-one: #a98973;
-        /*[[preset-darker-buttons]]*\/button-two: #537676;
-        /*[[preset-darker-buttons]]*\/beige-button-one: #b26041;
-        /*[[preset-darker-buttons]]*\/beige-button-two: #27473d;
-        /*[[preset-darker-buttons]]*\/red-button-one: #906c33;
-        /*[[preset-darker-buttons]]*\/red-button-two: #4e260e;
-        /*[[preset-darker-buttons]]*\/button-disabled-one: #2e3145;
-        /*[[preset-darker-buttons]]*\/button-disabled-two: #27201c;
         
         --selected: #df4c0c;
         --selected-text: #000;
@@ -387,14 +448,46 @@ theme3 "Copper" <<<EOT
         --energy-full-two: #3d998d;
         --energy-full-border: #9c2116;
 
-        --admin-text: #ffa3a3;
-        --admin-strong: #ffc391;
-        --admin-em: #dfc1a4;
-        --admin-link: #ffed80;
-        --admin-link-hover: #fffad9;
+        /*NEW VARS FOR REFACTOR*\/
+        --bar-border: var(--borders);
+        --nav-button-bg: var(--widget-med);
+
+        --text-accent: var(--accent-four);
+        --text-subtle: var(--text-med);
+
+        --alt-one: var(--widget);
+        --alt-two: var(--widget-med);
+        --alt-three: var(--widget-light);
+
+        --border-one: var(--borders);
+        --border-two: var(--borders-med);
+        --border-three: var(--borders-light);
+
+        --button-icon: #775E56;
+        --button-icon-text: #213342;
+        --button-disabled-text: #3E3534;
+        --button-stroke: #FEF7ED;
+        --button-disabled-stroke: #90837c;
+
+        --sidebar-one: var(--columns);
+        --sidebar-two: var(--columns);
+
+        /*[[preset-darker-buttons]]*\/button-one: #7a624d;
+        /*[[preset-darker-buttons]]*\/button-two: #1f3737;
+        /*[[preset-darker-buttons]]*\/button-text: #fefdf2;
+        /*[[preset-darker-buttons]]*\/button-text-dark: #fefdf2;
+        /*[[preset-darker-buttons]]*\/beige-button-one: #b26041;
+        /*[[preset-darker-buttons]]*\/beige-button-two: #27473d;
+        /*[[preset-darker-buttons]]*\/red-button-one: #654514;
+        /*[[preset-darker-buttons]]*\/red-button-two: #3e0d02;
+        /*[[preset-darker-buttons]]*\/button-disabled-one: #2e3145;
+        /*[[preset-darker-buttons]]*\/button-disabled-two: #27201c;
+        /*[[preset-darker-buttons]]*\/button-stroke: #B9B4AF;
+        /*[[preset-darker-buttons]]*\/button-disabled-stroke: #6B6B6B;
+        /*[[preset-darker-buttons]]*\/button-disabled-text: var(--section);
 
 EOT;
-theme4 "Dracula" <<<EOT
+dark4 "Dracula" <<<EOT
 
         --hue: 205deg;
         --filter: sepia(100%);
@@ -447,8 +540,8 @@ theme4 "Dracula" <<<EOT
         --accent-four: #94a4d7;
         --accent-five: #bd93f9;
         
-        --button-text: #f8f8f2;
-        --button-text-dark: #000;
+        --button-text: #1b1c24;
+        --button-text-dark: #fff;
         --button-one: #f2f2f2;
         --button-two: #a396d2;
         --beige-button-one: #6272a4;
@@ -457,15 +550,6 @@ theme4 "Dracula" <<<EOT
         --red-button-two: #24222d;
         --button-disabled-one: #6272a4;
         --button-disabled-two: #24222d;
-
-        /*[[preset-darker-buttons]]*\/button-one: #b3b4c3;
-        /*[[preset-darker-buttons]]*\/button-two: #6a6187;
-        /*[[preset-darker-buttons]]*\/beige-button-one: #4b5985;
-        /*[[preset-darker-buttons]]*\/beige-button-two: #2b2e41;
-        /*[[preset-darker-buttons]]*\/red-button-one: #3d346c;
-        /*[[preset-darker-buttons]]*\/red-button-two: #191432;
-        /*[[preset-darker-buttons]]*\/button-disabled-one: #3a4770;
-        /*[[preset-darker-buttons]]*\/button-disabled-two: #15131f;
         
         --selected: #50fa7b;
         --selected-text: #000;
@@ -482,16 +566,45 @@ theme4 "Dracula" <<<EOT
         --energy-full-one: #bd93f9;
         --energy-full-two: #ff79c6;
         --energy-full-border: #6272a4;
-        
-        --admin-text: #ffa3a3;
-        --admin-strong: #ffc391;
-        --admin-em: #dfc1a4;
-        --admin-link: #ffed80;
-        --admin-link-hover: #fffad9;
+
+        /*NEW VARS FOR REFACTOR*\/
+        --bar-border: var(--borders);
+
+        --text-accent: var(--accent-four);
+        --text-subtle: var(--text-med);
+
+        --alt-one: var(--widget);
+        --alt-two: var(--widget-med);
+        --alt-three: var(--widget-light);
+        --button-disabled-text: #1f1a2a;
+
+        --border-one: var(--borders);
+        --border-two: var(--borders-med);
+        --border-three: var(--borders-light);
+
+        --button-icon: #625F8E;
+        --button-icon-text: #00000B;
+        --button-stroke: #EBDAF2;
+        --button-disabled-stroke: #7681a3;
+        --nav-button-bg: var(--widget-med);
+
+        --sidebar-one: var(--columns);
+        --sidebar-two: var(--columns);
+
+        /*[[preset-darker-buttons]]*\/button-one: #6272A4;
+        /*[[preset-darker-buttons]]*\/button-two: #282A36;
+        /*[[preset-darker-buttons]]*\/button-text: #fff;
+        /*[[preset-darker-buttons]]*\/button-text-dark: #fff;
+        /*[[preset-darker-buttons]]*\/beige-button-one: #4b5985;
+        /*[[preset-darker-buttons]]*\/beige-button-two: #2b2e41;
+        /*[[preset-darker-buttons]]*\/red-button-one: #3d346c;
+        /*[[preset-darker-buttons]]*\/red-button-two: #191432;
+        /*[[preset-darker-buttons]]*\/button-disabled-one: #3a4770;
+        /*[[preset-darker-buttons]]*\/button-disabled-two: #15131f;
 
 EOT;
 
-theme99 "Custom" <<<EOT
+dark99 "Custom" <<<EOT
         --hue: /*[[hue]]*\/;
         --filter: /*[[filter]]*\/;
         --filter-brightness: brightness(/*[[brightness]]*\/);
@@ -570,12 +683,49 @@ theme99 "Custom" <<<EOT
         --energy-full-two: /*[[energy-full-two]]*\/;
         --energy-full-border: /*[[energy-full-border]]*\/;
 
+        /*NEW VARS FOR REFACTOR*\/
+        --bar-border: var(--borders);
+        --nav-button-bg: var(--widget-med);
 
-        --admin-text: /*[[admin-text]]*\/;
-        --admin-link: /*[[admin-link]]*\/;
-        --admin-strong: /*[[admin-strong]]*\/;
-        --admin-em: /*[[admin-em]]*\/;
-        --admin-link-hover: /*[[admin-link-hover]]*\/;
+        --text-accent: var(--accent-four);
+        --text-subtle: var(--text-med);
+
+        --alt-one: var(--widget);
+        --alt-two: var(--widget-med);
+        --alt-three: var(--widget-light);
+
+        --border-one: var(--borders);
+        --border-two: var(--borders-med);
+        --border-three: var(--borders-light);
+
+        --button-icon: /*[[button-icon]]*\/;
+        --button-icon-text: /*[[button-icon-text]]*\/;
+        --button-disabled-text: /*[[button-disabled-text]]*\/;
+        --button-stroke: /*[[button-stroke]]*\/;
+        --button-disabled-stroke: /*[[button-disabled-stroke]]*\/;
+
+        --sidebar-one: var(--columns);
+        --sidebar-two: var(--columns);
+
+EOT;
+}
+
+@advanced dropdown oldusertab "Alt Usertab" {
+oldusertab1 "Disabled" <<<EOT  EOT;
+oldusertab2 "Enabled" <<<EOT
+#fr-layout-player-module #fr-layout-player-module-main {
+    height: 100%;
+}
+#fr-layout-player-module {
+	height: 144px;
+    border-bottom: 2px solid;
+}
+#fr-layout-player-module-tray-icons {
+	position: absolute;
+	z-index: 6;
+	top: 70%;
+	right: 10px;
+}
 EOT;
 }
 
@@ -597,8 +747,8 @@ usertabbg3 "Treasure" <<<EOT
 EOT;
 usertabbg4 "Alchemist" <<<EOT
     background-image: url('https://www1.flightrising.com/static/layout/baldwin/baldwin-background.png');
-    background-size: 450px;
-    background-position: 10% 80%;
+    background-size: 400px;
+    background-position: 1% 85%;
     background-repeat: no-repeat;
     filter: var(--filter) hue-rotate(var(--hue)) brightness(65%) contrast(160%);
     opacity: 0.2;
@@ -647,39 +797,137 @@ usertabbg10 "Stormy" <<<EOT
     transform: scaleX(-1);
 EOT;
 }
-
+@advanced dropdown responsive "Enable Responsive Tablet Layout on Legacy Pages (Experimental, set layout to 'auto' in your account settings)" {
+responsive1 "Disabled" <<<EOT  EOT;
+responsive2 "Enabled" <<<EOT 
+@media screen and (max-width: 950px) {
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) {
+        width: 750px;
+    }
+    #fr-layout[data-responsive="desktop"]  div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation {
+        width: 750px;
+    }
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation-header,
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content)  #fr-layout-navigation:hover #fr-layout-navigation-content,
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content)  #fr-layout-navigation:hover #fr-layout-navigation-content-logged-out,
+        #fr-layout-main
+        {
+            display: block
+        }
+        #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation-content,
+        #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation-content-logged-out {
+            position: absolute;
+            display: none;
+            padding: 0;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation-content .fr-layout-navigation-category {
+        float: left;
+        padding: 10px 0;
+        width: 25%;
+    }
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-sidebar-bg {
+        display: none;
+      }
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-sidebar {
+        height: 50px;
+    }
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation a.fr-layout-navigation-link {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) ~ #fr-layout-footer,
+    #fr-layout[data-responsive="desktop"] #fr-layout-main:has(#fr-layout-legacy-content) ~ #fr-layout-footer {
+        width: 750px;
+    }
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #side-banner-desktop,
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #bottom-banner-desktop {
+        display: none !important;
+    }
+    #fr-layout.fr-theme[data-theme][data-location-id="0"][data-responsive="desktop"]:has(#fr-layout-legacy-content)::before {
+        background-size: 100%;
+    }
+}
+EOT;
+}
 @advanced dropdown leftcol "Navigation Position" {
 leftcol1 "Default" <<<EOT  EOT;
 leftcol2 "On Right" <<<EOT /* move column to right *\/
+#fr-layout-main,
 div.contentcontainer {
     display: grid;
     grid-template-columns: auto auto 200px;
 }
-div.leftcolumn {
+#fr-layout-sidebar,
+div.leftcolumn  {
     order: 2;
+}
+#fr-layout-sidebar-bg {
+    left: unset;
+    right: 0px;
+}
+#home-page {
+    display: flex;
+    flex-wrap: wrap;
+}
+#home-page-sidebar {
+    order: -1;
+    z-index: 2;
+}
+#home-page-sidebar-bg {
+    right: unset;
+    left: 0px;
 }
 #hoard-result-footer-container.hoard-result-footer-container-sticky[data-pinned="1"] #hoard-result-footer {
-	margin: 0 auto;
-	padding: 0 230px 0 30px;
-	width: 700px;
+    margin: 0 auto;
+    padding: 0 230px 0 30px;
+    width: 700px;
+}
+@media (max-width: 950px) {
+    [data-responsive="auto"] #fr-layout-main
+    {
+        display: block !important;
+    }
+    #fr-layout[data-reponsive="auto"] #fr-layout-fixed-navigation {
+        z-index: 3;
+    }
 }
 EOT;
-leftcol3 "On Right + Center Content" <<<EOT /* move column to right & center content *\/
+leftcol3 "On Right + Center Legacy Content" <<<EOT /* move column to right & center content *\/
+#fr-layout-main,
 div.contentcontainer {
     display: grid;
     grid-template-columns: auto auto 200px;
 }
-div.leftcolumn {
+div.leftcolumn,
+#fr-layout-sidebar {
     order: 2;
 }
-body {
+#fr-layout-sidebar-bg {
+    left: unset;
+    right: 0px;
+}
+#home-page {
+    display: flex;
+}
+#home-page-sidebar {
+    order: -1;
+    z-index: 2;
+}
+#home-page-sidebar-bg {
+    right: unset;
+    left: 0px;
+}
+body:not(:has(.logo + .pardon)):has(#fr-layout-legacy-content) {
     background-position: calc(50% + 100px) 0%;
 }
 body[style*="/static/layout/none/bg.jpg"]::before,
 body[style*="/layout/none/background.jpg"]::before {
         background-position-x: calc(50% + 100px);
 }
-.container {
+.container:not(:has(.logo + .pardon)),
+#fr-layout-wrap:not(:has(.logo + .pardon)):has(#fr-layout-legacy-content) {
     margin-left: calc(50% - (952px / 2) + 100px);
 }
 #footer {
@@ -701,7 +949,23 @@ body > .copybar, body > #bottom-banner {
 #hoard-result-footer-container.hoard-result-footer-container-sticky[data-pinned="1"] #hoard-result-footer {
     padding: 0 230px 0 230px;
 }
-
+@media (max-width: 950px) {
+    [data-responsive="auto"] #fr-layout-main,
+    [data-responsive="auto"] #home-page
+    {
+        display: block !important;
+    }
+    [data-responsive="auto"] #home-page-sidebar-bg {
+        display: none;
+    }
+    #fr-layout[data-reponsive="auto"] #fr-layout-fixed-navigation {
+        z-index: 3;
+    }
+    div.leftcolumn,
+    #fr-layout-sidebar {
+        order: 1;
+    }
+}
 @media screen and (max-width: 1200px) {
     body {
         background-position-x: 50%;
@@ -737,6 +1001,11 @@ div.leftcolumn > div[style] {
     position: sticky !important;
     top: 0px;
 }
+#fr-layout-navigation, #fr-layout-sidebar {
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+}
 EOT;
 stickymenu2 "Disable" <<<EOT  EOT;
 }
@@ -755,15 +1024,13 @@ stickyposter2 "Disabled" <<<EOT  EOT;
 
 @advanced dropdown adblock "Hide Ad Containers" {
 adblock1 "Enable" <<<EOT /*byebye bottom & nav ad banners*\/
-#bottom-banner, #skybanner {
+#bottom-banner, #skybanner, #fr-layout-bottom-banner {
     display: none !important;
 }
 EOT;
 adblock2 "Disable" <<<EOT  EOT;
 }
-
-@var checkbox filler2 "────── ↓ Accessibility Settings ↓ ───────" 1
-@var select preset-darker-buttons  "Preset Themes: Use Darker Button Color Scheme" {
+@var select preset-darker-buttons  "Preset Themes: Use Dark-Style Button Scheme" {
     "No" : "--unused-",
     "Yes" : "--"
 }
@@ -1047,7 +1314,7 @@ clan-color-text-2 "Dark Mode (Allow User-set Colors)" <<<EOT
 EOT;
 clan-color-text-3 "Light Mode" <<<EOT 
 /*general - we do not directly overwrite most vars to avoid breaking widgets *\/
-.clan-profile-bio {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio {
     --text-alt: #000;
     --em: var(--text-alt);
     --strong: var(--text-alt);
@@ -1067,59 +1334,59 @@ clan-color-text-3 "Light Mode" <<<EOT
     background: linear-gradient(to bottom, var(--widget-med-alt) 0%, var(--widget-light-alt) 100%);
     border-radius: 10px;
 }
-.clan-profile-bio li::marker {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio li::marker {
     --accent-two: var(--text-alt);
 }
 /*link colors*\/
-.clan-profile-bio :is(.gamedb-bbcode, .pinglist-bbcode) {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio :is(.gamedb-bbcode, .pinglist-bbcode) {
     --link: var(--link-alt);
     --link-hover: var(--link-hover-alt);
 }
-.clan-profile-bio a {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio a {
     color: var(--link-alt);
 }
-.clan-profile-bio a:hover,
-.clan-profile-bio a:focus,
-.clan-profile-bio a:focus-within {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio a:hover,
+#fr-layout.fr-theme[data-theme] .clan-profile-bio a:focus,
+#fr-layout.fr-theme[data-theme] .clan-profile-bio a:focus-within {
     color: var(--link-hover-alt);
 }
-.clan-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a {
     color: var(--link);
 }
-.clan-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:hover,
-.clan-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus, 
-.clan-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus-within {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:hover,
+#fr-layout.fr-theme[data-theme] .clan-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus, 
+#fr-layout.fr-theme[data-theme] .clan-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus-within {
     color: var(--link-hover);
 }
 /*columns*\/
-.clan-profile-bio td, .clan-profile-bio th {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio td, #fr-layout.fr-theme[data-theme] .clan-profile-bio th {
     color: var(--text-alt);
 }
 /*colored text*\/
-.clan-profile-bio span[style*="color:"] :is(b, i, strong, em, u),
-.clan-profile-bio a :is(b, i, strong, em, u) {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio span[style*="color:"] :is(b, i, strong, em, u),
+#fr-layout.fr-theme[data-theme] .clan-profile-bio a :is(b, i, strong, em, u) {
     color: inherit;
 }
 /*bbcode quotes & code tags *\/
-.clan-profile-bio.legacy-bbcode :is(div.bbcode_quote, div.bbcode_code) {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio.legacy-bbcode :is(div.bbcode_quote, div.bbcode_code) {
     border-color: var(--quote-header);
 }
-.clan-profile-bio.legacy-bbcode :is(div.bbcode_quote_head, div.bbcode_code_head) {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio.legacy-bbcode :is(div.bbcode_quote_head, div.bbcode_code_head) {
     --tooltip-header: var(--quote-header);
     --borders: --quote-header;
     --text: #fff;
 }
-.clan-profile-bio.legacy-bbcode :is(div.bbcode_quote_body, div.bbcode_code_body) {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio.legacy-bbcode :is(div.bbcode_quote_body, div.bbcode_code_body) {
     background-color: #f8f3d4;
     color: var(--text-alt);
 }
 /*hiddens*\/
-.clan-profile-bio .forum-hidden-header {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio .forum-hidden-header {
     --strong: #fff;
     --section: var(--fr-red);
     border-color: var(--fr-red);
 }
-.clan-profile-bio .forum-hidden {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio .forum-hidden {
     background: #fff;
     border-color: #cab1b1;
 }
@@ -1163,7 +1430,8 @@ bio-color-text-2 "Dark Mode (Allow User-Set Colors)" <<<EOT
 EOT;
 bio-color-text-3 "Light Mode" <<<EOT
 /*general - we do not directly overwrite most vars to avoid breaking widgets *\/
-#dragon-profile-bio.dragon-profile-bio, #dragon-profile-bio.dragon-profile-vista-bio {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio.dragon-profile-bio,
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio.dragon-profile-vista-bio {
     --text-alt: #000;
     --em: var(--text-alt);
     --strong: var(--text-alt);
@@ -1180,73 +1448,75 @@ bio-color-text-3 "Light Mode" <<<EOT
     border-color: var(--borders-med-alt);
     background: linear-gradient(to bottom, var(--widget-med-alt) 0%, var(--widget-light-alt) 100%)
 }
-#dragon-profile-bio li::marker {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio li::marker {
     --accent-two: var(--text-alt);
 }
-#dragon-profile-bio .dragon-profile-bio-text {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio .dragon-profile-bio-text {
     --em: inherit;
     --strong: inherit;
 }
-#dragon-profile-bio.dragon-profile-vista-bio .dragon-profile-bio-vista {
+
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio.dragon-profile-vista-bio .dragon-profile-bio-vista {
     border-right-width: 1px;
     border-color: var(--borders-med-alt);
 }
-#dragon-profile-bio .dragon-profile-bio-vista {
-    --widget-med: #fff;
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio .dragon-profile-bio-vista {
+    --widget: #fff;
 }
 /*link colors*\/
-#dragon-profile-bio .gamedb-bbcode,
-#dragon-profile-bio .pinglist-bbcode {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio .gamedb-bbcode,
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio .pinglist-bbcode {
     --link: var(--link-alt);
     --link-hover: var(--link-hover-alt);
 }
-#dragon-profile-bio a {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio a {
     color: var(--link-alt);
 }
-#dragon-profile-bio a:hover,
-#dragon-profile-bio a:focus,
-#dragon-profile-bio a:focus-within {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio a:hover,
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio a:focus,
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio a:focus-within {
     color: var(--link-hover-alt);
 }
-#dragon-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a {
     color: var(--link);
 }
-#dragon-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:hover,
-#dragon-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus, 
-#dragon-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus-within {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:hover,
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus, 
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus-within {
     color: var(--link-hover);
 }
 /*columns*\/
-#dragon-profile-bio td, #dragon-profile-bio th {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio td,
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio th {
     color: var(--text-alt);
 }
 /*colored text*\/
-.dragon-profile-bio-text span[style*="color:"] :is(b, i, strong, em, u),
-.dragon-profile-bio-text a :is(b, i, strong, em, u) {
+#fr-layout.fr-theme[data-theme] .dragon-profile-bio-text span[style*="color:"] :is(b, i, strong, em, u),
+#fr-layout.fr-theme[data-theme] .dragon-profile-bio-text a :is(b, i, strong, em, u) {
     color: inherit;
 }
 /*bbcode quotes*\/
-#dragon-profile-bio .bbcode_quote {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio .bbcode_quote {
     border-color: var(--quote-header);
 }
-#dragon-profile-bio div.bbcode_quote_head {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio div.bbcode_quote_head {
     --tooltip-header: var(--quote-header);
     --borders: --quote-header;
     --text: #fff;
     --link: #fff;
     --link-hover: #fff;
 }
-#dragon-profile-bio div.bbcode_quote_body {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio div.bbcode_quote_body {
     background-color: #f8f3d4;
     color: var(--text-alt);
 }
 /*hiddens*\/
-#dragon-profile-bio .forum-hidden-header {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio .forum-hidden-header {
     --strong: #fff;
     --section: var(--fr-red);
     border-color: var(--fr-red);
 }
-.dragon-profile-bio-text .forum-hidden {
+#fr-layout.fr-theme[data-theme] .dragon-profile-bio-text .forum-hidden {
     background: #fff;
     border-color: #cab1b1;
 }
@@ -1305,91 +1575,97 @@ forum-color-text-3 "Light Mode" <<<EOT
 
     color: var(--text-alt);
 }
-.post.blocked-post .post-text-content {
+#fr-layout.fr-theme[data-theme] .post.blocked-post .post-text-content {
     color: var(--text-alt) !important;
 }
-.post-edited {
+#fr-layout.fr-theme[data-theme] .post-edited {
     --link-hover: #731d08;
     --link: #96682C;
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text) li::marker {
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text) li::marker {
     --accent-two: var(--text-alt);
 }
 /*white bg*\/
-.post .post-frame {
+#fr-layout.fr-theme[data-theme] .post .post-frame,
+#fr-layout.fr-theme[data-theme] #msg-text {
     --widget-med-bg: #fff;
     --widget-med-alt: #faf9f7;
 }
-#topic-preview-text, #msg-preview-text, #msg-show {
-    background-color: #fff;
+#fr-layout.fr-theme[data-theme] #topic-preview-text,
+#fr-layout.fr-theme[data-theme] #msg-preview-text,
+#fr-layout.fr-theme[data-theme] #msg-show {
+    background: #fff;
 }
 /*fix pm attachments label*\/
-#msg-items > p {
+#fr-layout.fr-theme[data-theme] #msg-items > p {
     --text-alt: #000;
     color: var(--text-alt);
 }
 /*link colors*\/
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) .gamedb-bbcode,
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) .pinglist-bbcode {
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) .gamedb-bbcode,
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) .pinglist-bbcode {
     --link: var(--link-alt);
     --link-hover: var(--link-hover-alt);
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a {
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a {
     color: var(--link-alt);
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a:hover,
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a:focus,
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a:focus-within,
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a:hover :is(b, strong, i, em) {
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a:hover,
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a:focus,
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a:focus-within,
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) a:hover :is(b, strong, i, em) {
     color: var(--link-hover-alt);
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a {
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a {
     color: var(--link);
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:hover,
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus, 
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus-within {
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:hover,
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus, 
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.outfit-image, .scry-image, .forum-map-widget-frame, .dragon-effect-frame) a:focus-within {
     color: var(--link-hover);
 }
 /*columns*\/
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) td,
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) th {
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) td,
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) th {
     color: var(--text-alt);
 }
 /*colored text*\/
-.post:not(.post-admin) .post-text-content :is(b, i, strong, em),
+#fr-layout.fr-theme[data-theme] .post .post-text-content :is(b, i, strong, em),
 #topic-preview-text :is(b, i, strong, em),
 .post-text-signature :is(b, i, strong, em),
-:is(.post-text-content, #topic-preview-text) a :is(b, i, strong, em),
-:is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] :is(b, i, strong, em, u), .post-edited em, #msg-text :is(b, i, strong, em), #msg-text a :is(b, i, strong, em),
-#msg-preview-text :is(b, i, strong, em), #msg-preview-text a :is(b, i, strong, em){
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, #topic-preview-text) a :is(b, i, strong, em),
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text) span[style*="color:"] :is(b, i, strong, em, u),
+#fr-layout.fr-theme[data-theme] .post-edited em,
+#fr-layout.fr-theme[data-theme] #msg-text :is(b, i, strong, em),
+#fr-layout.fr-theme[data-theme] #msg-text a :is(b, i, strong, em),
+#fr-layout.fr-theme[data-theme] #msg-preview-text :is(b, i, strong, em), #msg-preview-text a :is(b, i, strong, em){
     color: inherit;
 }
 /*bbcode quotes & code tags*\/
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.bbcode_quote, .bbcode_code) {
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(.bbcode_quote, .bbcode_code) {
     border-color: var(--quote-header);
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(div.bbcode_quote_head, div.bbcode_code_head) {
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(div.bbcode_quote_head, div.bbcode_code_head) {
     --tooltip-header: var(--quote-header);
     --borders: --quote-header;
     --text: #fff;
     --link: #fff;
     --link-hover: #fff;
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(div.bbcode_quote_head, div.bbcode_code_head) a {
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(div.bbcode_quote_head, div.bbcode_code_head) a {
     color: inherit !important;
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(div.bbcode_quote_body, div.bbcode_code_body) {
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) :is(div.bbcode_quote_body, div.bbcode_code_body) {
     background-color: #f8f3d4;
     color: var(--text-alt);
 }
 /*hiddens*\/
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) .forum-hidden-header {
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) .forum-hidden-header {
     --strong: #fff;
     --section: var(--fr-red);
     border-color: var(--fr-red);
 }
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) .forum-hidden {
+#fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) .forum-hidden {
     background: #fff;
     border-color: #cab1b1;
 }
@@ -1399,7 +1675,7 @@ EOT;
 @advanced dropdown clan-override-fonts "User-set Fonts in Clan Bios" {
 clan-override-fonts-2 "Allow" <<<EOT EOT;
 clan-override-fonts-1 "Remove" <<<EOT
-.clan-profile-bio span[style*="font-family:"] {
+#fr-layout.fr-theme[data-theme] .clan-profile-bio span[style*="font-family:"] {
 	font-family: var(--font-family) !important;
 }
 EOT;
@@ -1408,7 +1684,7 @@ EOT;
 @advanced dropdown bio-override-fonts "User-set Fonts in Dragon Bios" {
 bio-override-fonts-2 "Allow" <<<EOT EOT;
 bio-override-fonts-1 "Remove" <<<EOT
-#dragon-profile-bio span[style*="font-family:"] {
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio span[style*="font-family:"] {
 	font-family: var(--font-family) !important;
 }
 EOT;
@@ -1416,13 +1692,24 @@ EOT;
 @advanced dropdown forum-override-fonts "User-set Fonts in Forum/PMs" {
 forum-override-fonts-2 "Allow" <<<EOT EOT;
 forum-override-fonts-1 "Remove" <<<EOT
-#topic-preview-text span[style*="font-family"],
-.post-text-content span[style*="font-family"],
-.post-text-signature span[style*="font-family"],
-#msg-text span[style*="font-family"] {
+#fr-layout.fr-theme[data-theme] #topic-preview-text span[style*="font-family"],
+#fr-layout.fr-theme[data-theme] .post-text-content span[style*="font-family"],
+#fr-layout.fr-theme[data-theme] .post-text-signature span[style*="font-family"],
+#fr-layout.fr-theme[data-theme] #msg-text span[style*="font-family"] {
     font-family: var(--font-family) !important;
 }
 EOT;
+}
+@advanced dropdown waystone "Fixed Position Waystone" {
+    waystone1 "Disabled" <<<EOT EOT;
+    waystone2 "Enabled" <<<EOT
+        #fr-layout-sidebar-waystone {
+            position: fixed;
+            z-index: 15;
+            bottom: 0px;
+            left: 0px;
+        }
+    EOT;
 }
 
 @var checkbox filler0 "─── ↓ Custom Theme Settings ↓ ───" 1
@@ -1470,25 +1757,21 @@ EOT;
 @var color accent-four "Accent Four" #97d4d9
 @var color accent-five "Accent Five" #00faff
 
-@var color button-text "Button Text (Light)" #fff
-@var color button-text-dark "Button Text (Dark)" #000
-@var color button-one "Lair/Hoard Buttons Gradient 1" #eef3f9
-@var color button-two "Lair/Hoard Buttons Gradient 2" #bacbdf
+@var color button-text "Button Text (Main UI)" #000
+@var color button-text-dark "Button Text (Red/Beige)" #000
+@var color button-stroke "SVG Button Outline" #DDDFF1
+@var color button-icon "SVG Button Icon Fill" #4D6586
+@var color button-icon-text "SVG Button Text Fill" #20275a
+@var color button-disabled-text "Disabled SVG Button Text/Icons Fill" #33365C
+@var color button-disabled-stroke "Disabled SVG Button Outline" #8495a8
+@var color button-one "Main UI Buttons Gradient 1" #eef3f9
+@var color button-two "Main UI Buttons Gradient 2" #bacbdf
 @var color beige-button-one "Beige Buttons Gradient 1" #488fad
 @var color beige-button-two "Beige Buttons Gradient 2" #7d5f88
 @var color red-button-one "Red Button Gradient 1" #31527a
 @var color red-button-two "Red Button Gradient 2" #1f3c5f
 @var color button-disabled-one "Disabled Buttons Gradient 1" #7f8d9f
 @var color button-disabled-two "Disabled Buttons Gradient 2" #444f5b
-
-@var color tab "Lair Tab" #17222d
-@var color tab-hover "Active Lair Tab" #163a59
-
-@var color admin-text "Admin Post Text" #ffa3a3
-@var color admin-strong "Admin Post Bold" #ffc391
-@var color admin-em "Admin Post Italic" #dfc1a4
-@var color admin-link "Admin Post Link" #ffed80
-@var color admin-link-hover "Admin Post Link Hover" #fffad9
 
 @var color energy-one "Energy/Progress Bars <100%/In-Progress Gradient 1" #235e96
 @var color energy-two "Energy/Progress Bars <100%/In-Progress Gradient 2" #80efbd
@@ -1503,18 +1786,958 @@ EOT;
 @var color error "Error Message Links & BG (semi-transparent)" #ff829e
 @var color error-text "Error Message Text" #fac9d4
 @var color success "Success Message Links & BG (semi-transparent)" #98e764
-@var color success-text "Success Message Text" #e2fac9
-  
+@var color success-text "Success Message Text" #e2fac9 
         
 
 ==/UserStyle== */
+
+@-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com.*") {
+    /*REFACTOR THEME CODE*/
+    .fr-theme[data-theme="default"] {
+        /*[[light]]*/
+    }
+    .fr-theme[data-theme="dark"] {
+        /*[[dark]]*/
+    }
+    #fr-layout.fr-theme[data-theme] a {
+        color: var(--link);
+    }
+    #fr-layout.fr-theme[data-theme] a:not(.common-ui-button):hover, #fr-layout.fr-theme[data-theme] a:not(.common-ui-button):focus {
+        color: var(--link-hover);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-main-1 {
+        background-color: var(--main);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-alt-1 {
+        background-color: var(--alt-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-alt2-1 {
+        background-color: var(--alt-two);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-hover-1:hover {
+        background-color: var(--alt-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-gradient-1 {
+        background: linear-gradient(var(--alt-two) 0%, var(--alt-three) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-border-1 {
+        border-color: var(--border-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-main-1 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-accent-1 {
+        color: var(--accent-four);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-subtle-1 {
+        color: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-link-1 {
+        color: var(--link);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-main-2 {
+        background-color: var(--sidebar-two);
+    }
+    /*dragon profile vista?*/
+    #fr-layout.fr-theme[data-theme] .theme-background-alt-2 {
+        background-color: var(--widget);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-hover-2:hover {
+        background-color: var(--widget-med);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-gradient-2 {
+        background: linear-gradient(var(--main) 0%, var(--alt-one) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-border-2 {
+        border-color: var(--border-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-main-2 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-accent-2 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-subtle-2 {
+        color: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-link-2 {
+        color: var(--link);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-main-3 {
+        background-color: var(--sidebar-two);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-alt-3 {
+        background-color: var(--alt-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-hover-3:hover {
+        background-color: var(--alt-two);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-gradient-3 {
+        background: linear-gradient(var(--alt-one) 0%, var(--alt-two) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-border-3 {
+        border-color:  var(--border-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-main-3 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-accent-3 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-subtle-3 {
+        color: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-link-3 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-main-4 {
+        background-color: var(--bar);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-alt-4 {
+        background-color: var(--red-button-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-hover-4:hover {
+        background-color: var(--red-button-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-gradient-4 {
+        background: linear-gradient(var(--red-button-one) 0%, var(--red-button-two) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-border-4 {
+        border-color: var(--bar-border);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-main-4 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-accent-4 {
+        color: var(--accent-two);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-subtle-4 {
+        color: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-link-4,
+    #fr-layout.fr-theme[data-theme] a.theme-text-link-4:hover,
+    #fr-layout.fr-theme[data-theme] a.theme-text-link-4:focus {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-main-5 {
+        background-color: var(--main);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-alt-5 {
+        background-color: var(--sidebar-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-hover-5:hover {
+        background-color: var(--sidebar-two);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-gradient-5 {
+        background: linear-gradient(var(--main) 0%, var(--main) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-border-5 {
+        border-color: var(--border-two);
+    }
+    /*usertab*/
+    #fr-layout.fr-theme[data-theme] .theme-text-main-5 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-accent-5 {
+        color: var(--link);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-subtle-5 {
+        color: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-link-5, #fr-layout.fr-theme[data-theme] a.theme-text-link-5:hover, #fr-layout.fr-theme[data-theme] a.theme-text-link-5:focus {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-main-6 {
+        background-color: var(--alt-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-alt-6 {
+        background-color: var(--alt-two);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-hover-6:hover {
+        background-color: var(--alt-two);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-gradient-6 {
+        background: linear-gradient(var(--alt-one) 0%, var(--alt-two) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-border-6 {
+        border-color:  var(--border-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-main-6 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-accent-6 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-subtle-6 {
+        color: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-link-6 {
+        color: var(--link);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-main-7 {
+        background-color: var(--main);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-alt-7 {
+        background-color: var(--alt-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-hover-7:hover {
+        background-color: var(--alt-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-gradient-7 {
+        background: linear-gradient(var(--alt-one) 0%, var(--alt-one) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-border-7 {
+        border-color:  var(--border-one);
+    }
+    /*alert popups*/
+    #fr-layout.fr-theme[data-theme] .theme-text-main-7 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-accent-7 {
+        color: var(--text-accent);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-subtle-7 {
+        color: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-link-7 {
+        color: var(--link);
+    }
+    /*PHONE MODE bottom nav*/
+    #fr-layout.fr-theme[data-theme] .theme-background-main-8 {
+        background-color: var(--red-button-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-alt-8 {
+        background-color: var(--red-button-two);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-background-hover-8:hover {
+        background: linear-gradient(to top, var(--red-button-one) 0%, var(--red-button-one) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-gradient-8 {
+        background: linear-gradient(var(--red-button-one) 0%, var(--red-button-two) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-border-8 {
+        border-color: var(--border-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-main-8 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-accent-8 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-subtle-8 {
+        color: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-text-link-8 {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-bar-glyph-fill {
+        fill: var(--accent-five);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-bar-glyph-stroke {
+        fill: var(--shadow);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-fixed-navigation-jump-glyph-box {
+        fill: var(--button-icon);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-fixed-navigation-jump-glyph-fill {
+        fill: var(--button-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-main-text-fill {
+        fill: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-main-text-stroke {
+        fill: var(--shadow);
+        stroke: var(--shadow);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-main-text-shadow {
+        fill: transparent;
+        stroke: transparent;
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-navigation-glyph-box {
+        fill: var(--nav-button-bg);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-navigation-glyph-stroke {
+        fill: var(--button-stroke);
+        stroke: var(--button-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-navigation-glyph-fill {
+        fill: var(--button-icon);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-navigation-text-shadow {
+        fill: transparent;
+        stroke: transparent;
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-navigation-text-stroke {
+        fill: var(--button-icon-text);
+        stroke: var(--button-icon-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-navigation-text-fill {
+        fill: var(--button-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-fixed-navigation-glyph-box {
+        fill: var(--nav-button-bg);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-fixed-navigation-glyph-stroke {
+        fill: var(--button-stroke);
+        stroke: var(--button-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-fixed-navigation-glyph-fill {
+        fill: var(--button-icon);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-fixed-navigation-text-shadow {
+        fill: transparent;
+        stroke: transparent;
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-fixed-navigation-text-stroke {
+        fill: var(--button-icon-text);
+        stroke: var(--button-icon-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-fixed-navigation-text-fill {
+        fill: var(--button-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-header-text-fill {
+        fill: var(--button-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-header-text-stroke {
+        fill: var(--button-icon-text);
+        stroke: var(--button-icon-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-header-text-shadow {
+        fill: transparent;
+        stroke: transparent;
+    }
+    /*dragon profile gender icon*/
+    #fr-layout.fr-theme[data-theme] .theme-svg-sex-glyph-box {
+        fill: var(--alt-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-sex-glyph-stroke {
+        fill: var(--border-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-sex-glyph-fill {
+        fill: var(--widget-light);
+    }
+    /*logout*/
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-logout-glyph-stroke {
+        fill: var(--button-disabled-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-logout-glyph-fill {
+        fill: var(--button-disabled-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-active-glyph-stroke {
+        fill: var(--button-icon);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-active-glyph-fill {
+        fill: var(--button-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-inactive-glyph-stroke {
+        fill: var(--button-disabled-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-inactive-glyph-fill {
+        fill: var(--button-disabled-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] {
+        position: relative;
+    }
+    #fr-layout.fr-theme[data-theme] > * {
+        z-index: 2;
+    }
+    #fr-layout.fr-theme[data-theme][data-location-id="0"]::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: -1;
+        filter: var(--filter) hue-rotate(var(--hue)); 
+        background: url('https://www1.flightrising.com/static/layout/site/backdrop.png');
+        background-repeat: no-repeat;
+        background-position: center top;
+    }
+    @media screen and (max-width: 950px) {
+        #fr-layout.fr-theme[data-theme][data-location-id="0"][data-responsive="auto"]::before {
+            background-size: 100%;
+        }
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-glyph-fill {
+        fill: var(--button-icon);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-glyph-stroke {
+        fill: var(--button-stroke);
+    }
+    /*buttons, lair tabs*/
+    #fr-layout.fr-theme[data-theme] .theme-ui-1 {
+        background: linear-gradient(to bottom, var(--button-one) 0%, var(--button-two) 100%);
+        border-color: var(--border-one);
+        color: var(--button-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1:hover {
+        background: linear-gradient(to top, var(--button-one) 0%, var(--button-two) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1 a {
+        color: var(--button-text-dark);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1:after {
+        border-color: var(--border-three);
+    }
+    /*button icons*/
+    #fr-layout.fr-theme[data-theme] .theme-ui-1 .theme-svg-glyph-fill {
+        fill: var(--button-icon);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1 .theme-svg-glyph-stroke {
+        fill: var(--button-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1 .theme-svg-text-fill {
+        fill: var(--button-icon-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1 .theme-svg-text-stroke {
+        fill: var(--button-stroke);
+        stroke: var(--button-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1 .theme-svg-text-shadow {
+        fill: transparent;
+        stroke: transparent;
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1 .common-ui-button-inset {
+        color: var(--text);
+        background: var(--widget);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1 .common-tab-indicator {
+        background: linear-gradient(to bottom, var(--energy-two) 0%, var(--energy-one) 100%);
+        border-color: var(--energy-border);
+        color: var(--button-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1 .common-ui-button-indicator {
+        background: linear-gradient(to bottom, var(--energy-two) 0%, var(--energy-one) 100%);
+        border-color: var(--energy-border);
+        color: var(--button-text);
+    }
+    /*disabled button*/
+    #fr-layout.fr-theme[data-theme] .theme-ui-1-disabled {
+        background: linear-gradient(to bottom, var(--button-disabled-one) 0%, var(--button-disabled-two) 100%);
+        border-color: var(--border-two);
+        color: var(--button-text-dark);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1-disabled:after {
+        border-color: var(--border-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1-disabled .theme-svg-glyph-fill {
+        fill: var(--button-disabled-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1-disabled .theme-svg-glyph-stroke {
+        fill: var(--button-disabled-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1-disabled .theme-svg-text-fill {
+        fill: var(--button-disabled-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1-disabled .theme-svg-text-stroke {
+        fill: var(--button-disabled-stroke);
+        stroke: var(--button-disabled-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1-disabled .theme-svg-text-shadow {
+        fill: transparent;
+        stroke: transparent;
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1-disabled .common-ui-button-inset {
+        color: var(--text-disabled);
+        background: var(--section);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1-disabled .common-tab-indicator {
+        background: linear-gradient(to bottom, var(--energy-full-two) 0%, var(--energy-full-one) 100%);
+        border-color: var(--energy-border);
+        color: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-1-disabled .common-ui-button-indicator {
+        color: var(--text);
+        border-color: var(--energy-border);
+        background-image: linear-gradient(to bottom, var(--energy-two) 0%, var(--energy-one) 100%);
+    }
+    /*locked hoard button & red buttons*/
+    #fr-layout.fr-theme[data-theme] .theme-ui-2 {
+        background: linear-gradient(to bottom, var(--red-button-one) 0%, var(--red-button-two) 100%);
+        border-color: var(--border-two);
+        color: var(--button-text-dark);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2:hover {
+        background: linear-gradient(to top, var(--red-button-one) 0%, var(--red-button-two) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2 a {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2:after {
+        border-color: var(--border-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2 .theme-svg-glyph-fill {
+        fill: var(--button-disabled-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2 .theme-svg-glyph-stroke {
+        fill: var(--button-disabled-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2 .theme-svg-text-fill {
+        fill: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2 .theme-svg-text-stroke {
+        fill: var(--button-disabled-stroke);
+        stroke: var(--button-disabled-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2 .theme-svg-text-shadow {
+        fill: transparent;
+        stroke: transparent;
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2 .common-ui-button-inset {
+        color: var(--text);
+        background: var(--widget);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2 .common-tab-indicator {
+        color: var(--text);
+        border-color: var(--energy-border);
+        background-image: linear-gradient(to bottom, var(--energy-two) 0%, var(--energy-one) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2 .common-ui-button-indicator {
+        color: var(--text);
+        border-color: var(--energy-border);
+        background-image: linear-gradient(to bottom, var(--energy-two) 0%, var(--energy-one) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2-disabled {
+        background: var(--button-disabled-one);
+        border-color: var(--button-disabled-two);
+        color: var(--button-disabled-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2-disabled:after {
+        border-color: var(--borders);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2-disabled .theme-svg-glyph-fill {
+        fill: var(--button-icon);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2-disabled .theme-svg-glyph-stroke {
+        fill: var(--button-disabled-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2-disabled .theme-svg-text-fill {
+        fill: var(--button-disabled-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2-disabled .theme-svg-text-stroke {
+        fill: transparent;
+        stroke: transparent;
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2-disabled .theme-svg-text-shadow {
+        fill: transparent;
+        stroke: transparent;
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2-disabled .common-ui-button-inset {
+        color: var(--text-disabled);
+        background: var(--section);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2-disabled .common-tab-indicator {
+        background: linear-gradient(to bottom, var(--energy-full-two) 0%, var(--energy-full-one) 100%);
+        border-color: var(--energy-border);
+        color: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-2-disabled .common-ui-button-indicator {
+        background: linear-gradient(to bottom, var(--energy-full-two) 0%, var(--energy-full-one) 100%);
+        border-color: var(--energy-border);
+        color: var(--text-subtle);
+    }
+    /*selected lair tab*/
+    #fr-layout.fr-theme[data-theme] .theme-ui-3 {
+        background: linear-gradient(to bottom, var(--red-button-one) 0%, var(--red-button-two) 100%);
+        border-color: var(--border-one);
+        color: var(--button-text-dark);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3:hover {
+        background: linear-gradient(to top, var(--red-button-one) 0%, var(--red-button-two) 100%);;
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3 a {
+        color: var(--button-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3:after {
+        border-color: var(--border-three);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3 .theme-svg-glyph-fill {
+        fill: var(--button-icon);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3 .theme-svg-glyph-stroke {
+        fill: var(--button-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3 .theme-svg-text-fill {
+        fill: var(--button-icon-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3 .theme-svg-text-stroke {
+        fill: var(--button-stroke);
+        stroke: var(--button-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3 .theme-svg-text-shadow {
+        fill: transparent;
+        stroke: transparent;
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3 .common-ui-button-inset {
+        color: var(--text);
+        background: var(--widget);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3 .common-tab-indicator {
+        background: linear-gradient(to bottom, var(--energy-two) 0%, var(--energy-one) 100%);
+        border-color: var(--energy-border);
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3 .common-ui-button-indicator {
+        color: var(--text);
+        border-color: var(--energy-border);
+        background: var(--energy-two);
+        background-image: linear-gradient(to bottom, var(--energy-two) 0%, var(--energy-one) 100%);
+        border-radius: 5px;
+        text-shadow: -1px 0 0 var(--shadow), 1px 0 0 var(--shadow), -1px 1px 0 var(--shadow), 1px 1px 0 var(--shadow), -1px 2px 0 var(--shadow), 1px 2px 0 var(--shadow), -1px -1px 0 var(--shadow), 1px -1px 0 var(--shadow), 0 -1px 0 var(--shadow);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3-disabled {
+        background: var(--section);
+        border-color: var(--section);
+        color: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3-disabled:after {
+        border-color: var(--main);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3-disabled .theme-svg-glyph-fill {
+        fill: var(--main);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3-disabled .theme-svg-glyph-stroke {
+        fill: var(--main);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3-disabled .theme-svg-text-fill {
+        fill: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3-disabled .theme-svg-text-stroke {
+        fill: transparent;
+        stroke: transparent;
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3-disabled .theme-svg-text-shadow {
+        fill: transparent;
+        stroke: transparent;
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3-disabled .common-ui-button-inset {
+        color: var(--text-subtle);
+        background: var(--main);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3-disabled .common-tab-indicator {
+        background: linear-gradient(to bottom, var(--energy-full-two) 0%, var(--energy-full-one) 100%);
+        border-color: var(--energy-border);
+        color: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3-disabled .common-ui-button-indicator {
+        background: linear-gradient(to bottom, var(--energy-full-two) 0%, var(--energy-full-one) 100%);
+        border-color: var(--energy-border);
+        color: var(--text-subtle);
+    }
+    /*dragon cards*/
+    #fr-layout.fr-theme[data-theme] .theme-ui-4 {
+        background: linear-gradient(var(--alt-two) 0%, var(--alt-three) 100%);
+        border-color:  var(--border-one);
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-4:after {
+        border-color: var(--border-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-4-selected {
+        background: linear-gradient(var(--alt-two) 0%, var(--alt-two) 100%);
+        border-color:  var(--border-one);
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-4-selected:after {
+        border-color: var(--border-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-breadcrumb-link {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-breadcrumb-active {
+        color: var(--accent-two);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-breadcrumb-deliminator {
+        color: var(--accent-three);
+    }
+    #fr-layout.fr-theme[data-theme] a.fr-layout-navigation-subheader:hover {
+        background-color: var(--main);
+    }
+    #fr-layout.fr-theme[data-theme] a.fr-layout-navigation-link:hover {
+        background-color: var(--main);
+    }
+    #fr-layout.fr-theme[data-theme] .ui-widget-content {
+        color: var(--text);
+        background: linear-gradient(var(--widget) 0%, var(--widget-med) 100%);
+        border-color: var(--border-one);
+    }
+    #fr-layout.fr-theme[data-theme] .ui-widget-header {
+        background-color: var(--tooltip-header);
+    }
+    #fr-layout.fr-theme[data-theme] .ui-dialog-titlebar {
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .ui-dialog-titlebar-close {
+        background: linear-gradient(to bottom, var(--widget-med) 0%, var(--widget-med) 100%);
+        border-color: var(--border-one);
+    }
+    #fr-layout.fr-theme[data-theme] .ui-dialog .ui-widget-content {
+        background: linear-gradient(var(--widget) 0%, var(--widget-med) 100%);
+        border-color: var(--border-one);
+        color: var(--acccent-four);
+    }
+    #fr-layout.fr-theme[data-theme] .ui-button-icon {
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(180%) contrast(120%) saturate(400%)
+    }
+    #fr-layout.fr-theme[data-theme] .bbcode_url {
+        color: var(--link);
+    }
+    #fr-layout.fr-theme[data-theme] .common-checkbox {
+        background: linear-gradient(to bottom, var(--columns) 0%, var(--main) 100%);
+        border-color: var(--border-two);
+        color: var(--text);
+    }
+    /*inputs*/
+    #fr-layout.fr-theme[data-theme] .common-textarea-frame {
+        background: var(--borders);
+    }
+    #fr-layout.fr-theme[data-theme] .common-textarea textarea {
+        border-color: var(--border-one);
+        background-color: var(--textarea);
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .common-field input[type="password"],
+    #fr-layout.fr-theme[data-theme] .common-filter input[type="text"],
+    #fr-layout.fr-theme[data-theme] .common-field input[type="text"],
+    #fr-layout.fr-theme[data-theme] .common-filter input[type="number"],
+    #fr-layout.fr-theme[data-theme] .common-field input[type="number"],
+    #fr-layout.fr-theme[data-theme] .common-filter input[type="date"],
+    #fr-layout.fr-theme[data-theme] .common-field input[type="date"] {
+        background: var(--columns);
+        border-color: var(--borders);
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .common-checkbox[data-selected="1"] {
+        background-image: linear-gradient(var(--selected) 0%, var(--selected) 100%);
+        border-color: var(--selected);
+        color: var(--selected-text);
+    }
+    #fr-layout.fr-theme[data-theme] .common-filter select,
+    #fr-layout.fr-theme[data-theme] .common-field select {
+        background-color: var(--columns);
+        background-image: url(/static/layout/common/select-menu.png), linear-gradient(var(--textarea) 0%, var(--widget) 100%);
+        border-color: var(--borders);
+        color: var(--text);
+    }
+    /*override styles*/
+    #fr-layout.fr-theme[data-theme] .common-style-override[data-style="0"],
+    #fr-layout.fr-theme[data-theme] .common-style-override[data-style="0"] i,
+    #fr-layout.fr-theme[data-theme] .common-style-override[data-style="0"] u,
+    #fr-layout.fr-theme[data-theme] .common-style-override[data-style="0"] strike,
+    #fr-layout.fr-theme[data-theme] .common-style-override[data-style="0"] span,
+    #fr-layout.fr-theme[data-theme] .common-style-override[data-style="0"] td,
+    #fr-layout.fr-theme[data-theme] .common-style-override[data-style="0"] sub,
+    #fr-layout.fr-theme[data-theme] .common-style-override[data-style="0"] sup {
+        color: var(--text) !important;
+        background: none !important;
+    }
+    #fr-layout.fr-theme[data-theme] .common-style-override[data-style="0"] a {
+        color: var(--link) !important;
+    }
+    #fr-layout.fr-theme[data-theme] #fr-layout-navigation-content {
+        background: linear-gradient(var(--sidebar-one) 0%, var(--sidebar-two) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] #fr-layout-sidebar-bg {
+        border-right: 1px solid  var(--border-one);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-fade-1 {
+        background: -moz-linear-gradient(top, rgba(8, 0, 26, 0) 0%, var(--main) 20%, var(--main) 100%);
+        background: -webkit-linear-gradient(top, rgba(8, 0, 26, 0) 0%, var(--main) 20%, var(--main) 100%);
+        background: linear-gradient(to bottom, rgba(8, 0, 26, 0) 0%, var(--main) 20%, var(--main) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-fade-2 {
+        background: -moz-linear-gradient(top, rgba(8, 0, 26, 0) 0%, var(--main) 80%, var(--main) 100%);
+        background: -webkit-linear-gradient(top, rgba(8, 0, 26, 0) 0%, var(--main) 80%, var(--main) 100%);
+        background: linear-gradient(to bottom, rgba(8, 0, 26, 0) 0%, var(--main) 80%, var(--main) 100%);
+    }
+    /*dragon scene fade*/
+    #fr-layout.fr-theme[data-theme] .theme-fade-3 {
+        background: -moz-linear-gradient(
+            top,
+            var(--main) 0%,
+            rgba(8, 0, 26, 0) 25%,
+            rgba(8, 0, 26, 0) 70%,
+            var(--main) 100%
+        );
+        background: -webkit-linear-gradient(
+            top,
+            var(--main) 0%,
+            rgba(8, 0, 26, 0) 25%,
+            rgba(8, 0, 26, 0) 70%,
+            var(--main) 100%
+        );
+        background: linear-gradient(
+            to bottom,
+            var(--main) 0%,
+            rgba(8, 0, 26, 0) 25%,
+            rgba(8, 0, 26, 0) 70%,
+            var(--main) 100%
+        );
+    }
+}
+@-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com.*") {
+    /* GENERAL THEME ADDITIONS & PATCHES */
+    
+    *::-webkit-scrollbar {
+        background: var(--section)
+    }
+    *::-webkit-scrollbar-thumb {
+        background: var(--alt-three);
+        border: 2px solid var(--alt-two)
+    }
+    body, html {
+        scrollbar-color: var(--widget-light) var(--section)
+    }
+    /*fix height for internal bg to look less crappy*/
+    #fr-layout-content {
+        min-height: 500px;
+    }
+    #fr-layout-player-module-logout {
+        z-index: 3;
+    }
+    /*[[waystone]]*/
+    #fr-layout.fr-theme[data-theme] #fr-layout-player-module-logout:hover .theme-svg-player-module-logout-glyph-fill {
+        fill: var(--button-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] #fr-layout-player-module-logout:hover .theme-svg-player-module-logout-glyph-stroke {
+        fill: var(--button-icon)
+    }
+    /*usertab fix ugly thing*/
+    #fr-layout-player-module-main {
+        padding-top: 4px;
+    }
+    #fr-layout-player-module-main .fr-layout-player-module-left {
+        padding-top: 5px;
+    }
+    #fr-layout-player-module-main .fr-layout-player-module-username {
+        text-shadow: -1px 0 0 var(--shadow), 1px 0 0 var(--shadow), -1px 1px 0 var(--shadow), 1px 1px 0 var(--shadow), -1px 2px 0 var(--shadow), 1px 2px 0 var(--shadow), -1px -1px 0 var(--shadow), 1px -1px 0 var(--shadow), 0 -1px 0 var(--shadow);
+    }
+    #fr-layout-player-module-energy-meter {
+        margin-top: 5px;
+    }
+    /*alerts*/
+    #fr-layout-alerts-content > *  {
+        background: var(--alt-one)
+    }
+    #fr-layout-alerts circle[style*="fill"] {
+        fill: var(--strong) !important;
+    }
+    #fr-layout-alerts-content > *:nth-child(2n+1) {
+        background: var(--alt-two)
+    }
+    #fr-layout-alerts-content {
+        border-width: 2px;
+        overflow: hidden;
+    }
+    .lair-tab-description {
+        --main: var(--section)
+    }
+    /*sidebar fixes*/
+    #home-page-sidebar {
+        background: none;
+    }
+    #home-page-sidebar-bg {
+        border-left: 1px solid var(--border-one);
+        box-sizing: border-box;
+    }
+    /*fix subheader*/
+    #fr-layout.fr-theme[data-theme] .responsive-page-header-sublink.theme-border-1 {
+        border-color: var(--text-subtle)
+    }
+    /*mobile nav fix*/
+    .fr-layout-fixed-navigation-list-item:hover, .fr-layout-fixed-navigation-list-item:focus {
+        color: var(--text)
+    }
+    /* ui messages */
+    .common-message strong, .common-message b, .common-message em, .common-message i,
+    .common-dialog-message strong, .common-dialog-message b, .common-dialog-message em, .common-dialog-message i,
+    .info-box strong, .info-box b, .info-box em, .info-box i, .event_pack b, .event_pack strong {
+        color: inherit;
+    }
+    .common-dialog-warning {
+        padding: 10px 10px 10px 30px;
+        color: var(--warning-text);
+        background-color: rgba(var(--warning),0.1);
+        text-align: center;
+        border: 2px solid rgb(var(--warning));
+        background-position: 5px 50%;
+    }
+    .common-message:not(.common-message-info):not(.common-message-success):not(.common-message-error):not(.skin-system-message-buy-blueprints) {
+        background: var(--alt-two);
+        border-color: var(--border-two)
+    }
+    .common-message li::marker, div.search-errors li::marker {
+        color: inherit;
+    }
+    .common-message-info, .dgnres-select .info-box {
+        color: var(--warning-text);
+        border-color: rgb(var(--warning));
+        background-color: rgba(var(--warning),0.08);
+    }
+    #wikitext div[style*="url(/images/layout/message_icons/information.png)"] {
+        color: var(--warning-text) !important;
+        border-color: rgb(var(--warning)) !important;
+        background-color: rgba(var(--warning),0.08) !important;
+    }
+    #fr-layout.fr-theme[data-theme] .common-checkbox[data-selected="1"]::after {
+        filter:invert(100%);
+    }
+    div.search-errors {
+        border: 1px solid;
+    }
+    .common-message-info a {
+        color: rgb(var(--warning));
+    }
+    .common-message-info a:hover, .common-message-info a:hover > * {
+        color: var(--warning-text);
+    }
+    .common-message-info a[style*="color"] {
+         color: rgb(var(--warning)) !important;
+    }
+    .common-message-info a[style*="color"]:hover {
+         color: var(--warning-text) !important;
+    }
+    .common-message-error, div.search-errors {
+        color: var(--error-text);
+        border-color: rgb(var(--error));
+        background-color: rgba(var(--error),0.08);
+    }
+    .common-message-error a, div.search-errors a {
+        color: rgb(var(--error));
+    }
+    .common-message-error a:hover, .common-message-error a:hover > *, div.search-errors a:hover, div.search-errors a:hover > * {
+        color: var(--error-text);
+    }
+    .common-message-success {
+        color: var(--success-text);
+        border-color: rgb(var(--success));
+        background-color: rgba(var(--success),0.08);
+    }
+    .common-message-success a {
+        color: rgb(var(--success));
+    }
+    .common-message-success a:hover, .common-message-success a:hover > * {
+        color: var(--success-text);
+    }
+    #noauth-container h1, #noauth-container h3 {
+        color: rgb(var(--error));
+    }
+    *[style*="color: #FF0000;"] {
+        color: rgb(var(--error)) !important;
+    }
+    /*forum hidden*/
+    .forum-hidden {
+        border-color: var(--border-one)
+    }
+    #fr-layout[data-responsive="auto"] #fr-layout-fixed-navigation {
+        z-index: 2;
+    }
+}
 
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com.*") {
     /* Global Styles */
     
     :root {
-        /*[[theme]]*/
         --font-family: Verdana, Geneva, sans-serif;
         --font-size: 12px;
         --forum-font-size: /*[[forum-font-size]]*/;
@@ -1536,6 +2759,13 @@ EOT;
         font-family: var(--font-family);
         font-size: var(--font-size);
     }
+    .fr-theme[data-theme][data-location-id="0"] {
+        position: relative;
+        z-index: 2;
+    }
+    .fr-theme[data-theme="dark"][data-location-id="0"]::before {
+        
+    }
     *::-webkit-scrollbar {
         background: var(--section)
     }
@@ -1556,7 +2786,7 @@ EOT;
     td, th, .common-hub-item-description, #registration h1, #noauth-container h2, #error-404 div, .common-bubble-byline, .cc-color-override-603568657.cc-window, .friend-requests-page-details-main, #postsheader, .forum-hidden-header {
         color: var(--text);
     }
-    strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown, .hoard-sale-buyback-item-name, .dgnres-index .cooldown .label, .wws-description h2, #nrgavg div:first-child, #nrgavg div:last-child {
+    strong, b, .common-red-text, .ui-widget-content .common-red-text, .baldwin-redtext, .trade-cost, h2, h3, .dgnres-index h2, .dgnres-select .dragon-name, #blurb #explanation span, #itemprev #prevcaption span, #baldwin-preview-container #baldwin-preview-icon-cooldown, #fr-layout.fr-theme[data-theme] .hoard-sale-buyback-item-name, .dgnres-index .cooldown .label, .wws-description h2, #nrgavg div:first-child, #nrgavg div:last-child {
         color: var(--strong);
     }
     span[style*="color:"][style*="#6F1111"], .pinkerton-text-footer span[style*="color"] {
@@ -1596,8 +2826,8 @@ EOT;
         background: none !important;
         position: relative;
         z-index: 2;
-        color: var(--button-text) !important;
-        text-shadow: -1px 0 0 var(--shadow), 1px 0 0 var(--shadow), -1px 1px 0 var(--shadow), 1px 1px 0 var(--shadow), -1px 2px 0 var(--shadow), 1px 2px 0 var(--shadow), -1px -1px 0 var(--shadow), 1px -1px 0 var(--shadow), 0 -1px 0 var(--shadow);
+        color: var(--button-icon-text) !important;
+        text-shadow: -1px 0 0 var(--button-stroke), 1px 0 0 var(--button-stroke), -1px 1px 0 var(--button-stroke), 1px 1px 0 var(--button-stroke), -1px 2px 0 var(--button-stroke), 1px 2px 0 var(--button-stroke), -1px -1px 0 var(--button-stroke), 1px -1px 0 var(--button-stroke), 0 -1px 0 var(--button-stroke);
     }
     .statdiv span #alerticon::before, #alertimg + #alert[style] > div[style*="background-image:"]::before,
     #trade-chat span::before, #messicon::before, #frenicon::before, span.pending-avatar-msg-count::before {
@@ -1613,13 +2843,13 @@ EOT;
         z-index: -1;
     }
     .common-tab-indicator {
-        color: var(--button-text) !important;
+        color: var(--text) !important;
         text-shadow: -1px 0 0 var(--shadow), 1px 0 0 var(--shadow), -1px 1px 0 var(--shadow), 1px 1px 0 var(--shadow), -1px 2px 0 var(--shadow), 1px 2px 0 var(--shadow), -1px -1px 0 var(--shadow), 1px -1px 0 var(--shadow), 0 -1px 0 var(--shadow);
         border: 1px solid var(--energy-border);
         background-image: linear-gradient(to bottom, var(--energy-two) 0%, var(--energy-one) 100%);
     }
     .common-hub-item-alert, .archaeology-dig-site-index-row-badge, .ah-alert-badge {
-        color: var(--button-text);
+        color: var(--text);
         border: 1px solid var(--energy-border);
         background: var(--energy-two);
         background-image: linear-gradient(to bottom, var(--energy-two) 0%, var(--energy-one) 100%);
@@ -1688,7 +2918,7 @@ EOT;
     #alertwin a[href*="/auction-house/activity/"] div.alert-v2::after {
         content: '⟡';
     }
-    #alertlist > a, #alertwin > a {
+    #fr-layout-alerts-content > a {
         display: block;
     }
     #alertlist > *:nth-child(2n+1):not(#alerts-see-all-v2):not(.alert-v2-unread), #alertwin > *:nth-child(2n+1):not(#alerts-see-all-v2):not(.alert-v2-unread) {
@@ -1716,7 +2946,7 @@ EOT;
     }
     /*adjust default site bg based on hue*/
     body[style*="/static/layout/none/bg.jpg"],
-     body[style*="/layout/none/background.jpg"] {
+    body[style*="/layout/none/background.jpg"] {
         background: none !important;
     }
     body[style*="/static/layout/none/bg.jpg"]::before,
@@ -1736,60 +2966,35 @@ EOT;
         height: 100%;
     }
     /*unset bgs*/
-    .home-contentcontainer, .loginarea, .contentcontainer {
+    .home-contentcontainer, .loginarea, .contentcontainer,
+    #fr-layout-main #fr-layout-legacy-content:has(#bestiary) {
         background-image: none;
     }
     
-    /*remove non-transparent internal bgs*/
-    .main[style*="internal_bg.jpg"],
-    .main[style*="vault_bg.jpg"],
-    .main[style*="/bg_dressingroom.jpg"],
-    .main[style*="fantastic-familiar/faded-background.jpg"],
-    .main[style*="/bg_crossroads_start_offset.jpg"] {
-        background: none !important;
+    /*remove boring flight stuff*/
+    #fr-layout-main #fr-layout-legacy-content:has(#bestiary) {
+        background-image: none !important;
     }
     
     /*re-add bgs across site using scenes*/
     /*z-index fixes*/
-    div.contentcontainer div.main[style*="/bestiary/internal_bg.jpg"],
-    div.contentcontainer div.main[style*="/static/layout/dressingroom/bg_dressingroom.jpg"],
-    div.contentcontainer div.main[style*="/static/layout/market/internal_bg.jpg"],
-    div.contentcontainer div.main[style*="/static/layout/wiki/internal_bg.jpg"],
-    div.contentcontainer div.main[style*="/static/layout/scryer/internal_bg.jpg"],
-    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/faded-background.jpg"],
-    div.contentcontainer div.main[style*="/static/layout/hoard/internal_bg.jpg"],
-    div.contentcontainer div.main[style*="/static/layout/hoard/vault_bg.jpg"],
-    div.contentcontainer .main[style*="/static/layout/dressingroom/bg_gathering.jpg"],
-    div.contentcontainer .main[style*="/static/layout/search/internal_bg.jpg"] {
+    #fr-layout-main #fr-layout-legacy-content {
         position: relative;
         z-index: 2;
     }
-    /*bestiary*/
-    div.contentcontainer div.main[style*="/bestiary/internal_bg.jpg"]::before {
+    /*shared*/
+    #fr-layout-main #fr-layout-legacy-content::before {
         content: '';
         position: absolute;
         height: 100%;
         width: 100%;
         z-index: -1;
-        background-image: url('https://www1.flightrising.com/static/layout/fantastic-familiar/background.png') !important;
-        filter: var(--filter) hue-rotate(var(--hue));
         top: 0;
         left: 0;
         background-repeat: no-repeat;
-        opacity: 0.15;
-        background-position: 435px -285px;
-        background-size: 95%;
     }
     /*bg shared styles*/
-    div.contentcontainer div.main[style*="/static/layout/hoard/internal_bg.jpg"]::after,
-    div.contentcontainer div.main[style*="/static/layout/hoard/vault_bg.jpg"]::after,
-    div.contentcontainer div.main[style*="/static/layout/dressingroom/bg_dressingroom.jpg"]::after,
-    div.contentcontainer div.main[style*="/static/layout/wiki/internal_bg.jpg"]::after,
-    div.contentcontainer div.main[style*="/static/layout/scryer/internal_bg.jpg"]::after,
-    div.contentcontainer .main[style*="/static/layout/dressingroom/bg_gathering.jpg"]::after,
-    div.contentcontainer div.main[style*="/market/internal_bg.jpg"]::after,
-    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/faded-background.jpg"]::after,
-    div.contentcontainer .main[style*="/static/layout/search/internal_bg.jpg"]::after {
+    #fr-layout-main #fr-layout-legacy-content[style*="background-image:"]::after {
         content: '';
         position: absolute;
         height: 525px;
@@ -1800,6 +3005,13 @@ EOT;
         left: 0;
         background-repeat: no-repeat;
         opacity: 0.1;
+    }
+    /*bestiary*/
+    #fr-layout-main #fr-layout-legacy-content:has(#bestiary)::after {
+        background-image: url('https://www1.flightrising.com/static/layout/fantastic-familiar/background.png') !important;
+        opacity: 0.15;
+        background-position: 435px -285px;
+        background-size: 95%;
     }
     /*marketplace & grand exchange*/
     div.contentcontainer div.main[style*="/market/internal_bg.jpg"]::after {
@@ -1976,16 +3188,17 @@ EOT;
         color: var(--link-hover) !important;
     }
     /*user info tab*/
-    #usertab, #logintab {
+    #usertab, #logintab, #fr-layout-player-module #fr-layout-player-module-main {
         background: linear-gradient(to bottom, var(--widget-med) 0%, var(--widget-light) 100%) !important;
         border-radius: 10px 10px 0 0;
         box-sizing:border-box;
-        border: 5px solid var(--bar);
+        border: 3px solid var(--bar);
         border-bottom: none;
         width: 295px;
         z-index: 2;
+        position: relative;
     }
-    #usertab::before {
+    #usertab::before, #fr-layout-player-module #fr-layout-player-module-main::before {
         content: '';
         position: absolute;
         z-index: 1;
@@ -1993,7 +3206,15 @@ EOT;
         height: 100%;
         top: 0px;
         left: 0px;
+        border-radius: 5px 5px 0 0;
         /*[[usertabbg]]*/
+    }
+    #fr-layout-player-module #fr-layout-player-module-main::before {
+        z-index: -1;
+    }
+    /*[[oldusertab]]*/
+    #fr-layout-banner-bar, #fr-layout-banner-frame {
+        z-index: 5;
     }
     #usertab > * {
         z-index: 2;
@@ -2011,7 +3232,7 @@ EOT;
     div#userdata a:hover, #namespan a:hover span, #usertab a[href*="userpage"]:hover span, #logwin a[style*="color"]:hover {
         color: var(--link-hover) !important;
     }
-    #ltavtr, div#avatars div#avtable img, div#avatars span#currentnav img, .clan-profile-avatar, .friends-page-avatar img, .choose-vista-preview-avatar, .dragon-profile-bio-vista-avatar {
+    #ltavtr, .fr-layout-player-module-avatar, div#avatars div#avtable img, div#avatars span#currentnav img, .clan-profile-avatar, .friends-page-avatar img, .choose-vista-preview-avatar, .dragon-profile-bio-vista-avatar {
         background: var(--widget);
         border: 2px solid var(--borders-med);
         outline: 2px solid var(--borders);
@@ -2131,7 +3352,7 @@ EOT;
     }
     /*buttons*/
     .beigebutton.thingbutton, .thingbutton, .skin-system-order-action {
-        color: var(--button-text);
+        color: var(--button-text-dark);
         text-shadow: 0 1px 1px var(--shadow), 0 1px 1px var(--shadow), 0 1px 1px var(--shadow), 0 1px 2px var(--shadow);
         padding: 10px;
         -webkit-box-shadow: 0 2px 3px var(--shadow);
@@ -2143,28 +3364,28 @@ EOT;
         flex-wrap: wrap;
     }
     .common-ui-button::after, .common-ui-button-disabled::after, .common-ui-button-accept::after {
-        display: none !important;
+        border-color: var(--borders-light)
     }
     a.beigebutton.thingbutton:not([disabled]):hover, .thingbutton:not([disabled]):hover, .skin-system-order-action:not([disabled]):hover, .thingbutton:not(.inactivebutton):hover {
-        color: var(--button-text);
+        color: var(--button-text-dark);
         background: linear-gradient(to top, var(--beige-button-one) 0%, var(--beige-button-two) 100%);
     }
     .redbutton, .redbutton.anybutton, .mb_button, .skin-system-order-action.skin-system-cancel-order {
         background: linear-gradient(to bottom, var(--red-button-one) 0%, var(--red-button-two) 100%);
-        color: var(--button-text);
+        color: var(--button-text-dark);
         text-shadow: 0 1px 1px var(--shadow), 0 1px 1px var(--shadow), 0 1px 1px var(--shadow), 0 1px 2px var(--shadow);
         -webkit-box-shadow: 0 2px 3px var(--shadow);
         font-weight: bold;
     }
     .redbutton:not([disabled]):hover, .redbutton.anybutton:not([disabled]):hover, .mb_button:not([disabled]):hover, .skin-system-order-action.skin-system-cancel-order:not([disabled]):hover {
-        color: var(--button-text);
+        color: var(--button-text-dark);
         background: linear-gradient(to top, var(--red-button-one) 0%, var(--red-button-two) 100%);
     }
     .redbutton, .redbutton.anybutton {
         padding: 10px;
     }
-    .redbutton.anybutton:disabled, .mb_button, .beigebutton.thingbutton:disabled, .skin-system-order-action.skin-system-cancel-order:disabled, .inactivebutton {
-        color: var(--button-text) !important;
+    .redbutton.anybutton:disabled, .beigebutton.thingbutton:disabled, .skin-system-order-action.skin-system-cancel-order:disabled, .inactivebutton {
+        color: var(--button-disabled-text) !important;
     }
     /*dot pagination*/
     .slick-dots li {
@@ -2181,52 +3402,92 @@ EOT;
         background: var(--accent-five)
     }
     /*more buttons*/
-    .common-ui-button, a.common-ui-button, .lair-pagination .lair-pagination-page, .common-pagination .common-pagination-page, .common-ui-vertical-button-group, .common-js-pagination .common-pagination-page, .wws-carousel-navigation-status,
-    .sitewide-effort-navigation-item, .item-picker-pagination-pages, .dragon-picker-pagination-pages, .morphology-picker-pagination-pages {
-        color: var(--button-text-dark);
-        border: 2px solid var(--borders-med);
+    .common-ui-button,
+    #fr-layout.fr-theme[data-theme] a.common-ui-button,
+    #fr-layout.fr-theme[data-theme] .lair-pagination .lair-pagination-page,
+    #fr-layout.fr-theme[data-theme] .common-pagination .common-pagination-page,
+    #fr-layout.fr-theme[data-theme] .common-ui-vertical-button-group,
+    #fr-layout.fr-theme[data-theme] .common-js-pagination .common-pagination-page,
+    #fr-layout.fr-theme[data-theme] .wws-carousel-navigation-status,
+    #fr-layout.fr-theme[data-theme] .sitewide-effort-navigation-item,
+    #fr-layout.fr-theme[data-theme] .item-picker-pagination-pages,
+    #fr-layout.fr-theme[data-theme] .dragon-picker-pagination-pages,
+    #fr-layout.fr-theme[data-theme] .morphology-picker-pagination-pages {
+        color: var(--button-text);
+        border: 2px solid var(--borders);
         background: linear-gradient(to bottom, var(--button-one) 0%, var(--button-two) 100%);
     }
-    .common-ui-button-disabled, a.common-ui-button-disabled, .greybutton, .greybutton.stopbutton,
-    .common-ui-vertical-button-group > .common-ui-button-disabled,
-    .common-ui-vertical-button-group .common-ui-button-group .common-ui-button-disabled,
-    .beigebutton.thingbutton:disabled,
-    .beigebutton.thingbutton.inactivebutton {
+    #fr-layout.fr-theme[data-theme] .common-ui-button-disabled,
+    #fr-layout.fr-theme[data-theme] a.common-ui-button-disabled,
+    #fr-layout.fr-theme[data-theme] .greybutton,
+    #fr-layout.fr-theme[data-theme] .greybutton.stopbutton,
+    #fr-layout.fr-theme[data-theme] .common-ui-vertical-button-group > .common-ui-button-disabled,
+    #fr-layout.fr-theme[data-theme] .common-ui-vertical-button-group .common-ui-button-group .common-ui-button-disabled,
+    #fr-layout.fr-theme[data-theme] .beigebutton.thingbutton:disabled,
+    #fr-layout.fr-theme[data-theme] .beigebutton.thingbutton.inactivebutton {
         background: linear-gradient(to bottom, var(--button-disabled-one) 0%, var(--button-disabled-two) 100%);
         border-color: var(--borders);
         color: var(--button-text);
         cursor: not-allowed !important;
     }
-    .common-ui-vertical-button-group > .common-ui-button:last-child::after, .common-ui-vertical-button-group > .common-ui-button-disabled:last-child::after {
+    #fr-layout.fr-theme[data-theme] .common-ui-vertical-button-group > .common-ui-button:last-child::after,
+    #fr-layout.fr-theme[data-theme] .common-ui-vertical-button-group > .common-ui-button-disabled:last-child::after {
         opacity: 0.5;
         border-color: var(--text)
     }
-    .common-ui-button-disabled:after {
+    #fr-layout.fr-theme[data-theme] .common-ui-button-disabled:after {
         border-color: rgba(255,255,255,0.1);
     }
     /*pagination buttons*/
-    .common-pagination .common-pagination-page, .common-js-pagination .common-pagination-page {
+    #fr-layout.fr-theme[data-theme] .common-pagination .common-pagination-page,
+    #fr-layout.fr-theme[data-theme] .common-js-pagination .common-pagination-page {
         width: auto;
-        min-width: 30px;
+        min-width: 36px;
         font-weight: bold;
         margin: auto 0.15em
     }
-    .common-pagination-page.common-pagination-page-counter, .common-pagination-page.common-pagination-page-counter:hover {
+    #fr-layout.fr-theme[data-theme] .common-pagination-page.common-pagination-page-counter, 
+    #fr-layout.fr-theme[data-theme] .common-pagination-page.common-pagination-page-counter:hover {
         padding: 0 0.5em;
         min-width: 100px;
         width: auto;
     }
-    .common-ui-vertical-button-group .common-ui-button:hover, .common-pagination .common-pagination-page:hover, .common-js-pagination .common-pagination-page:hover, .common-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover, .common-js-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover,
-    .sitewide-effort-navigation-item:not(.sitewide-effort-navigation-item-current):hover,
-    .item-picker-pagination-pages:hover, .dragon-picker-pagination-pages:hover, .morphology-picker-pagination-pages:hover {
-        border-color: var(--borders-light);
-        color: var(--button-text-dark);
+    #fr-layout.fr-theme[data-theme] .common-ui-vertical-button-group .common-ui-button:hover, 
+    #fr-layout.fr-theme[data-theme] .common-pagination .common-pagination-page:hover, 
+    #fr-layout.fr-theme[data-theme] .common-js-pagination .common-pagination-page:hover, 
+    #fr-layout.fr-theme[data-theme] .common-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover, 
+    #fr-layout.fr-theme[data-theme] .common-js-pagination .common-pagination-page-space.common-pagination-page-space-hover:hover,
+    #fr-layout.fr-theme[data-theme] .sitewide-effort-navigation-item:not(.sitewide-effort-navigation-item-current):hover,
+    #fr-layout.fr-theme[data-theme] .item-picker-pagination-pages:hover,
+    #fr-layout.fr-theme[data-theme] .dragon-picker-pagination-pages:hover,
+    #fr-layout.fr-theme[data-theme] .morphology-picker-pagination-pages:hover {
+        border-color: var(--borders);
+        color: var(--button-text);
         background: linear-gradient(to bottom, var(--button-two) 0%, var(--button-one) 100%);
     }
-    .common-pagination .common-pagination-page-active, .common-pagination .common-pagination-page-active:hover, .common-js-pagination .common-pagination-page-active, .common-js-pagination .common-pagination-page-active:hover, .recipe-pagination .common-pagination-page[data-enabled="false"], .recipe-pagination .common-pagination-page[data-enabled="false"]:hover, .lair-pagination .lair-pagination-page-active, .lair-pagination .lair-pagination-page-active:hover, .sitewide-effort-navigation-item.sitewide-effort-navigation-item-current, .sitewide-effort-navigation-item.sitewide-effort-navigation-item-current:hover {
+    #fr-layout.fr-theme[data-theme] .common-pagination .common-pagination-page-active,
+    #fr-layout.fr-theme[data-theme] .common-pagination .common-pagination-page-active:hover,
+    #fr-layout.fr-theme[data-theme] .common-js-pagination .common-pagination-page-active,
+    #fr-layout.fr-theme[data-theme] .common-js-pagination .common-pagination-page-active:hover,
+    #fr-layout.fr-theme[data-theme] .recipe-pagination .common-pagination-page[data-enabled="false"],
+    #fr-layout.fr-theme[data-theme] .recipe-pagination .common-pagination-page[data-enabled="false"]:hover,
+    #fr-layout.fr-theme[data-theme] .lair-pagination .lair-pagination-page-active,
+    #fr-layout.fr-theme[data-theme] .lair-pagination .lair-pagination-page-active:hover,
+    #fr-layout.fr-theme[data-theme] .sitewide-effort-navigation-item.sitewide-effort-navigation-item-current,
+    #fr-layout.fr-theme[data-theme] .sitewide-effort-navigation-item.sitewide-effort-navigation-item-current:hover {
         border-color: var(--borders);
     }
-    .common-pagination .common-pagination-page-active, .common-pagination .common-pagination-page-active:hover, .common-js-pagination .common-pagination-page-active, .common-js-pagination .common-pagination-page-active:hover, .recipe-pagination .common-pagination-page[data-enabled="false"], .recipe-pagination .common-pagination-page[data-enabled="false"]:hover, .lair-pagination .lair-pagination-page-active, .lair-pagination .lair-pagination-page-active:hover, .sitewide-effort-navigation-item.sitewide-effort-navigation-item-current, .sitewide-effort-navigation-item.sitewide-effort-navigation-item-current:hover {
+    
+    #fr-layout.fr-theme[data-theme] .common-pagination .common-pagination-page-active,
+    #fr-layout.fr-theme[data-theme] .common-pagination .common-pagination-page-active:hover,
+    #fr-layout.fr-theme[data-theme] .common-js-pagination .common-pagination-page-active,
+    #fr-layout.fr-theme[data-theme] .common-js-pagination .common-pagination-page-active:hover,
+    #fr-layout.fr-theme[data-theme] .recipe-pagination .common-pagination-page[data-enabled="false"],
+    #fr-layout.fr-theme[data-theme] .recipe-pagination .common-pagination-page[data-enabled="false"]:hover,
+    #fr-layout.fr-theme[data-theme] .lair-pagination .lair-pagination-page-active,
+    #fr-layout.fr-theme[data-theme] .lair-pagination .lair-pagination-page-active:hover,
+    #fr-layout.fr-theme[data-theme] .sitewide-effort-navigation-item.sitewide-effort-navigation-item-current,
+    #fr-layout.fr-theme[data-theme] .sitewide-effort-navigation-item.sitewide-effort-navigation-item-current:hover {
         background: linear-gradient(to bottom, var(--beige-button-one) 0%, var(--beige-button-two) 100%);
         text-shadow: 0 1px 1px var(--shadow);
         color: var(--text)
@@ -2240,7 +3501,7 @@ EOT;
         background-image: url(https://www1.flightrising.com/static/layout/icon_treasure.png);
         background-size: 14px;
     }
-    /*item rarities*/
+    /*item rarities TODO*/
     .rarity-6 .itemname {
         background: linear-gradient(to right, var(--tooltip-bg) 0%, #c59a9680 100%);
     }
@@ -2353,7 +3614,7 @@ EOT;
         border: 2px solid rgb(var(--warning));
         background-position: 5px 50%;
     }
-    .common-message:not(.common-message-info):not(.common-message-success):not(.skin-system-message-buy-blueprints) {
+    .common-message:not(.common-message-info, .common-message-success, .skin-system-message-buy-blueprints, .common-message-warning, .common-message-error) {
         background: var(--widget-med);
         border-color: var(--borders)
     }
@@ -2478,13 +3739,14 @@ EOT;
     #trademsgform textarea,
     #clan_bio,
     textarea#message,
-    textarea#suggestion {
+    textarea#suggestion,
+    #dragon-profile-bio-form textarea#message {
         background-color: var(--textarea);
         color: var(--text);
         font-family: var(--font-family);
         font-size: 13px;
         line-height: 1.5em;
-        border: 1px solid var(--borders) !important;
+        border: 2px solid var(--borders) !important;
     }
     textarea, #message, #message:hover, #message:focus {
         background-color: var(--textarea);
@@ -2545,15 +3807,16 @@ EOT;
         background-color: var(--selected);
         color: var(--selected-text);
     }
-    .common-checkbox[data-selected="1"]::after {
+    /*.fr-theme[data-theme="dark"] .common-checkbox[data-selected="1"]::after {
         filter: brightness(0);
-    }
+    }*/
     /*common meters*/
-    .common-meter-text, #crafter-meter .common-meter-text {
-        color: var(--button-text);
+    .common-meter-text, #crafter-meter .common-meter-text,
+    #fr-layout-player-module-energy-meter .common-meter-text, #fr-layout-player-module-energy-meter [data-state="full"] .common-meter-text {
+        color: var(--text);
         text-shadow: -1px 0 0 var(--shadow), 1px 0 0 var(--shadow), -1px 1px 0 var(--shadow), 1px 1px 0 var(--shadow), -1px 2px 0 var(--shadow), 1px 2px 0 var(--shadow), -1px -1px 0 var(--shadow), 1px -1px 0 var(--shadow), 0 -1px 0 var(--shadow);
     }
-    .common-meter-full {
+    .common-meter-full, #fr-layout #fr-layout-player-module-energy-meter .common-meter-full {
         background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
         border: 1px solid var(--energy-border);
     }
@@ -2561,7 +3824,7 @@ EOT;
         background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%) !important;
         border: 1px solid var(--energy-border) !important;
     }
-    .common-meter-full[style*="100%"] {
+    .common-meter-full[style*="100%"], #fr-layout #fr-layout-player-module-energy-meter .common-meter-full[style*="100%"] {
         background: linear-gradient(to right, var(--energy-full-one) 0%, var(--energy-full-two) 100%);
         border: 1px solid var(--energy-full-border);
     }
@@ -2604,8 +3867,8 @@ EOT;
     }
     
     /*[[leftcol]]*/
-    
     /*[[stickymenu]]*/
+    /*[[responsive]]*/
     
     /* lower brightness of divider image */
     img[src*="/images/layout/graydot.gif"], img[src*="/static/layout/graydot.gif"], img.divider {
@@ -2631,7 +3894,7 @@ EOT;
     .settings-hub-category, .common-fieldset, .common-fieldset legend,
     #lair-edit-page .lair-page-filters, #lair-view-page .lair-page-filters {
         border: 2px solid var(--borders-light);
-        outline: 2px solid var(--borders);
+        outline: 2px solid var(--borders-light);
         background: var(--widget-med);
     }
     #dragon-search-filters .dragon-search-filters-footer {
@@ -2733,11 +3996,11 @@ EOT;
         border-color: var(--accent-five);
         background: var(--tab-hover);
     }
-    .common-tab a, .common-tab > span {
-        color: var(--link)
+    #fr-layout.fr-theme[data-theme] .common-tab a, #fr-layout.fr-theme[data-theme] .common-tab > span, #fr-layout.fr-theme[data-theme] .common-tab:hover > span, #fr-layout.fr-theme[data-theme] .common-tab a:hover, #fr-layout.fr-theme[data-theme] .common-tab a:focus {
+        color: var(--button-text)
     }
-    .common-tab-selected a, .common-tab-selected:hover a, .common-tab-selected > span, .common-tab:hover > span {
-        color: var(--link-hover)
+    #fr-layout.fr-theme[data-theme] .common-tab-selected a, #fr-layout.fr-theme[data-theme] .common-tab-selected:hover a, #fr-layout.fr-theme[data-theme] .common-tab-selected > span, #fr-layout.fr-theme[data-theme]  .common-tab-selected:hover > span {
+        color: var(--button-text-dark)
     }
     /*fix issue w/ buttons being over alerts*/
     .statdiv span #alerticon, #trade-chat span, #messicon, #frenicon, span.pending-avatar-msg-count {
@@ -2919,10 +4182,10 @@ EOT;
     .dragon-search-filters-reset, .dragon-search-filters-keep-expanded {
         color: var(--text);
     }
-    .content-header-sub, #pl_headerSmall, p.subheader {
+    #fr-layout.fr-theme[data-theme] .responsive-page-header-subtitle, .content-header-sub, #pl_headerSmall, p.subheader {
         color: var(--accent-four);
     }
-    .content-header-sub strong {
+    #fr-layout.fr-theme[data-theme] .responsive-page-header-subtitle strong, .content-header-sub strong {
         color: var(--accent-three)
     }
     .gather_selection_box,
@@ -2949,12 +4212,12 @@ EOT;
         border-color: var(--borders) !important;
         border-radius: 10px !important;
     }
-    /* Close Box */
-    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
-        border: 2px solid var(--borders) !important;
-        background: var(--section) !important;
-        font-weight: normal !important;
-        color: var(--widget) !important;
+    /* Close Box button */
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active, #fr-layout .ui-dialog .ui-dialog-titlebar-close {
+        border: 2px solid var(--borders);
+        background: var(--section);
+        font-weight: normal;
+        color: var(--widget);
     }
     
     .gather_container .lair-page-dragon-energy-meter-meter-full {
@@ -2966,7 +4229,7 @@ EOT;
         border: 1px solid var(--energy-full-border);
     }
     /* full width gathering buttons */
-    .gatherbutton input {
+    .gatherbutton button {
         width: 95%;
     }
 
@@ -3088,36 +4351,41 @@ EOT;
     
     /*quotes*/
     
-    div.bbcode_quote_body, .legacy-bbcode div.bbcode_quote_body {
+    #fr-layout.fr-theme[data-theme] div.bbcode_quote_body, #fr-layout.fr-theme[data-theme] .legacy-bbcode div.bbcode_quote_body {
         background-color: rgba(var(--widget-rgb), 0.7);
         color: var(--text);
     }
-    div.bbcode_code_body, .legacy-bbcode div.bbcode_code_body {
+    #fr-layout.fr-theme[data-theme] div.bbcode_code_body, #fr-layout.fr-theme[data-theme] .legacy-bbcode div.bbcode_code_body {
         background-color: #111;
         color: lime;
     }
-    div.bbcode_quote_head, div.bbcode_code_head, .legacy-bbcode div.bbcode_quote_head, .legacy-bbcode div.bbcode_code_head {
+    #fr-layout.fr-theme[data-theme] div.bbcode_quote_head, div.bbcode_code_head, #fr-layout.fr-theme[data-theme] .legacy-bbcode div.bbcode_quote_head, .legacy-bbcode div.bbcode_code_head {
         background-color: var(--tooltip-header);
         color: var(--text);
         border-bottom: 1px solid var(--borders);
     }
-    div.bbcode_quote, div.bbcode_code {
+    #fr-layout.fr-theme[data-theme] div.bbcode_quote, #fr-layout.fr-theme[data-theme] div.bbcode_code {
         border-width: 1px;
         border-style: solid;
         border-color: var(--borders);
+        max-width: 100%;
     }
-    .legacy-bbcode div.bbcode_quote, .legacy-bbcode div.bbcode_code {
+    #fr-layout.fr-theme[data-theme] .legacy-bbcode div.bbcode_quote, #fr-layout.fr-theme[data-theme] .legacy-bbcode div.bbcode_code {
         border-color: var(--borders)
     }
-    div#bbcode-tag-bar {
+    #fr-layout.fr-theme[data-theme] div#bbcode-tag-bar {
         padding: 5px !important;
     }
     
-    .forum-hidden {
+    #fr-layout.fr-theme[data-theme] .forum-hidden {
         background: rgba(var(--widget-rgb), 0.7);
         border-color: var(--borders);
     }
-    .forum-hidden-header {
+    #fr-layout.fr-theme[data-theme] .forum-hidden-content {
+        color: inherit;
+        background: none;
+    }
+    #fr-layout.fr-theme[data-theme] .forum-hidden-header {
         background: var(--section);
         color: var(--strong);
         border: 1px solid var(--borders);
@@ -3126,7 +4394,7 @@ EOT;
         grid-template-columns: 20px auto;
         align-items: center;
     }
-    .forum-hidden-header:has(img[src="/static/svg_icons/eye-solid.svg"][style=""]) {
+    #fr-layout.fr-theme[data-theme] .forum-hidden-header:has(img[src="/static/svg_icons/eye-solid.svg"][style=""]) {
         border-radius: 8px 8px 0 0;
     }
     /*effects widgets*/
@@ -3231,9 +4499,10 @@ EOT;
     }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/main\\.php.*") {
-    
     /* Old Layout Fixes  */
-    
+    :root:has(div.container) {
+        /*[[dark]]*/
+    }
     img#internal_bg[src="/images/layout/scrying/internal_bg.jpg"],
     img#internal_bg[src="/images/layout/wiki/internal_bg.jpg"],
     img#internal_bg[src="/images/layout/search/internal_bg.jpg"],
@@ -3398,14 +4667,17 @@ EOT;
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/clan-profile.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/clan\\/settings.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/friends.*") {
     /* Clan Profiles & Friends Page  */
     
-    .clan-profile-header {
-        color: var(--accent-four);
-text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
+    #fr-layout.fr-theme[data-theme] .clan-profile-header .theme-svg-header-text-fill  {
+        fill: var(--accent-four);
     }
-    .clan-profile-username.clan-profile-header, .clan-profile-icon {
-        text-shadow: var(--stroke);
+    #fr-layout.fr-theme[data-theme] .clan-profile-username.clan-profile-header .theme-svg-main-text-fill,
+    .clan-profile-icon {
         color: var(--text);
-        font-weight: bold;
+        fill: var(--text)
+    }
+    #fr-layout.fr-theme[data-theme] .clan-profile-icon {
+        color: var(--text) !important;
+        text-shadow: 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow) !important;
     }
     #clan-profile-header .clan-profile-header-title,
     .clan-profile-lair-location-level,
@@ -3413,11 +4685,23 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         color: var(--strong);
         text-shadow: 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow) !important;
     }
-    
+    .clan-profile-friend img {
+        border: 1px solid var(--borders);
+        outline: 1px solid var(--borders-med);
+        border-radius: 3px;
+    }
+    .clan-profile-friend:hover img {
+        outline: 1px solid var(--borders-light);
+    }
+    .friends-page-avatar {
+        background: none;
+        border: none;
+    }
     .clan-profile-stat strong,
     .clan-profile-activity-text strong {
         color: var(--strong);
     }
+    #fr-layout.fr-theme[data-theme] .friends-page-dragons.theme-text-subtle-1,
     #clan-profile-header .clan-profile-header-subtitle,
     .clan-profile-bio-empty, .clan-profile-comment-empty-text,
     .common-limited-textarea-footer {
@@ -3444,9 +4728,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border-color: var(--borders-med);
     }
     .clan-profile-forum-posts-footer a::after, .clan-profile-activities-footer a::after {
-        content: ' ...';
+        content: '...';
         font-weight: normal;
-        font-size: 0.5em;
     }
     .clan-profile-vista,
     #clan-profile-comments-frame {
@@ -3514,23 +4797,23 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/dragon.*") {
     /* Dragon Profiles */
-    h2, h3, .dragon-profile-header-name {
+    #fr-layout.fr-theme[data-theme] h2, #fr-layout.fr-theme[data-theme] h3, #fr-layout.fr-theme[data-theme] .dragon-profile-header-name {
         text-shadow: 0 1px 1px var(--shadow);
     }
-    h3.dragon-profile-details-subheader a, .exalted-details-column a, .exalted-lineage-list li a  {
+    #fr-layout.fr-theme[data-theme] h3.dragon-profile-details-subheader a, #fr-layout.fr-theme[data-theme] .exalted-details-column a, #fr-layout.fr-theme[data-theme] .exalted-lineage-list li a  {
         color: var(--link);
     }
-    .dragon-profile-divider {
+    #fr-layout.fr-theme[data-theme] .dragon-profile-divider {
         border-bottom: 1px solid var(--divider);
     }
-    #dragon-profile-bio hr {
+    #fr-layout.fr-theme[data-theme] #dragon-profile-bio hr {
         border-bottom: 0px solid var(--divider);
     }
-    #dragon-profile-familiar-type {
+    #fr-layout.fr-theme[data-theme] #dragon-profile-familiar-type {
         color: var(--accent-four);
         text-shadow: 0 1px 1px var(--shadow);
     }
-    #dragon-profile-exalt-confirm-dialog div p, .choose-scene-current-name, .choose-familiar-preview-name {
+    #fr-layout.fr-theme[data-theme] #dragon-profile-exalt-confirm-dialog div p, .choose-scene-current-name, .choose-familiar-preview-name {
         color: var(--accent-three);
     }
     .choose-scene-current-name {
@@ -3574,10 +4857,12 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #choose-apparel-filters {
         margin-top: -5px;
     }
-    #choose-apparel-apparel-button.common-tab-big, #choose-apparel-skin-button.common-tab-big {
+    #choose-apparel-apparel-button.common-tab-big,
+    #choose-apparel-skin-button.common-tab-big {
         margin-bottom: 0;
     }
-    #dragon-profile-details-misc .dragon-profile-details-frame, .exalted-details-column .common-fieldset-inset {
+    #dragon-profile-details-misc .dragon-profile-details-frame,
+    .exalted-details-column .common-fieldset-inset {
         border: 2px solid var(--borders);
         background: var(--widget);
         border-radius: 10px;
@@ -3598,9 +4883,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #dragon-profile-dragon-frame, #dragon-profile-familiar-frame, .dragon-profile-scene-scenic-dragon, .common-animated-familiar {
         filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, .5));
     }
-    .dragon-profile-scene-custom::after {
-        background: linear-gradient(to bottom, var(--main) 0%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 70%, var(--main) 100%) !important;
-    }
     .dragon-profile-scene-scenic-gradient, #dragon-profile-export-gradient {
         background: linear-gradient(to bottom, rgba(255, 0, 0, 0) 70%, var(--main) 100%) !important;
     }
@@ -3619,9 +4901,11 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
         border: 1px solid var(--energy-border);
     }
-    .dragon-profile-lineage, #dragon-profile-bio.dragon-profile-bio, #dragon-profile-bio.dragon-profile-vista-bio {
-        border: 2px solid var(--borders-med);
-        outline: 2px solid var(--borders);
+    .dragon-profile-lineage,
+    #dragon-profile-bio.dragon-profile-bio,
+    #dragon-profile-bio.dragon-profile-vista-bio {
+        border: 2px solid var(--borders);
+        outline: 2px solid var(--borders-med);
         background: linear-gradient(to bottom, var(--widget-med) 0%, var(--widget-light) 100%);
     }
     .dragon-profile-vista-bio .dragon-profile-bio-vista {
@@ -3629,11 +4913,15 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border-right: 2px solid var(--borders-med);
         background-repeat: no-repeat;
     }
+    #fr-layout.fr-theme[data-theme] #dragon-profile-show-details .theme-svg-glyph-fill,
+    #fr-layout.fr-theme[data-theme] #dragon-profile-hide-details .theme-svg-glyph-fill {
+        fill: var(--button-stroke)
+    }
     /*[[bio-color-text]]*/
     /*[[bio-override-fonts]]*/
     .dragon-profile-ability-item-empty, .dragon-profile-item-blank {
         border: 1px solid var(--borders);
-        background: linear-gradient(to bottom, var(--widget-med) 0%, var(--widget-light) 100%);
+        background: linear-gradient(to bottom, var(--widget) 0%, var(--section) 100%);
     }
     .lair-feed-dialog-food-cost {
         color: var(--em) !important;
@@ -3643,9 +4931,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background: var(--widget);
         border: 2px solid var(--borders-med);
         outline: 2px solid var(--borders);
-    }
-    #dragon-profile-likes .dragon-profile-likes-count {
-        color: var(--button-text-dark)
     }
     .dragon-profile-bio-vista-avatar img {
         border-radius: 10px !important;
@@ -3737,7 +5022,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .choose-dragon-apparel-slot-open {
         color: var(--em)
     }
-
     .common-ui-tabs {
         background: linear-gradient(to bottom, var(--main) 50%, var(--section) 100%);
     }
@@ -3746,38 +5030,42 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     .common-tab-selected, .common-tab-selected:hover {
         border-radius: 10px 10px 0px 0px;
-        border: 2px solid var(--borders) !important;
         border-bottom: 0px solid var(--widget) !important;
-        background: linear-gradient(to bottom, var(--widget) 50%, var(--widget) 100%) !important;
+        background: var(--widget) !important;
     }
-    .common-tab, .common-tab:hover {
+    #fr-layout.fr-theme[data-theme] #dragon-profile-details-misc .common-tab,
+    #fr-layout.fr-theme[data-theme] #dragon-profile-details-misc .common-tab:hover {
         background: linear-gradient(to bottom, var(--borders) 0%, var(--borders) 100%);
         border: 2px solid var(--borders);
         border-bottom: none;
         border-radius: 10px 10px 0px 0px;
+        color: var(--strong)
     }
-    .common-tab[data-coverage] {
+    #fr-layout.fr-theme[data-theme] #dragon-profile-details-misc .common-tab > span {
+        color: inherit
+    }
+    #fr-layout.fr-theme[data-theme] .common-tab[data-coverage] {
         border-bottom: 2px solid var(--borders) !important;
     }
-    .common-tab-center {
+    #fr-layout.fr-theme[data-theme] .common-tab-center {
         font-weight: bold !important;
     }
-    .ui-widget textarea {
+    #fr-layout.fr-theme[data-theme] .ui-widget textarea {
         background-color: var(--textarea) !important;
         color: var(--text) !important;
         border-radius: 0px !important;
         font-size: 13px !important;
     }
-    .dragon-profile-details-frame {
+    #fr-layout.fr-theme[data-theme] .dragon-profile-details-frame {
         border: 2px solid var(--borders);
-        background: var(--widget);
+        background: linear-gradient(var(--alt-one) 0%, var(--alt-two) 100%);
         border-radius: 10px;
         padding-bottom: 15px;
     }
-    #dragon-profile-details-misc .dragon-profile-details-frame {
-        padding-bottom: 15px;
+    #fr-layout.fr-theme[data-theme] .dragon-profile-details-frame:has(#dragon-profile-physical) {
+        border-radius:  0 0 10px 10px;
     }
-    #dragon-profile-apparel-items {
+    #fr-layout.fr-theme[data-theme] #dragon-profile-apparel-items {
         width: 140px !important;
     }
     .dragon-profile-customize-category, .settings-hub-category {
@@ -3785,10 +5073,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         outline: 2px solid var(--borders);
         background: var(--widget);
     }
-    h2.dragon-profile-details-header {
+    #fr-layout.fr-theme[data-theme]  h2.dragon-profile-details-header {
         margin-bottom: -2px !important;
     }
-    #dragon-profile-report {
+    #fr-layout.fr-theme[data-theme]  #dragon-profile-report {
         padding-top: 4px;
     }
 
@@ -3797,146 +5085,96 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         text-shadow: 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow);
         color: var(--strong)
     }
-    #dragon-profile-header .dragon-profile-header-name, #dragon-profile-familiar-name, .dragon-profile-bio-header, h2.dragon-profile-details-header,
-    .exalted-details-column strong{
+    #fr-layout.fr-theme[data-theme] #dragon-profile-header .dragon-profile-header-name,
+    #fr-layout.fr-theme[data-theme] #dragon-profile-familiar-name,
+    #fr-layout.fr-theme[data-theme] .dragon-profile-bio-header,
+    #fr-layout.fr-theme[data-theme] h2.dragon-profile-details-header,
+    #fr-layout.fr-theme[data-theme] .exalted-details-column strong{
         color: var(--strong)
     }
-    #dragon-profile-header .dragon-profile-header-subtitle {
+    #fr-layout.fr-theme[data-theme] #dragon-profile-header .dragon-profile-header-subtitle {
        color: var(--text); 
     }
-    #dragon-profile-header .dragon-profile-header-number {
+    #fr-layout.fr-theme[data-theme] #dragon-profile-header .dragon-profile-header-number {
         color: var(--accent-four);
     }
-    h3.dragon-profile-details-subheader, .exalted-lineage-header {
+    #fr-layout.fr-theme[data-theme] h3.dragon-profile-details-subheader, #fr-layout.fr-theme[data-theme] .exalted-lineage-header {
         color: var(--accent-three);
     }
 
-    /*lower opacity of custom scenes since the default is a little too intense for the dark theme*/
-    #dragon-profile-scene {
-        box-sizing:border-box;
-        opacity: 0.2;
-    }
-    /*set different, lower opacity for the default flight scenes*/
-    #dragon-profile-scene:not(.dragon-profile-scene-custom) {
-        opacity: 0.12;
-    }
-    /*add gradient to top of non-custom scenes to match */
-    #dragon-profile-scene:not(.dragon-profile-scene-custom)::before {
-        content: '';
-        background: linear-gradient(to bottom, var(--main) 0%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 70%, var(--main) 100%) !important;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        width: 100%;
-    } 
-    /* add gradient over bottom of non-custom scene to match default */
-    #dragon-profile-scene:not(.dragon-profile-scene-custom)::after {
-        content: '';
-        position: absolute;
-        background: linear-gradient(to bottom, transparent 0%, var(--main) 50%, var(--main) 100%) !important;
-        height: 175px;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-    }
-
-    /*change default flight bgs to the exalted bgs, & flip the div horizontally with transform.
-    use background position to get it to look as close as possible to the original bgs */
-    #dragon-profile-scene:not(.dragon-profile-scene-custom) {
-        background-size: 100%;
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-    }
-    /*earth*/
-    #dragon-profile-scene[style*="background-image:url(/static/layout/profile/backgrounds/1.jpg)"] {
-        background-image: url('https://www1.flightrising.com/static/layout/exalted/exalted-1.jpg') !important;
-        background-position: 0% 115%;
-    }
-    /*plague*/
-    #dragon-profile-scene[style*="background-image:url(/static/layout/profile/backgrounds/2.jpg)"] {
-        background-image: url('https://www1.flightrising.com/static/layout/exalted/exalted-2.jpg') !important;
-        background-position: 0% 128%;
-    }
-    /*wind*/
-    #dragon-profile-scene[style*="background-image:url(/static/layout/profile/backgrounds/3.jpg)"] {
-        background-image: url('https://www1.flightrising.com/static/layout/exalted/exalted-3.jpg') !important;
-        background-position: 0% 128%;
-    }
-    /*water*/
-    #dragon-profile-scene[style*="background-image:url(/static/layout/profile/backgrounds/4.jpg)"] {
-        background-image: url('https://www1.flightrising.com/static/layout/exalted/exalted-4.jpg') !important;
-        background-position: 0% 120%;
-    }
-    /*lightning*/
-    #dragon-profile-scene[style*="background-image:url(/static/layout/profile/backgrounds/5.jpg)"] {
-        background-image: url('https://www1.flightrising.com/static/layout/exalted/exalted-5.jpg') !important;
-        background-position: 0% 120%;
-    }
-    /*ice*/
-    #dragon-profile-scene[style*="background-image:url(/static/layout/profile/backgrounds/6.jpg)"] {
-        background-image: url('https://www1.flightrising.com/static/layout/exalted/exalted-6.jpg') !important;
-        background-position: 0% 105%;
-    }
-    /*shadow*/
-    #dragon-profile-scene[style*="background-image:url(/static/layout/profile/backgrounds/7.jpg)"] {
-        background-image: url('https://www1.flightrising.com/static/layout/exalted/exalted-7.jpg') !important;
-        background-position: 0% 74%;
-    }
-    /*light*/
-    #dragon-profile-scene[style*="background-image:url(/static/layout/profile/backgrounds/8.jpg)"] {
-        background-image: url('https://www1.flightrising.com/static/layout/exalted/exalted-8.jpg') !important;
-        background-position: 0% 125%;
-    }
-    /*arcane*/
-    #dragon-profile-scene[style*="background-image:url(/static/layout/profile/backgrounds/9.jpg)"] {
-        background-image: url('https://www1.flightrising.com/static/layout/exalted/exalted-9.jpg') !important;
-        background-position: 0% 54%;
-    }
-    /*nature*/
-    #dragon-profile-scene[style*="background-image:url(/static/layout/profile/backgrounds/10.jpg)"] {
-        background-image: url('https://www1.flightrising.com/static/layout/exalted/exalted-10.jpg') !important;
-        background-position: 0% 112%;
-    }
-    /*fire*/
-    #dragon-profile-scene[style*="background-image:url(/static/layout/profile/backgrounds/11.jpg)"] {
-        background-image: url('https://www1.flightrising.com/static/layout/exalted/exalted-11.jpg') !important;
-        background-position: 0% 122%;
-    }
-
     /*exalted profile*/
-    .main[style*="exalted/exalted"] {
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted/exalted"] {
         position: relative;
         z-index: 2;
+        background: none !important;
     }
-    .main[style*="exalted/exalted"] .content {
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted/exalted"] .content {
         position: relative;
     }
-    .main[style*="exalted/exalted"]::after {
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted/exalted"]::after {
         content: '';
         position: absolute;
-        background: var(--main);
         height: 816px;
         width: 100%;
         mix-blend-mode: multiply;
         top: 0;
         left: 0;
         z-index: -1;
-    }    
+    }
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted/exalted"]::before {
+        content: '';
+        position: absolute;
+        height: 525px;
+        width: 100%;
+        z-index: -1;
+        background-image: linear-gradient(to bottom, rgb(34, 40, 43, 0) 0%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 70%, var(--main) 100%) !important;
+        top: 300px;
+        left: 0;
+        background-repeat: no-repeat;
+    }
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted-1"]::after {
+        background: url('/static/layout/exalted/exalted-1.jpg');
+    }
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted-2"]::after {
+        background: url('/static/layout/exalted/exalted-2.jpg');
+    }
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted-3"]::after {
+        background: url('/static/layout/exalted/exalted-3.jpg');
+    }
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted-4"]::after {
+        background: url('/static/layout/exalted/exalted-4.jpg');
+    }
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted-5"]::after {
+        background: url('/static/layout/exalted/exalted-5.jpg');
+    }
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted-6"]::after {
+        background: url('/static/layout/exalted/exalted-6.jpg');
+    }
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted-7"]::after {
+        background: url('/static/layout/exalted/exalted-7.jpg');
+    }
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted-8"]::after {
+        background: url('/static/layout/exalted/exalted-8.jpg');
+    }
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted-9"]::after {
+        background: url('/static/layout/exalted/exalted-9.jpg');
+    }
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted-10"]::after {
+        background: url('/static/layout/exalted/exalted-10.jpg');
+    }
+    #fr-layout-main #fr-layout-legacy-content[style*="exalted-11"]::after {
+        background: url('/static/layout/exalted/exalted-11.jpg');
+    }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/lair.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/den.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/nesting\\/.*") {
     /* Lair, Den, & Nesting Grounds  */
-    .lair-tab a {
-        color: var(--link)
+    #fr-layout.fr-theme[data-theme] .theme-ui-3.lair-tab a {
+        color: var(--button-text-dark)
     }
-    .lair-tab:hover a {
-        color: var(--link-hover)
+    #fr-layout.fr-theme[data-theme] .theme-ui-3.lair-tab:hover a {
+        color: var(--button-text-dark)
     }
-    .lair-tab-default {
+    #fr-layout.fr-theme[data-theme] .theme-ui-3.lair-tab-default {
         background-color: var(--tab-hover);
         border-bottom: 2px solid var(--borders);
         border-color: inherit !important;
@@ -3977,7 +5215,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .lair-tab {
         border: 2px solid var(--borders-light);
         background: var(--tab);
-        border-radius: 5px;
+        border-radius: 10px 10px 0 0;
     }
     .lair-tab .lair-tab-move, .lair-tab:hover .lair-tab-move {
         border-color: var(--borders-light)
@@ -4045,7 +5283,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border: 2px solid rgb(var(--success));
         background: linear-gradient(to top, rgba(var(--success), 0.2) 0%, rgba(var(--success), 0.5) 100%);
     }
-    .lair-page-dragons .lair-page-dragon .lair-page-dragon-box .lair-page-dragon-name, .dragon-card .dragon-card-box .dragon-card-name {
+    #fr-layout.fr-theme[data-theme] .lair-page-dragons .lair-page-dragon .lair-page-dragon-box .lair-page-dragon-name,
+    #fr-layout.fr-theme[data-theme] .dragon-card .dragon-card-box .dragon-card-name.theme-text-accent-1 {
         color: var(--text);
     }
     .lair-page-dragons .lair-page-dragon[data-selected="true"] .lair-page-dragon-box .lair-page-dragon-name,
@@ -4144,11 +5383,11 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img.lair-page-dragon-element {
         filter: contrast(150%);
     }
-    .lair-footer .lair-slots-available {
+    #fr-layout.fr-theme[data-theme] .lair-footer .lair-slots-available {
         background: var(--section);
         color: var(--accent-two);
     }
-    .lair-footer .lair-slots-available strong {
+    #fr-layout.fr-theme[data-theme] .lair-footer .lair-slots-available strong {
         color: var(--accent-three) !important;
     }
     #den-slot-unlock .den-slot-unlock, #den-slot-unlock-list .den-slot-unlock {
@@ -4188,10 +5427,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     /* Familiar Bonding & Fantastic Familiars */
     
     /*cottage bg on ff page*/
-    div.main[style*="/static/layout/fantastic-familiar/background.png"] div.content {
+    #fr-layout-main #fr-layout-legacy-content[style*="/static/layout/fantastic-familiar/background.png"] div.content {
         margin-left: 0;
     }
-    div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/background.png"], div.contentcontainer div.main[style*="/static/layout/fantastic-familiar/background.png"] div.content {
+    #fr-layout-main #fr-layout-legacy-content[style*="/static/layout/fantastic-familiar/background.png"], #fr-layout-main #fr-layout-legacy-content[style*="/static/layout/fantastic-familiar/background.png"] {
         position: relative;
         z-index: 2;
     }
@@ -4241,7 +5480,13 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         left: 0;
         background-repeat: no-repeat;
     }
-    
+    #fantastic-familiar-text a[style*="color"] {
+        color: var(--link) !important;
+    }
+    #fantastic-familiar-text a[style*="color"]:hover,
+    #fantastic-familiar-text a[style*="color"]:focus {
+        color: var(--link-hover) !important;
+    }
     #bonding-dialog-familiar, .bonding-dialog-familiar {
         background: var(--widget-med);
         border: none;
@@ -4411,11 +5656,11 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/gift.*") {
     /* Galore */
-    div.main {
+    #fr-layout-main #fr-layout-legacy-content {
         position: relative;
         z-index: 2;
     }
-    div.main::before {
+    #fr-layout-main #fr-layout-legacy-content::before {
         content: '';
         position: absolute;
         height: 525px;
@@ -4426,7 +5671,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         left: 0;
         background-repeat: no-repeat;
     }
-    div.main::after {
+    #fr-layout-main #fr-layout-legacy-content::after {
         content: '';
         position: absolute;
         height: 525px;
@@ -4447,48 +5692,43 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/bestiary.*") {
     /* Bestiary */
-    .bestiary-familiar-box {
+    #fr-layout.fr-theme[data-theme] .bestiary-familiar-box {
         background: linear-gradient(to bottom, var(--widget-light) 0%, var(--widget-med) 100%);
         border: 2px solid var(--borders-med);
-        outline: 3px solid var(--borders);
+        outline: 3px solid var(--borders-med);
     }
-    .bestiary-familiar-name {
+    #fr-layout.fr-theme[data-theme] .bestiary-familiar-name {
         color: var(--text);
         text-shadow: var(--stroke);
     }
-    .bestiary-familiar-nickname {
-        color: var(--strong);
+    #fr-layout.fr-theme[data-theme] .bestiary-familiar-nickname {
+        color: var(--accent-two);
         font-weight: bold;
         text-shadow: -2px -2px 0px var(--widget), -2px -1px 0px var(--widget), -2px 0px 0px var(--widget), -2px 1px 0px var(--widget), -2px 2px 0px var(--widget), -1px -2px 0px var(--widget), -1px -1px 0px var(--widget), -1px 0px 0px var(--widget), -1px 1px 0px var(--widget), -1px 2px 0px var(--widget), 0px -2px 0px var(--widget), 0px -1px 0px var(--widget), 0px 0px 0px var(--widget), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--widget), 1px -1px 0px var(--widget), 1px 0px 0px var(--widget), 1px 1px 0px var(--widget), 1px 2px 0px var(--widget), 2px -2px 0px var(--widget), 2px -1px 0px var(--widget), 2px 0px 0px var(--widget), 2px 1px 0px var(--widget), 2px 2px 0px var(--widget);
     }
-    .bestiary-familiar-description {
+    #fr-layout.fr-theme[data-theme] .bestiary-familiar-description {
         background: var(--widget);
         color: var(--text);
         border-color: var(--borders);
     }
-    .bestiary-familiar-bond-level-description {
+    #fr-layout.fr-theme[data-theme] .bestiary-familiar-bond-level-description {
         color: var(--text);
     }
-    #bestiary-familiars[data-display="compact"] .bestiary-familiar[data-description="1"] .bestiary-familiar-box {
+    #fr-layout.fr-theme[data-theme] #bestiary-familiars[data-display="compact"] .bestiary-familiar[data-description="1"] .bestiary-familiar-box {
         box-shadow: 0px 0px 10px var(--text-med);
     }
-    #bestiary-footer .bestiary-results-count {
+    #fr-layout.fr-theme[data-theme] #bestiary-footer .bestiary-results-count {
         background: var(--section);
         color: var(--accent-two);
         margin-top: 5px;
     }
-    #bestiary-footer .bestiary-results-count strong {
+    #fr-layout.fr-theme[data-theme] #bestiary-footer .bestiary-results-count strong {
         color: var(--accent-three) !important;
     }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/dominance.*") {
     /* Dominance */
-    
-    div.main {
-        position: relative;
-        z-index: 2;
-    }
-    div.main::before {
+    #fr-layout-main #fr-layout-legacy-content::before {
         content: '';
         position: absolute;
         height: 525px;
@@ -4499,7 +5739,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         left: 0;
         background-repeat: no-repeat;
     }
-    div.main::after {
+    #fr-layout-main #fr-layout-legacy-content::after {
         content: '';
         position: absolute;
         height: 525px;
@@ -4515,9 +5755,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #dominance-flavor-text {
         color: var(--text)
     }
-    #dominance-background-image {
-        content: url('https://file.garden/ad64HQx5M13uwGkq/SDR/dominance.png') !important;
-    }
     #dominance-flavor-text > .flavor-black {
         color: var(--strong)
     }
@@ -4528,11 +5765,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/baldwin.*") {
     /* Baldwin */
     
-    div.contentcontainer div.main {
-        position: relative;
-        z-index: 2;
-    }
-    div.contentcontainer div.main::after {
+    #fr-layout-main #fr-layout-legacy-content::after {
         background-image: url('https://www1.flightrising.com/static/cms/scene/48174.png') !important;
         content: '';
         position: absolute;
@@ -4547,7 +5780,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-position: top left;
         transform: scaleX(-1);
     }
-    div.contentcontainer div.main::before {
+    #fr-layout-main #fr-layout-legacy-content::before {
         content: '';
         position: absolute;
         height: 525px;
@@ -4557,9 +5790,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         top: 0;
         left: 0;
         background-repeat: no-repeat;
-    }
-    #baldwin #baldwin-himself { 
-        filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.8));
     }
     #baldwin #speech-bubble-content, .baldwin-create-speech-bubble {
         z-index: 2;
@@ -4580,6 +5810,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         width:100%;
         top: 0;
         left: 0;
+    }
+    #fr-layout.fr-theme[data-theme] #baldwin-xpbar-label {
+        color: #fff;
     }
     #baldwin #speech-bubble-content::before {
         height: 382px;
@@ -4614,16 +5847,16 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         top: 60px;
         transform: scale(1.05, 0.85) rotate(135deg);
     }
-    #baldwin-timer-value, .baldwin-timer-completed {
+    #fr-layout.fr-theme[data-theme] #baldwin-timer-value, #fr-layout.fr-theme[data-theme] .baldwin-timer-completed {
         color: var(--accent-three)
     }
-    .baldwin-timer-header {
+    #fr-layout.fr-theme[data-theme] .baldwin-timer-header, #fr-layout.fr-theme[data-theme] #baldwin #speech-bubble, .baldwin-create-speech-bubble {
         color: var(--text)
     }
-    #baldwin-xpbar-leftlabel, #baldwin-xpbar-rightlabel {
+    #fr-layout.fr-theme[data-theme] #baldwin-xpbar-leftlabel, #fr-layout.fr-theme[data-theme] #baldwin-xpbar-rightlabel {
         color: var(--strong)
     }
-    .recipe {
+    #fr-layout.fr-theme[data-theme] .recipe {
         background: linear-gradient(to top, var(--section) 0%, var(--widget) 50%, var(--widget-med) 100%);
         color: var(--text);
         border: 2px solid var(--borders-light);
@@ -4633,13 +5866,13 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border-color: rgb(var(--warning));
         color: var(--warning-text);
     }
-    .baldwin-xptext, .baldwin-xptext b {
+    #fr-layout.fr-theme[data-theme] .baldwin-xptext, #fr-layout.fr-theme[data-theme] .baldwin-xptext b {
         color: rgb(var(--success))
     }
-    .recipe-cost {
+    #fr-layout.fr-theme[data-theme] .recipe-cost {
         color: var(--accent-three)
     }
-    #baldwin #speech-bubble-button-tray input,
+    #baldwin #speech-bubble-button-tray button,
     #baldwin #baldwin-collect-button {
         width: 95%;
     }
@@ -4648,7 +5881,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border-color: rgb(var(--success));
         border-radius: 5px;
     }
-    
     #baldwin #plus-button::before{
         content: '+';
         font-weight: bold;
@@ -4745,7 +5977,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     .crafter-meter-header, .crafter-recipe-reward-name, .crafter-recipe-ingredient,
     .swap-offer-requirement, .swap-offer-output-name {
-        color: var(--strong)
+        color: var(--accent-five)
     }
     .crafter-recipe-footer-item {
         color: var(--text);
@@ -4881,23 +6113,28 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/sophie.*") {
     /*Sophie*/
-    div.contentcontainer div.main::after {
+    #fr-layout-main #fr-layout-legacy-content[style*="static/layout/sophie/reduce-background.png"]::after,
+    #fr-layout-main #fr-layout-legacy-content[style*="static/layout/sophie/create-background.png"]::after {
         background-image: url('https://www1.flightrising.com/static/cms/scene/37360.png') !important;
     }
-    div.contentcontainer div.main[style*="static/layout/sophie/reduce-background.png"] div.content::before {
+    #fr-layout-main #fr-layout-legacy-content[style*="static/layout/sophie/reduce-background.png"] div.content::before {
         background-image: url('https://www1.flightrising.com/static/layout/sophie/reduce-background.png') !important;
     }
-    div.contentcontainer div.main[style*="static/layout/sophie/create-background.png"] div.content::before {
+    #fr-layout-main #fr-layout-legacy-content[style*="static/layout/sophie/create-background.png"] div.content::before {
         background-image: url('https://www1.flightrising.com/static/layout/sophie/create-background.png') !important;
     }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/swap.*") {
     /*Swipp*/
-    div.contentcontainer div.main::after {
+    #fr-layout-main #fr-layout-legacy-content::after {
         background-image: url('https://www1.flightrising.com/static/cms/scene/34843.png') !important;
     }
-    div.contentcontainer div.main[style*="/static/layout/swap/background.png"] div.content::before {
+    #fr-layout-main #fr-layout-legacy-content:has(a[style*="sinclair-button.png"])::before {
         background-image: url('https://www1.flightrising.com/static/layout/swap/background.png') !important;
+        filter: none;
+        background-position: 0 0;
+        opacity: 1;
+        background-size: auto;
     }
 }
 
@@ -4907,6 +6144,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .tomo-question-frame {
         background: var(--section);
         border-color: var(--borders);
+    }
+    .tomo-dialog, .tomo-question, .tomo-result-dialog {
+        color: var(--text)
     }
     #tomo-reward, #tomo-remaining {
         color: var(--accent-four);
@@ -4927,7 +6167,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .tomo-answer-neutral {
         color: var(--text-med);
     }
-    .tomo-next .beigebutton, #raffle-button {
+    .tomo-next .common-ui-button, #raffle-button {
         width: 100%;
         box-sizing: border-box;
     }
@@ -4940,10 +6180,11 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/gathering.*") {
     /* Gathering */
-    .onecol .main {
+    #fr-layout-main #fr-layout-legacy-content {
         z-index: 2;
+        background: none !important;
     }
-    div.contentcontainer .main[style*="background-image"]::after {
+    #fr-layout-main #fr-layout-legacy-content[style*="background-image"]::after {
         content: '';
         background-image: url('https://www1.flightrising.com/static/cms/scene/43921.png') !important;
         position: absolute;
@@ -4956,7 +6197,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-repeat: no-repeat;
         opacity: 0.2;
     }
-    div.contentcontainer div.main::before {
+    #fr-layout-main #fr-layout-legacy-content::before {
         content: '';
         position: absolute;
         height: 525px;
@@ -4969,8 +6210,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     #gather_success_bg {
         left: 145px;
+        top: 400px;
     }
-    
     #gather_success_bg img {
         filter: brightness(60%) contrast(180%);
         mix-blend-mode: overlay;
@@ -4996,17 +6237,25 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         box-shadow: 0px 0px 15px var(--main), 0px 0px 10px var(--main), 0px 0px 5px var(--main);
         border-radius: 18px;
     }
+    /*fix issue with gathering buttons being labeled as disabled when not disabled?*/
+    #fr-layout.fr-theme[data-theme] .gatherbutton button.common-ui-button-disabled:not([disabled="disabled"]) {
+        background: linear-gradient(to bottom, var(--beige-button-one) 0%, var(--beige-button-two) 100%);
+        color: var(--button-text);
+        cursor: pointer !important;
+    }
+    /*fix issue with gathering buttons being labeled as disabled when not disabled?*/
+    #fr-layout.fr-theme[data-theme] .gatherbutton button.common-ui-button-disabled:not([disabled="disabled"]):hover {
+        background: linear-gradient(to top, var(--beige-button-one) 0%, var(--beige-button-two) 100%);
+        color: var(--button-text);
+        cursor: pointer !important;
+    }
 }
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/crim.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/pinkpile.*") {
     /* Crim & Pinkerton */
     
     /*shared bg*/
-    div.contentcontainer div.main {
-        position: relative;
-        z-index: 2;
-    }
-    div.contentcontainer div.main::after {
+    #fr-layout-main #fr-layout-legacy-content::after {
         background-image: url('https://www1.flightrising.com/static/cms/scene/42686.png') !important;
         content: '';
         position: absolute;
@@ -5020,7 +6269,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         opacity: 0.1;
         background-position: top right;
     }
-    div.contentcontainer div.main::before {
+    #fr-layout-main #fr-layout-legacy-content::before {
         content: '';
         position: absolute;
         height: 525px;
@@ -5081,47 +6330,13 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         right: -35px !important;
     }
     /*pinkerton*/
-    .pinkerton-text-footer input {
+    .pinkerton-text-footer button {
         width: 100%;
     }
 }
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/raffle.*") {
     /* Roundsey */
-    #raffle-text {
-        z-index: 2;
-    }
-    #raffle-background::before {
-        content: '';
-        position: absolute;
-        top: 100px;
-        left: 35px;
-        width: 340px;
-        height: 255px;
-        background: linear-gradient(to bottom, var(--widget) 0%, var(--widget-med) 100%);
-        color: var(--text);
-        border: 3px solid var(--borders-med);
-        outline: 2px solid var(--borders);
-        border-radius: 10px;
-    }
-    #raffle-text::before {
-        content: '';
-        position: absolute;
-        bottom: -56px;
-        left: 120px;
-        border-style: solid;
-        border-width: 20px;
-        border-color: var(--borders) transparent transparent transparent !important;
-    }
-    #raffle-text::after {
-        content: '';
-        position: absolute;
-        bottom: -50px;
-        left: 123px;
-        border-style: solid;
-        border-width: 17px;
-        border-color: var(--borders-med) transparent transparent transparent !important;
-    }
     #raffle-counter-frame {
         color: #000;
     }
@@ -5130,6 +6345,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     #raffle-timer .raffle-timer-value {
         color: var(--accent-three)
+    }
+    #roundsey-overlay {
+        top: 550px;
+        left: 510px;
     }
 }
 
@@ -5163,8 +6382,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #pursuits-rewards-meter {
         padding: 25px 21px 5px 21px;
         background: var(--widget);
-        border: 2px solid var(--widget-med);
-        outline: 2px solid var(--borders);
+        border: 2px solid;
+        outline: 2px solid var(--widget-med);
     }
     .pursuits-rewards-meter-action button {
         width: 100%;
@@ -5178,8 +6397,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     .pursuits-list {
         background: var(--widget);
-        border: 2px solid var(--widget-med);
-        outline: 2px solid var(--borders);
+        border: 2px solid;
+        outline: 2px solid var(--borders-med);
     }
     .pursuit-item {
         margin: 10px 8px;
@@ -5386,31 +6605,11 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     /* Alerts Page */
     #alert-list .individual-alert {
         font-size: 12px;
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: 0;
-        padding: 8px 5px;
         box-sizing: border-box;
         border-bottom: 1px solid var(--divider);
     }
     #alert-list .individual-alert:nth-child(2n+1) {
         background: var(--widget-med)
-    }
-    #alert-list .individual-alert > span {
-        position: static !important;
-        margin-right: 5px;
-    }
-    #alert-list .individual-alert > span:first-child {
-        margin-right: 10px;
-    }
-    #alert-list .individual-alert > span:nth-child(2) {
-        color: var(--em);
-        font-weight: bold;
-    }
-    #alert-list .alert-text {
-        margin-left: 5px;
-        width: 515px;
-        flex-grow: 1;
     }
     #alert-list .individual-alert hr {
         display: none;
@@ -5594,12 +6793,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/auction-house.*") {
     /* Auction House */
-    
-    div.contentcontainer div.main {
-        position: relative;
-        z-index: 2;
-    }
-    div.contentcontainer div.main::after {
+    #fr-layout-main #fr-layout-legacy-content::after {
         background-image: url('https://www1.flightrising.com/static/cms/scene/50697.png') !important;
         content: '';
         position: absolute;
@@ -5612,7 +6806,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-repeat: no-repeat;
         opacity: 0.1;
     }
-    div.contentcontainer div.main::before {
+    #fr-layout-main #fr-layout-legacy-content::before {
         content: '';
         position: absolute;
         height: 525px;
@@ -5638,17 +6832,26 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .ah-expired, .ah-search-error-header {
         color: rgb(var(--error));
     }
-    .ah-listing-itemname, .ah-dlg-itemname, .ah-dlg-cost, #ah-sell-itemname {
+    #fr-layout.fr-theme[data-theme] .ah-listing-itemname,
+    #fr-layout.fr-theme[data-theme] .ah-dlg-itemname,
+    #fr-layout.fr-theme[data-theme] .ah-dlg-cost,
+    #fr-layout.fr-theme[data-theme] #ah-sell-itemname {
         color: var(--em)
     }
     .ah-current-tab {
-        color: var(--strong)
+        color: var(--accent-three)
     }
     .ui-dialog .ui-dialog-content, #ah-search-collapsed-blurb,
     .ah-search-submit-container-right, .ah-reset-to-defaults,
     .dragon-search-filters-reset, .dragon-search-filters-keep-expanded,
     div#friendchange.ui-dialog-content.ui-widget-content div span, .ah-search-error-tip {
         color: var(--text);
+    }
+    #ah-search-submit::after {
+        display: none;
+    }
+    #ah-search-submit {
+        outline: 2px solid var(--borders-light)
     }
     .ah-search-option select, span.dragon-search-multiselect select, span.dragon-search-color-range select, span.dragon-search-filter select {
         border-radius: 10px;
@@ -5928,7 +7131,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .game-database-record-effect {
         background: linear-gradient(to bottom, var(--widget-light) 0%, var(--widget-med) 100%);
         border: 2px solid var(--borders-med);
-        outline: 2px solid var(--borders);
+        outline: 2px solid var(--borders-med);
     }
     .hoard-apply-attribute-result {
         display: flex;
@@ -5987,8 +7190,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background: linear-gradient(to bottom, var(--button-one) 20%, var(--button-two) 100%);
         border-right: 0;
     }
-    .hoard-stored-currency-count {
-        color: var(--button-text);
+    .hoard-stored-currency-count, #fr-layout.fr-theme[data-theme] .hoard-stored-currency-header {
+        color: var(--text);
         text-shadow: -1px 0 0 var(--shadow), 1px 0 0 var(--shadow), -1px 1px 0 var(--shadow), 1px 1px 0 var(--shadow), -1px 2px 0 var(--shadow), 1px 2px 0 var(--shadow), -1px -1px 0 var(--shadow), 1px -1px 0 var(--shadow), 0 -1px 0 var(--shadow);
     }
     .hoard-stack-functions-quantity, .dragon-picker-preview-number, .game-database-no-result {
@@ -6102,11 +7305,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     /* Game DB */
     
     /*z-index fixes*/
-    div.contentcontainer div.main {
-        position: relative;
-        z-index: 2;
-    }
-    div.contentcontainer div.main::after {
+    #fr-layout-main #fr-layout-legacy-content::after {
         content: '';
         position: absolute;
         height: 525px;
@@ -6119,7 +7318,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-repeat: no-repeat;
         opacity: 0.12;
     }
-    div.contentcontainer div.main::before {
+    #fr-layout-main #fr-layout-legacy-content::before {
         content: '';
         position: absolute;
         height: 525px;
@@ -6198,7 +7397,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/site\\/dev-tracker.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search\\/forums.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/msgs.*") {
     /* Forums & PMs */
-    :root {
+    .fr-theme[data-theme] {
         --post-text: var(--text);
         --widget-med-bg: var(--widget-med);
         --widget-med-alt: rgba(var(--widget-med-rgb),0.75);
@@ -6329,21 +7528,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .post-text[data-style="0"] span.bbcode_spoiler:hover {
         color: var(--text) !important;
     }
-    .post-admin .post-text-content, .post-admin .post-text-content li, .post-admin .post-text-content li span, .search-result-body.adminpost {
-        color: var(--admin-text) !important;
-    }
-    .post-admin .post-text-content a:not(.dragon-effect-controls-item, .pinglist-button-title), .post-admin .post-text-content a:not(.dragon-effect-controls-item, .pinglist-button-title) > *, .post-admin .post-text-content ul li::marker {
-        color: var(--admin-link) !important;
-    }
-    .post-admin .post-text-content a:not(.dragon-effect-controls-item, .pinglist-button-title):hover, .post-admin .post-text-content a:not(.dragon-effect-controls-item, .pinglist-button-title):focus, .post-admin .post-text-content a:not(.dragon-effect-controls-item, .pinglist-button-title):hover > *, .post-admin .post-text-content a:not(.dragon-effect-controls-item, .pinglist-button-title):focus > * {
-        color: var(--admin-link-hover) !important;
-    }
-    .post-admin .post-text-content b, .post-admin .post-text-content strong {
-        color: var(--admin-strong)
-    }
-    .post-admin .post-text-content i, .post-admin .post-text-content em {
-        color: var(--admin-em)
-    }
     .common-message-forum.common-message-info, .common-message-forum.common-message-info b, .common-message-forum.common-message-info i {
         color: var(--warning-text);
     }
@@ -6403,7 +7587,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         font-weight: normal;
         color: var(--text-med);
     }
-    .post-stat-count {
+    #fr-layout.fr-theme[data-theme] .post-stat-count {
         color: var(--text);
         font-weight: bold;
         text-shadow: var(--stroke)
@@ -6427,36 +7611,39 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border-top: 1px solid var(--separator) !important;
     }
     /*rework posts to use display flex*/
-    .post .post-frame {
+    #fr-layout.fr-theme[data-theme] .post .post-frame {
         border: none;
         box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5) !important;
         background-color: var(--widget);
         display: flex;
         justify-content: space-between;
     }
-    .post:nth-child(2n) .post-frame {
+    #fr-layout.fr-theme[data-theme] .post:nth-child(2n) .post-frame {
         background-color: var(--widget);
     }
-    .post .post-text {
+    #fr-layout.fr-theme[data-theme] .post .post-text {
         float: none;
         margin-left: auto;
         border-radius: 0 12px 12px 0;
         padding-left: 3px;
+        border-left: 1px solid var(--borders);
     }
-    .post-frame .post-text {
-        background-color: var(--widget-med-bg);
+    #fr-layout.fr-theme[data-theme] .post-frame .post-text {
+        background: var(--widget-med-bg);
     }
-    .post:nth-child(2n) .post-frame .post-text {
+    #fr-layout.fr-theme[data-theme] .post:nth-child(2n) .post-frame .post-text {
         background-color: var(--widget-med-alt);
     }
-    div.post-author {
+    #fr-layout.fr-theme[data-theme] div.post-author {
         background-color: var(--widget);
         border-right: none;
     }
-    div.post-author:not([style*="background-image"]) {
+    #fr-layout.fr-theme[data-theme] div.post-author:not([style*="background-image"]) {
         background: linear-gradient(to bottom, var(--section) 0%, var(--widget) 50%);
     }
-    a.post-author-username, .post-author-username, .editor-author-username {
+    #fr-layout.fr-theme[data-theme] a.post-author-username,
+    #fr-layout.fr-theme[data-theme] .post-author-username,
+    #fr-layout.fr-theme[data-theme]  .editor-author-username {
         color: var(--text);
         font-size: 1.1em;
         display: inline-block !important;
@@ -6466,7 +7653,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         line-height: 110%;
         text-shadow: var(--stroke);
     }
-    .post-author-title:not(:empty) {
+    #fr-layout.fr-theme[data-theme] .post-author-title:not(:empty) {
         color: var(--text);
         font-weight: bold;
         text-shadow: var(--stroke);
@@ -6512,7 +7699,13 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border: solid 1px var(--borders) !important;
         padding: 5px !important;
     }
-    .news, table#forum-fr td, table#forum-general td, h1.forum-header, table#postlist td.lastpost, table#postlist td.activity div.activity-replies, table#postlist td.topic {
+    #fr-layout.fr-theme[data-theme] .news,
+    #fr-layout.fr-theme[data-theme] table#forum-fr td,
+    #fr-layout.fr-theme[data-theme] table#forum-general td,
+    #fr-layout.fr-theme[data-theme] h1.forum-header,
+    #fr-layout.fr-theme[data-theme] table#postlist td.lastpost,
+    #fr-layout.fr-theme[data-theme] table#postlist td.activity div.activity-replies,
+    #fr-layout.fr-theme[data-theme] table#postlist td.topic {
         color: var(--text);
     }
     table#postlist tr.darker {
@@ -6520,6 +7713,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     table#postlist tr {
         background-color: var(--widget-med);
+        display: flex;
+        align-items: center;
     }
     table#postlist {
         border: none !important;
@@ -6618,6 +7813,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     table#postlist td.topic .postpages {
         text-align: right;
+        bottom: 0px;
     }
     #forum-content #forum-header {
         display: flex;
@@ -6629,6 +7825,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         max-width: 75%;
     }
     #forum-content #topic-header strong {
+        color: var(--text);
         text-shadow: 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow);
     }
     #topic-search, #forum-search {
@@ -7070,81 +8267,36 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/archaeology.*") {
     /* Archaeology */
-    
-    div.main {
-        position: relative;
-        z-index: 2;
-        background: none !important;
-    }
-    div.main[style*="url(/static/layout/archaeology/background.png)"] div#archaeology-page::before {
-        content: '';
-        position: absolute;
-        height: 750px;
-        width: 100%;
-        top: 0;
-        left: 0;
-        background-repeat: no-repeat;
-        background-image: url('https://file.garden/ad64HQx5M13uwGkq/SDR/arlo.png');
-    }
-    div.contentcontainer div.main::after {
-        content: '';
-        position: absolute;
-        height: 525px;
-        width: 100%;
-        z-index: -2;
-        background-image: url('https://www1.flightrising.com/static/cms/scene/44082.png') !important;
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(150%);
-        top: 0;
-        left: 0;
-        background-repeat: no-repeat;
-        opacity: 0.2;
-    }
-    div.contentcontainer div.main::before {
-        content: '';
-        position: absolute;
-        height: 525px;
-        width: 100%;
-        z-index: -1;
-        background-image: linear-gradient(to bottom, rgb(34, 40, 43, 0) 0%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 70%, var(--main) 100%);
-        top: 0;
-        left: 0;
-        background-repeat: no-repeat;
-    }
-    
-    div.content {
-        background: none !important;
-    }
-    #archaeology-xp-meter .common-meter-full {
-        border-color: #000;
-    }
-    #archaeology-xp-meter-label,
-    #archaeology-xp-meter-amount,
-    .archaeology-dig-site-index-row-focus-toggle-text
+    #fr-layout.fr-theme[data-theme] #archaeology-xp-meter-label,
+    #fr-layout.fr-theme[data-theme] #archaeology-xp-meter-amount,
+    #fr-layout.fr-theme[data-theme] .archaeology-dig-site-index-row-focus-toggle-text
     {
         color: var(--strong);
     }
-    .archaeology-dig-site-index-row-description {
+    #fr-layout.fr-theme[data-theme] .archaeology-dig-site-index-row-description {
         color: var(--em)
     }
-    #archaeology-dig-timer-header,
-    .archaeology-supply {
+    #fr-layout.fr-theme[data-theme] #archaeology-dig-timer-header,
+    #fr-layout.fr-theme[data-theme] .archaeology-supply {
         color: var(--text);
     }
-    #archaeology-dig-timer-time, #archaeology-dig-timer-text, .archaeology-dig-plot-complete span {
+    #fr-layout.fr-theme[data-theme] #archaeology-dig-timer-time,
+    #fr-layout.fr-theme[data-theme] #archaeology-dig-timer-text,
+    #fr-layout.fr-theme[data-theme] .archaeology-dig-plot-complete span {
         color: var(--accent-three);
     }
-    .archaeology-dig-plot-complete {
+    #fr-layout.fr-theme[data-theme] .archaeology-dig-plot-complete {
         background: rgba(var(--widget-rgb),0.9);
         border-color: var(--borders);
         color: var(--text);
     }
-    .archaeology-dig-site-index-row-notes-badge {
+    #fr-layout.fr-theme[data-theme] .archaeology-dig-site-index-row-notes-badge {
         background: none;
         position: relative;
         z-index: 2;
         color: var(--link)
     }
-    .archaeology-dig-site-index-row-notes-badge::before {
+    #fr-layout.fr-theme[data-theme] .archaeology-dig-site-index-row-notes-badge::before {
         content: '';
         background: url('https://www1.flightrising.com/static/layout/archaeology/research-notes-badge.png');
         filter: invert(100%) var(--filter) hue-rotate(var(--hue));
@@ -7154,10 +8306,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         width: 100%;
         height: 100%;
         z-index: -1;
-    }
-    /*fix weird z-index issue with back button. only occurs with arlo?*/
-    img[src$="/static/layout/button_back.png"] {
-        z-index: 1;
     }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/market.*") {
@@ -7172,7 +8320,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         --flash-border: #b36f27;
     }
     /*bg*/
-     div.contentcontainer div.main[style*="/market/internal_bg.jpg"]::before {
+     #fr-layout-main #fr-layout-legacy-content::before {
         content: '';
         position: absolute;
         height: 100%;
@@ -7186,7 +8334,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         opacity: 0.15;
          background-position: 330px -245px;
     }
-    div.contentcontainer div.main[style*="/market/internal_bg.jpg"]::after {
+    #fr-layout-main #fr-layout-legacy-content[style*="/market/internal_bg.jpg"]::after {
         display: none;
     }
     .flash_sale_tab_icon img {
@@ -7362,6 +8510,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .custom-shop-trade {
         background: linear-gradient(to top, var(--section) 0%, var(--widget) 50%, var(--widget-med) 100%);
         border: 2px solid var(--borders-light);
+        outline: 2px solid var(--borders)
     }
     /*blue item name*/
     .custom-shop-trade-reward-name {
@@ -7856,7 +9005,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 }
 
 @-moz-document domain("flightrising.com") {
-    /* Image Replacement */
+    /* LEGACY: Image Replacement */
     img[src*="/static/layout"]::selection { background: transparent; }
     img[src*="/static/layout"]::-moz-selection { background: transparent; }
     
@@ -8044,7 +9193,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     img[src$="/static/layout/icon_star.png"],
     .hoard-result-item-box[data-favorite="1"]:after,
-    #dragon-profile-likes[data-active="true"] .dragon-profile-likes-icon,
     img[src$="/static/layout/game-database/button-favorite-on.png"],
     img[src$="/static/layout/pinglist/bbcode-subscribed.png"],
     img[src$="/static/layout/buttton_subscribed.png"] {
@@ -8111,7 +9259,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="static/layout/toggle_off.png"] {
         filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue));
     }
-    img[src$="/static/layout/profile/emblem-ancient.png"], img[src$="/static/layout/profile/emblem-hatchling.png"] {
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/profile/emblem-ancient.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/profile/emblem-hatchling.png"] {
         filter: invert(100) var(--filter) hue-rotate(var(--hue));
         opacity: 0.7;
     }
@@ -8119,46 +9268,33 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/auctionhouse/searchtab_up.png"] {
         filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(200%) contrast(150%);
     }
-    img[src$="/static/layout/baldwin/arrow.png"],
-    img[src$="/static/layout/crafter/arrow.png"],
-    img[src$="/static/layout/lair/buttons/page-expand.png"],
-    img[src$="/static/layout/lair/buttons/page-collapse.png"],
-    img[src$="/static/icons/close.png"],
-    img[src$="/static/layout/copy.png"],
-    img[src$="/static/layout/pinglist/bbcode-no-icon.png"],
-    img[src$="/static/layout/pinglist/bbcode-not-subscribed.png"] {
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/baldwin/arrow.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/crafter/arrow.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/lair/buttons/page-expand.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/lair/buttons/page-collapse.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/icons/close.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/copy.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/pinglist/bbcode-no-icon.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/pinglist/bbcode-not-subscribed.png"] {
         filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(70%) saturate(200%);
     }
-    img[src$="/static/layout/button_attachdragon.png"],
-    img[src$="/static/layout/icon_itemnotattached.png"],
-    img[src$="/static/layout/icon_currencynotattached.png"],
-    img[src$="/static/layout/icon_dragonnotattached.png"],
-    img[src$="/static/icons/question.png"],
-    .forum-hidden-icon {
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/button_attachdragon.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/icon_itemnotattached.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/icon_currencynotattached.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/icon_dragonnotattached.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/icons/question.png"],
+    .fr-theme[data-theme="dark"] .forum-hidden-icon {
         filter: invert(100%) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(100%) contrast(100%)
     }
     #coli-equip-statpoints-btn, .coli-equip-statdlg-plus-btn.coli-equip-disabled {
         filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(110%) saturate(200%);
     }
-    img[src$="/static/layout/baldwin/arrow.png"],
-    img[src$="/static/layout/crafter/arrow.png"] {
-        content: url('https://file.garden/ad64HQx5M13uwGkq/SDR/arrow.png') !important
-    }
-    img[src$="/static/layout/lair/icons/male.png"],
-    img[src$="/static/layout/lair/icons/female.png"] {
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/lair/icons/male.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/lair/icons/female.png"] {
         filter: brightness(200%);
     }
     #trading-post-content {
         background-image: url('https://file.garden/ad64HQx5M13uwGkq/SDR/tradingpost.png');
-    }
-    img[src$="/static/layout/revamp/right_status_top_green_small.png"] {
-        content: url('https://file.garden/ad64HQx5M13uwGkq/SDR/right-status-top-green-small.png') !important;
-    }
-    img[src$="/static/layout/revamp/right_status_top_yellow_small.png"] {
-        content: url('https://file.garden/ad64HQx5M13uwGkq/SDR/right-status-top-yellow-small.png') !important;
-    }
-    #raffle-background {
-        background-image: url('https://file.garden/ad64HQx5M13uwGkq/SDR/roundsey.png');
     }
     img[src$="/static/layout/baldwin/cauldron_loading.gif"] {
         content: url('https://file.garden/ad64HQx5M13uwGkq/SDR/cauldronloading.gif') !important;
