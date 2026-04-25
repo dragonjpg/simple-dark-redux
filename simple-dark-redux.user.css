@@ -8832,107 +8832,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
 }
 
-@-moz-document regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/clan-home.*"), regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/shop-home.*"), regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/play-home.*"), regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/wiki\\/wiki-home.*") {
-    /* Category Hubs */
-    .menu_content a {
-        display: inline-block;
-        position: relative;
-    }
-    .menu_content a::after {
-        content: '';
-        position: absolute;
-        display: inline-flex;
-        justify-content: center;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 55px;
-        color: var(--text);
-        background: var(--main);
-        box-sizing:border-box;
-        padding: 0.2em 2em 0.5em 2em;
-        opacity: 0;
-        font-weight: bold;
-    }
-    .menu_content a:hover::after {
-        opacity: 1;
-    }
-    #headertext > p {
-        color: var(--text-med);
-    }
-    /*clan*/
-    .menu_content a[href^="https://www1.flightrising.com/nest"]::after {
-        content: 'Breed your dragons and incubate their eggs.'
-    }
-    .menu_content a[href="https://www1.flightrising.com/lair"]::after {
-        content: 'Feed and manage the dragons in your lair.';
-    }
-    .menu_content a[href="https://www1.flightrising.com/gather"]::after {
-        content: 'Gather food, artifacts, and materials.';
-    }
-    .menu_content a[href*="/clan-profile/"]::after {
-        content: 'Your personal profile, displaying information and recent activity.';
-        height: 60px;
-    }
-    .menu_content a[href$="/hoard"]::after {
-        content: "The storage area for all your clan's items.";
-        padding-top: 0.8em;
-    }
-    .menu_content a[href$="https://www1.flightrising.com/msgs"]::after {
-        content: 'Send and recieve personal messages with other users.';
-        padding: 0.8em 1.2em 0.5em 1.2em;
-    }
-    /*shop*/
-    .menu_content a[href$="/market"]::after {
-        content: 'Purchase items for treasure and gems.';
-    }
-    .menu_content a[href$="/auction-house"]::after {
-        content: 'Buy, sell, and view item and dragon auctions.';
-    }
-    .menu_content a[href$="/trading"]::after {
-        content: 'Bargain with merchants for unique items.';
-    }
-    .menu_content a[href$="/crossroads"]::after {
-        content: 'Trade dragons with other Flight Rising users.';
-    }
-    .menu_content a[href$="/wiki/skins/1"]::after {
-        content: 'Create custom skins for your dragons.';
-    }
-    .menu_content a[href$="/buy-gems"]::after {
-        content: "Purchase gems, Flight Rising's premium currency.";
-    }
-    /*play*/
-    .menu_content a[href$="/fairgrounds"]::after {
-        content: 'Play mini-games to earn your clan treasure.';
-    }
-    .menu_content a[href$="/coliseum"]::after {
-        content: 'Equip your dragons and battle against enemies.';
-    }
-    .menu_content a[href$="/dominance"]::after {
-        content: 'Track the elemental flights as they fight for dominance.';
-        padding: 0.5em 1.2em 0.5em 1.2em;
-    }
-    /*library*/
-    .menu_content a[href$="/forums"]::after {
-        content: 'Discuss a wide range of topics with other players.';
-    }
-    .menu_content a[href$="/world-map"]::after {
-        content: 'Learn about the various regions of the world.';
-    }
-    .menu_content a[href$="/search"]::after {
-        content: 'Search for users, dragons, and forum posts.';
-    }
-    .menu_content a[href$="/site/media"]::after {
-        content: 'Download icons, banners, and wallpapers.';
-    }
-    .menu_content a[href$="https://www1.flightrising.com/wiki/wiki"]::after {
-        content: 'Articles and information about Flight Rising.';
-    }
-    .menu_content a[href="https://www1.flightrising.com/scrying"]::after {
-        content: 'Preview future possibilities for the dragons in your clan.';
-    }
-}
-
 @-moz-document domain("flightrising.com") {
     /* LEGACY: Image Replacement */
     img[src*="/static/layout"]::selection { background: transparent; }
@@ -9215,15 +9114,13 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .fr-theme[data-theme="dark"] .forum-hidden-icon {
         filter: invert(100%) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(100%) contrast(100%)
     }
-    #coli-equip-statpoints-btn, .coli-equip-statdlg-plus-btn.coli-equip-disabled {
+    .fr-theme[data-theme="dark"] #coli-equip-statpoints-btn,
+    .fr-theme[data-theme="dark"] .coli-equip-statdlg-plus-btn.coli-equip-disabled {
         filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(110%) saturate(200%);
     }
     .fr-theme[data-theme="dark"] img[src$="/static/layout/lair/icons/male.png"],
     .fr-theme[data-theme="dark"] img[src$="/static/layout/lair/icons/female.png"] {
         filter: brightness(200%);
-    }
-    #trading-post-content {
-        background-image: url('https://file.garden/ad64HQx5M13uwGkq/SDR/tradingpost.png');
     }
     img[src$="/static/layout/baldwin/cauldron_loading.gif"] {
         content: url('https://file.garden/ad64HQx5M13uwGkq/SDR/cauldronloading.gif') !important;
