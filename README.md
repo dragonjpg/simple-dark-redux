@@ -6,9 +6,12 @@ A Flight Rising userstyle. A rewrite of [Zoga's Simple Dark Theme](https://users
 
 You will need [Stylus](https://github.com/openstyles/stylus#readme). When you install, leave 'Check for Updates' checked in order to get automatic updates. View [these](https://github.com/openstyles/stylus/wiki/Usercss#how-do-i-customize-usercss) [pages](https://github.com/openstyles/stylus/wiki/Popup#interface) to see how to change the style's settings directly in Stylus if it's your first time using it. Happy browsing!
 
+# You must have 'Experimental: Force theme settings on pages still in development' enabled in your Account Settings or this theme will not function properly.
+## This style's rewrite has been designed to have eventual support for custom light themes as well. For now, you will have to have 'Dark Theme' selected.
+
 ### General Info
-**Last Updated:** Oct. 3, 2025\
-**Current Ver:** 2.8.0\
+**Last Updated:** Apr. 25, 2026\
+**Current Ver:** 3.0.0\
 **Full Changelog:** [View Here](https://github.com/dragonjpg/simple-dark-redux/pulls?q=is%3Apr+is%3Aclosed)\
 **Found a bug? Have a suggestion?** [Open an Issue](https://github.com/dragonjpg/simple-dark-redux/issues)
 
@@ -22,7 +25,7 @@ You will need [Stylus](https://github.com/openstyles/stylus#readme). When you in
 
 ## Preview Images
 
-### **Theme Previews:**
+### **Theme Previews (OUTDATED):**
 #### Classic Blue
 ![Screenshot of the home page in the default Classic Blue theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/classic_blue_1.png)\
 ![Screenshot of the Lair page in the default Classic Blue theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/classic_blue_2.png)
