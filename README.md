@@ -1,14 +1,20 @@
 # Flight Rising - Simple Dark Redux
 ### Description
-A Flight Rising userstyle. A rewrite of [Zoga's Simple Dark Theme](https://userstyles.org/styles/150521/simple-dark-theme-for-flight-rising) that includes my addon for the original theme, [Simple Dark Tweaks.](https://userstyles.org/styles/200085/simple-dark-tweaks-for-flight-rising) Major features include scene support, multiple themes to choose from including a customizable theme, various [accessibility settings](#accessibility-settings), and [optional "light mode"](#bios--forums-settings) styling that affects clan bios, dragon bios, and forum posts/PMs.
+A Flight Rising userstyle. Originally a rewrite of [Zoga's Simple Dark Theme](https://userstyles.org/styles/150521/simple-dark-theme-for-flight-rising) that includes my addon for the original theme, [Simple Dark Tweaks.](https://userstyles.org/styles/200085/simple-dark-tweaks-for-flight-rising).
+
+Major features multiple themes to choose from including a customizable theme, various [accessibility settings](#accessibility-settings), and [optional "light mode"](#bios--forums-settings) styling that affects clan bios, dragon bios, and forum posts/PMs.
 
 **Quick Install:** [via Github](https://github.com/dragonjpg/simple-dark-redux/raw/main/simple-dark-redux.user.css) or [via the Userstyles.World mirror.](https://userstyles.world/api/style/9725.user.css)
 
 You will need [Stylus](https://github.com/openstyles/stylus#readme). When you install, leave 'Check for Updates' checked in order to get automatic updates. View [these](https://github.com/openstyles/stylus/wiki/Usercss#how-do-i-customize-usercss) [pages](https://github.com/openstyles/stylus/wiki/Popup#interface) to see how to change the style's settings directly in Stylus if it's your first time using it. Happy browsing!
 
+# IMPORTANT NOTES:
+## * You must have 'Experimental: Force theme settings on pages still in development' enabled in your Account Settings or this theme will not function properly on partial legacy pages.
+## * 3.0 has been designed to have eventual support for custom light themes as well. For now, you will have to have 'Dark Theme' selected in your Account Settings or the site will not look correct.
+
 ### General Info
-**Last Updated:** Oct. 3, 2025\
-**Current Ver:** 2.8.0\
+**Last Updated:** Apr. 25, 2026\
+**Current Ver:** 3.0.0\
 **Full Changelog:** [View Here](https://github.com/dragonjpg/simple-dark-redux/pulls?q=is%3Apr+is%3Aclosed)\
 **Found a bug? Have a suggestion?** [Open an Issue](https://github.com/dragonjpg/simple-dark-redux/issues)
 
@@ -22,7 +28,7 @@ You will need [Stylus](https://github.com/openstyles/stylus#readme). When you in
 
 ## Preview Images
 
-### **Theme Previews:**
+### **Theme Previews (OUTDATED):**
 #### Classic Blue
 ![Screenshot of the home page in the default Classic Blue theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/classic_blue_1.png)\
 ![Screenshot of the Lair page in the default Classic Blue theme.](https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/main/images/classic_blue_2.png)
