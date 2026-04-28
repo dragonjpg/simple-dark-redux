@@ -1,15 +1,424 @@
 /* ==UserStyle==
-@name           Simple Dark Redux for Flight Rising
+@name           Simple Themes for Flight Rising
 @namespace      userstyles.world/user/meow
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
-@version        3.0.0
-@description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks.
+@updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
+@version        3.1.0
+@description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
 
 @var checkbox filler2 "I have enabled 'Experimental: Force theme settings on pages still in development.' in my account settings." 0
-@var checkbox filler1 "─ Theme Selection & Customization ─" 1
+@var checkbox filler1 "↓ Customization ↓" 1
+@advanced dropdown light "Light Theme Replacement" {
+light1 "Rainy Day" <<<EOT
+        --hue: -200deg;
+        --filter: sepia(100%);
+        --filter-brightness: brightness(95%);
+        --selection-bg: #283916;
+        --selection-text: #fcff9d;
+        
+        --background: #000;
+        --main: #d1d1d1;
+        --columns: #B7BCBF;
+        --bar: #7F8F94;
+        
+        --widget: #afbec6;
+        --widget-rgb: 175, 190, 198;
+        --widget-med: #dedede;
+        --widget-med-rgb: 222, 222, 222;
+        --widget-light: #ADC4CC;
+        --section: #c6d6d9;
+        
+        --textarea: #eee;
+        
+        --warning: 245, 233, 194;
+        --warning-text: #493302;
+        --error: 241, 208, 214;
+        --error-text: #660000;
+        --success: 204, 228, 188;
+        --success-text: #224010;
+        
+        --borders: #888f9f;
+        --borders-med: #1A68A1;
+        --borders-light: #ABD1D7;
+
+        --text: #111111;
+        --text-med: #454139;
+        --text-dark: #000;
+        --text-disabled: var(--text-med);
+        --shadow: #fff;
+        --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
+        
+        --strong: #000;
+        --em: #000;
+        --link: #0b4d67;
+        --link-hover: #7f7e7d;
+
+        --accent-one: #302A5E;
+        --accent-two: #60729d;
+        --accent-three: #12549b;
+        --accent-four: #0b1140;
+        --accent-five: #854408;
+
+        --button-text: #111333;
+        --button-text-dark: #031d04;
+        --button-one: #d1ccbc;
+        --button-two: #829a9d;
+        --beige-button-one: #D7EEFC;
+        --beige-button-two: #B3B6BF;
+        --red-button-one: #93c6eb;
+        --red-button-two: #d7d7d7;
+        --button-disabled-one: #a39191;
+        --button-disabled-two: #8e9ba3;
+
+        --selected: #859ba8;
+        --selected-text: #000;
+        
+        --divider: #4b634e;
+
+        --tooltip-bg: #d4dee2;
+        --tooltip-header: #a5d0ef;
+
+        --energy-one: #B3D7CF;
+        --energy-two: #8996B3;
+        --energy-border: #38464b;
+
+        --energy-full-one: #9ae2c7;
+        --energy-full-two: #91A7FC;
+        --energy-full-border: #06350e;
+
+        /*NEW VARS FOR REFACTOR*\/
+        --bar-border: var(--borders);
+        --nav-button-bg: var(--widget-med);
+
+        --text-accent: var(--accent-four);
+        --text-subtle: var(--text-med);
+
+        --alt-one: var(--widget);
+        --alt-two: var(--widget-med);
+        --alt-three: var(--widget-light);
+
+        --border-one: var(--borders);
+        --border-two: var(--borders-med);
+        --border-three: var(--borders-light);
+
+        --button-icon: #8a939d;
+        --button-icon-text: #414D5A;
+        --button-disabled-text: #494c56;
+        --button-stroke: #b5ced5;
+        --button-disabled-stroke: #7a8ea8;
+
+        --sidebar-one: var(--columns);
+        --sidebar-two: var(--columns);
+EOT;
+light2 "Lavender" <<<EOT
+        --hue: -150deg;
+        --filter: sepia(100%);
+        --filter-brightness: brightness(97%);
+        --selection-bg: #283916;
+        --selection-text: #fcff9d;
+
+        --background: #000;
+        --main: #e1cfe6;
+        --columns: #BCA1C4;
+        --bar: #9D86AC;
+
+	    --widget: #C2ACCC;
+        --widget-rgb: 194, 172, 204;
+        --widget-med: #e6c1e6;
+        --widget-med-rgb: 230, 193, 230;
+        --widget-light: #EFE4FF;
+        --section: #d5bbeb;
+        --textarea: #eee;
+        
+        --warning: 245, 233, 194;
+        --warning-text: #493302;
+        --error: 241, 208, 214;
+        --error-text: #660000;
+        --success: 204, 228, 188;
+        --success-text: #224010;
+        
+        --borders: #9aae7e;
+        --borders-med: #A1851A;
+        --borders-light: #C7CC83;
+        
+        --text: #111111;
+        --text-med: #454139;
+        --text-dark: #000;
+        --text-disabled: var(--text-med);
+        --shadow: #fff;
+        --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
+        
+        --strong: #2c0a33;
+        --em: #100e35;
+        --link: #371151;
+        --link-hover: #7f0989;
+        
+        --accent-one: #731D08;
+        --accent-two: #136702;
+        --accent-three: #704500;
+        --accent-four: #220202;
+        --accent-five: #854408;
+        
+        --button-text: #1d1203;
+        --button-text-dark: #031d04;
+        --button-one: #f5f19d;
+        --button-two: #b7cf84;
+        --beige-button-one: #F8F4ED;
+        --beige-button-two: #B9AC8C;
+        --red-button-one: #90dc89;
+        --red-button-two: #f8c220;
+        --button-disabled-one: #6b7658;
+        --button-disabled-two: #c4c386;
+
+        --selected: #e4bb41;
+        --selected-text: #000;
+        
+        --divider: #4b634e;
+
+        --tooltip-bg: #f5eddf;
+        --tooltip-header: #8bcc81;
+        
+        --energy-one: #D9C265;
+        --energy-two: #C3EB89;
+        --energy-border: #654b19;
+        
+        --energy-full-one: #62c472;
+        --energy-full-two: #FFD041;
+        --energy-full-border: #06350e;
+
+        /*NEW VARS FOR REFACTOR*\/
+        --bar-border: var(--borders);
+        --nav-button-bg: var(--widget-med);
+
+        --text-accent: var(--accent-four);
+        --text-subtle: var(--text-med);
+
+        --alt-one: var(--widget);
+        --alt-two: var(--widget-med);
+        --alt-three: var(--widget-light);
+
+        --border-one: var(--borders);
+        --border-two: var(--borders-med);
+        --border-three: var(--borders-light);
+
+        --button-icon: #97a359;
+        --button-icon-text: #1E4602;
+        --button-disabled-text: #6b645a;
+        --button-stroke: #efe8b1;
+        --button-disabled-stroke: #b9b792;
+
+        --sidebar-one: var(--columns);
+        --sidebar-two: var(--columns);
+EOT;
+light3 "Banana" <<<EOT
+        --hue: 0deg;
+        --filter: sepia(100%);
+        --filter-brightness: brightness(95%);
+        --selection-bg: #283916;
+        --selection-text: #fcff9d;
+        
+        --background: #000;
+        --main: #f1eed5;
+        --columns: #E6D79F;
+        --bar: #9FB967;
+        
+        --widget: #F1F8D8;
+        --widget-rgb: 233, 232, 228;
+        --widget-med: #f3e9c0;
+        --widget-med-rgb: 255, 255, 255;
+        --widget-light: #D5EFC0;
+        --section: #efe594;
+        
+        --textarea: #eee;
+        
+        --warning: 245, 233, 194;
+        --warning-text: #493302;
+        --error: 241, 208, 214;
+        --error-text: #660000;
+        --success: 204, 228, 188;
+        --success-text: #224010;
+        
+        --borders: #9aae7e;
+        --borders-med: #A1851A;
+        --borders-light: #C7CC83;
+        
+        --text: #111111;
+        --text-med: #454139;
+        --text-dark: #000;
+        --text-disabled: var(--text-med);
+        --shadow: #fff;
+        --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
+        
+        --strong: #000;
+        --em: #000;
+        --link: #29510e;
+        --link-hover: #925a00;
+        
+        --accent-one: #731D08;
+        --accent-two: #136702;
+        --accent-three: #704500;
+        --accent-four: #220202;
+        --accent-five: #854408;
+        
+        --button-text: #1d1203;
+        --button-text-dark: #031d04;
+        --button-one: #f5f19d;
+        --button-two: #b7cf84;
+        --beige-button-one: #F8F4ED;
+        --beige-button-two: #B9AC8C;
+        --red-button-one: #90dc89;
+        --red-button-two: #f8c220;
+        --button-disabled-one: #6b7658;
+        --button-disabled-two: #c4c386;
+
+        --selected: #e4bb41;
+        --selected-text: #000;
+        
+        --divider: #4b634e;
+
+        --tooltip-bg: #f5eddf;
+        --tooltip-header: #8bcc81;
+        
+        --energy-one: #D9C265;
+        --energy-two: #C3EB89;
+        --energy-border: #654b19;
+        
+        --energy-full-one: #62c472;
+        --energy-full-two: #FFD041;
+        --energy-full-border: #06350e;
+
+        /*NEW VARS FOR REFACTOR*\/
+        --bar-border: var(--borders);
+        --nav-button-bg: var(--widget-med);
+
+        --text-accent: var(--accent-four);
+        --text-subtle: var(--text-med);
+
+        --alt-one: var(--widget);
+        --alt-two: var(--widget-med);
+        --alt-three: var(--widget-light);
+
+        --border-one: var(--borders);
+        --border-two: var(--borders-med);
+        --border-three: var(--borders-light);
+
+        --button-icon: #97a359;
+        --button-icon-text: #1E4602;
+        --button-disabled-text: #6b645a;
+        --button-stroke: #efe8b1;
+        --button-disabled-stroke: #b9b792;
+
+        --sidebar-one: var(--columns);
+        --sidebar-two: var(--columns);
+EOT;
+light3 "Strawberry" <<<EOT EOT;
+light5 "Beach" <<<EOT EOT;
+light99 "Custom" <<<EOT
+        --hue: /*[[hue2]]*\/;
+        --filter: /*[[filter2]]*\/;
+        --filter-brightness: brightness(/*[[brightness2]]*\/);
+        --selection-bg: /*[[selection-bg2]]*\/;
+        --selection-text: /*[[selection-text2]]*\/;
+        
+        --background: #000;
+        --main: /*[[main2]]*\/;
+        --columns: /*[[columns2]]*\/;
+        --bar: /*[[bar2]]*\/;
+        
+        --widget: /*[[widget2]]*\/;
+        --widget-rgb: /*[[widget2-rgb]]*\/;
+        --widget-med: /*[[widget-med2]]*\/;
+        --widget-med-rgb: /*[[widget-med2-rgb]]*\/;
+        --widget-light: /*[[widget-light2]]*\/;
+        --section: /*[[section2]]*\/;
+        
+        --textarea: /*[[textarea2]]*\/;
+        
+        --warning: /*[[warning2-rgb]]*\/;
+        --warning-text: /*[[warning-text2]]*\/;
+        --error: /*[[error2-rgb]]*\/;
+        --error-text: /*[[error-text2]]*\/;
+        --success: /*[[success2-rgb]]*\/;
+        --success-text: /*[[success-text2]]*\/;
+        
+        --borders: /*[[borders2]]*\/;
+        --borders-med: /*[[borders-med2]]*\/;
+        --borders-light: /*[[borders-light2]]*\/;
+        
+        --text: /*[[text2]]*\/;
+        --text-med: /*[[text-med2]]*\/;
+        --text-dark: /*[[text-dark2]]*\/;
+        --text-disabled: var(--text-med);
+        --shadow: /*[[shadow2]]*\/;
+        --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
+        
+        --strong: /*[[strong2]]*\/;
+        --em: /*[[em2]]*\/;
+        --link: /*[[link2]]*\/;
+        --link-hover: /*[[link-hover2]]*\/;
+        
+        --accent-one: /*[[accent-one2]]*\/;
+        --accent-two: /*[[accent-two2]]*\/;
+        --accent-three: /*[[accent-three2]]*\/;
+        --accent-four: /*[[accent-four2]]*\/;
+        --accent-five: /*[[accent-five2]]*\/;
+        
+        --button-text: /*[[button-text2]]*\/;
+        --button-text-dark: /*[[button-text-dark2]]*\/;
+        --button-one: /*[[button-one2]]*\/;
+        --button-two: /*[[button-two2]]*\/;
+        --beige-button-one: /*[[beige-button-one2]]*\/;
+        --beige-button-two: /*[[beige-button-two2]]*\/;
+        --red-button-one: /*[[red-button-one2]]*\/;
+        --red-button-two: /*[[red-button-two2]]*\/;
+        --button-disabled-one: /*[[button-disabled-one2]]*\/;
+        --button-disabled-two: /*[[button-disabled-two2]]*\/;
+        
+        --selected: var(--beige-button-one);
+        --selected-text: var(--button-text-dark);
+        
+        --divider: /*[[divider2]]*\/;
+        
+        --tooltip-bg: /*[[tooltip-bg2]]*\/;
+        --tooltip-header: /*[[tooltip-header2]]*\/;
+        
+        --energy-one: /*[[energy-one2]]*\/;
+        --energy-two: /*[[energy-two2]]*\/;
+        --energy-border: /*[[energy-border2]]*\/;
+        
+        --energy-full-one: /*[[energy-full-one2]]*\/;
+        --energy-full-two: /*[[energy-full-two2]]*\/;
+        --energy-full-border: /*[[energy-full-border2]]*\/;
+
+        /*NEW VARS FOR REFACTOR*\/
+        --bar-border: var(--borders);
+        --nav-button-bg: var(--widget-med);
+
+        --text-accent: var(--accent-four);
+        --text-subtle: var(--text-med);
+
+        --alt-one: var(--widget);
+        --alt-two: var(--widget-med);
+        --alt-three: var(--widget-light);
+
+        --border-one: var(--borders);
+        --border-two: var(--borders-med);
+        --border-three: var(--borders-light);
+
+        --button-icon: /*[[button-icon2]]*\/;
+        --button-icon-text: /*[[button-icon-text2]]*\/;
+        --button-disabled-text: /*[[button-disabled-text2]]*\/;
+        --button-stroke: /*[[button-stroke2]]*\/;
+        --button-disabled-stroke: /*[[button-disabled-stroke2]]*\/;
+
+        --sidebar-one: var(--columns);
+        --sidebar-two: var(--columns);
+
+EOT;
+}
 @advanced dropdown dark "Dark Theme Replacement" {
 dark1 "Classic Blue" <<<EOT 
 
@@ -592,7 +1001,7 @@ dark4 "Dracula" <<<EOT
         --sidebar-two: var(--columns);
 
         /*[[preset-darker-buttons]]*\/button-one: #6272A4;
-        /*[[preset-darker-buttons]]*\/button-two: #282A36;
+        /*[[preset-darker-buttons]]*\/button-two: #583F76;
         /*[[preset-darker-buttons]]*\/button-text: #fff;
         /*[[preset-darker-buttons]]*\/button-text-dark: #fff;
         /*[[preset-darker-buttons]]*\/beige-button-one: #4b5985;
@@ -728,8 +1137,75 @@ oldusertab2 "Enabled" <<<EOT
 }
 EOT;
 }
-
-@advanced dropdown usertabbg "Usertab BG" {
+@advanced dropdown usertabbglight "Light Usertab BG" {
+usertabbglight10 "Stormy" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/cms/scene/52963.png');
+    background-size: 375px;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(350%);
+    opacity: 0.2;
+    transform: scaleX(-1);
+EOT;
+usertabbglight1 "Clouds" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/layout/scryer/predictmorphology_bg.png');
+    background-size: 600px;
+    background-position: -10% 4%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(500%);
+    opacity: 0.3;
+EOT;
+usertabbglight3 "Treasure" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/layout/tooltips/description-5.png');
+    background-size: 244px;
+    background-position: 100% -10%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(65%) contrast(180%);
+EOT;
+usertabbglight4 "Alchemist" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/layout/baldwin/baldwin-background.png');
+    background-size: 400px;
+    background-position: 1% 85%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(65%) contrast(160%);
+    opacity: 0.2;
+EOT;
+usertabbglight5 "Spooky" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/cms/custom-shop/backgrounds/custom-shop-background-639d4d075d8d8.png');
+    background-size: 700px;
+    background-position: 56% 11%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(300%);
+    opacity: 0.25;
+EOT;
+usertabbglight6 "Books" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/cms/familiar/art/48163.png');
+    background-size: 180px;
+    background-position: -10% 19%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(150%);
+    opacity: 0.3;
+    transform: scaleX(-1);
+EOT;
+usertabbglight7 "Warrior" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/cms/custom-shop/backgrounds/custom-shop-background-62f1ff9567e81.png');
+    background-size: 700px;
+    background-position: 8% 76%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(200%);
+    opacity: 0.3;
+EOT;
+usertabbglight9 "Mushroom" <<<EOT
+    background-image: url('https://www1.flightrising.com/static/cms/familiar/art/36303.png');
+    background-size: 180px;
+    background-position: -15% 15%;
+    background-repeat: no-repeat;
+    filter: var(--filter) hue-rotate(var(--hue)) brightness(60%) contrast(150%);
+    opacity: 0.3;
+    transform: scaleX(-1);
+EOT;
+}
+@advanced dropdown usertabbg "Dark Usertab BG" {
 usertabbg1 "Clouds" <<<EOT
     background-image: url('https://www1.flightrising.com/static/layout/scryer/predictmorphology_bg.png');
     background-size: 600px;
@@ -797,7 +1273,7 @@ usertabbg10 "Stormy" <<<EOT
     transform: scaleX(-1);
 EOT;
 }
-@advanced dropdown responsive "Enable Responsive Tablet Layout on Legacy Pages (Experimental, set layout to 'auto' in your account settings)" {
+@advanced dropdown responsive "Enable Responsive Tablet Layout on Legacy Pages (Experimental)" {
 responsive1 "Disabled" <<<EOT  EOT;
 responsive2 "Enabled" <<<EOT 
 @media screen and (max-width: 950px) {
@@ -847,6 +1323,13 @@ responsive2 "Enabled" <<<EOT
     }
     #fr-layout.fr-theme[data-theme][data-location-id="0"][data-responsive="desktop"]:has(#fr-layout-legacy-content)::before {
         background-size: 100%;
+    }
+    /*fix sticky hoard footer pos*\/
+  #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content)  #hoard-result-footer-container[data-pinned="1"] #hoard-functions-left {
+        margin-left: 0px;
+    }
+#fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #hoard-result-footer-container.hoard-result-footer-container-sticky[data-pinned="1"] #hoard-result-footer {
+        padding: 0 30px 0 30px
     }
 }
 EOT;
@@ -1030,7 +1513,7 @@ adblock1 "Enable" <<<EOT /*byebye bottom & nav ad banners*\/
 EOT;
 adblock2 "Disable" <<<EOT  EOT;
 }
-@var select preset-darker-buttons  "Preset Themes: Use Dark-Style Button Scheme" {
+@var select preset-darker-buttons  "Preset Dark Themes: Use Dark-Style Button Scheme" {
     "No" : "--unused-",
     "Yes" : "--"
 }
@@ -1702,17 +2185,45 @@ EOT;
 }
 @advanced dropdown waystone "Fixed Position Waystone" {
     waystone1 "Disabled" <<<EOT EOT;
-    waystone2 "Enabled" <<<EOT
+    waystone3 "On Right" <<<EOT
         #fr-layout-sidebar-waystone {
             position: fixed;
             z-index: 15;
             bottom: 0px;
-            left: 0px;
+            right: 5%;
         }
+    @media screen and (max-width: 1550px) {
+        #fr-layout-sidebar-waystone {
+            right: 0%;
+        }
+    }
+    @media screen and (max-width: 1155px) {
+       #fr-layout[data-responsive="auto"] #fr-layout-sidebar-waystone {
+        position: static;
+      }
+    }
+    EOT;
+    waystone2 "On Left" <<<EOT
+        #fr-layout-sidebar-waystone {
+            position: fixed;
+            z-index: 15;
+            bottom: 0px;
+            left: 5%;
+        }
+    @media screen and (max-width: 1550px) {
+        #fr-layout-sidebar-waystone {
+            left: 0%;
+        }
+    }
+    @media screen and (max-width: 1155px) {
+      #fr-layout[data-responsive="auto"] #fr-layout-sidebar-waystone {
+        position: static;
+      }
+    }
     EOT;
 }
 
-@var checkbox filler0 "─── ↓ Custom Theme Settings ↓ ───" 1
+@var checkbox filler0 "↓ CUSTOM DARK THEME SETTINGS ↓" 1
 @var select filter "Buttons & Default Site BG" {
     "Color (Changes w/ Hue)":"sepia(100%)",
     "Grayscale":"grayscale(100%)"
@@ -1787,7 +2298,82 @@ EOT;
 @var color error-text "Error Message Text" #fac9d4
 @var color success "Success Message Links & BG (semi-transparent)" #98e764
 @var color success-text "Success Message Text" #e2fac9 
+
+@var checkbox filler02 "↓ CUSTOM LIGHT THEME SETTINGS ↓" 1
+@var select filter2 "Buttons & Default Site BG" {
+   "Color (Changes w/ Hue)":"sepia(100%)",
+   "Grayscale":"grayscale(100%)"
+}
+@var range hue2 "Button & Default Site BG Hue" [175, -360, 360, 5, 'deg']
+@var range brightness2 "Buttons Brightness" [95, 65, 125, 5, '%']
+
+@var color main2 "Main Page BG" #22282b
+@var color columns2 "Left/Right Columns" #15191e
+@var color bar2 "Top Bar" #364650
+
+@var color text2 "Text (Primary/Tooltips)" #dae0e7
+@var color text-med2 "Text (Medium/Disabled)" #8495a8
+@var color text-dark2 "Text (Dark)" #2a3d49
+@var color shadow2 "Text Outline" #000
+
+@var color selection-bg2 "Text Select BG" #050613
+@var color selection-text2 "Text Select Color" #ffb1e4
+
+@var color strong2 "Bold Text" #70d2ff
+@var color em2 "Italic Text" #a6dbda
+@var color link2 "Links" #c6b7ff
+@var color link-hover2 "Links Hover" #f194ff
+
+@var color tooltip-bg2 "Tooltip BG" #0C171D
+@var color tooltip-header2 "Tooltip Headings BG" #1b354d
+@var color textarea2 "Textarea BG" #364650
+
+@var color widget2 "Widgets (Dark)" #192429
+@var color widget-med2 "Widgets (Medium)" #293036
+@var color widget-light2 "Widgets (Light)" #415362
+@var color section2 "Sections" #0e131a
+
+@var color borders2 "Borders (Dark)" #060d12
+@var color borders-med2 "Borders (Medium)" #343b40
+@var color borders-light2 "Borders (Light)" #527488
+@var color divider2 "Dividers/Separators" #4b5763
+
+@var color accent-one2 "Accent One" #568fb8
+@var color accent-two2 "Accent Two" #7ce4f7
+@var color accent-three2 "Accent Three" #00ffe1
+@var color accent-four2 "Accent Four" #97d4d9
+@var color accent-five2 "Accent Five" #00faff
+
+@var color button-text2 "Button Text (Main UI)" #000
+@var color button-text-dark2 "Button Text (Red/Beige)" #000
+@var color button-stroke2 "SVG Button Outline" #DDDFF1
+@var color button-icon2 "SVG Button Icon Fill" #4D6586
+@var color button-icon-text2 "SVG Button Text Fill" #20275a
+@var color button-disabled-text2 "Disabled SVG Button Text/Icons Fill" #33365C
+@var color button-disabled-stroke2 "Disabled SVG Button Outline" #8495a8
+@var color button-one2 "Main UI Buttons Gradient 1" #eef3f9
+@var color button-two2 "Main UI Buttons Gradient 2" #bacbdf
+@var color beige-button-one2 "Beige Buttons Gradient 1" #488fad
+@var color beige-button-two2 "Beige Buttons Gradient 2" #7d5f88
+@var color red-button-one2 "Red Button Gradient 1" #31527a
+@var color red-button-two2 "Red Button Gradient 2" #1f3c5f
+@var color button-disabled-one2 "Disabled Buttons Gradient 1" #7f8d9f
+@var color button-disabled-two2 "Disabled Buttons Gradient 2" #444f5b
+
+@var color energy-one2 "Energy/Progress Bars <100%/In-Progress Gradient 1" #235e96
+@var color energy-two2 "Energy/Progress Bars <100%/In-Progress Gradient 2" #80efbd
+@var color energy-border2 "Energy/Progress Bars <100%/In-Progress Border" #70d2ff
         
+@var color energy-full-one2 "Energy/Progress Bars 100%/Complete Gradient 1" #86d2cb
+@var color energy-full-two2 "Energy/Progress Bars 100%/Complete Gradient 2" #b75db7
+@var color energy-full-border2 "Energy/Progress Bars 100%/Complete Border" #5a489b
+        
+@var color warning2 "Warning Message Links & BG (semi-transparent)" #fec16e
+@var color warning-text2 "Warning Message Text" #fde9bd
+@var color error2 "Error Message Links & BG (semi-transparent)" #ff829e
+@var color error-text2 "Error Message Text" #fac9d4
+@var color success2 "Success Message Links & BG (semi-transparent)" #98e764
+@var color success-text2 "Success Message Text" #e2fac9 
 
 ==/UserStyle== */
 
@@ -1795,9 +2381,11 @@ EOT;
     /*REFACTOR THEME CODE*/
     .fr-theme[data-theme="default"] {
         /*[[light]]*/
+        --drop-shadow: rgba(0, 0, 0, .2)
     }
     .fr-theme[data-theme="dark"] {
         /*[[dark]]*/
+        --drop-shadow: rgba(0, 0, 0, .5);
     }
     #fr-layout.fr-theme[data-theme] a {
         color: var(--link);
@@ -1887,8 +2475,11 @@ EOT;
     #fr-layout.fr-theme[data-theme] .theme-text-subtle-3 {
         color: var(--text-subtle);
     }
-    #fr-layout.fr-theme[data-theme] .theme-text-link-3 {
+    #fr-layout.fr-theme[data-theme="dark"] .theme-text-link-3 {
         color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme="default"] .theme-text-link-3 {
+        color: var(--link);
     }
     #fr-layout.fr-theme[data-theme] .theme-background-main-4 {
         background-color: var(--bar);
@@ -1899,11 +2490,11 @@ EOT;
     #fr-layout.fr-theme[data-theme] .theme-background-hover-4:hover {
         background-color: var(--red-button-one);
     }
+    #fr-layout.fr-theme[data-theme] .theme-border-4 {
+        border-color: var(--bar-border)
+    }
     #fr-layout.fr-theme[data-theme] .theme-gradient-4 {
         background: linear-gradient(var(--red-button-one) 0%, var(--red-button-two) 100%);
-    }
-    #fr-layout.fr-theme[data-theme] .theme-border-4 {
-        border-color: var(--bar-border);
     }
     #fr-layout.fr-theme[data-theme] .theme-text-main-4 {
         color: var(--text);
@@ -1923,7 +2514,7 @@ EOT;
         background-color: var(--main);
     }
     #fr-layout.fr-theme[data-theme] .theme-background-alt-5 {
-        background-color: var(--sidebar-one);
+        background-color: var(--bar);
     }
     #fr-layout.fr-theme[data-theme] .theme-background-hover-5:hover {
         background-color: var(--sidebar-two);
@@ -1944,7 +2535,9 @@ EOT;
     #fr-layout.fr-theme[data-theme] .theme-text-subtle-5 {
         color: var(--text-subtle);
     }
-    #fr-layout.fr-theme[data-theme] .theme-text-link-5, #fr-layout.fr-theme[data-theme] a.theme-text-link-5:hover, #fr-layout.fr-theme[data-theme] a.theme-text-link-5:focus {
+    #fr-layout.fr-theme[data-theme] .theme-text-link-5,
+    #fr-layout.fr-theme[data-theme] a.theme-text-link-5:hover,
+    #fr-layout.fr-theme[data-theme] a.theme-text-link-5:focus {
         color: var(--text);
     }
     #fr-layout.fr-theme[data-theme] .theme-background-main-6 {
@@ -2035,6 +2628,9 @@ EOT;
     }
     #fr-layout.fr-theme[data-theme] .theme-svg-bar-glyph-stroke {
         fill: var(--shadow);
+    }
+    #fr-layout.fr-theme[data-theme="default"] .theme-svg-bar-glyph-stroke {
+        --shadow: var(--borders);
     }
     #fr-layout.fr-theme[data-theme] .theme-svg-fixed-navigation-jump-glyph-box {
         fill: var(--button-icon);
@@ -2342,7 +2938,7 @@ EOT;
         color: var(--button-text-dark);
     }
     #fr-layout.fr-theme[data-theme] .theme-ui-3:hover {
-        background: linear-gradient(to top, var(--red-button-one) 0%, var(--red-button-two) 100%);;
+        background: linear-gradient(to top, var(--red-button-one) 0%, var(--red-button-two) 100%);
     }
     #fr-layout.fr-theme[data-theme] .theme-ui-3 a {
         color: var(--button-text);
@@ -2473,10 +3069,12 @@ EOT;
     #fr-layout.fr-theme[data-theme] .ui-dialog .ui-widget-content {
         background: linear-gradient(var(--widget) 0%, var(--widget-med) 100%);
         border-color: var(--border-one);
-        color: var(--acccent-four);
     }
     #fr-layout.fr-theme[data-theme] .ui-button-icon {
         filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(180%) contrast(120%) saturate(400%)
+    }
+    #fr-layout.fr-theme[data-theme="default"] .ui-button-icon {
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) contrast(120%)
     }
     #fr-layout.fr-theme[data-theme] .bbcode_url {
         color: var(--link);
@@ -2604,6 +3202,7 @@ EOT;
     /*usertab fix ugly thing*/
     #fr-layout-player-module-main {
         padding-top: 4px;
+        height: 95px;
     }
     #fr-layout-player-module-main .fr-layout-player-module-left {
         padding-top: 5px;
@@ -2621,6 +3220,10 @@ EOT;
     #fr-layout-alerts circle[style*="fill"] {
         fill: var(--strong) !important;
     }
+    #fr-layout.fr-theme[data-theme="default"] #fr-layout-alerts circle[style*="fill"] {
+        fill: var(--link) !important;
+        filter: brightness(300%);
+    }
     #fr-layout-alerts-content > *:nth-child(2n+1) {
         background: var(--alt-two)
     }
@@ -2628,8 +3231,8 @@ EOT;
         border-width: 2px;
         overflow: hidden;
     }
-    .lair-tab-description {
-        --main: var(--section)
+    .fr-theme[data-theme] .lair-tab-description {
+        background: linear-gradient(to bottom, var(--main) 0%, var(--section) 100%)
     }
     /*sidebar fixes*/
     #home-page-sidebar {
@@ -2661,6 +3264,10 @@ EOT;
         border: 2px solid rgb(var(--warning));
         background-position: 5px 50%;
     }
+    .fr-theme[data-theme="default"] .common-dialog-warning {
+        background-color: rgba(var(--warning),1);
+        border-color: var(--warning-text);
+    }
     .common-message:not(.common-message-info):not(.common-message-success):not(.common-message-error):not(.skin-system-message-buy-blueprints) {
         background: var(--alt-two);
         border-color: var(--border-two)
@@ -2673,6 +3280,11 @@ EOT;
         border-color: rgb(var(--warning));
         background-color: rgba(var(--warning),0.08);
     }
+    .fr-theme[data-theme="default"] .common-message-info,
+    .fr-theme[data-theme="default"] .dgnres-select .info-box {
+        background-color: rgba(var(--warning),1);
+        border-color: var(--warning-text);
+    }
     #wikitext div[style*="url(/images/layout/message_icons/information.png)"] {
         color: var(--warning-text) !important;
         border-color: rgb(var(--warning)) !important;
@@ -2684,22 +3296,33 @@ EOT;
     div.search-errors {
         border: 1px solid;
     }
-    .common-message-info a {
-        color: rgb(var(--warning));
+    #fr-layout.fr-theme[data-theme] .common-message-info a {
+        color: rgb(var(--warning)) !important;
     }
-    .common-message-info a:hover, .common-message-info a:hover > * {
+    #fr-layout.fr-theme[data-theme="default"] .common-message-info a {
+        color: rgb(var(--warning-text)) !important;
+    }
+    #fr-layout.fr-theme[data-theme] .common-message-info a:hover,
+    #fr-layout.fr-theme[data-theme] .common-message-info a:hover > * {
         color: var(--warning-text);
     }
-    .common-message-info a[style*="color"] {
+    #fr-layout.fr-theme[data-theme="dark"] .common-message-info a[style*="color"] {
          color: rgb(var(--warning)) !important;
     }
-    .common-message-info a[style*="color"]:hover {
+    #fr-layout.fr-theme[data-theme="dark"] .common-message-info a[style*="color"]:hover,
+    #fr-layout.fr-theme[data-theme="default"] .common-message-info a[style*="color"],
+    #fr-layout.fr-theme[data-theme="default"] .common-message-info a[style*="color"]:hover {
          color: var(--warning-text) !important;
     }
     .common-message-error, div.search-errors {
         color: var(--error-text);
         border-color: rgb(var(--error));
         background-color: rgba(var(--error),0.08);
+    }
+    #fr-layout.fr-theme[data-theme="default"] .common-message-error,
+    #fr-layout.fr-theme[data-theme="default"] div.search-errors {
+        background-color: rgba(var(--error),1);
+        border-color: var(--error-text);
     }
     .common-message-error a, div.search-errors a {
         color: rgb(var(--error));
@@ -2712,8 +3335,15 @@ EOT;
         border-color: rgb(var(--success));
         background-color: rgba(var(--success),0.08);
     }
+    #fr-layout.fr-theme[data-theme="default"] .common-message-success {
+        background-color: rgba(var(--success),1);
+        border-color: var(--success-text);
+    }
     .common-message-success a {
-        color: rgb(var(--success));
+        color: rgb(var(--success)) !important;
+    }
+    #fr-layout.fr-theme[data-theme="default"] .common-message-success a {
+        color: var(--success-text) !important;
     }
     .common-message-success a:hover, .common-message-success a:hover > * {
         color: var(--success-text);
@@ -2817,8 +3447,15 @@ EOT;
     .dgnres-table tr, .common-table tr, hr.skin-system-hr, .friend-request {
         border-color: var(--divider)
     }
-    img[src*="/images/layout/graydot.gif"], img[src*="/static/layout/graydot.gif"], img.divider {
+    .fr-theme[data-theme="dark"] img[src*="/images/layout/graydot.gif"],
+    .fr-theme[data-theme="dark"] img[src*="/static/layout/graydot.gif"],
+    .fr-theme[data-theme="dark"] img.divider {
         opacity: 0.2;
+    }
+    .fr-theme[data-theme="default"] img[src*="/images/layout/graydot.gif"],
+    .fr-theme[data-theme="default"] img[src*="/static/layout/graydot.gif"],
+    .fr-theme[data-theme="default"] img.divider {
+        opacity: 0.8;
     }
     /*alerts*/
     .statdiv span #alerticon, #trade-chat span, #messicon, #frenicon, span.pending-avatar-msg-count,
@@ -2927,7 +3564,7 @@ EOT;
     #alertlist .alert-v2, #alertlist .alert-v2.alert-v2-darkline, #alertwin .alert-v2.alert-v2-darkline, #alertwin .alert-v2, #status-box .status-row {
         border-bottom: 1px solid var(--borders-med) !important;
     }
-    #alerts-see-all-v2 {
+    #fr-layout.fr-theme[data-theme] #alerts-see-all-v2 {
         padding-bottom: 7px;
         background: var(--section);
     }
@@ -3209,6 +3846,10 @@ EOT;
         border-radius: 5px 5px 0 0;
         /*[[usertabbg]]*/
     }
+    #fr-layout.fr-theme[data-theme="default"] #usertab::before,
+    #fr-layout.fr-theme[data-theme="default"] #fr-layout-player-module #fr-layout-player-module-main::before {
+        /*[[usertabbglight]]*/
+    }
     #fr-layout-player-module #fr-layout-player-module-main::before {
         z-index: -1;
     }
@@ -3352,14 +3993,21 @@ EOT;
     }
     /*buttons*/
     .beigebutton.thingbutton, .thingbutton, .skin-system-order-action {
+        color: var(--button-text-dark);
         padding: 10px;
-        -webkit-box-shadow: 0 2px 3px var(--shadow);
+        box-shadow: none;
         border: 2px solid var(--borders-med);
         background: linear-gradient(to bottom, var(--beige-button-one) 0%, var(--beige-button-two) 100%);
         display: inline-flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+        text-shadow: none;
+    }
+    .fr-theme[data-theme="default"] .beigebutton.thingbutton,
+    .fr-theme[data-theme="default"] .thingbutton,
+    .fr-theme[data-theme="default"] .skin-system-order-action {
+         color: var(--button-text);
     }
     .common-ui-button::after, .common-ui-button-disabled::after, .common-ui-button-accept::after {
         border-color: var(--borders-light)
@@ -3371,7 +4019,7 @@ EOT;
     .redbutton, .redbutton.anybutton, .mb_button, .skin-system-order-action.skin-system-cancel-order {
         background: linear-gradient(to bottom, var(--red-button-one) 0%, var(--red-button-two) 100%);
         color: var(--button-text-dark);
-        -webkit-box-shadow: 0 2px 3px var(--shadow);
+        box-shadow: none;
         font-weight: bold;
     }
     .redbutton:not([disabled]):hover, .redbutton.anybutton:not([disabled]):hover, .mb_button:not([disabled]):hover, .skin-system-order-action.skin-system-cancel-order:not([disabled]):hover {
@@ -3424,7 +4072,7 @@ EOT;
     #fr-layout.fr-theme[data-theme] .beigebutton.thingbutton.inactivebutton {
         background: linear-gradient(to bottom, var(--button-disabled-one) 0%, var(--button-disabled-two) 100%);
         border-color: var(--borders);
-        color: var(--button-text);
+        color: var(--text-med);
         cursor: not-allowed !important;
     }
     #fr-layout.fr-theme[data-theme] .common-ui-vertical-button-group > .common-ui-button:last-child::after,
@@ -3584,7 +4232,7 @@ EOT;
     /*content*/
     .content-header, .menu_header span, h1, #error-404 span, #pl_headerBig {
         color: var(--strong);
-        text-shadow: 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow) !important;
+        /*text-shadow: 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow) !important;*/
     }
     /*popup widgets*/
     .ui-widget-header {
@@ -3983,11 +4631,11 @@ EOT;
     .common-tab {
         border: 2px solid var(--borders-light);
         border-radius: 5px;
-        background: var(--tab);
+        background: var(--button-one);
     }
     .common-tab:hover {
         border: 2px solid var(--borders-light);
-        background: var(--tab-hover);
+        background: var(--button-two);
     }
     .common-tab-selected, .common-tab-selected:hover {
         border-color: var(--accent-five);
@@ -4315,11 +4963,11 @@ EOT;
     }
     #bottom-banner, #bottom-banner-center.content {
         max-width: 950px;
-        background: var(--tab) !important;
+        background: var(--button-one) !important;
     }
     /*footer*/
     div.copybar {
-        background-color: var(--section) !important;
+        background-color: var(--sidebar-one) !important;
         color: var(--text) !important;
         border-radius: 0px !important;
     }
@@ -4588,10 +5236,7 @@ EOT;
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/clan-profile.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/clan\\/settings.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/friends.*") {
     /* Clan Profiles & Friends Page  */
-    
-    #fr-layout.fr-theme[data-theme] .clan-profile-header .theme-svg-header-text-fill  {
-        fill: var(--accent-four);
-    }
+
     #fr-layout.fr-theme[data-theme] .clan-profile-username.clan-profile-header .theme-svg-main-text-fill,
     .clan-profile-icon {
         color: var(--text);
@@ -4678,7 +5323,7 @@ EOT;
     {
         background: var(--section);
     }
-    img[src*="/static/layout/clan-profile/gear.png"] {
+    .fr-theme[data-theme="dark"] img[src*="/static/layout/clan-profile/gear.png"] {
         filter: brightness(200%);
     }
     #comment {
@@ -4803,7 +5448,7 @@ EOT;
         margin-bottom: -1px;
     }
     #dragon-profile-dragon-frame, #dragon-profile-familiar-frame, .dragon-profile-scene-scenic-dragon, .common-animated-familiar {
-        filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, .5));
+        filter: drop-shadow(0px 0px 3px var(--drop-shadow));
     }
     .dragon-profile-scene-scenic-gradient, #dragon-profile-export-gradient {
         background: linear-gradient(to bottom, rgba(255, 0, 0, 0) 70%, var(--main) 100%) !important;
@@ -4837,13 +5482,18 @@ EOT;
     }
     #fr-layout.fr-theme[data-theme] #dragon-profile-show-details .theme-svg-glyph-fill,
     #fr-layout.fr-theme[data-theme] #dragon-profile-hide-details .theme-svg-glyph-fill {
-        fill: var(--button-stroke)
+        fill: var(--button-icon)
     }
     /*[[bio-color-text]]*/
     /*[[bio-override-fonts]]*/
-    .dragon-profile-ability-item-empty, .dragon-profile-item-blank {
+    .dragon-profile-ability-item-empty,
+    #fr-layout.fr-theme[data-theme] .dragon-profile-item-blank,
+    #fr-layout.fr-theme[data-theme] .dragon-profile-item-blank:hover {
         border: 1px solid var(--borders);
         background: linear-gradient(to bottom, var(--widget) 0%, var(--section) 100%);
+    }
+    #fr-layout.fr-theme[data-theme] a.dragon-profile-item-blank:hover {
+        border-color: var(--borders-light)
     }
     .lair-feed-dialog-food-cost {
         color: var(--em) !important;
@@ -5093,9 +5743,7 @@ EOT;
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/lair.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/den.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/nesting\\/.*") {
     /* Lair, Den, & Nesting Grounds  */
-    #fr-layout.fr-theme[data-theme] .theme-ui-3.lair-tab a {
-        color: var(--button-text-dark)
-    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-3.lair-tab a,
     #fr-layout.fr-theme[data-theme] .theme-ui-3.lair-tab:hover a {
         color: var(--button-text-dark)
     }
@@ -5103,7 +5751,11 @@ EOT;
         background-color: var(--tab-hover);
         border-bottom: 2px solid var(--borders);
         border-color: inherit !important;
-        height: 30px
+        height: 30px;
+    }
+    #fr-layout.fr-theme[data-theme] #lair-page-filter-toggle.theme-ui-3 {
+        --red-button-one: var(--button-one);
+        --red-button-two: var(--button-two);
     }
     #unlock-slots-dialog .unlock-slots-dialog-discount {
         background: rgba(var(--success),0.15);
@@ -5118,7 +5770,6 @@ EOT;
     }
     .lair-tab-description {
         background: var(--section);
-        border: none;
         padding: 12px;
     }
     #lair-edit-page #lair-tab-description textarea, #lair-edit-page #lair-tab-description .lair-tab-description-toggle {
@@ -5137,38 +5788,8 @@ EOT;
         margin-top: 6px;
         font-size: 11.5px;
     }
-    .lair-tab {
-        border: 2px solid var(--borders-light);
-        background: var(--tab);
-        border-radius: 10px 10px 0 0;
-    }
-    .lair-tab .lair-tab-move, .lair-tab:hover .lair-tab-move {
-        border-color: var(--borders-light)
-    }
-    .lair-tab:hover {
-        border: 2px solid var(--borders-light);
-        background: var(--widget);
-    }
-    .lair-tab-selected a, .lair-tab-selected:hover a {
-        color: var(--strong);
-    }
-    .lair-tab-selected, .lair-tab-selected:hover {
-        border-color: var(--accent-five);
-        background: var(--tab-hover);
-    }
-    .lair-tab-selected:hover .lair-tab-move {
-        border-color: var(--accent-five)
-    }
     #lair-edit-page .lair-tabs {
         margin-top: 50px
-    }
-    #lair-edit-page .lair-page-filters::before {
-        content: '';
-        position: absolute;
-        height: 43px; width: 37px;
-        background-image: url('https://www1.flightrising.com/static/layout/lair/buttons/filter-large.png');
-        top: calc(50% - 21px); left: 17px;
-        filter: var(--filter) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
     }
     #lair-edit-page .lair-page .lair-page-dragons {
         background: var(--widget);
@@ -5435,10 +6056,6 @@ EOT;
     }
     #bonding-dialog-treasure, .bonding-dialog-reward, .bonding-dialog-rewards-text-fiona, #bonding-dialog-text .bonding-dialog-rewards-text-fiona {
         color: var(--em);
-    }
-    div#ajax-bonding.ui-dialog-content.ui-widget-content, #bonding-dialog {
-        margin-top: 10px;
-        margin-right: 5px;
     }
     .bonding-dialog-fiona, #bonding-dialog-fiona {
         background: linear-gradient(to bottom, var(--widget-med), var(--widget-light) 100%);
@@ -6246,7 +6863,12 @@ EOT;
         background-repeat: no-repeat;
         background-position: top center;
         z-index: -1;
+    }
+    .fr-theme[data-theme="dark"] #crimswap::before {
         filter: invert(100%) var(--filter) hue-rotate(var(--hue)) contrast(80%) saturate(200%);
+    }
+    .fr-theme[data-theme="default"] #crimswap::before {
+        filter: var(--filter) hue-rotate(var(--hue)) contrast(80%);
     }
     #crim-text.common-npc-dialog[data-tail="right"]::before {
         right: -41px !important;
@@ -7325,9 +7947,15 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .fr-theme[data-theme] {
         --post-text: var(--text);
         --widget-med-bg: var(--widget-med);
-        --widget-med-alt: rgba(var(--widget-med-rgb),0.75);
+        --widget-alt-opacity: 0.75;
+        --widget-med-alt: rgba(var(--widget-med-rgb),var(--widget-alt-opacity));
     }
-    
+    .fr-theme[data-theme="default"] {
+        --widget-alt-opacity: 0.6;
+    }
+    #super-container span[style*="#731d08"] {
+        color: var(--accent-one) !important;
+    }
     /*fix dev tracker*/
     #dev-tracker-content .dev-tracker-search-result-timestamp, .pinglist-widget-code, .pinglist-ping-code {
         color: var(--text-med)
@@ -7595,7 +8223,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         display: flex;
         align-items: center;
         box-sizing: border-box;
-        width: 701px;
+        width: 702px;
     }
     .post-text .expand-quotes {
         background-color: var(--widget);
@@ -7640,6 +8268,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-color: var(--widget-med);
         display: flex;
         align-items: center;
+        border-color: var(--borders);
+        border-left: 1px solid var(--borders);
+        border-right: 1px solid var(--borders);
     }
     table#postlist {
         border: none !important;
@@ -8235,13 +8866,18 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 }
 @-moz-document regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/market.*") {
     /* Marketplace */
-    :root {
+    #fr-layout.fr-theme[data-theme="dark"] {
         --flash-item: #ff9758;
-        --flash-price: #e7e1d6;
-        --flash-bg-one: #6b310a;
+        --flash-price: #ffe3b0;
         --flash-bg-one: #43211b;
         --flash-bg-two: #563926;
-        --flash-bg-three: #695124;
+        --flash-border: #b36f27;
+    }
+    #fr-layout.fr-theme[data-theme="default"] {
+        --flash-item: #761b06;
+        --flash-price: #761b06;
+        --flash-bg-one: #e2c44d;
+        --flash-bg-two: #deaf82;
         --flash-border: #b36f27;
     }
     /*bg*/
@@ -8267,24 +8903,25 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     .market-item-result-name, .market-item-result-name-hot {
         top: 13px;
-        color: var(--strong);
     }
-    .market-flash-result .market-item-result-name {
+    #fr-layout.fr-theme[data-theme] .market-flash-result .market-item-result-name {
         color: var(--flash-item);
     }
-    #small-hot-boxes-container .market-item-result-hot, .market-item-result:not(.market-flash-result) {
+    #small-hot-boxes-container .market-item-result-hot,
+    .market-item-result:not(.market-flash-result) {
         background: linear-gradient(to top, var(--section) 0%, var(--widget) 50%, var(--widget-med) 100%);
         border: 2px solid var(--borders-light);
     }
     .market-item-result.market-ghost-box {
-        border: none;
+        opacity: 0.5;
     }
-    .market-item-result.market-flash-result {
+    #fr-layout.fr-theme[data-theme] .market-item-result.market-flash-result {
         background:  linear-gradient(to bottom, #43211b 0%, #563926 50%, #695124 100%);
         border: 2px solid var(--flash-border);
         position: relative;
+        overflow: hidden;
     }
-    .market-item-result.market-flash-result::before {
+    #fr-layout.fr-theme[data-theme] .market-item-result.market-flash-result::before {
         content: '';
         position: absolute;
         top: 0;
@@ -8293,16 +8930,19 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         width: 100%;
         height: 100%;
         opacity: 0.8;
+    }
+    #fr-layout.fr-theme[data-theme="dark"] .market-item-result.market-flash-result::before {
         filter: invert(100%) hue-rotate(180deg);
-        border-radius: 8px;
     }
     .market-item-price-container, .gem-pricing-container {
         background: var(--widget-light);
         color: var(--text);
         border-color: var(--borders);
     }
-    .market-flash-result .market-item-price-container {
-        background: var(--flash-border);
+    #fr-layout.fr-theme[data-theme] .market-flash-result .market-item-price-container {
+        --alt-one: var(--flash-bg-one);
+        --border-one: var(--flash-border);
+        --main: var(--flash-bg-two);
         color: var(--flash-price);
     }
     .treasure-price, .gem-price {
@@ -9064,18 +9704,31 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/lair/backgrounds/female.png"] {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(65%) contrast(190%);
     }
-    img[src$="/layout/button_hatch.png"],
-    img[src$="/layout/button_nest_breed.png"],
-    img[src$="/layout/button_incubate.png"],
-    img[src$="/static/layout/button_boon.png"],
-    img[src$="/layout/eggtimer_0.png"],
-    img[src$="/layout/eggtimer_1.png"],
-    img[src$="/layout/eggtimer_2.png"],
-    img[src$="/layout/eggtimer_3.png"],
-    img[src$="/layout/eggtimer_4.png"],
-    img[src$="/layout/eggtimer_5.png"],
+    .fr-theme[data-theme="dark"] img[src$="/layout/button_hatch.png"],
+    .fr-theme[data-theme="dark"] img[src$="/layout/button_nest_breed.png"],
+    .fr-theme[data-theme="dark"] img[src$="/layout/button_incubate.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/button_boon.png"],
+    .fr-theme[data-theme="dark"] img[src$="/layout/eggtimer_0.png"],
+    .fr-theme[data-theme="dark"] img[src$="/layout/eggtimer_1.png"],
+    .fr-theme[data-theme="dark"] img[src$="/layout/eggtimer_2.png"],
+    .fr-theme[data-theme="dark"] img[src$="/layout/eggtimer_3.png"],
+    .fr-theme[data-theme="dark"] img[src$="/layout/eggtimer_4.png"],
+    .fr-theme[data-theme="dark"] img[src$="/layout/eggtimer_5.png"],
     .coli-equip-statdlg-plus-btn {
         filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(75%) contrast(150%);
+    }
+    .fr-theme[data-theme="default"] img[src$="/layout/button_hatch.png"],
+    .fr-theme[data-theme="default"] img[src$="/layout/button_nest_breed.png"],
+    .fr-theme[data-theme="default"] img[src$="/layout/button_incubate.png"],
+    .fr-theme[data-theme="default"] img[src$="/static/layout/button_boon.png"],
+    .fr-theme[data-theme="default"] img[src$="/layout/eggtimer_0.png"],
+    .fr-theme[data-theme="default"] img[src$="/layout/eggtimer_1.png"],
+    .fr-theme[data-theme="default"] img[src$="/layout/eggtimer_2.png"],
+    .fr-theme[data-theme="default"] img[src$="/layout/eggtimer_3.png"],
+    .fr-theme[data-theme="default"] img[src$="/layout/eggtimer_4.png"],
+    .fr-theme[data-theme="default"] img[src$="/layout/eggtimer_5.png"],
+    .coli-equip-statdlg-plus-btn {
+        filter: var(--filter) hue-rotate(var(--hue)) brightness(95%) contrast(110%);
     }
     img[src$="http://www1.flightrising.com/static/layout/revamp/clock_large.png"], img[src$="/images/layout/revamp/clock_large.png"], img[src$="https://www1.flightrising.com/static/layout/revamp/clock_large.png"],
     #cluetip-waitimage,
@@ -9092,8 +9745,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         filter: invert(100) var(--filter) hue-rotate(var(--hue));
         opacity: 0.7;
     }
-    img[src$="/static/layout/auctionhouse/searchtab_down.png"],
-    img[src$="/static/layout/auctionhouse/searchtab_up.png"] {
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/auctionhouse/searchtab_down.png"],
+    .fr-theme[data-theme="dark"] img[src$="/static/layout/auctionhouse/searchtab_up.png"] {
         filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(200%) contrast(150%);
     }
     .fr-theme[data-theme="dark"] img[src$="/static/layout/baldwin/arrow.png"],
@@ -9113,6 +9766,14 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .fr-theme[data-theme="dark"] img[src$="/static/icons/question.png"],
     .fr-theme[data-theme="dark"] .forum-hidden-icon {
         filter: invert(100%) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(100%) contrast(100%)
+    }
+    .fr-theme[data-theme="default"] img[src$="/static/layout/button_attachdragon.png"],
+    .fr-theme[data-theme="default"] img[src$="/static/layout/icon_itemnotattached.png"],
+    .fr-theme[data-theme="default"] img[src$="/static/layout/icon_currencynotattached.png"],
+    .fr-theme[data-theme="default"] img[src$="/static/layout/icon_dragonnotattached.png"],
+    .fr-theme[data-theme="default"] img[src$="/static/icons/question.png"],
+    .fr-theme[data-theme="default"] .forum-hidden-icon {
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue))
     }
     .fr-theme[data-theme="dark"] #coli-equip-statpoints-btn,
     .fr-theme[data-theme="dark"] .coli-equip-statdlg-plus-btn.coli-equip-disabled {
