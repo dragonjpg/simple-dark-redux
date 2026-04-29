@@ -16,8 +16,8 @@ light1 "Rainy Day" <<<EOT
         --hue: -200deg;
         --filter: sepia(100%);
         --filter-brightness: brightness(95%);
-        --selection-bg: #283916;
-        --selection-text: #fcff9d;
+        --selection-bg: #86a7b5;
+        --selection-text: #060a10;
         
         --background: #000;
         --main: #d1d1d1;
@@ -51,8 +51,8 @@ light1 "Rainy Day" <<<EOT
         --shadow: #fff;
         --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
         
-        --strong: #000;
-        --em: #000;
+        --strong: #0f0a1d;
+        --em: #19212a;
         --link: #0b4d67;
         --link-hover: #7f7e7d;
 
@@ -60,10 +60,10 @@ light1 "Rainy Day" <<<EOT
         --accent-two: #60729d;
         --accent-three: #12549b;
         --accent-four: #0b1140;
-        --accent-five: #854408;
+        --accent-five: #140e5e;
 
         --button-text: #111333;
-        --button-text-dark: #031d04;
+        --button-text-dark: #03031d;
         --button-one: #d1ccbc;
         --button-two: #829a9d;
         --beige-button-one: #D7EEFC;
@@ -76,7 +76,7 @@ light1 "Rainy Day" <<<EOT
         --selected: #859ba8;
         --selected-text: #000;
         
-        --divider: #4b634e;
+        --divider: #5f5f63;
 
         --tooltip-bg: #d4dee2;
         --tooltip-header: #a5d0ef;
@@ -87,7 +87,7 @@ light1 "Rainy Day" <<<EOT
 
         --energy-full-one: #9ae2c7;
         --energy-full-two: #91A7FC;
-        --energy-full-border: #06350e;
+        --energy-full-border: #03031d;
 
         /*NEW VARS FOR REFACTOR*\/
         --bar-border: var(--borders);
@@ -117,77 +117,78 @@ light2 "Lavender" <<<EOT
         --hue: -150deg;
         --filter: sepia(100%);
         --filter-brightness: brightness(97%);
-        --selection-bg: #283916;
-        --selection-text: #fcff9d;
+        --selection-bg: #baade9;
+        --selection-text: #0b0110;
 
         --background: #000;
-        --main: #e1cfe6;
-        --columns: #BCA1C4;
-        --bar: #9D86AC;
+        --main: #e4d6f1;
+        --columns: #D4AEDC;
+        --bar: #A78FCA;
 
-	    --widget: #C2ACCC;
+        --widget: #C2ACCC;
         --widget-rgb: 194, 172, 204;
-        --widget-med: #e6c1e6;
-        --widget-med-rgb: 230, 193, 230;
-        --widget-light: #EFE4FF;
+        --widget-med: #f3cef3;
+        --widget-med-rgb: 243, 206, 243;
+        --widget-light: #D8C2F8;
         --section: #d5bbeb;
-        --textarea: #eee;
-        
+
+        --textarea: #f1ecf8;
+
         --warning: 245, 233, 194;
         --warning-text: #493302;
         --error: 241, 208, 214;
         --error-text: #660000;
         --success: 204, 228, 188;
         --success-text: #224010;
-        
-        --borders: #9aae7e;
-        --borders-med: #A1851A;
-        --borders-light: #C7CC83;
-        
-        --text: #111111;
-        --text-med: #454139;
+
+        --borders: #887ab9;
+        --borders-med: #CA93D5;
+        --borders-light: #E4BBE0;
+
+        --text: #040113;
+        --text-med: #504253;
         --text-dark: #000;
         --text-disabled: var(--text-med);
         --shadow: #fff;
         --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
-        
+
         --strong: #2c0a33;
         --em: #100e35;
         --link: #371151;
         --link-hover: #7f0989;
-        
-        --accent-one: #731D08;
-        --accent-two: #136702;
-        --accent-three: #704500;
-        --accent-four: #220202;
-        --accent-five: #854408;
-        
-        --button-text: #1d1203;
-        --button-text-dark: #031d04;
-        --button-one: #f5f19d;
-        --button-two: #b7cf84;
-        --beige-button-one: #F8F4ED;
-        --beige-button-two: #B9AC8C;
-        --red-button-one: #90dc89;
-        --red-button-two: #f8c220;
-        --button-disabled-one: #6b7658;
-        --button-disabled-two: #c4c386;
 
-        --selected: #e4bb41;
+        --accent-one: #462256;
+        --accent-two: #431c89;
+        --accent-three: #7952a1;
+        --accent-four: #291c58;
+        --accent-five: #5c0b57;
+
+        --button-text: #310849;
+        --button-text-dark: #07063c;
+        --button-one: #d1b7f1;
+        --button-two: #f5d3f8;
+        --beige-button-one: #C4B1E6;
+        --beige-button-two: #AB8BD9;
+        --red-button-one: #d689dc;
+        --red-button-two: #b1a0ed;
+        --button-disabled-one: #917dc4;
+        --button-disabled-two: #c67fcc;
+
+        --selected: #ad66de;
         --selected-text: #000;
-        
-        --divider: #4b634e;
 
-        --tooltip-bg: #f5eddf;
-        --tooltip-header: #8bcc81;
-        
-        --energy-one: #D9C265;
-        --energy-two: #C3EB89;
-        --energy-border: #654b19;
-        
-        --energy-full-one: #62c472;
-        --energy-full-two: #FFD041;
-        --energy-full-border: #06350e;
+        --divider: #796990;
+
+        --tooltip-bg: #f2dff5;
+        --tooltip-header: #c09edc;
+
+        --energy-one: #BD92D5;
+        --energy-two: #AA9DE9;
+        --energy-border: #563b85;
+
+        --energy-full-one: #ee7df8;
+        --energy-full-two: #B58BF3;
+        --energy-full-border: #380972;
 
         /*NEW VARS FOR REFACTOR*\/
         --bar-border: var(--borders);
@@ -204,16 +205,117 @@ light2 "Lavender" <<<EOT
         --border-two: var(--borders-med);
         --border-three: var(--borders-light);
 
-        --button-icon: #97a359;
-        --button-icon-text: #1E4602;
-        --button-disabled-text: #6b645a;
-        --button-stroke: #efe8b1;
-        --button-disabled-stroke: #b9b792;
+        --button-icon: #937ad7;
+        --button-icon-text: #702692;
+        --button-disabled-text: #63619f;
+        --button-stroke: #f3d0f8;
+        --button-disabled-stroke: #d59dcf;
 
         --sidebar-one: var(--columns);
         --sidebar-two: var(--columns);
 EOT;
-light3 "Banana" <<<EOT
+light3 "Strawberry" <<<EOT 
+        --hue: -59deg;
+        --filter: sepia(100%);
+        --filter-brightness: brightness(100%);
+        --selection-bg: #b58686;
+        --selection-text: #061009;
+
+        --background: #000;
+        --main: #ede9e6;
+        --columns: #C7CC9F;
+        --bar: #e2a0aa;
+
+        --widget: #ebebb8;
+        --widget-rgb: 235, 235, 184;
+        --widget-med: #edd3d3;
+        --widget-med-rgb: 237, 211, 211;
+        --widget-light: #EBE1C4;
+        --section: #d9c6c6;
+
+        --textarea: #f8fcdd;
+
+        --warning: 245, 233, 194;
+        --warning-text: #493302;
+        --error: 241, 208, 214;
+        --error-text: #660000;
+        --success: 204, 228, 188;
+        --success-text: #224010;
+
+        --borders: #ca939a;
+        --borders-med: #718E64;
+        --borders-light: #B9D79A;
+
+        --text: #1b0208;
+        --text-med: #454139;
+        --text-dark: #000;
+        --text-disabled: var(--text-med);
+        --shadow: #fff;
+        --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
+
+        --strong: #0e3702;
+        --em: #130000;
+        --link: #670000;
+        --link-hover: #155802;
+
+        --accent-one: #18401A;
+        --accent-two: #783044;
+        --accent-three: #901111;
+        --accent-four: #40150b;
+        --accent-five: #5e0e3b;
+
+        --button-text: #311;
+        --button-text-dark: #1d0101;
+        --button-one: #eff8e2;
+        --button-two: #e9c2be;
+        --beige-button-one: #F5C5D1;
+        --beige-button-two: #EF9696;
+        --red-button-one: #c2ebba;
+        --red-button-two: #e48a8a;
+        --button-disabled-one: #c29999;
+        --button-disabled-two: #afbda6;
+
+        --selected: #d58896;
+        --selected-text: #000;
+
+        --divider: #634b4b;
+
+        --tooltip-bg: #e0e2d4;
+        --tooltip-header: #efb7b7;
+
+        --energy-one: #e2aeb3;
+        --energy-two: #9DBF8E;
+        --energy-border: #8c6870;
+
+        --energy-full-one: #fa808c;
+        --energy-full-two: #A5E289;
+        --energy-full-border: #65071d;
+
+        /*NEW VARS FOR REFACTOR*\/
+        --bar-border: var(--borders);
+        --nav-button-bg: var(--widget-med);
+
+        --text-accent: var(--accent-four);
+        --text-subtle: var(--text-med);
+
+        --alt-one: var(--widget);
+        --alt-two: var(--widget-med);
+        --alt-three: var(--widget-light);
+
+        --border-one: var(--borders);
+        --border-two: var(--borders-med);
+        --border-three: var(--borders-light);
+
+        --button-icon: #bb8781;
+        --button-icon-text: #460707;
+        --button-disabled-text: #4a5649;
+        --button-stroke: #efe0d1;
+        --button-disabled-stroke: #b98d91;
+
+        --sidebar-one: var(--columns);
+        --sidebar-two: var(--columns);
+EOT;
+light4 "Banana" <<<EOT
         --hue: 0deg;
         --filter: sepia(100%);
         --filter-brightness: brightness(95%);
@@ -226,13 +328,13 @@ light3 "Banana" <<<EOT
         --bar: #9FB967;
         
         --widget: #F1F8D8;
-        --widget-rgb: 233, 232, 228;
+        --widget-rgb: 241, 248, 216;
         --widget-med: #f3e9c0;
-        --widget-med-rgb: 255, 255, 255;
+        --widget-med-rgb: 243, 233, 192;
         --widget-light: #D5EFC0;
         --section: #efe594;
         
-        --textarea: #eee;
+        --textarea: #D5EFC0;
         
         --warning: 245, 233, 194;
         --warning-text: #493302;
@@ -257,10 +359,10 @@ light3 "Banana" <<<EOT
         --link: #29510e;
         --link-hover: #925a00;
         
-        --accent-one: #731D08;
+        --accent-one: #403103;
         --accent-two: #136702;
         --accent-three: #704500;
-        --accent-four: #220202;
+        --accent-four: #022212;
         --accent-five: #854408;
         
         --button-text: #1d1203;
@@ -314,8 +416,210 @@ light3 "Banana" <<<EOT
         --sidebar-one: var(--columns);
         --sidebar-two: var(--columns);
 EOT;
-light3 "Strawberry" <<<EOT EOT;
-light5 "Beach" <<<EOT EOT;
+light5 "Beach" <<<EOT
+        --hue: 150deg;
+        --filter: sepia(100%);
+        --filter-brightness: brightness(98%);
+        --selection-bg: #7ec8e3;
+        --selection-text: #0b2a33;
+
+        --background: #000;
+        --main: #fff6e8;
+        --columns: #e1f1e8;
+        --bar: #5bb4c9;
+
+        --widget: #e6f5ef;
+        --widget-rgb: 230, 245, 239;
+        --widget-med: #d8e7ec;
+        --widget-med-rgb: 216, 231, 236;
+        --widget-light: #faeace;
+        --section: #fae8cf;
+
+        --textarea: #fdfaf3;
+
+        --warning: 245, 233, 194;
+        --warning-text: #493302;
+        --error: 241, 208, 214;
+        --error-text: #660000;
+        --success: 204, 228, 188;
+        --success-text: #224010;
+
+        --borders: #9ecad6;
+        --borders-med: #6aa6b6;
+        --borders-light: #f5d5d5;
+
+        --text: #0b2a33;
+        --text-med: #3f5f66;
+        --text-dark: #000;
+        --text-disabled: var(--text-med);
+        --shadow: #fff;
+        --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
+
+        --strong: #0a3a46;
+        --em: #12343b;
+        --link: #1f7a8c;
+        --link-hover: #9f4949;
+
+        --accent-one: #00a8c6;
+        --accent-two: #835008;
+        --accent-three: #b53a4b;
+        --accent-four: #1a489b;
+        --accent-five: #a6770c;
+
+        --button-text: #0b2a33;
+        --button-text-dark: #06191f;
+        --button-one: #d5f5e5;
+        --button-two: #cfe3e8;
+        --beige-button-one: #f4e3c3;
+        --beige-button-two: #e8d2a6;
+        --red-button-one: #b8e0d2;
+        --red-button-two: #e6a8a8;
+        --button-disabled-one: #c3d3d8;
+        --button-disabled-two: #aabcc2;
+
+        --selected: #7ec8e3;
+        --selected-text: #062028;
+
+        --divider: #7faab5;
+
+        --tooltip-bg: #e6f2f5;
+        --tooltip-header: #cfe3e8;
+
+        --energy-one: #7ec8e3;
+        --energy-two: #b8e0d2;
+        --energy-border: #5f9fb0;
+
+        --energy-full-one: #4fb3d8;
+        --energy-full-two: #8fd6c3;
+        --energy-full-border: #2c6e7f;
+
+        /* NEW VARS FOR REFACTOR *\/
+        --bar-border: var(--borders);
+        --nav-button-bg: var(--widget-med);
+
+        --text-accent: var(--accent-four);
+        --text-subtle: var(--text-med);
+
+        --alt-one: var(--widget);
+        --alt-two: var(--widget-med);
+        --alt-three: var(--widget-light);
+
+        --border-one: var(--borders);
+        --border-two: var(--borders-med);
+        --border-three: var(--borders-light);
+
+        --button-icon: #6aa6b6;
+        --button-icon-text: #0b2a33;
+        --button-disabled-text: #5f7378;
+        --button-stroke: #f3eacd;
+        --button-disabled-stroke: #aabcc2;
+
+        --sidebar-one: var(--columns);
+        --sidebar-two: var(--columns);
+EOT;
+light6 "Alucard" <<<EOT
+        --hue: 0deg;
+        --filter: sepia(100%);
+        --filter-brightness: brightness(100%);
+        --selection-bg: #cfcfde;
+        --selection-text: #1f1f1f;
+
+        --background: #000;
+        --main: #FFFBEB;
+        --columns: #ebe5c9;
+        --bar: #ede3b4;
+
+        --widget: #f6f1da;
+        --widget-rgb: 246, 241, 218;
+        --widget-med: #e9e2c2;
+        --widget-med-rgb: 233, 226, 194;
+        --widget-light: #f5f4ed;
+        --section: #e9e6d7;
+
+        --tab: #ebe5c9;
+        --tab-hover: #e0d9b8;
+        --textarea: #e6dfbf;
+
+        --warning: 255, 226, 206;
+        --warning-text: #7a380c;
+        --error: 254, 226, 223;
+        --error-text: #90170a;
+        --success: 221, 239, 219;
+        --success-text: #14710a;
+
+        --borders: #aea26b;
+        --borders-med: #c6ac85;
+        --borders-light: #c4bb93;
+
+        --text: #1F1F1F;
+        --text-med: #6c664b;
+        --text-dark: #5a553f;
+        --text-disabled: var(--text-med);
+        --shadow: #fff;
+        --stroke: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 0px var(--shadow), -2px 1px 0px var(--shadow), -2px 2px 0px var(--shadow), -1px -2px 0px var(--shadow), -1px -1px 0px var(--shadow), -1px 0px 0px var(--shadow), -1px 1px 0px var(--shadow), -1px 2px 0px var(--shadow), 0px -2px 0px var(--shadow), 0px -1px 0px var(--shadow), 0px 0px 0px var(--shadow), 0px 1px 0px var(--shadow), 0px 2px 0px var(--shadow), 1px -2px 0px var(--shadow), 1px -1px 0px var(--shadow), 1px 0px 0px var(--shadow), 1px 1px 0px var(--shadow), 1px 2px 0px var(--shadow), 2px -2px 0px var(--shadow), 2px -1px 0px var(--shadow), 2px 0px 0px var(--shadow), 2px 1px 0px var(--shadow), 2px 2px 0px var(--shadow);
+
+        --strong: #036a96;
+        --em: #6b580a;
+        --link: #a3144d;
+        --link-hover: #644ac9;
+
+        --accent-one: #a3144d;
+        --accent-two: #14710a;
+        --accent-three: #a34d14;
+        --accent-four: #036a96;
+        --accent-five: #644ac9;
+
+        --button-text: #1f1f1f;
+        --button-text-dark: #ffffff;
+        --button-one: #ffffff;
+        --button-two: #dcd5b5;
+        --beige-button-one: #e0d9b8;
+        --beige-button-two: #cfc7a3;
+        --red-button-one: #cb3a2a;
+        --red-button-two: #a3144d;
+        --button-disabled-one: #d6cfb0;
+        --button-disabled-two: #c4bb93;
+
+        --selected: #14710a;
+        --selected-text: #ffffff;
+
+        --divider: #cfc7a3;
+
+        --tooltip-bg: #f6f1da;
+        --tooltip-header: #ebe5c9;
+
+        --energy-one: #036a96;
+        --energy-two: #644ac9;
+        --energy-border: #c4bb93;
+
+        --energy-full-one: #644ac9;
+        --energy-full-two: #a3144d;
+        --energy-full-border: #c4bb93;
+
+        /*NEW VARS FOR REFACTOR*\/
+        --bar-border: var(--borders);
+
+        --text-accent: var(--accent-four);
+        --text-subtle: var(--text-med);
+
+        --alt-one: var(--widget);
+        --alt-two: var(--widget-med);
+        --alt-three: var(--widget-light);
+        --button-disabled-text: #6c664b;
+
+        --border-one: var(--borders);
+        --border-two: var(--borders-med);
+        --border-three: var(--borders-light);
+
+        --button-icon: #6c664b;
+        --button-icon-text: #1f1f1f;
+        --button-stroke: #ffffff;
+        --button-disabled-stroke: #c4bb93;
+        --nav-button-bg: var(--widget-med);
+
+        --sidebar-one: var(--columns);
+        --sidebar-two: var(--columns);
+EOT;
 light99 "Custom" <<<EOT
         --hue: /*[[hue2]]*\/;
         --filter: /*[[filter2]]*\/;
@@ -421,7 +725,6 @@ EOT;
 }
 @advanced dropdown dark "Dark Theme Replacement" {
 dark1 "Classic Blue" <<<EOT 
-
         --hue: 175deg;
         --filter: sepia(100%);
         --filter-brightness: brightness(/*[[preset-brightness]]*\/);
@@ -539,7 +842,6 @@ dark1 "Classic Blue" <<<EOT
 
 EOT;
 dark5 "Rising Red" <<<EOT 
-
         --hue: -30deg;
         --filter: sepia(100%);
         --filter-brightness: saturate(50%) brightness(/*[[preset-brightness]]*\/);
@@ -658,7 +960,6 @@ dark5 "Rising Red" <<<EOT
 
 EOT;
 dark2 "Gray" <<<EOT
-
         --hue: -30deg;
         --filter: grayscale(100%);
         --filter-brightness: brightness(/*[[preset-brightness]]*\/);
@@ -766,8 +1067,8 @@ dark2 "Gray" <<<EOT
         /*[[preset-darker-buttons]]*\/button-two: #262626;
         /*[[preset-darker-buttons]]*\/button-text: #fff;
         /*[[preset-darker-buttons]]*\/button-text-dark: #fff;
-        /*[[preset-darker-buttons]]*\/beige-button-one: #3e3737;
-        /*[[preset-darker-buttons]]*\/beige-button-two: #222;
+        /*[[preset-darker-buttons]]*\/beige-button-one: #443838;
+        /*[[preset-darker-buttons]]*\/beige-button-two: #0e0e0e;
         /*[[preset-darker-buttons]]*\/red-button-one: #a36c32;
         /*[[preset-darker-buttons]]*\/red-button-two: #5b0629;
         /*[[preset-darker-buttons]]*\/button-disabled-one: #3b3b3b;
@@ -778,7 +1079,6 @@ dark2 "Gray" <<<EOT
 
 EOT;
 dark3 "Copper" <<<EOT
-
         --hue: -35deg;
         --filter: sepia(100%);
         --filter-brightness: saturate(60%) brightness(/*[[preset-brightness]]*\/);
@@ -2304,76 +2604,76 @@ EOT;
    "Color (Changes w/ Hue)":"sepia(100%)",
    "Grayscale":"grayscale(100%)"
 }
-@var range hue2 "Button & Default Site BG Hue" [175, -360, 360, 5, 'deg']
+@var range hue2 "Button & Default Site BG Hue" [-200, -360, 360, 5, 'deg']
 @var range brightness2 "Buttons Brightness" [95, 65, 125, 5, '%']
 
-@var color main2 "Main Page BG" #22282b
-@var color columns2 "Left/Right Columns" #15191e
-@var color bar2 "Top Bar" #364650
+@var color main2 "Main Page BG" #d1d1d1
+@var color columns2 "Left/Right Columns" #B7BCBF
+@var color bar2 "Top Bar" #7F8F94
 
-@var color text2 "Text (Primary/Tooltips)" #dae0e7
-@var color text-med2 "Text (Medium/Disabled)" #8495a8
-@var color text-dark2 "Text (Dark)" #2a3d49
-@var color shadow2 "Text Outline" #000
+@var color text2 "Text (Primary/Tooltips)" #111111
+@var color text-med2 "Text (Medium/Disabled)" #454139
+@var color text-dark2 "Text (Dark)" #000
+@var color shadow2 "Text Outline" #fff
 
-@var color selection-bg2 "Text Select BG" #050613
-@var color selection-text2 "Text Select Color" #ffb1e4
+@var color selection-bg2 "Text Select BG" #86a7b5
+@var color selection-text2 "Text Select Color" #060a10
 
-@var color strong2 "Bold Text" #70d2ff
-@var color em2 "Italic Text" #a6dbda
-@var color link2 "Links" #c6b7ff
-@var color link-hover2 "Links Hover" #f194ff
+@var color strong2 "Bold Text" #0f0a1d
+@var color em2 "Italic Text" #19212a
+@var color link2 "Links" #0b4d67
+@var color link-hover2 "Links Hover" #7f7e7d
 
-@var color tooltip-bg2 "Tooltip BG" #0C171D
-@var color tooltip-header2 "Tooltip Headings BG" #1b354d
-@var color textarea2 "Textarea BG" #364650
+@var color tooltip-bg2 "Tooltip BG" #d4dee2
+@var color tooltip-header2 "Tooltip Headings BG" #a5d0ef
+@var color textarea2 "Textarea BG" #eee
 
-@var color widget2 "Widgets (Dark)" #192429
-@var color widget-med2 "Widgets (Medium)" #293036
-@var color widget-light2 "Widgets (Light)" #415362
-@var color section2 "Sections" #0e131a
+@var color widget2 "Widgets (Dark)" #afbec6
+@var color widget-med2 "Widgets (Medium)" #dedede
+@var color widget-light2 "Widgets (Light)" #ADC4CC
+@var color section2 "Sections" #c6d6d9
 
-@var color borders2 "Borders (Dark)" #060d12
-@var color borders-med2 "Borders (Medium)" #343b40
-@var color borders-light2 "Borders (Light)" #527488
-@var color divider2 "Dividers/Separators" #4b5763
+@var color borders2 "Borders (Dark)" #888f9f
+@var color borders-med2 "Borders (Medium)" #1A68A1
+@var color borders-light2 "Borders (Light)" #ABD1D7
+@var color divider2 "Dividers/Separators" #5f5f63
 
-@var color accent-one2 "Accent One" #568fb8
-@var color accent-two2 "Accent Two" #7ce4f7
-@var color accent-three2 "Accent Three" #00ffe1
-@var color accent-four2 "Accent Four" #97d4d9
-@var color accent-five2 "Accent Five" #00faff
+@var color accent-one2 "Accent One" #302A5E
+@var color accent-two2 "Accent Two" #60729d
+@var color accent-three2 "Accent Three" #12549b
+@var color accent-four2 "Accent Four" #0b1140
+@var color accent-five2 "Accent Five" #140e5e
 
-@var color button-text2 "Button Text (Main UI)" #000
-@var color button-text-dark2 "Button Text (Red/Beige)" #000
-@var color button-stroke2 "SVG Button Outline" #DDDFF1
-@var color button-icon2 "SVG Button Icon Fill" #4D6586
-@var color button-icon-text2 "SVG Button Text Fill" #20275a
-@var color button-disabled-text2 "Disabled SVG Button Text/Icons Fill" #33365C
-@var color button-disabled-stroke2 "Disabled SVG Button Outline" #8495a8
-@var color button-one2 "Main UI Buttons Gradient 1" #eef3f9
-@var color button-two2 "Main UI Buttons Gradient 2" #bacbdf
-@var color beige-button-one2 "Beige Buttons Gradient 1" #488fad
-@var color beige-button-two2 "Beige Buttons Gradient 2" #7d5f88
-@var color red-button-one2 "Red Button Gradient 1" #31527a
-@var color red-button-two2 "Red Button Gradient 2" #1f3c5f
-@var color button-disabled-one2 "Disabled Buttons Gradient 1" #7f8d9f
-@var color button-disabled-two2 "Disabled Buttons Gradient 2" #444f5b
+@var color button-text2 "Button Text (Main UI)" #111333
+@var color button-text-dark2 "Button Text (Red/Beige)" #03031d
+@var color button-stroke2 "SVG Button Outline" #b5ced5
+@var color button-icon2 "SVG Button Icon Fill" #8a939d
+@var color button-icon-text2 "SVG Button Text Fill" #414D5A
+@var color button-disabled-text2 "Disabled SVG Button Text/Icons Fill" #494c56
+@var color button-disabled-stroke2 "Disabled SVG Button Outline" #7a8ea8
+@var color button-one2 "Main UI Buttons Gradient 1" #d1ccbc
+@var color button-two2 "Main UI Buttons Gradient 2" #829a9d
+@var color beige-button-one2 "Beige Buttons Gradient 1" #D7EEFC
+@var color beige-button-two2 "Beige Buttons Gradient 2" #B3B6BF
+@var color red-button-one2 "Red Button Gradient 1" #93c6eb
+@var color red-button-two2 "Red Button Gradient 2" #d7d7d7
+@var color button-disabled-one2 "Disabled Buttons Gradient 1" #a39191
+@var color button-disabled-two2 "Disabled Buttons Gradient 2" #8e9ba3
 
-@var color energy-one2 "Energy/Progress Bars <100%/In-Progress Gradient 1" #235e96
-@var color energy-two2 "Energy/Progress Bars <100%/In-Progress Gradient 2" #80efbd
-@var color energy-border2 "Energy/Progress Bars <100%/In-Progress Border" #70d2ff
+@var color energy-one2 "Energy/Progress Bars <100%/In-Progress Gradient 1" #B3D7CF
+@var color energy-two2 "Energy/Progress Bars <100%/In-Progress Gradient 2" #8996B3
+@var color energy-border2 "Energy/Progress Bars <100%/In-Progress Border" #38464b
         
-@var color energy-full-one2 "Energy/Progress Bars 100%/Complete Gradient 1" #86d2cb
-@var color energy-full-two2 "Energy/Progress Bars 100%/Complete Gradient 2" #b75db7
-@var color energy-full-border2 "Energy/Progress Bars 100%/Complete Border" #5a489b
+@var color energy-full-one2 "Energy/Progress Bars 100%/Complete Gradient 1" #9ae2c7
+@var color energy-full-two2 "Energy/Progress Bars 100%/Complete Gradient 2" #91A7FC
+@var color energy-full-border2 "Energy/Progress Bars 100%/Complete Border" #03031d
         
-@var color warning2 "Warning Message Links & BG (semi-transparent)" #fec16e
-@var color warning-text2 "Warning Message Text" #fde9bd
-@var color error2 "Error Message Links & BG (semi-transparent)" #ff829e
-@var color error-text2 "Error Message Text" #fac9d4
-@var color success2 "Success Message Links & BG (semi-transparent)" #98e764
-@var color success-text2 "Success Message Text" #e2fac9 
+@var color warning2 "Warning Message BG" #F5E9C2
+@var color warning-text2 "Warning Message Text & Links" #493302
+@var color error2 "Error Message BG" #F1D0D6
+@var color error-text2 "Error Message Text & Links" #660000
+@var color success2 "Success Message BG" #CCE4BC
+@var color success-text2 "Success Message Text & Links" #224010 
 
 ==/UserStyle== */
 
@@ -3220,6 +3520,9 @@ EOT;
     #fr-layout-alerts circle[style*="fill"] {
         fill: var(--strong) !important;
     }
+    .home-page-announcement-timestamp em {
+        color: inherit;
+    }
     #fr-layout.fr-theme[data-theme="default"] #fr-layout-alerts circle[style*="fill"] {
         fill: var(--link) !important;
         filter: brightness(300%);
@@ -4022,6 +4325,10 @@ EOT;
         box-shadow: none;
         font-weight: bold;
     }
+    .redbutton.anybutton {
+        border: 2px solid var(--borders-med);
+        text-shadow: none;
+    }
     .redbutton:not([disabled]):hover, .redbutton.anybutton:not([disabled]):hover, .mb_button:not([disabled]):hover, .skin-system-order-action.skin-system-cancel-order:not([disabled]):hover {
         color: var(--button-text-dark);
         background: linear-gradient(to top, var(--red-button-one) 0%, var(--red-button-two) 100%);
@@ -4232,7 +4539,6 @@ EOT;
     /*content*/
     .content-header, .menu_header span, h1, #error-404 span, #pl_headerBig {
         color: var(--strong);
-        /*text-shadow: 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow) !important;*/
     }
     /*popup widgets*/
     .ui-widget-header {
@@ -4887,6 +5193,10 @@ EOT;
     .scry-image .scry-buttons, .outfit-image .outfit-buttons {
         z-index: 3;
     }
+    .scry-button-select {
+        background: var(--widget);
+        border-color: var(--borders)
+    }
     .scry-image .scry-image-rear::before, .outfit-image-rear::before, .pinglist-button::before, .pinglist-button-demo::before {    
         content: "";
         background-image: url('https://www1.flightrising.com//static/layout/scryer/bg_scrywidget.png');
@@ -4898,8 +5208,19 @@ EOT;
         left: 0px;
         opacity: 0.75;
         z-index: -1;
-        filter: invert(100%) var(--filter) hue-rotate(var(--hue)) saturate(150%) brightness(100%);
         pointer-events: none;
+    }
+    .fr-theme[data-theme="dark"] .scry-image .scry-image-rear::before,
+    .fr-theme[data-theme="dark"] .outfit-image-rear::before,
+    .fr-theme[data-theme="dark"] .pinglist-button::before,
+    .fr-theme[data-theme="dark"] .pinglist-button-demo::before {
+        filter: invert(100%) var(--filter) hue-rotate(var(--hue)) saturate(150%) brightness(100%);
+    }
+    .fr-theme[data-theme="default"] .scry-image .scry-image-rear::before,
+    .fr-theme[data-theme="default"] .outfit-image-rear::before,
+    .fr-theme[data-theme="default"] .pinglist-button::before,
+    .fr-theme[data-theme="default"] .pinglist-button-demo::before {
+        filter: var(--filter) hue-rotate(var(--hue)) saturate(100%) brightness(100%);
     }
     .outfit-image-rear::before {
         background-image: url('https://www1.flightrising.com/static/layout/dressingroom/bg_outfitwidget.png');
@@ -5242,15 +5563,16 @@ EOT;
         color: var(--text);
         fill: var(--text)
     }
-    #fr-layout.fr-theme[data-theme] .clan-profile-icon {
-        color: var(--text) !important;
-        text-shadow: 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow) !important;
-    }
     #clan-profile-header .clan-profile-header-title,
     .clan-profile-lair-location-level,
     .clan-profile-stat strong {
         color: var(--strong);
-        text-shadow: 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow) !important;
+        text-shadow: 0 0 0.2em var(--drop-shadow), 0 0 0.2em var(--drop-shadow), 0 0 0.2em var(--drop-shadow) !important;
+    }
+    .fr-theme[data-theme="default"] #clan-profile-header .clan-profile-header-title,
+    .fr-theme[data-theme="default"] .clan-profile-lair-location-level,
+    .fr-theme[data-theme="default"] .clan-profile-stat strong {
+        text-shadow: 0 0 0.2em var(--drop-shadow) !important;
     }
     .clan-profile-friend img {
         border: 1px solid var(--borders);
@@ -5382,6 +5704,9 @@ EOT;
     }
     #fr-layout.fr-theme[data-theme] #dragon-profile-exalt-confirm-dialog div p, .choose-scene-current-name, .choose-familiar-preview-name {
         color: var(--accent-three);
+    }
+    .dragon-profile-battle-stat-buff {
+        color: var(--success-text)
     }
     .choose-scene-current-name {
         font-size: 12px;
@@ -5656,9 +5981,14 @@ EOT;
     }
 
     /*dark glow around text on scenes*/
-    #dragon-profile-header, .dragon-profile-header-name, .breadcrumbs {
-        text-shadow: 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow);
-        color: var(--strong)
+    #dragon-profile-header, .dragon-profile-header-name {
+        text-shadow: 0 0 0.2em var(--drop-shadow), 0 0 0.2em var(--drop-shadow), 0 0 0.2em var(--drop-shadow);
+        color: var(--strong);
+    }
+    .fr-theme[data-theme="default"] #dragon-profile-header,
+    .fr-theme[data-theme="default"] .dragon-profile-header-name {
+        text-shadow: 0 0 0.2em var(--drop-shadow);
+        color: var(--strong);
     }
     #fr-layout.fr-theme[data-theme] #dragon-profile-header .dragon-profile-header-name,
     #fr-layout.fr-theme[data-theme] #dragon-profile-familiar-name,
@@ -5671,7 +6001,7 @@ EOT;
        color: var(--text); 
     }
     #fr-layout.fr-theme[data-theme] #dragon-profile-header .dragon-profile-header-number {
-        color: var(--accent-four);
+        color: var(--accent-two);
     }
     #fr-layout.fr-theme[data-theme] h3.dragon-profile-details-subheader, #fr-layout.fr-theme[data-theme] .exalted-lineage-header {
         color: var(--accent-three);
@@ -7969,7 +8299,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         color: var(--accent-five);
         background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,var(--section) 80%);
     }
-    
+    #dev-tracker-content .dev-tracker-search-option select {
+        border: 1px solid var(--borders);
+    }
     /*subforum list*/
     #forum-fr td > a:first-child img, #forum-general td > a:first-child img {
         opacity: 0;
@@ -8452,6 +8784,11 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     #postlist .blocked-by-user, #postlist .blocking-user, .blocked-post .post-text-content {
         color: rgb(var(--warning)) !important;
+    }
+    .fr-theme[data-theme="default"] #postlist .blocked-by-user,
+    .fr-theme[data-theme="default"] #postlist .blocking-user,
+    .fr-theme[data-theme="default"] .blocked-post .post-text-content {
+        color: rgb(var(--warning-text)) !important;
     }
     
     /*pinglists*/
