@@ -1,8 +1,8 @@
-# Flight Rising - Simple Dark Redux
+# Flight Rising - Simple Themes
 ### Description
-A Flight Rising userstyle. Originally a rewrite of [Zoga's Simple Dark Theme](https://userstyles.org/styles/150521/simple-dark-theme-for-flight-rising) that includes my addon for the original theme, [Simple Dark Tweaks.](https://userstyles.org/styles/200085/simple-dark-tweaks-for-flight-rising).
+A Flight Rising userstyle. Originally a rewrite of [Zoga's Simple Dark Theme](https://userstyles.org/styles/150521/simple-dark-theme-for-flight-rising) that includes my addon for the original theme, [Simple Dark Tweaks.](https://userstyles.org/styles/200085/simple-dark-tweaks-for-flight-rising). Now supports both Light and Dark theme replacement.
 
-Major features multiple themes to choose from including a customizable theme, various [accessibility settings](#accessibility-settings), and [optional "light mode"](#bios--forums-settings) styling that affects clan bios, dragon bios, and forum posts/PMs.
+Major features multiple themes to choose from including customizable themes for both Light and Dark Mode, various [accessibility settings](#accessibility-settings), and [optional "light mode"](#bios--forums-settings) styling that affects clan bios, dragon bios, and forum posts/PMs.
 
 **Quick Install:** [via Github](https://github.com/dragonjpg/simple-dark-redux/raw/main/simple-dark-redux.user.css) or [via the Userstyles.World mirror.](https://userstyles.world/api/style/9725.user.css)
 
@@ -10,21 +10,30 @@ You will need [Stylus](https://github.com/openstyles/stylus#readme). When you in
 
 # IMPORTANT NOTES:
 ## * You must have 'Experimental: Force theme settings on pages still in development' enabled in your Account Settings or this theme will not function properly on partial legacy pages.
-## * 3.0 has been designed to have eventual support for custom light themes as well. For now, you will have to have 'Dark Theme' selected in your Account Settings or the site will not look correct.
 
 ### General Info
-**Last Updated:** Apr. 25, 2026\
-**Current Ver:** 3.0.0\
+**Last Updated:** Apr. 29, 2026\
+**Current Ver:** 3.1.0\
 **Full Changelog:** [View Here](https://github.com/dragonjpg/simple-dark-redux/pulls?q=is%3Apr+is%3Aclosed)\
 **Found a bug? Have a suggestion?** [Open an Issue](https://github.com/dragonjpg/simple-dark-redux/issues)
 
 ### Themes Available:
+**LIGHT**
+- **Rainy Day** - A low contrast blue-grey theme.
+- **Lavender** - Soft purples
+- **Strawberry** - Pale pink and greens
+- **Banana** - Exactly what it says on the tin. 🍌
+- **Beach** - Light sands, blues, some coral accents.
+- **Alucard** - A light mode companion to [Dracula](https://draculatheme.com/contribute)
+- **Custom** - Fully customizable theme. Default settings are for Rainy Day.
+
+**DARK**
 - **Classic Blue** - Zoga's classic blue palette.
 - **Rising Red** - A Red and gold theme based on the site's logo and default banner.
 - **Gray** - Your bog-standard gray, with warm accents.
 - **Copper** - Deep browns inspired by the FR color wheel.
-- **Dracula** - A pale [popular dark theme](https://github.com/dracula/dracula-theme)
-- **Custom** - Fully customizable theme. Default settings are for the Blue theme. There are a LOT of colors you can adjust (mostly because FR ~~and I~~ love gradients). Go nuts.
+- **Dracula** - A pale [popular dark theme](https://draculatheme.com/contribute)
+- **Custom** - Fully customizable theme. Default settings are for the Classic Blue theme.
 
 ## Preview Images
 
