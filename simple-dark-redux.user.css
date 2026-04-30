@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.1.0
+@version        3.1.1
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -1705,6 +1705,9 @@ div.leftcolumn,
 body:not(:has(.logo + .pardon)):has(#fr-layout-legacy-content) {
     background-position: calc(50% + 100px) 0%;
 }
+body:not(:has(.logo + .pardon)):has(#fr-layout-legacy-content)[data-location-id="0"]::before {
+    background-position: calc(50% + 100px) 0%;
+}
 body[style*="/static/layout/none/bg.jpg"]::before,
 body[style*="/layout/none/background.jpg"]::before {
         background-position-x: calc(50% + 100px);
@@ -1795,7 +1798,7 @@ stickymenu2 "Disable" <<<EOT  EOT;
 
 @advanced dropdown stickyposter "Sticky Post Authors" {
 stickyposter1 "Enabled" <<<EOT /* sticky post author *\/
-div.post-author {
+.post:not(.blocked-post) div.post-author {
     position: sticky;
     top: 0;
     align-self: flex-start;
@@ -7484,6 +7487,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         font-size: 12px;
         box-sizing: border-box;
         border-bottom: 1px solid var(--divider);
+    }
+    #alert-list .individual-alert td {
+        font-size: 12px;
     }
     #alert-list .individual-alert:nth-child(2n+1) {
         background: var(--widget-med)
