@@ -1640,7 +1640,14 @@ leftcol2 "On Right" <<<EOT /* move column to right *\/
 #fr-layout-main,
 div.contentcontainer {
     display: grid;
+    grid-template-columns: auto 200px;
+}
+#fr-layout-main:has(#home-page) {
+    display: grid;
     grid-template-columns: auto auto 200px;
+}
+#fr-layout-main::after {
+    display: none;
 }
 #fr-layout-sidebar,
 div.leftcolumn  {
@@ -1681,7 +1688,14 @@ leftcol3 "On Right + Center Legacy Content" <<<EOT /* move column to right & cen
 #fr-layout-main,
 div.contentcontainer {
     display: grid;
+    grid-template-columns: auto 200px;
+}
+#fr-layout-main:has(#home-page) {
+    display: grid;
     grid-template-columns: auto auto 200px;
+}
+#fr-layout-main::after {
+    display: none;
 }
 div.leftcolumn,
 #fr-layout-sidebar {
@@ -1702,9 +1716,7 @@ div.leftcolumn,
     right: unset;
     left: 0px;
 }
-body:not(:has(.logo + .pardon)):has(#fr-layout-legacy-content) {
-    background-position: calc(50% + 100px) 0%;
-}
+body:not(:has(.logo + .pardon)):has(#fr-layout-legacy-content),
 body:not(:has(.logo + .pardon)):has(#fr-layout-legacy-content)[data-location-id="0"]::before {
     background-position: calc(50% + 100px) 0%;
 }
