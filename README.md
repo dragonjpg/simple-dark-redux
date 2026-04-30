@@ -2,16 +2,19 @@
 ### Description
 A Flight Rising userstyle. Originally a rewrite of [Zoga's Simple Dark Theme](https://userstyles.org/styles/150521/simple-dark-theme-for-flight-rising) that includes my addon for the original theme, [Simple Dark Tweaks.](https://userstyles.org/styles/200085/simple-dark-tweaks-for-flight-rising). Now supports both Light and Dark theme replacement.
 
-Major features multiple themes to choose from including customizable themes for both Light and Dark Mode, various [accessibility settings](#accessibility-settings), and [optional "light mode"](#bios--forums-settings) styling that affects clan bios, dragon bios, and forum posts/PMs.
+Major features multiple themes to choose from including customizable themes for both Light and Dark Mode, various [accessibility settings](#accessibility-settings), and [optional "light mode"](#bios--forums-settings) styling that displays clan bios, dragon bios, and/or forum posts/PMs in a default site-style white background with black text.
 
 **Quick Install:** [via Github](https://github.com/dragonjpg/simple-dark-redux/raw/main/simple-dark-redux.user.css) or [via the Userstyles.World mirror.](https://userstyles.world/api/style/9725.user.css)
 
 You will need [Stylus](https://github.com/openstyles/stylus#readme). When you install, leave 'Check for Updates' checked in order to get automatic updates. View [these](https://github.com/openstyles/stylus/wiki/Usercss#how-do-i-customize-usercss) [pages](https://github.com/openstyles/stylus/wiki/Popup#interface) to see how to change the style's settings directly in Stylus if it's your first time using it. Happy browsing!
 
 # IMPORTANT NOTES:
-## * You must have 'Experimental: Force theme settings on pages still in development' enabled in your Account Settings or this theme will not function properly on partial legacy pages.
+## * You must have 'Experimental: Force theme settings on pages still in development' enabled in your Account Settings to maximize compatibility with this theme.
+## * Install the [Theme Quickswitcher](https://github.com/dragonjpg/flight-rising-misc/raw/refs/heads/main/scripts/theme-quickswitcher.user.js) to swap between Light & Dark Mode on the fly!
+(compatible with base FR and this userstyle)\
+<img alt="quickswitch" src="https://github.com/user-attachments/assets/a2743c6c-239e-4fab-98de-51ca1ec728c0" />
 
-### General Info
+## General Info
 **Last Updated:** Apr. 29, 2026\
 **Current Ver:** 3.1.0\
 **Full Changelog:** [View Here](https://github.com/dragonjpg/simple-dark-redux/pulls?q=is%3Apr+is%3Aclosed)\
