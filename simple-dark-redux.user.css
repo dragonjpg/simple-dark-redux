@@ -4039,6 +4039,7 @@ EOT;
         border-color: var(--borders);
         border-radius: 10px;
         font-size: 12px;
+        z-index: 3 !important;
     }
     .raffle-dragon .raffle-dragon-tooltip .raffle-dragon-tooltip-title, .faire-tooltip {
         color: var(--strong);
@@ -7048,8 +7049,14 @@ EOT;
     .tomo-answer-correct {
         color: rgb(var(--success));
     }
+    .fr-theme[data-theme="default"] .tomo-answer-correct {
+        color: var(--success-text);
+    }
     .tomo-answer-incorrect {
         color: rgb(var(--error));
+    }
+    .fr-theme[data-theme="default"] .tomo-answer-incorrect {
+        color: var(--error-text);
     }
     .tomo-answer-neutral {
         color: var(--text-med);
