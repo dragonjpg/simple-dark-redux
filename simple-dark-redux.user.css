@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.1.0
+@version        3.1.1
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -1577,37 +1577,49 @@ EOT;
 responsive1 "Disabled" <<<EOT  EOT;
 responsive2 "Enabled" <<<EOT 
 @media screen and (max-width: 950px) {
-    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) {
-        width: 750px;
-    }
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content),
     #fr-layout[data-responsive="desktop"]  div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation {
         width: 750px;
     }
     #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation-header,
     #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content)  #fr-layout-navigation:hover #fr-layout-navigation-content,
-    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content)  #fr-layout-navigation:hover #fr-layout-navigation-content-logged-out,
-        #fr-layout-main
-        {
-            display: block
-        }
-        #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation-content,
-        #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation-content-logged-out {
-            position: absolute;
-            display: none;
-            padding: 0;
-            border-bottom-right-radius: 10px;
-            border-bottom-left-radius: 10px;
-        }
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content)  #fr-layout-navigation:hover #fr-layout-navigation-content-logged-out
+    {
+        display: block;
+        float: none;
+    }
+    #fr-layout-main, div.contentcontainer {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    #fr-layout-navigation, #fr-layout-sidebar {
+        z-index: 5;
+        order: 0;
+    }
+    #fr-layout[data-responsive="desktop"] #fr-layout-main {
+        margin-top: 50px;
+    }
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation-content,
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation-content-logged-out {
+        position: absolute;
+        display: none;
+        padding: 0;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
     #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation-content .fr-layout-navigation-category {
         float: left;
         padding: 10px 0;
         width: 25%;
     }
-    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-sidebar-bg {
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-sidebar-bg,
+    #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-side-banner {
         display: none;
       }
     #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-sidebar {
         height: 50px;
+        width: 100%;
+        margin-top: -50px;
     }
     #fr-layout[data-responsive="desktop"] div#fr-layout-wrap:has(#fr-layout-legacy-content) #fr-layout-navigation a.fr-layout-navigation-link {
         font-size: 14px;
@@ -1641,6 +1653,9 @@ leftcol2 "On Right" <<<EOT /* move column to right *\/
 div.contentcontainer {
     display: grid;
     grid-template-columns: auto auto 200px;
+}
+#fr-layout-main::after {
+    display: none;
 }
 #fr-layout-sidebar,
 div.leftcolumn  {
@@ -1683,6 +1698,9 @@ div.contentcontainer {
     display: grid;
     grid-template-columns: auto auto 200px;
 }
+#fr-layout-main::after {
+    display: none;
+}
 div.leftcolumn,
 #fr-layout-sidebar {
     order: 2;
@@ -1702,7 +1720,8 @@ div.leftcolumn,
     right: unset;
     left: 0px;
 }
-body:not(:has(.logo + .pardon)):has(#fr-layout-legacy-content) {
+body:not(:has(.logo + .pardon)):has(#fr-layout-legacy-content),
+body:not(:has(.logo + .pardon)):has(#fr-layout-legacy-content)[data-location-id="0"]::before {
     background-position: calc(50% + 100px) 0%;
 }
 body[style*="/static/layout/none/bg.jpg"]::before,
@@ -1795,7 +1814,7 @@ stickymenu2 "Disable" <<<EOT  EOT;
 
 @advanced dropdown stickyposter "Sticky Post Authors" {
 stickyposter1 "Enabled" <<<EOT /* sticky post author *\/
-div.post-author {
+.post:not(.blocked-post) div.post-author {
     position: sticky;
     top: 0;
     align-self: flex-start;
@@ -2245,6 +2264,7 @@ bio-color-text-3 "Light Mode" <<<EOT
 }
 #fr-layout.fr-theme[data-theme] #dragon-profile-bio .dragon-profile-bio-vista {
     --widget: #fff;
+    --alt-two: #E9E6DE;
 }
 /*link colors*\/
 #fr-layout.fr-theme[data-theme] #dragon-profile-bio .gamedb-bbcode,
@@ -2354,7 +2374,9 @@ forum-color-text-3 "Light Mode" <<<EOT
     --admin-link: var(--link-alt);
     --admin-link-hover: var(--link-hover-alt);
 
-    --warning-text: #986714;
+    --warning-text: #724903;
+    --error-text: #660000;
+    --success-text: darkgreen;
 
     color: var(--text-alt);
 }
@@ -2383,6 +2405,10 @@ forum-color-text-3 "Light Mode" <<<EOT
 #fr-layout.fr-theme[data-theme] #msg-items > p {
     --text-alt: #000;
     color: var(--text-alt);
+}
+#fr-layout.fr-theme[data-theme] .common-message a,
+#fr-layout.fr-theme[data-theme] .common-message a :is(b, strong, i, em) {
+    color: inherit !important;
 }
 /*link colors*\/
 #fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) .gamedb-bbcode,
@@ -2804,6 +2830,17 @@ EOT;
     }
     #fr-layout.fr-theme[data-theme] .theme-text-subtle-4 {
         color: var(--text-subtle);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-ui-4-special,
+    #fr-layout.fr-theme[data-theme] .theme-ui-3-special,
+    #fr-layout.fr-theme[data-theme] .theme-ui-2-special,
+    #fr-layout.fr-theme[data-theme] .theme-ui-1-special {
+        background: linear-gradient(to bottom, var(--energy-full-one) 0%, var(--energy-full-two) 35%, var(--alt-three) 60%);
+        border-color: var(--energy-full-border);
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .hoard-result-item-box.theme-ui-4-special {
+        background: linear-gradient(to bottom, var(--energy-full-one) 0%, var(--energy-full-two) 50%, var(--alt-three) 90%);
     }
     #fr-layout.fr-theme[data-theme] .theme-text-link-4,
     #fr-layout.fr-theme[data-theme] a.theme-text-link-4:hover,
@@ -3403,6 +3440,7 @@ EOT;
         background: var(--columns);
         border-color: var(--borders);
         color: var(--text);
+        padding: 0.5em;
     }
     #fr-layout.fr-theme[data-theme] .common-checkbox[data-selected="1"] {
         background-image: linear-gradient(var(--selected) 0%, var(--selected) 100%);
@@ -3410,11 +3448,15 @@ EOT;
         color: var(--selected-text);
     }
     #fr-layout.fr-theme[data-theme] .common-filter select,
-    #fr-layout.fr-theme[data-theme] .common-field select {
+    #fr-layout.fr-theme[data-theme] .common-field select,
+    #fr-layout.fr-theme[data-theme] .common-color-field select {
         background-color: var(--columns);
-        background-image: url(/static/layout/common/select-menu.png), linear-gradient(var(--textarea) 0%, var(--widget) 100%);
+        background-image: url('https://www1.flightrising.com/static/layout/common/select-menu.png'), linear-gradient(var(--textarea) 0%, var(--widget) 100%);
+        background-repeat: no-repeat;
+        background-position: right center;
         border-color: var(--borders);
         color: var(--text);
+        padding: 0.5em;
     }
     /*override styles*/
     #fr-layout.fr-theme[data-theme] .common-style-override[data-style="0"],
@@ -3664,6 +3706,10 @@ EOT;
     #fr-layout[data-responsive="auto"] #fr-layout-fixed-navigation {
         z-index: 2;
     }
+    /*modal fix*/
+    #fr-layout-main #fr-layout-legacy-content:has(#hoard-results-shade[style*="display: block"]) {
+      z-index: 7;
+    }
 }
 
 
@@ -3695,9 +3741,6 @@ EOT;
     .fr-theme[data-theme][data-location-id="0"] {
         position: relative;
         z-index: 2;
-    }
-    .fr-theme[data-theme="dark"][data-location-id="0"]::before {
-        
     }
     *::-webkit-scrollbar {
         background: var(--section)
@@ -3878,7 +3921,6 @@ EOT;
         border-color: var(--borders);
         padding: 0.5em;
         border-radius: 5px;
-        font-size: 13px;
     }
     .editor-topic input {
         border-color: var(--borders);
@@ -3920,7 +3962,7 @@ EOT;
     /*z-index fixes*/
     #fr-layout-main #fr-layout-legacy-content {
         position: relative;
-        z-index: 2;
+        z-index: 4;
     }
     /*shared*/
     #fr-layout-main #fr-layout-legacy-content::before {
@@ -4024,6 +4066,7 @@ EOT;
         border-color: var(--borders);
         border-radius: 10px;
         font-size: 12px;
+        z-index: 4 !important;
     }
     .raffle-dragon .raffle-dragon-tooltip .raffle-dragon-tooltip-title, .faire-tooltip {
         color: var(--strong);
@@ -4158,7 +4201,7 @@ EOT;
     }
     /*[[oldusertab]]*/
     #fr-layout-banner-bar, #fr-layout-banner-frame {
-        z-index: 5;
+        z-index: 6;
     }
     #usertab > * {
         z-index: 2;
@@ -4448,47 +4491,84 @@ EOT;
     .itemtip .itemdesc, .itemtip .skindesc, .itemtip .tooltip-itemid, #form-header, .itemtip .tooltip-level {
         color: var(--text)
     }
+    #fr-layout.fr-theme[data-theme] .item-tip-header {
+        background: var(--tooltip-bg)
+    }
     .itemtip .sellval {
         color: var(--strong);
         background-image: url(https://www1.flightrising.com/static/layout/icon_treasure.png);
         background-size: 14px;
     }
     /*item rarities TODO*/
-    .rarity-6 .itemname {
+    .rarity-6 .itemname,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="6"] .item-tip-header  {
         background: linear-gradient(to right, var(--tooltip-bg) 0%, #c59a9680 100%);
     }
-    .itemtip.rarity-6 .itemname .itemtitle {
+    .itemtip.rarity-6 .itemname .itemtitle,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="6"] .item-tip-name {
         color: #ffd0cc;
     }
-    .rarity-5 .itemname {
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="6"] .item-tip-name {
+        color: #2a0a07;
+    }
+    .rarity-5 .itemname,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="5"] .item-tip-header {
         background: linear-gradient(to right, var(--tooltip-bg) 0%, #dab58780 100%);
     }
-    .itemtip.rarity-5 .itemname .itemtitle {
+    .itemtip.rarity-5 .itemname .itemtitle,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="5"] .item-tip-name {
         color: #ffe7c4;
     }
-    .rarity-4 .itemname {
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="5"] .item-tip-name {
+        color: #4a2f06;
+    }
+    .rarity-4 .itemname,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="4"] .item-tip-header  {
         background: linear-gradient(to right, var(--tooltip-bg) 0%, #8f8acd80 100%);
     }
-    .itemtip.rarity-4 .itemname .itemtitle {
+    .itemtip.rarity-4 .itemname .itemtitle,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="4"] .item-tip-name {
         color: #d7d5ff;
     }
-    .rarity-3 .itemname {
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="4"] .item-tip-name {
+        color: #1a1844;
+    }
+    .rarity-3 .itemname,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="3"] .item-tip-header  {
         background: linear-gradient(to right, var(--tooltip-bg) 0%, #8ea9ce80 100%);
     }
-    .itemtip.rarity-3 .itemname .itemtitle {
+    .itemtip.rarity-3 .itemname .itemtitle,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="3"] .item-tip-name {
         color: #cde1ff;
     }
-    .rarity-2 .itemname {
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="3"] .item-tip-name {
+        color: #101822;
+    }
+    .rarity-2 .itemname,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="2"] .item-tip-header  {
         background: linear-gradient(to right, var(--tooltip-bg) 0%, #a7b8a280 100%);
     }
-    .itemtip.rarity-2 .itemname .itemtitle {
+    .itemtip.rarity-2 .itemname .itemtitle,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="2"] .item-tip-name {
         color: #deffd0;
     }
-    .rarity-0 .itemname, .rarity-1 .itemname {
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="2"] .item-tip-name {
+        color: #0d1a07;
+    }
+    .rarity-0 .itemname, .rarity-1 .itemname,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="0"] .item-tip-header,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="1"] .item-tip-header {
         background: linear-gradient(to right, var(--tooltip-bg) 0%, #acacac80 100%);
     }
-    .itemtip.rarity-0 .itemname .itemtitle, .itemtip.rarity-1 .itemname .itemtitle {
+    .itemtip.rarity-0 .itemname .itemtitle, .itemtip.rarity-1 .itemname .itemtitle,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="0"] .item-tip-name,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="1"] .item-tip-name
+    {
         color: #e6e6e6;
+    }
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="0"] .item-tip-name,
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="1"] .item-tip-name {
+        color: #282828;
     }
     /*item count label*/
     .itemicon span, .baldwin-mini-item span, .baldwin-fullsize-item span {
@@ -4725,7 +4805,7 @@ EOT;
         background-color: var(--columns);
         color: var(--text);
         border: 1px solid var(--borders);
-        background-image: url('https://www1.flightrising.com/static/layout/common/select-menu.png');
+        background-image: url('https://www1.flightrising.com/static/layout/common/select-menu.png'), linear-gradient(var(--textarea) 0%, var(--widget) 100%);
         background-position: right center;
         background-repeat: no-repeat;
         padding-right: 18px;
@@ -5199,7 +5279,7 @@ EOT;
     }
     .scry-image .scry-image-rear::before, .outfit-image-rear::before, .pinglist-button::before, .pinglist-button-demo::before {    
         content: "";
-        background-image: url('https://www1.flightrising.com//static/layout/scryer/bg_scrywidget.png');
+        background-image: url('https://www1.flightrising.com/static/layout/scryer/bg_scrywidget.png');
         background-size: cover;
         position: absolute;
         top: 0px;
@@ -6025,6 +6105,22 @@ EOT;
         top: 0;
         left: 0;
         z-index: -1;
+        opacity: 0.15;
+    }
+    #exalted-content .theme-breadcrumb-active {
+        color: var(--accent-two) !important
+    }
+    #exalted-content {
+        color: var(--text) !important;
+    }
+    #exalted-content h1 {
+        color: var(--accent-four) !important;
+    }
+    #exalted-content a {
+        color: var(--link) !important;
+    }
+    #exalted-content a:hover, #exalted-content a:focus {
+        color: var(--link-hover) !important;
     }
     #fr-layout-main #fr-layout-legacy-content[style*="exalted/exalted"]::before {
         content: '';
@@ -6038,37 +6134,37 @@ EOT;
         background-repeat: no-repeat;
     }
     #fr-layout-main #fr-layout-legacy-content[style*="exalted-1"]::after {
-        background: url('/static/layout/exalted/exalted-1.jpg');
+        background: url('https://www1.flightrising.com/static/layout/exalted/exalted-1.jpg');
     }
     #fr-layout-main #fr-layout-legacy-content[style*="exalted-2"]::after {
-        background: url('/static/layout/exalted/exalted-2.jpg');
+        background: url('https://www1.flightrising.com/static/layout/exalted/exalted-2.jpg');
     }
     #fr-layout-main #fr-layout-legacy-content[style*="exalted-3"]::after {
-        background: url('/static/layout/exalted/exalted-3.jpg');
+        background: url('https://www1.flightrising.com/static/layout/exalted/exalted-3.jpg');
     }
     #fr-layout-main #fr-layout-legacy-content[style*="exalted-4"]::after {
-        background: url('/static/layout/exalted/exalted-4.jpg');
+        background: url('https://www1.flightrising.com/static/layout/exalted/exalted-4.jpg');
     }
     #fr-layout-main #fr-layout-legacy-content[style*="exalted-5"]::after {
-        background: url('/static/layout/exalted/exalted-5.jpg');
+        background: url('https://www1.flightrising.com/static/layout/exalted/exalted-5.jpg');
     }
     #fr-layout-main #fr-layout-legacy-content[style*="exalted-6"]::after {
-        background: url('/static/layout/exalted/exalted-6.jpg');
+        background: url('https://www1.flightrising.com/static/layout/exalted/exalted-6.jpg');
     }
     #fr-layout-main #fr-layout-legacy-content[style*="exalted-7"]::after {
-        background: url('/static/layout/exalted/exalted-7.jpg');
+        background: url('https://www1.flightrising.com/static/layout/exalted/exalted-7.jpg');
     }
     #fr-layout-main #fr-layout-legacy-content[style*="exalted-8"]::after {
-        background: url('/static/layout/exalted/exalted-8.jpg');
+        background: url('https://www1.flightrising.com/static/layout/exalted/exalted-8.jpg');
     }
     #fr-layout-main #fr-layout-legacy-content[style*="exalted-9"]::after {
-        background: url('/static/layout/exalted/exalted-9.jpg');
+        background: url('https://www1.flightrising.com/static/layout/exalted/exalted-9.jpg');
     }
     #fr-layout-main #fr-layout-legacy-content[style*="exalted-10"]::after {
-        background: url('/static/layout/exalted/exalted-10.jpg');
+        background: url('https://www1.flightrising.com/static/layout/exalted/exalted-10.jpg');
     }
     #fr-layout-main #fr-layout-legacy-content[style*="exalted-11"]::after {
-        background: url('/static/layout/exalted/exalted-11.jpg');
+        background: url('https://www1.flightrising.com/static/layout/exalted/exalted-11.jpg');
     }
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/lair.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/den.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/nesting\\/.*") {
@@ -6240,12 +6336,11 @@ EOT;
         background: var(--tab);
         border-radius: 5px;
     }
-    .modal-tab-icon, .modal-tab-name, .modal-tab-count, .lair-feed-dialog-food-cost {
-        color: var(--accent-three) !important;
+    .modal-tab-icon, .modal-tab-name, .modal-tab-count {
+        color: var(--button-text) !important;
     }
-    .modal-tab:hover {
-        border-color: var(--accent-five);
-        background: var(--tab-hover);
+    #fr-layout.fr-theme[data-theme] .lair-feed-dialog-food-cost {
+        color: var(--accent-four);
     }
     .lair-tab-name {
         max-width: none;
@@ -6750,10 +6845,14 @@ EOT;
     }
     #baldwin #plus-button {
         background: rgba(var(--success),0.1);
-        border-color: rgb(var(--success));
         border-radius: 5px;
+        border: 2px dashed rgb(var(--success));
     }
-    #baldwin #plus-button::before{
+    [data-theme="default"] #baldwin #plus-button {
+        background: rgba(var(--success),0.8);
+        border-color: var(--success-text);
+    }
+    #baldwin #plus-button::before {
         content: '+';
         font-weight: bold;
         display: block;
@@ -6769,7 +6868,9 @@ EOT;
         border-radius: 5px;
         text-align: center;
     }
-        
+    [data-theme="default"] #baldwin #plus-button::before {
+        background: var(--success-text);
+    }
     .baldwin-divider {
         background: none;
         position: relative;
@@ -6856,6 +6957,7 @@ EOT;
     }
     #crafter-timer-countdown, #crafter-timer-subtitle, #swap-timer-countdown {
 	    color: var(--accent-three);
+        text-shadow: var(--stroke);
     }
     #crafter-status-claim {
         width: 100%;
@@ -6863,14 +6965,26 @@ EOT;
     .crafter-page-index {
         padding-top: 10px;
     }
-    .crafter-page-index #crafter-status {
-        background: linear-gradient(to bottom, var(--widget-light) 0%, var(--widget-med) 100%);
-        border: 2px solid var(--borders-med);
-        outline: 2px solid var(--borders);
+    #crafter-frame {
+        background-image: inherit;
+        margin-left: -25px;
+        margin-top: -20px;
+        padding: 20px 25px;
+        background-repeat: no-repeat;
+        width: 750px;
+        box-sizing: border-box;
+    }
+    #crafter-frame .responsive-page-header-title {
+        text-shadow: var(--stroke);
     }
     #crafter-reduce-item {
         background: rgba(var(--success),0.1);
         border-color: rgb(var(--success));
+        border-radius: 5px;
+    }
+    [data-theme="default"] #crafter-reduce-item {
+        background: rgba(var(--success),0.8);
+        border-color: var(--success-text);
         border-radius: 5px;
     }
     #crafter-reduce-item::before {
@@ -6889,6 +7003,9 @@ EOT;
         left: calc(50% - 24px);
         border-radius: 5px;
         text-align: center;
+    }
+    [data-theme="default"] #crafter-reduce-item::before {
+        background: var(--success-text)
     }
     .crafter-status-diagram:not(:has(button)) {
         display: flex;
@@ -6985,14 +7102,16 @@ EOT;
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/trading\\/sophie.*") {
     /*Sophie*/
-    #fr-layout-main #fr-layout-legacy-content[style*="static/layout/sophie/reduce-background.png"]::after,
-    #fr-layout-main #fr-layout-legacy-content[style*="static/layout/sophie/create-background.png"]::after {
+    #fr-layout-main #fr-layout-legacy-content[style*="static/layout/sophie/"]:not([style*="index-background.png)"])::after {
         background-image: url('https://www1.flightrising.com/static/cms/scene/37360.png') !important;
     }
-    #fr-layout-main #fr-layout-legacy-content[style*="static/layout/sophie/reduce-background.png"] div.content::before {
+    #fr-layout-main #fr-layout-legacy-content[style*="static/layout/sophie/"]:not([style*="index-background.png)"]) {
+        background-image: none !important;
+    }
+    #fr-layout-main #fr-layout-legacy-content[style*="static/layout/sophie/reduce-background.png"] #crafter-frame {
         background-image: url('https://www1.flightrising.com/static/layout/sophie/reduce-background.png') !important;
     }
-    #fr-layout-main #fr-layout-legacy-content[style*="static/layout/sophie/create-background.png"] div.content::before {
+    #fr-layout-main #fr-layout-legacy-content[style*="static/layout/sophie/create-background.png"] #crafter-frame {
         background-image: url('https://www1.flightrising.com/static/layout/sophie/create-background.png') !important;
     }
 }
@@ -7033,8 +7152,14 @@ EOT;
     .tomo-answer-correct {
         color: rgb(var(--success));
     }
+    .fr-theme[data-theme="default"] .tomo-answer-correct {
+        color: var(--success-text);
+    }
     .tomo-answer-incorrect {
         color: rgb(var(--error));
+    }
+    .fr-theme[data-theme="default"] .tomo-answer-incorrect {
+        color: var(--error-text);
     }
     .tomo-answer-neutral {
         color: var(--text-med);
@@ -7485,6 +7610,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         box-sizing: border-box;
         border-bottom: 1px solid var(--divider);
     }
+    #alert-list .individual-alert td {
+        font-size: 12px;
+    }
     #alert-list .individual-alert:nth-child(2n+1) {
         background: var(--widget-med)
     }
@@ -7655,6 +7783,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         box-sizing: border-box;
         border-radius: 4px;
     }
+    [data-theme="default"] #tradedone {
+        border-color: var(--success-text);
+        background-color: rgba(var(--success),0.8);
+    }
     img[src$="/static/layout/button_senddelivery.png"],
     img[src$="/static/layout/button_senddelivery_disabled.png"],
     img[src$="/static/layout/button_requesttrade.png"],
@@ -7730,10 +7862,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #ah-search-submit {
         outline: 2px solid var(--borders-light)
     }
-    .ah-search-option select, span.dragon-search-multiselect select, span.dragon-search-color-range select, span.dragon-search-filter select {
-        border-radius: 10px;
-        padding: 2px;
-    }
     .ah-sep-container {
         background: none;
     }
@@ -7781,6 +7909,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     .ah-price-range input {
         margin: 0 2px;
+    }
+    .ah-search-option input,
+    .ah-price-range input {
+        padding: 0.15em;
     }
     div.ah-price-range-andor {
         width: 100%;
@@ -8105,6 +8237,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         top: 0px;
         right: 0px;
         bottom: unset;
+        opacity: 1;
     }
     #game-database-sidebar-actions {
         display: flex;
@@ -10000,7 +10133,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .hoard-result-item-box[data-favorite="1"]:after,
     img[src$="/static/layout/game-database/button-favorite-on.png"],
     img[src$="/static/layout/pinglist/bbcode-subscribed.png"],
-    img[src$="/static/layout/buttton_subscribed.png"] {
+    img[src$="/static/layout/buttton_subscribed.png"],
+    .game-database-item-result[data-favorite="true"]::before {
         filter: sepia(100%) hue-rotate(var(--hue)) brightness(75%) contrast(180%) saturate(400%);
     }
     img[src$="/layout/button_incubate_used.png"],
@@ -10088,13 +10222,19 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     .fr-theme[data-theme="dark"] img[src$="/static/layout/baldwin/arrow.png"],
     .fr-theme[data-theme="dark"] img[src$="/static/layout/crafter/arrow.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/lair/buttons/page-expand.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/lair/buttons/page-collapse.png"],
     .fr-theme[data-theme="dark"] img[src$="/static/icons/close.png"],
     .fr-theme[data-theme="dark"] img[src$="/static/layout/copy.png"],
     .fr-theme[data-theme="dark"] img[src$="/static/layout/pinglist/bbcode-no-icon.png"],
     .fr-theme[data-theme="dark"] img[src$="/static/layout/pinglist/bbcode-not-subscribed.png"] {
         filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(70%) saturate(200%);
+    }
+    .fr-theme[data-theme="default"] img[src$="/static/layout/baldwin/arrow.png"],
+    .fr-theme[data-theme="default"] img[src$="/static/layout/crafter/arrow.png"],
+    .fr-theme[data-theme="default"] img[src$="/static/icons/close.png"],
+    .fr-theme[data-theme="default"] img[src$="/static/layout/copy.png"],
+    .fr-theme[data-theme="default"] img[src$="/static/layout/pinglist/bbcode-no-icon.png"],
+    .fr-theme[data-theme="default"] img[src$="/static/layout/pinglist/bbcode-not-subscribed.png"] {
+        filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) saturate(150%);
     }
     .fr-theme[data-theme="dark"] img[src$="/static/layout/button_attachdragon.png"],
     .fr-theme[data-theme="dark"] img[src$="/static/layout/icon_itemnotattached.png"],
