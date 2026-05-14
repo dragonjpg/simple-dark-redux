@@ -2831,6 +2831,17 @@ EOT;
     #fr-layout.fr-theme[data-theme] .theme-text-subtle-4 {
         color: var(--text-subtle);
     }
+    #fr-layout.fr-theme[data-theme] .theme-ui-4-special,
+    #fr-layout.fr-theme[data-theme] .theme-ui-3-special,
+    #fr-layout.fr-theme[data-theme] .theme-ui-2-special,
+    #fr-layout.fr-theme[data-theme] .theme-ui-1-special {
+        background: linear-gradient(to bottom, var(--energy-full-one) 0%, var(--energy-full-two) 35%, var(--alt-three) 60%);
+        border-color: var(--energy-full-border);
+        color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .hoard-result-item-box.theme-ui-4-special {
+        background: linear-gradient(to bottom, var(--energy-full-one) 0%, var(--energy-full-two) 50%, var(--alt-three) 90%);
+    }
     #fr-layout.fr-theme[data-theme] .theme-text-link-4,
     #fr-layout.fr-theme[data-theme] a.theme-text-link-4:hover,
     #fr-layout.fr-theme[data-theme] a.theme-text-link-4:focus {
@@ -4480,47 +4491,84 @@ EOT;
     .itemtip .itemdesc, .itemtip .skindesc, .itemtip .tooltip-itemid, #form-header, .itemtip .tooltip-level {
         color: var(--text)
     }
+    #fr-layout.fr-theme[data-theme] .item-tip-header {
+        background: var(--tooltip-bg)
+    }
     .itemtip .sellval {
         color: var(--strong);
         background-image: url(https://www1.flightrising.com/static/layout/icon_treasure.png);
         background-size: 14px;
     }
     /*item rarities TODO*/
-    .rarity-6 .itemname {
+    .rarity-6 .itemname,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="6"] .item-tip-header  {
         background: linear-gradient(to right, var(--tooltip-bg) 0%, #c59a9680 100%);
     }
-    .itemtip.rarity-6 .itemname .itemtitle {
+    .itemtip.rarity-6 .itemname .itemtitle,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="6"] .item-tip-name {
         color: #ffd0cc;
     }
-    .rarity-5 .itemname {
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="6"] .item-tip-name {
+        color: #2a0a07;
+    }
+    .rarity-5 .itemname,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="5"] .item-tip-header {
         background: linear-gradient(to right, var(--tooltip-bg) 0%, #dab58780 100%);
     }
-    .itemtip.rarity-5 .itemname .itemtitle {
+    .itemtip.rarity-5 .itemname .itemtitle,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="5"] .item-tip-name {
         color: #ffe7c4;
     }
-    .rarity-4 .itemname {
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="5"] .item-tip-name {
+        color: #4a2f06;
+    }
+    .rarity-4 .itemname,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="4"] .item-tip-header  {
         background: linear-gradient(to right, var(--tooltip-bg) 0%, #8f8acd80 100%);
     }
-    .itemtip.rarity-4 .itemname .itemtitle {
+    .itemtip.rarity-4 .itemname .itemtitle,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="4"] .item-tip-name {
         color: #d7d5ff;
     }
-    .rarity-3 .itemname {
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="4"] .item-tip-name {
+        color: #1a1844;
+    }
+    .rarity-3 .itemname,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="3"] .item-tip-header  {
         background: linear-gradient(to right, var(--tooltip-bg) 0%, #8ea9ce80 100%);
     }
-    .itemtip.rarity-3 .itemname .itemtitle {
+    .itemtip.rarity-3 .itemname .itemtitle,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="3"] .item-tip-name {
         color: #cde1ff;
     }
-    .rarity-2 .itemname {
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="3"] .item-tip-name {
+        color: #101822;
+    }
+    .rarity-2 .itemname,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="2"] .item-tip-header  {
         background: linear-gradient(to right, var(--tooltip-bg) 0%, #a7b8a280 100%);
     }
-    .itemtip.rarity-2 .itemname .itemtitle {
+    .itemtip.rarity-2 .itemname .itemtitle,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="2"] .item-tip-name {
         color: #deffd0;
     }
-    .rarity-0 .itemname, .rarity-1 .itemname {
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="2"] .item-tip-name {
+        color: #0d1a07;
+    }
+    .rarity-0 .itemname, .rarity-1 .itemname,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="0"] .item-tip-header,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="1"] .item-tip-header {
         background: linear-gradient(to right, var(--tooltip-bg) 0%, #acacac80 100%);
     }
-    .itemtip.rarity-0 .itemname .itemtitle, .itemtip.rarity-1 .itemname .itemtitle {
+    .itemtip.rarity-0 .itemname .itemtitle, .itemtip.rarity-1 .itemname .itemtitle,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="0"] .item-tip-name,
+    #fr-layout.fr-theme[data-theme] .itemtip[data-rarity="1"] .item-tip-name
+    {
         color: #e6e6e6;
+    }
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="0"] .item-tip-name,
+    #fr-layout.fr-theme[data-theme="default"] .itemtip[data-rarity="1"] .item-tip-name {
+        color: #282828;
     }
     /*item count label*/
     .itemicon span, .baldwin-mini-item span, .baldwin-fullsize-item span {
@@ -8189,6 +8237,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         top: 0px;
         right: 0px;
         bottom: unset;
+        opacity: 1;
     }
     #game-database-sidebar-actions {
         display: flex;
@@ -10084,7 +10133,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .hoard-result-item-box[data-favorite="1"]:after,
     img[src$="/static/layout/game-database/button-favorite-on.png"],
     img[src$="/static/layout/pinglist/bbcode-subscribed.png"],
-    img[src$="/static/layout/buttton_subscribed.png"] {
+    img[src$="/static/layout/buttton_subscribed.png"],
+    .game-database-item-result[data-favorite="true"]::before {
         filter: sepia(100%) hue-rotate(var(--hue)) brightness(75%) contrast(180%) saturate(400%);
     }
     img[src$="/layout/button_incubate_used.png"],
