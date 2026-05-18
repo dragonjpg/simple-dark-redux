@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.1.1
+@version        3.1.2
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -2089,7 +2089,7 @@ EOT;
 @var range msg-font-size "Private Message Font Size" [12, 12, 20, 1, 'px']
 @var range msg-line-height "Private Message Line Height" [120, 100, 250, 10, '%']
 @advanced dropdown clan-color-text "Clan Bios" {
-clan-color-text-1 "Dark Mode (Disallow User-set Colors)" <<<EOT
+clan-color-text-1 "Theme Colors (Disallow User-set Colors)" <<<EOT
 .clan-profile-bio span[style*="color:"]:not([style*="transparent"], .bbcode_spoiler) {
     color: inherit !important;
 }
@@ -2100,7 +2100,7 @@ clan-color-text-1 "Dark Mode (Disallow User-set Colors)" <<<EOT
     color: inherit !important;
 }
 EOT;
-clan-color-text-2 "Dark Mode (Allow User-set Colors)" <<<EOT 
+clan-color-text-2 "Theme Colors (Allow User-set Colors)" <<<EOT 
 .clan-profile-bio {
     color: var(--text);
 }
@@ -2114,14 +2114,14 @@ clan-color-text-2 "Dark Mode (Allow User-set Colors)" <<<EOT
     color: var(--link-hover);
 }
 EOT;
-clan-color-text-3 "Light Mode" <<<EOT 
+clan-color-text-3 "Default Site Theme Colors" <<<EOT 
 /*general - we do not directly overwrite most vars to avoid breaking widgets *\/
 #fr-layout.fr-theme[data-theme] .clan-profile-bio {
     --text-alt: #000;
     --em: var(--text-alt);
     --strong: var(--text-alt);
-    --widget-med-alt: #f9f9f9;
-    --widget-light-alt: #eee;
+    --widget-med-alt: #F5F3ED;
+    --widget-light-alt: #F5F3ED;
     --borders-med-alt: #858179;
     --shadow: #b0b0b0;
     --fr-red: #570f01;
@@ -2195,7 +2195,7 @@ clan-color-text-3 "Light Mode" <<<EOT
 EOT;
 }
 @advanced dropdown bio-color-text "Dragon Bios" {
-bio-color-text-1 "Dark Mode (Disallow User-Set Colors)" <<<EOT
+bio-color-text-1 "Theme Colors (Disallow User-Set Colors)" <<<EOT
 .dragon-profile-bio-text span:not([style*="transparent"], .bbcode_spoiler) {
     color: var(--text) !important;
 }
@@ -2215,7 +2215,7 @@ a.bbcode_url:hover, a.bbcode_url:focus {
     color: var(--link-hover) !important;
 }
 EOT;
-bio-color-text-2 "Dark Mode (Allow User-Set Colors)" <<<EOT
+bio-color-text-2 "Theme Colors (Allow User-Set Colors)" <<<EOT
 .dragon-profile-bio-text {
     color: var(--text);
 }
@@ -2230,25 +2230,31 @@ bio-color-text-2 "Dark Mode (Allow User-Set Colors)" <<<EOT
     color: var(--link-hover);
 }
 EOT;
-bio-color-text-3 "Light Mode" <<<EOT
+bio-color-text-3 "Default Site Theme Colors" <<<EOT
 /*general - we do not directly overwrite most vars to avoid breaking widgets *\/
 #fr-layout.fr-theme[data-theme] #dragon-profile-bio.dragon-profile-bio,
 #fr-layout.fr-theme[data-theme] #dragon-profile-bio.dragon-profile-vista-bio {
     --text-alt: #000;
     --em: var(--text-alt);
     --strong: var(--text-alt);
-    --widget-med-alt: #f9f9f9;
-    --widget-light-alt: #eee;
-    --borders-med-alt: #858179;
+    --widget-med-alt: #e9e6de;
+    --widget-light-alt: #e9e6de;
+    --borders-med-alt: #cccccc;
     --shadow: #b0b0b0;
     --fr-red: #570f01;
     --quote-header: #874430;
-    --link-hover-alt: #731d08;
-    --link-alt: #96682C;
+    --link-hover-alt: #96682C;
+    --link-alt: #731d08;
 
     color: var(--text-alt);
     border-color: var(--borders-med-alt);
     background: linear-gradient(to bottom, var(--widget-med-alt) 0%, var(--widget-light-alt) 100%)
+}
+#fr-layout.fr-theme[data-theme] #dragon-profile-bio.common-style-override[data-style="0"] {
+    background: linear-gradient(to bottom, var(--widget-med-alt) 0%, var(--widget-light-alt) 100%) !important
+}
+#fr-layout.fr-theme[data-theme] .common-style-override[data-style="0"] a {
+    --link: var(--link-alt)
 }
 #fr-layout.fr-theme[data-theme] #dragon-profile-bio li::marker {
     --accent-two: var(--text-alt);
@@ -2327,7 +2333,7 @@ EOT;
 }
 
 @advanced dropdown forum-color-text "PMs & Forum Posts" {
-forum-color-text-1 "Dark Mode (Disallow User-set Colors)" <<<EOT
+forum-color-text-1 "Theme Colors (Disallow User-set Colors)" <<<EOT
 :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) span[style*="color:"]:not(span[style*="transparent"], .bbcode_spoiler) {
     color: var(--text) !important;
 }
@@ -2339,7 +2345,7 @@ forum-color-text-1 "Dark Mode (Disallow User-set Colors)" <<<EOT
 }
 
 EOT;
-forum-color-text-2 "Dark Mode (Allow User-set Colors)" <<<EOT
+forum-color-text-2 "Theme Colors (Allow User-set Colors)" <<<EOT
 #topic-preview-text, .post-text {
     color: var(--text);
 }
@@ -2351,22 +2357,24 @@ forum-color-text-2 "Dark Mode (Allow User-set Colors)" <<<EOT
     color: inherit;
 }
 EOT;
-forum-color-text-3 "Light Mode" <<<EOT
+forum-color-text-3 "Default Site Theme Colors" <<<EOT
 /*general - we do not directly overwrite most vars to avoid breaking widgets *\/
-:is(.post-text-content, .post-text-signature, #topic-preview-text),
+:is(.post-text-content, .post-text-signature, #topic-preview-text, .post-edited),
 #msg-preview-text, #msg-text {
-    --text-alt: #000;
+    --text-alt: #111111;
     --text-med: #555;
     --post-text: var(--text-alt);
     --em: inherit;
     --strong: inherit;
-    --widget-med-alt: #faf9f7;
+    --widget-med-alt: #E9E6DE;
     --borders-med-alt: #858179;
     --shadow: #b0b0b0;
     --fr-red: #570f01;
     --quote-header: #874430;
-    --link-hover-alt: #731d08;
-    --link-alt: #96682C;
+    --link-hover-alt: #96682C;
+    --link-alt: #731d08;
+    --text-subtle: var(--text-med);
+    --divider: #111111;
 
     --admin-text: #340000;
     --admin-strong: var(--admin-text);
@@ -2384,8 +2392,8 @@ forum-color-text-3 "Light Mode" <<<EOT
     color: var(--text-alt) !important;
 }
 #fr-layout.fr-theme[data-theme] .post-edited {
-    --link-hover: #731d08;
-    --link: #96682C;
+    --link-hover: #96682C;
+    --link: #731d08;
 }
 #fr-layout.fr-theme[data-theme] :is(.post-text-content, .post-text-signature, #topic-preview-text) li::marker {
     --accent-two: var(--text-alt);
@@ -2393,13 +2401,13 @@ forum-color-text-3 "Light Mode" <<<EOT
 /*white bg*\/
 #fr-layout.fr-theme[data-theme] .post .post-frame,
 #fr-layout.fr-theme[data-theme] #msg-text {
-    --widget-med-bg: #fff;
-    --widget-med-alt: #faf9f7;
+    --widget-med-bg: #F5F3ED;
+    --widget-med-alt: #E9E6DE;
 }
 #fr-layout.fr-theme[data-theme] #topic-preview-text,
 #fr-layout.fr-theme[data-theme] #msg-preview-text,
 #fr-layout.fr-theme[data-theme] #msg-show {
-    background: #fff;
+    background: #F5F3ED;
 }
 /*fix pm attachments label*\/
 #fr-layout.fr-theme[data-theme] #msg-items > p {
@@ -3636,7 +3644,7 @@ EOT;
         background-color: rgba(var(--warning),0.08) !important;
     }
     #fr-layout.fr-theme[data-theme] .common-checkbox[data-selected="1"]::after {
-        filter:invert(100%);
+        filter: invert(100%);
     }
     div.search-errors {
         border: 1px solid;
@@ -3706,9 +3714,11 @@ EOT;
     #fr-layout[data-responsive="auto"] #fr-layout-fixed-navigation {
         z-index: 2;
     }
-    /*modal fix*/
-    #fr-layout-main #fr-layout-legacy-content:has(#hoard-results-shade[style*="display: block"]) {
-      z-index: 7;
+    .common-svg-star-fill {
+        fill: var(--energy-full-one);
+    }
+    .common-svg-star-stroke {
+        fill: var(--energy-full-border)
     }
 }
 
@@ -4809,11 +4819,7 @@ EOT;
         background-position: right center;
         background-repeat: no-repeat;
         padding-right: 18px;
-        -moz-appearance: none;
-        -webkit-appearance: none;
         appearance: none;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
         border-radius: 5px;
     }
     #coli-dragonlist-controls select, #item-chooser-controls #quantity {
@@ -5212,6 +5218,10 @@ EOT;
     .common-bubble-subject,
     .dragon-search-filters-reset, .dragon-search-filters-keep-expanded {
         color: var(--text);
+    }
+    #fr-layout.fr-theme[data-theme] .responsive-page-header-title,
+    #fr-layout.fr-theme[data-theme] .clan-profile-header-title {
+        color: var(--strong);
     }
     #fr-layout.fr-theme[data-theme] .responsive-page-header-subtitle, .content-header-sub, #pl_headerSmall, p.subheader {
         color: var(--accent-four);
@@ -5872,6 +5882,9 @@ EOT;
     .dragon-profile-familiar-meter-full {
         background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
         border: 1px solid var(--energy-border);
+    }
+    #fr-layout.fr-theme[data-theme] #dragon-profile-bio.common-style-override[data-style="0"] {
+        background: linear-gradient(to bottom, var(--widget-med) 0%, var(--widget-light) 100%) !important;
     }
     .dragon-profile-lineage,
     #dragon-profile-bio.dragon-profile-bio,
@@ -8090,6 +8103,10 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/hoard.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/vault.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/game-database.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/search.*") {
     /* Hoard & Vault & GameDB & Search */
+    /*modal fix*/
+    #fr-layout-main #fr-layout-legacy-content:has(#hoard-results-shade[style*="display: block"]) {
+      z-index: 7;
+    }
     .common-bulletin-text {
         background: var(--columns);
     }
@@ -8117,11 +8134,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-repeat: no-repeat;
         margin: 5px auto;
         padding-right: 18px;
-        -moz-appearance: none;
-        -webkit-appearance: none;
         appearance: none;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
         border-radius: 5px;
     }
     .hoard-result-item[data-selected="1"] .hoard-result-item-box {
@@ -8298,11 +8311,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-repeat: no-repeat;
         margin: 5px auto;
         padding-right: 18px;
-        -moz-appearance: none;
-        -webkit-appearance: none;
         appearance: none;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
         border-radius: 5px;
     }
     img[src$="/static/layout/hoard/tooltip-lock.png"],
@@ -8410,7 +8419,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .fr-theme[data-theme] {
         --post-text: var(--text);
         --widget-med-bg: var(--widget-med);
-        --widget-alt-opacity: 0.75;
+        --widget-alt-opacity: 0.4;
         --widget-med-alt: rgba(var(--widget-med-rgb),var(--widget-alt-opacity));
     }
     .fr-theme[data-theme="default"] {
@@ -8647,10 +8656,16 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         border-left: 1px solid var(--borders);
     }
     #fr-layout.fr-theme[data-theme] .post-frame .post-text {
-        background: var(--widget-med-bg);
+        background-color: var(--widget-med-bg);
     }
     #fr-layout.fr-theme[data-theme] .post:nth-child(2n) .post-frame .post-text {
         background-color: var(--widget-med-alt);
+    }
+    .post.post-admin .post-text,
+    .post-admin .post-header {
+        background-image: inherit;
+        background-position: top right;
+        background-repeat: no-repeat;
     }
     #fr-layout.fr-theme[data-theme] div.post-author {
         background-color: var(--widget);
