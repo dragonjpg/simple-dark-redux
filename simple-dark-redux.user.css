@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.1.2
+@version        3.2.0
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -722,6 +722,11 @@ light99 "Custom" <<<EOT
         --sidebar-two: var(--columns);
 
 EOT;
+}
+@advanced dropdown darktheme "Dark Theme to Replace" {
+darktheme1 "Dark" <<<EOTdarkEOT;
+darktheme2 "Slate" <<<EOTslateEOT;
+darktheme3 "Charcoal" <<<EOTcharcoalEOT;
 }
 @advanced dropdown dark "Dark Theme Replacement" {
 dark1 "Classic Blue" <<<EOT 
@@ -2326,7 +2331,7 @@ bio-color-text-3 "Default Site Theme Colors" <<<EOT
     border-color: var(--fr-red);
 }
 #fr-layout.fr-theme[data-theme] .dragon-profile-bio-text .forum-hidden {
-    background: #fff;
+    background: inherit;
     border-color: #cab1b1;
 }
 EOT;
@@ -2717,7 +2722,7 @@ EOT;
         /*[[light]]*/
         --drop-shadow: rgba(0, 0, 0, .2)
     }
-    .fr-theme[data-theme="dark"] {
+    .fr-theme[data-theme="/*[[darktheme]]*/"] {
         /*[[dark]]*/
         --drop-shadow: rgba(0, 0, 0, .5);
     }
@@ -2809,7 +2814,7 @@ EOT;
     #fr-layout.fr-theme[data-theme] .theme-text-subtle-3 {
         color: var(--text-subtle);
     }
-    #fr-layout.fr-theme[data-theme="dark"] .theme-text-link-3 {
+    #fr-layout.fr-theme[data-theme="/*[[darktheme]]*/"] .theme-text-link-3 {
         color: var(--text);
     }
     #fr-layout.fr-theme[data-theme="default"] .theme-text-link-3 {
@@ -3459,7 +3464,7 @@ EOT;
     #fr-layout.fr-theme[data-theme] .common-field select,
     #fr-layout.fr-theme[data-theme] .common-color-field select {
         background-color: var(--columns);
-        background-image: url('https://www1.flightrising.com/static/layout/common/select-menu.png'), linear-gradient(var(--textarea) 0%, var(--widget) 100%);
+        background-image: url('https://www1.flightrising.com/static/layout/common/select-menu.png');
         background-repeat: no-repeat;
         background-position: right center;
         border-color: var(--borders);
@@ -3659,10 +3664,10 @@ EOT;
     #fr-layout.fr-theme[data-theme] .common-message-info a:hover > * {
         color: var(--warning-text);
     }
-    #fr-layout.fr-theme[data-theme="dark"] .common-message-info a[style*="color"] {
+    #fr-layout.fr-theme[data-theme="/*[[darktheme]]*/"] .common-message-info a[style*="color"] {
          color: rgb(var(--warning)) !important;
     }
-    #fr-layout.fr-theme[data-theme="dark"] .common-message-info a[style*="color"]:hover,
+    #fr-layout.fr-theme[data-theme="/*[[darktheme]]*/"] .common-message-info a[style*="color"]:hover,
     #fr-layout.fr-theme[data-theme="default"] .common-message-info a[style*="color"],
     #fr-layout.fr-theme[data-theme="default"] .common-message-info a[style*="color"]:hover {
          color: var(--warning-text) !important;
@@ -3803,9 +3808,9 @@ EOT;
     .dgnres-table tr, .common-table tr, hr.skin-system-hr, .friend-request {
         border-color: var(--divider)
     }
-    .fr-theme[data-theme="dark"] img[src*="/images/layout/graydot.gif"],
-    .fr-theme[data-theme="dark"] img[src*="/static/layout/graydot.gif"],
-    .fr-theme[data-theme="dark"] img.divider {
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src*="/images/layout/graydot.gif"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src*="/static/layout/graydot.gif"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img.divider {
         opacity: 0.2;
     }
     .fr-theme[data-theme="default"] img[src*="/images/layout/graydot.gif"],
@@ -4815,7 +4820,7 @@ EOT;
         background-color: var(--columns);
         color: var(--text);
         border: 1px solid var(--borders);
-        background-image: url('https://www1.flightrising.com/static/layout/common/select-menu.png'), linear-gradient(var(--textarea) 0%, var(--widget) 100%);
+        background-image: url('https://www1.flightrising.com/static/layout/common/select-menu.png');
         background-position: right center;
         background-repeat: no-repeat;
         padding-right: 18px;
@@ -4844,7 +4849,7 @@ EOT;
         background-color: var(--selected);
         color: var(--selected-text);
     }
-    /*.fr-theme[data-theme="dark"] .common-checkbox[data-selected="1"]::after {
+    /*.fr-theme[data-theme="/*[[darktheme]]*\/"] .common-checkbox[data-selected="1"]::after {
         filter: brightness(0);
     }*/
     /*common meters*/
@@ -5300,10 +5305,10 @@ EOT;
         z-index: -1;
         pointer-events: none;
     }
-    .fr-theme[data-theme="dark"] .scry-image .scry-image-rear::before,
-    .fr-theme[data-theme="dark"] .outfit-image-rear::before,
-    .fr-theme[data-theme="dark"] .pinglist-button::before,
-    .fr-theme[data-theme="dark"] .pinglist-button-demo::before {
+    .fr-theme[data-theme="/*[[darktheme]]*/"] .scry-image .scry-image-rear::before,
+    .fr-theme[data-theme="/*[[darktheme]]*/"] .outfit-image-rear::before,
+    .fr-theme[data-theme="/*[[darktheme]]*/"] .pinglist-button::before,
+    .fr-theme[data-theme="/*[[darktheme]]*/"] .pinglist-button-demo::before {
         filter: invert(100%) var(--filter) hue-rotate(var(--hue)) saturate(150%) brightness(100%);
     }
     .fr-theme[data-theme="default"] .scry-image .scry-image-rear::before,
@@ -5735,7 +5740,7 @@ EOT;
     {
         background: var(--section);
     }
-    .fr-theme[data-theme="dark"] img[src*="/static/layout/clan-profile/gear.png"] {
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src*="/static/layout/clan-profile/gear.png"] {
         filter: brightness(200%);
     }
     #comment {
@@ -5900,7 +5905,7 @@ EOT;
     }
     #fr-layout.fr-theme[data-theme] #dragon-profile-show-details .theme-svg-glyph-fill,
     #fr-layout.fr-theme[data-theme] #dragon-profile-hide-details .theme-svg-glyph-fill {
-        fill: var(--button-icon)
+        fill: var(--button-text)
     }
     /*[[bio-color-text]]*/
     /*[[bio-override-fonts]]*/
@@ -7332,7 +7337,7 @@ EOT;
         background-position: top center;
         z-index: -1;
     }
-    .fr-theme[data-theme="dark"] #crimswap::before {
+    .fr-theme[data-theme="/*[[darktheme]]*/"] #crimswap::before {
         filter: invert(100%) var(--filter) hue-rotate(var(--hue)) contrast(80%) saturate(200%);
     }
     .fr-theme[data-theme="default"] #crimswap::before {
@@ -8129,6 +8134,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     /* make hoard/vault settings match the dropdown select style */
     .settings-hub-select-control select {
         border: 1px solid var(--borders);
+        background-color: var(--columns);
         background-image: url('https://www1.flightrising.com/static/layout/common/select-menu.png');
         background-position: right center;
         background-repeat: no-repeat;
@@ -8306,6 +8312,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     /* make hoard/vault settings match the dropdown select style */
     .settings-hub-select-control select {
         border: 1px solid var(--borders);
+        background-color: var(--columns);
         background-image: url('https://www1.flightrising.com/static/layout/common/select-menu.png');
         background-position: right center;
         background-repeat: no-repeat;
@@ -8519,6 +8526,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #msg-text .dragon-effect-frame[data-layout="bbcode"] .dragon-effect-controls-inset-text,
     #msg-preview-text .dragon-effect-frame[data-layout="bbcode"] .dragon-effect-controls-inset-text {
         line-height: 120%;
+    }
+    .ui-dialog[style*="top: -"]:has(#topic-preview) {
+        top: 0 !important
     }
     /*forums*/
     .forumname {
@@ -9351,7 +9361,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 }
 @-moz-document regexp("(http|https):\\/\\/(|www1\\.|www\\.)flightrising\\.com\\/market.*") {
     /* Marketplace */
-    #fr-layout.fr-theme[data-theme="dark"] {
+    #fr-layout.fr-theme[data-theme="/*[[darktheme]]*/"] {
         --flash-item: #ff9758;
         --flash-price: #ffe3b0;
         --flash-bg-one: #43211b;
@@ -9416,7 +9426,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         height: 100%;
         opacity: 0.8;
     }
-    #fr-layout.fr-theme[data-theme="dark"] .market-item-result.market-flash-result::before {
+    #fr-layout.fr-theme[data-theme="/*[[darktheme]]*/"] .market-item-result.market-flash-result::before {
         filter: invert(100%) hue-rotate(180deg);
     }
     .market-item-price-container, .gem-pricing-container {
@@ -10190,16 +10200,16 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="/static/layout/lair/backgrounds/female.png"] {
         filter: var(--filter) hue-rotate(var(--hue)) brightness(65%) contrast(190%);
     }
-    .fr-theme[data-theme="dark"] img[src$="/layout/button_hatch.png"],
-    .fr-theme[data-theme="dark"] img[src$="/layout/button_nest_breed.png"],
-    .fr-theme[data-theme="dark"] img[src$="/layout/button_incubate.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/button_boon.png"],
-    .fr-theme[data-theme="dark"] img[src$="/layout/eggtimer_0.png"],
-    .fr-theme[data-theme="dark"] img[src$="/layout/eggtimer_1.png"],
-    .fr-theme[data-theme="dark"] img[src$="/layout/eggtimer_2.png"],
-    .fr-theme[data-theme="dark"] img[src$="/layout/eggtimer_3.png"],
-    .fr-theme[data-theme="dark"] img[src$="/layout/eggtimer_4.png"],
-    .fr-theme[data-theme="dark"] img[src$="/layout/eggtimer_5.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/layout/button_hatch.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/layout/button_nest_breed.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/layout/button_incubate.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/button_boon.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/layout/eggtimer_0.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/layout/eggtimer_1.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/layout/eggtimer_2.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/layout/eggtimer_3.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/layout/eggtimer_4.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/layout/eggtimer_5.png"],
     .coli-equip-statdlg-plus-btn {
         filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(75%) contrast(150%);
     }
@@ -10226,21 +10236,21 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     img[src$="static/layout/toggle_off.png"] {
         filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue));
     }
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/profile/emblem-ancient.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/profile/emblem-hatchling.png"] {
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/profile/emblem-ancient.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/profile/emblem-hatchling.png"] {
         filter: invert(100) var(--filter) hue-rotate(var(--hue));
         opacity: 0.7;
     }
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/auctionhouse/searchtab_down.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/auctionhouse/searchtab_up.png"] {
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/auctionhouse/searchtab_down.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/auctionhouse/searchtab_up.png"] {
         filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(200%) contrast(150%);
     }
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/baldwin/arrow.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/crafter/arrow.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/icons/close.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/copy.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/pinglist/bbcode-no-icon.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/pinglist/bbcode-not-subscribed.png"] {
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/baldwin/arrow.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/crafter/arrow.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/icons/close.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/copy.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/pinglist/bbcode-no-icon.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/pinglist/bbcode-not-subscribed.png"] {
         filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(70%) saturate(200%);
     }
     .fr-theme[data-theme="default"] img[src$="/static/layout/baldwin/arrow.png"],
@@ -10251,12 +10261,12 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .fr-theme[data-theme="default"] img[src$="/static/layout/pinglist/bbcode-not-subscribed.png"] {
         filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) saturate(150%);
     }
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/button_attachdragon.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/icon_itemnotattached.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/icon_currencynotattached.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/icon_dragonnotattached.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/icons/question.png"],
-    .fr-theme[data-theme="dark"] .forum-hidden-icon {
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/button_attachdragon.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/icon_itemnotattached.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/icon_currencynotattached.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/icon_dragonnotattached.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/icons/question.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] .forum-hidden-icon {
         filter: invert(100%) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(100%) contrast(100%)
     }
     .fr-theme[data-theme="default"] img[src$="/static/layout/button_attachdragon.png"],
@@ -10267,12 +10277,12 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .fr-theme[data-theme="default"] .forum-hidden-icon {
         filter: var(--filter) var(--filter-brightness) hue-rotate(var(--hue))
     }
-    .fr-theme[data-theme="dark"] #coli-equip-statpoints-btn,
-    .fr-theme[data-theme="dark"] .coli-equip-statdlg-plus-btn.coli-equip-disabled {
+    .fr-theme[data-theme="/*[[darktheme]]*/"] #coli-equip-statpoints-btn,
+    .fr-theme[data-theme="/*[[darktheme]]*/"] .coli-equip-statdlg-plus-btn.coli-equip-disabled {
         filter: invert(100) var(--filter) var(--filter-brightness) hue-rotate(var(--hue)) brightness(110%) saturate(200%);
     }
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/lair/icons/male.png"],
-    .fr-theme[data-theme="dark"] img[src$="/static/layout/lair/icons/female.png"] {
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/lair/icons/male.png"],
+    .fr-theme[data-theme="/*[[darktheme]]*/"] img[src$="/static/layout/lair/icons/female.png"] {
         filter: brightness(200%);
     }
     img[src$="/static/layout/baldwin/cauldron_loading.gif"] {
