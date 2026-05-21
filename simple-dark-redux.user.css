@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.2.0
+@version        3.2.1
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -3471,6 +3471,11 @@ EOT;
         color: var(--text);
         padding: 0.5em;
     }
+    #fr-layout.fr-theme[data-theme="/*[[darktheme]]*/"] .common-filter select,
+    #fr-layout.fr-theme[data-theme="/*[[darktheme]]*/"] .common-field select,
+    #fr-layout.fr-theme[data-theme="/*[[darktheme]]*/"] .common-color-field select {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANBAMAAACEMClyAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAADBQTFRFAAAA////////////////////////////////////////////////////////////O00EMAAAABB0Uk5TADUhfhJ4gAhtbgJeX0sTIgnNjQcAAABRSURBVHicY2RgYGDk/wAkgAxl/nNgBksQ/+0DIEbFOwbDTCCDa80GBjaTBEYG3kigsiwDkGIwQBLh2rMAooah8i1EF8icagWIyTIHIVaA7QIA/i0RDmzfDpwAAAAASUVORK5CYII=);
+    }
     /*override styles*/
     #fr-layout.fr-theme[data-theme] .common-style-override[data-style="0"],
     #fr-layout.fr-theme[data-theme] .common-style-override[data-style="0"] i,
@@ -4816,7 +4821,12 @@ EOT;
         border: var(--borders);
         padding: 0.15em;
     }
-    .common-column-content select, select, .dragon-picker-filter-field input, .dragon-picker-filter-field select, .morphology-picker-filter-field input, .morphology-picker-filter-field select {
+    .common-column-content select,
+    select,
+    .dragon-picker-filter-field input,
+    .dragon-picker-filter-field select,
+    .morphology-picker-filter-field input,
+    .morphology-picker-filter-field select {
         background-color: var(--columns);
         color: var(--text);
         border: 1px solid var(--borders);
@@ -4826,6 +4836,14 @@ EOT;
         padding-right: 18px;
         appearance: none;
         border-radius: 5px;
+    }
+    [data-theme="/*[[darktheme]]*/"] .common-column-content select,
+    [data-theme="/*[[darktheme]]*/"] select,
+    [data-theme="/*[[darktheme]]*/"] .dragon-picker-filter-field input,
+    [data-theme="/*[[darktheme]]*/"] .dragon-picker-filter-field select,
+    [data-theme="/*[[darktheme]]*/"] .morphology-picker-filter-field input,
+    [data-theme="/*[[darktheme]]*/"] .morphology-picker-filter-field select {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANBAMAAACEMClyAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAADBQTFRFAAAA////////////////////////////////////////////////////////////O00EMAAAABB0Uk5TADUhfhJ4gAhtbgJeX0sTIgnNjQcAAABRSURBVHicY2RgYGDk/wAkgAxl/nNgBksQ/+0DIEbFOwbDTCCDa80GBjaTBEYG3kigsiwDkGIwQBLh2rMAooah8i1EF8icagWIyTIHIVaA7QIA/i0RDmzfDpwAAAAASUVORK5CYII=);
     }
     #coli-dragonlist-controls select, #item-chooser-controls #quantity {
         background-color: var(--widget);
@@ -7518,9 +7536,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/scrying.*"), regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/nesting\\/.*") {
     /* Scrying Workshop & Fixes for Nesting Grounds/Preview Offspring */
-    #predict-morphology .scry-options select {
-        padding: 0;
-    }
     #predict-morphology .scry-load, #predict-morphology .scry-manage-options {
         background: rgba(var(--widget-rgb),0.85);
         border-color: var(--borders)
@@ -8143,6 +8158,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         appearance: none;
         border-radius: 5px;
     }
+    [data-theme="/*[[darktheme]]*/"] .settings-hub-select-control select {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANBAMAAACEMClyAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAADBQTFRFAAAA////////////////////////////////////////////////////////////O00EMAAAABB0Uk5TADUhfhJ4gAhtbgJeX0sTIgnNjQcAAABRSURBVHicY2RgYGDk/wAkgAxl/nNgBksQ/+0DIEbFOwbDTCCDa80GBjaTBEYG3kigsiwDkGIwQBLh2rMAooah8i1EF8icagWIyTIHIVaA7QIA/i0RDmzfDpwAAAAASUVORK5CYII=);
+    }
     .hoard-result-item[data-selected="1"] .hoard-result-item-box {
         background: linear-gradient(to bottom, var(--energy-one) 0%, var(--energy-two) 100%);
         border: 2px solid var(--energy-border);
@@ -8320,6 +8338,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         padding-right: 18px;
         appearance: none;
         border-radius: 5px;
+    }
+    [data-theme="/*[[darktheme]]*/"] .settings-hub-select-control select {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANBAMAAACEMClyAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAADBQTFRFAAAA////////////////////////////////////////////////////////////O00EMAAAABB0Uk5TADUhfhJ4gAhtbgJeX0sTIgnNjQcAAABRSURBVHicY2RgYGDk/wAkgAxl/nNgBksQ/+0DIEbFOwbDTCCDa80GBjaTBEYG3kigsiwDkGIwQBLh2rMAooah8i1EF8icagWIyTIHIVaA7QIA/i0RDmzfDpwAAAAASUVORK5CYII=);
     }
     img[src$="/static/layout/hoard/tooltip-lock.png"],
     img[src$="/static/layout/hoard/tooltip-like.png"],
