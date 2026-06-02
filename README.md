@@ -15,8 +15,8 @@ You will need [Stylus](https://github.com/openstyles/stylus#readme). When you in
 <img alt="quickswitch" src="https://github.com/user-attachments/assets/a2743c6c-239e-4fab-98de-51ca1ec728c0" />
 
 ## General Info
-**Last Updated:** Apr. 29, 2026\
-**Current Ver:** 3.1.0\
+**Last Updated:** Jun. 2, 2026\
+**Current Ver:** 3.2.2\
 **Full Changelog:** [View Here](https://github.com/dragonjpg/simple-dark-redux/pulls?q=is%3Apr+is%3Aclosed)\
 **Found a bug? Have a suggestion?** [Open an Issue](https://github.com/dragonjpg/simple-dark-redux/issues)
 
