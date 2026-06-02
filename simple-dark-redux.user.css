@@ -5270,7 +5270,8 @@ EOT;
         color: var(--text);
     }
     #fr-layout.fr-theme[data-theme] .responsive-page-header-title,
-    #fr-layout.fr-theme[data-theme] .clan-profile-header-title {
+    #fr-layout.fr-theme[data-theme] .clan-profile-header-title,
+    #fr-layout.fr-theme[data-theme] .forum-listing-header {
         color: var(--strong);
     }
     #fr-layout.fr-theme[data-theme] .responsive-page-header-subtitle, .content-header-sub, #pl_headerSmall, p.subheader {
