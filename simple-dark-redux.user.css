@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.2.1
+@version        3.2.2
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -1133,7 +1133,7 @@ dark3 "Copper" <<<EOT
         --accent-two: #c6c5a8;
         --accent-three: #f27c4e;
         --accent-four: #b2c4b3;
-        --accent-five: #767067;
+        --accent-five: #d7b075;
         
         --button-text: #080e10;
         --button-text-dark: #fefdf2;
@@ -1918,12 +1918,20 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 #gather_collect_buttons input {
     width: 48%;
 }
-#baldwin-preview-container #baldwin-preview-button-tray, #newitem #pinkerton-button-tray, #pinkerton-button-tray, #name-dragon-start-dialog .common-dialog-section:last-child, #ah-cancel-verify-dlg p:last-child, #ah-cancel-ok-dlg p:last-child, #ah-sell-verify-dlg p:last-child, #ah-sell-ok-dlg p:last-child, #ah-sell-submit-container, .raffle-window-buttons, #blocked-by-user-close,
-.vista-options ~ div:last-of-type {
+#baldwin-preview-container #baldwin-preview-button-tray, #newitem #pinkerton-button-tray, #pinkerton-button-tray, #name-dragon-start-dialog .common-dialog-section:last-child, #ah-cancel-verify-dlg p:last-child, #ah-cancel-ok-dlg p:last-child, #ah-sell-verify-dlg p:last-child, #ah-sell-ok-dlg p:last-child, #ah-sell-submit-container, .raffle-window-buttons, #blocked-by-user-close, .vista-options ~ div:last-of-type, .ui-dialog-content .common-dialog-section:has( > .common-ui-button) {
     display: flex;
     justify-content: center;
     width: 100%;
     margin: 10px auto;
+    grid-gap: 0.5em;
+    flex-wrap: wrap;
+}
+#errors-close {
+    width: 100%;
+    margin: 20px 0 0;
+}
+.ui-dialog-content .common-dialog-section .common-ui-button {
+    flex-grow: 1;
 }
 .vista-options ~ div:last-of-type {
     margin: 10px auto !important;
@@ -1962,6 +1970,9 @@ div#purchase.ui-dialog-content > div:last-child button + button {
     min-height: 50px;
     max-width: 100%;
 }
+.dialog-button-tray:has(button ~ button) {
+    grid-gap: 15px;
+}
 #dialog-dad + img + #dialog-mom + div br {
     display: none;
 }
@@ -1978,7 +1989,7 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 .dialog-button-tray input[type="button"] {
     margin-right: 0;
 }
-.dragon-picker-preview-buttons > .dragon-picker-preview-back + .dragon-picker-preview-confirm, .dialog-button-tray > input + input, .dialog-button-tray > a + input, .dialog-button-tray > button + button, .market-purchase-buttons button + button, #name-dragon-start-dialog .common-dialog-section:last-child > input + input, #dialog-dad + img + #dialog-mom + div + div button + button, .raffle-window-buttons input + input, div#confirm-trade button + button, div#confirm-approve button + button  {
+.dragon-picker-preview-buttons > .dragon-picker-preview-back + .dragon-picker-preview-confirm, .dialog-button-tray > input + input, .dialog-button-tray > a + input, .market-purchase-buttons button + button, #name-dragon-start-dialog .common-dialog-section:last-child > input + input, #dialog-dad + img + #dialog-mom + div + div button + button, div#confirm-trade button + button, div#confirm-approve button + button  {
     margin-left: 20px;
 }
 #mannequin-confirm-ok, #name-dragon-confirm-dialog .common-dialog-section:last-child input, #breed_mod #close, #tutclose, #closeprev, #skin-no, #share-outfit-cancel, #overwriteMorphology, #saveNewMorphology, #take-confirm button {
@@ -3730,6 +3741,10 @@ EOT;
     .common-svg-star-stroke {
         fill: var(--energy-full-border)
     }
+    /*patch for quickswitcher*/
+    #fr-layout.fr-theme[data-theme] #themeswap :is(.day, .night) .theme-svg-player-module-logout-glyph-fill {
+        fill: currentColor;
+    } 
 }
 
 
@@ -3884,21 +3899,23 @@ EOT;
     #alertlist > a > .alert-v2, #alertwin > a > .alert-v2 {
         color: var(--text)
     }
-    #alertlist div.alert-v2.alert-v2-unread, #alertwin div.alert-v2.alert-v2-unread {
+    div.alert-v2 {
+        --pushpin: url("data:image/svg+xml,%3Csvg fill='%23e2fac9' width='50px' height='50px' viewBox='0 0 32 32' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.973 17.802l-7.794-4.5c-0.956-0.553-2.18-0.225-2.732 0.731-0.552 0.957-0.224 2.18 0.732 2.732l7.793 4.5c0.957 0.553 2.18 0.225 2.732-0.732 0.554-0.956 0.226-2.179-0.731-2.731zM12.545 12.936l6.062 3.5 2.062-5.738-4.186-2.416-3.938 4.654zM8.076 27.676l5.799-7.044-2.598-1.5-3.201 8.544zM23.174 7.525l-5.195-3c-0.718-0.414-1.635-0.169-2.049 0.549-0.415 0.718-0.168 1.635 0.549 2.049l5.196 3c0.718 0.414 1.635 0.169 2.049-0.549s0.168-1.635-0.55-2.049z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    #alertlist div.alert-v2.alert-v2-unread,
+    #alertwin div.alert-v2.alert-v2-unread,
+    #fr-layout.fr-theme[data-theme] #fr-layout-alerts-content div.alert-v2.alert-v2-unread {
         background: var(--section);
         background-image: none;
-        color: var(--em)
+        color: var(--em);
     }
     #alertwin .alert-v2-date, #alertlist .alert-v2-date, #status-box .status-author time, .pinglist-ping-demo, .breadcrumbs .tabbed-breadcrumbs span {
         color: var(--text-med)
     }
-    #alertlist div.alert-v2.alert-v2-unread::after,
-    #alertwin div.alert-v2.alert-v2-unread::after, 
-    #alertlist a[href$="/trading/archaeology/dig-sites"] div.alert-v2::after,
-    #alertwin a[href$="/trading/archaeology/dig-sites"] div.alert-v2::after,
-    #alertlist a[href*="/auction-house/activity/"] div.alert-v2::after,
-    #alertwin a[href*="/auction-house/activity/"] div.alert-v2::after {
-        content: '⟡ NEW';
+    :is(#alertlist, #alertwin, #fr-layout-alerts-content) div.alert-v2.alert-v2-unread::after, 
+    :is(#alertlist, #alertwin, #fr-layout-alerts-content) a[href$="/trading/archaeology/dig-sites"] div.alert-v2::after,
+    :is(#alertlist, #alertwin, #fr-layout-alerts-content) a[href*="/auction-house/activity/"] div.alert-v2::after {
+        content: '⟡ NEW' / 'NEW';
         font-weight: bold;
         color: var(--success-text);
         position: absolute;
@@ -3908,18 +3925,28 @@ EOT;
         padding: 2px 4px;
         border-radius: 3px;
         font-size: 8px;
+        border: 1px solid rgba(var(--success),0.25);
     }
-    #alertlist a[href$="/trading/baldwin/transmute"] div.alert-v2.alert-v2-unread::after,
-    #alertwin a[href$="/trading/baldwin/transmute"] div.alert-v2.alert-v2-unread::after,
-    #alertlist a[href$="/trading/archaeology/dig-sites"] div.alert-v2::after,
-    #alertwin a[href$="/trading/archaeology/dig-sites"] div.alert-v2::after,
-    #alertlist a[href$="/trading/sophie"] div.alert-v2::after,
-    #alertwin a[href$="/trading/sophie"] div.alert-v2::after,
-    #alertlist a[href*="/auction-house/activity/"] div.alert-v2.alert-v2-unread::after,
-    #alertwin a[href*="/auction-house/activity/"] div.alert-v2.alert-v2-unread::after,
-    #alertlist a[href*="/auction-house/activity/"] div.alert-v2::after,
-    #alertwin a[href*="/auction-house/activity/"] div.alert-v2::after {
-        content: '⟡';
+    #fr-layout.fr-theme[data-theme="default"] #fr-layout-alerts-content div.alert-v2::after {
+        background-color: rgba(var(--success),0.6);
+        border-color: rgba(var(--success),1)
+    }
+    :is(#alertlist, #alertwin, #fr-layout-alerts-content) a[href$="/trading/baldwin/transmute"] div.alert-v2::after,
+    :is(#alertlist, #alertwin, #fr-layout-alerts-content) a[href$="/trading/archaeology/dig-sites"] div.alert-v2::after,
+    :is(#alertlist, #alertwin, #fr-layout-alerts-content) a[href$="/trading/sophie"] div.alert-v2::after,
+    :is(#alertlist, #alertwin, #fr-layout-alerts-content) a[href*="/auction-house/activity/"] div.alert-v2::after {
+        content: '⟡' / 'Pinned';
+        color: transparent;
+        background-image: var(--pushpin);
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    #fr-layout.fr-theme[data-theme="default"] div.alert-v2 {
+        --pushpin: url("data:image/svg+xml,%3Csvg fill='%23224010' width='50px' height='50px' viewBox='0 0 32 32' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.973 17.802l-7.794-4.5c-0.956-0.553-2.18-0.225-2.732 0.731-0.552 0.957-0.224 2.18 0.732 2.732l7.793 4.5c0.957 0.553 2.18 0.225 2.732-0.732 0.554-0.956 0.226-2.179-0.731-2.731zM12.545 12.936l6.062 3.5 2.062-5.738-4.186-2.416-3.938 4.654zM8.076 27.676l5.799-7.044-2.598-1.5-3.201 8.544zM23.174 7.525l-5.195-3c-0.718-0.414-1.635-0.169-2.049 0.549-0.415 0.718-0.168 1.635 0.549 2.049l5.196 3c0.718 0.414 1.635 0.169 2.049-0.549s0.168-1.635-0.55-2.049z'%3E%3C/path%3E%3C/svg%3E");
+    }
+    .alert-v2-date img {
+        display: none;
     }
     #fr-layout-alerts-content > a {
         display: block;
@@ -5243,7 +5270,8 @@ EOT;
         color: var(--text);
     }
     #fr-layout.fr-theme[data-theme] .responsive-page-header-title,
-    #fr-layout.fr-theme[data-theme] .clan-profile-header-title {
+    #fr-layout.fr-theme[data-theme] .clan-profile-header-title,
+    #fr-layout.fr-theme[data-theme] .forum-listing-header {
         color: var(--strong);
     }
     #fr-layout.fr-theme[data-theme] .responsive-page-header-subtitle, .content-header-sub, #pl_headerSmall, p.subheader {
@@ -5258,23 +5286,52 @@ EOT;
         background-color: var(--textarea);
         border-color: var(--borders);
     }
-    
+    /*trading post stall buttons*/
     #trading-post-content .common-hub-item-button-image {
+        outline: 0px solid transparent;
+    }
+    [data-theme="/*[[darktheme]]*/"] #trading-post-content .common-hub-item-button-image {
         opacity: 0.75;
-        transition: opacity 0.3s;
     }
     #trading-post-content a:hover .common-hub-item-button-image,
     #trading-post-content a:focus .common-hub-item-button-image {
-        opacity: 1;
+        outline: 2px solid var(--bar);
+        border-radius: 8px;
     }
-    
+    [data-theme="/*[[darktheme]]*/"] #trading-post-content a:hover .common-hub-item-button-image,
+    [data-theme="/*[[darktheme]]*/"] #trading-post-content a:focus .common-hub-item-button-image {
+        opacity: 1;
+        outline: 2px solid var(--accent-five);
+    }
+    .common-hub-item-button:focus .common-hub-item-description {
+        display: block;
+    }
+    #trading-post-content .common-column {
+        width: auto;
+        margin-bottom: 0;
+    }
+    #trading-post-content .common-focus {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
+    }
+    #trading-post-content .common-focus .common-row {
+        display: flex;
+        justify-content: center;
+    }
+    #trading-post-content .common-hub-item-description {
+        background: var(--tooltip-bg);
+    }
     /*Support */
-    div.common-hub-item-description {
-        color: var(--text) !important;
-        background: var(--main) !important;
-        border: 0px solid var(--borders) !important;
-        border-color: var(--borders) !important;
-        border-radius: 10px !important;
+    div.common-hub-item-description,
+    .custom-shops-list-item-description {
+        color: var(--tooltip-text);
+        background: var(--tooltip-bg);
+        border: 0px solid var(--borders);
+        border-color: var(--borders);
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 6px;
+        pointer-events: none;
     }
     /* Close Box button */
     .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active, #fr-layout .ui-dialog .ui-dialog-titlebar-close {
@@ -5354,7 +5411,8 @@ EOT;
     .scry-image .scry-image-rear {
         transition: 0.3s opacity;
     }
-    .scry-image:hover .scry-buttons {
+    .scry-image:hover .scry-buttons,
+    .scry-image[data-selected="true"] .scry-buttons {
         opacity: 1;
         pointer-events: auto;
     }
@@ -6642,6 +6700,10 @@ EOT;
         background-position: 15px center;
         border-radius: 8px;
     }
+    .fr-theme[data-theme="default"] .dr-apparel-widget-information {
+        background-color: rgb(var(--warning));
+        border-color: var(--warning-text);
+    }
     .dr-apparel-widget-information strong {
         color: inherit;
     }
@@ -7246,14 +7308,16 @@ EOT;
         top: 400px;
     }
     #gather_success_bg img {
-        filter: brightness(60%) contrast(180%);
-        mix-blend-mode: overlay;
+        mix-blend-mode: difference;
+        opacity: 0.8;
         border-radius: 20px;
         overflow: hidden;
         min-width: 450px;
         min-height: 315px;
-        background: #fff;
         padding: 5px 5px 20px;
+    }
+    .fr-theme[data-theme="default"] #gather_success_bg img {
+        mix-blend-mode: darken;
     }
     .gatherblurb {
         margin-top: 30px;
@@ -7600,7 +7664,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     #assay-container > div:nth-child(3) {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         padding-top: 0 !important;
@@ -8552,11 +8615,16 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         top: 0 !important
     }
     /*forums*/
-    .forumname {
-        color: var(--link)
+    #fr-layout.fr-theme[data-theme] .forumlink {
+        color: var(--text);
     }
-    .forumlink {
-        color: var(--text)
+    #fr-layout.fr-theme[data-theme] .forumlink::after {
+        content: ' »' / '';
+        color: var(--accent-two);
+        opacity: 0;
+    }
+    #fr-layout.fr-theme[data-theme] .forumlink:hover::after, #fr-layout.fr-theme[data-theme] .forumlink:focus::after {
+        opacity: 1;
     }
     .post-text-content td, .post-text-content th {
         font-size: 0.83em;
@@ -8649,12 +8717,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         color: var(--text);
         font-weight: bold;
         text-shadow: var(--stroke)
-    }
-    #topic-header {
-        color: var(--text);
-    }
-    #topic-header strong {
-        color: var(--strong);
     }
     .main[style*="/404/"] span[style*="731d08"] {
         color: var(--strong) !important;
@@ -8886,14 +8948,50 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         display: flex;
         align-items: center;
     }
+    .forum-listing .forum-listing-name::before {
+        content: ' » ' / '';
+        color: var(--accent-two);
+        position: absolute;
+        margin-left: -30px;
+        margin-top: -6px;
+        font-size: 25px;
+        opacity: 0;
+        transition: 0.2s;
+    }
+    .forum-listing .forum-listing-name:hover::before,
+    .forum-listing:focus-within .forum-listing-name::before {
+        opacity: 1;
+        margin-left: -25px;
+    }
+    .forum-listing .forum-listing-name::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
     #forum-content #topic-header {
         box-sizing: border-box;
         width: auto;
         max-width: 75%;
+        color: var(--accent-three);
+        font-size: 0px;
     }
     #forum-content #topic-header strong {
         color: var(--text);
-        text-shadow: 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow), 0 0 0.2em var(--shadow);
+        font-size: 14px;
+    }
+    #forum-content #topic-header::before {
+        content: 'TOPIC ' / 'Topic: ';
+        color: var(--accent-two);
+        font-size: 12px;
+        font-weight: bold;
+    }
+    #forum-content #topic-header strong::before {
+        content: ' » ' / '';
+        color: var(--accent-three);
+        font-size: 14px;
     }
     #topic-search, #forum-search {
         width: auto;
@@ -9474,6 +9572,71 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         --gems: 138, 195, 237;
         --gems-text: 178, 222, 255;
     }
+    [data-theme="default"] {
+        --gems: 229, 236, 255;
+        --gems-text: 61, 103, 151;
+    }
+    #fr-layout-main #fr-layout-legacy-content[style="background-image:"]::after {
+        background-image: url('https://www1.flightrising.com/static/cms/scene/50695.png') !important;
+        filter: var(--filter) hue-rotate(var(--hue)) brightness(110%) contrast(150%);
+        background-position: top right;
+    }
+    .custom-shops-list-item {
+        height: auto;
+        padding: 2px;
+        position: relative;
+        overflow: visible;
+    }
+    .custom-shops-list-item:focus-within .custom-shops-list-item-description {
+        visibility: visible;
+    }
+    #trading-post-content .common-focus {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
+    }
+    .custom-shops-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        grid-gap: 25px;
+        padding: 0 25px;
+        box-sizing: border-box;
+    }
+    .custom-shops-list-item-description {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        top: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+    }
+    .custom-shops-list::after {
+        display: none;
+    }
+    .custom-shops-list-item img {
+        outline: 0px solid transparent;
+        margin-top: 2px;
+    }
+    [data-theme="/*[[darktheme]]*/"] [data-active="true"] .custom-shops-list-item img {
+        opacity: 0.75;
+    }
+    .custom-shops-list-item a:hover img,
+    .custom-shops-list-item a:focus img,
+    .custom-shops-list-item:focus-within a img {
+        outline: 2px solid var(--bar);
+        border-radius: 8px;
+    }
+    [data-theme="/*[[darktheme]]*/"] .custom-shops-list-item a:hover img,
+    [data-theme="/*[[darktheme]]*/"] .custom-shops-list-item a:focus img,
+    [data-theme="/*[[darktheme]]*/"] .custom-shops-list-item:focus-within a img {
+        outline: 2px solid var(--accent-five);
+    }
+    [data-theme="/*[[darktheme]]*/"] [data-active="true"] .custom-shops-list-item a:hover img,
+    [data-theme="/*[[darktheme]]*/"] [data-active="true"] .custom-shops-list-item a:focus img,
+    [data-theme="/*[[darktheme]]*/"] [data-active="true"] .custom-shops-list-item:focus-within a img {
+        opacity: 1;
+    }
     /*shared bg stuff*//* TODO
     div.contentcontainer div.main[style*="/custom-shop/"] {
         position: relative;
@@ -9559,6 +9722,11 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     .common-message.custom-shops-common-message div:last-of-type {
         margin-top: 0;
+    }
+    
+    /*shop icons*/
+    .custom-shops-list-item > a {
+        display: block;
     }
     
     /*divider headers*/
@@ -9657,11 +9825,26 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background-color: rgba(var(--gems),0.2);
         border-color: rgb(var(--gems));
     }
+    [data-theme="default"] .custom-shop-trade-currency-treasure {
+        color: var(--warning-text);
+        background-color: rgba(var(--warning),0.9);
+        border-color: var(--warning-text);
+    }
+    [data-theme="default"] .custom-shop-trade-currency-gems {
+        color: rgb(var(--gems-text));
+        background-color: rgba(var(--gems),0.9);
+        border-color: rgb(var(--gems-text));
+    }
     /*ap box*/
     .custom-shop-trade-currency-achievement-tokens {
         color: var(--error-text);
         background-color: rgba(var(--error),0.15);
         border-color: rgb(var(--error));
+    }
+    [data-theme="default"]  .custom-shop-trade-currency-achievement-tokens {
+        color: var(--error-text);
+        background-color: rgba(var(--error),0.9);
+        border-color: var(--error-text);
     }
 }
 
