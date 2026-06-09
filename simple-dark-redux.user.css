@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.2.2
+@version        3.2.3
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -1926,6 +1926,9 @@ div#purchase.ui-dialog-content > div:last-child button + button {
     grid-gap: 0.5em;
     flex-wrap: wrap;
 }
+#ah-cancel-verify-dlg p:last-child {
+    flex-wrap: nowrap;
+}
 #errors-close {
     width: 100%;
     margin: 20px 0 0;
@@ -1950,6 +1953,7 @@ div#purchase.ui-dialog-content > div:last-child button + button {
     flex-grow: 1;
     min-height: 50px;
     max-width: 50%;
+    box-sizing: border-box;
 }
 .market-purchase-buttons button:only-child {
     max-width: 100%;
@@ -1996,7 +2000,8 @@ div#purchase.ui-dialog-content > div:last-child button + button {
     width: 100%;
     min-height: 50px;
 }
-#fromhoard #inner #attch, #fromhoard #inner #generic-hoard-confirm {
+#fromhoard #inner #attch, #fromhoard #inner #generic-hoard-confirm,
+#ah-sell-verify-dlg p:last-child input {
     margin-left: 0px;
     width: 47%;
 }
@@ -3931,9 +3936,7 @@ EOT;
         background-color: rgba(var(--success),0.6);
         border-color: rgba(var(--success),1)
     }
-    :is(#alertlist, #alertwin, #fr-layout-alerts-content) a[href$="/trading/baldwin/transmute"] div.alert-v2::after,
-    :is(#alertlist, #alertwin, #fr-layout-alerts-content) a[href$="/trading/archaeology/dig-sites"] div.alert-v2::after,
-    :is(#alertlist, #alertwin, #fr-layout-alerts-content) a[href$="/trading/sophie"] div.alert-v2::after,
+    :is(#alertlist, #alertwin, #fr-layout-alerts-content) a[href^="https://www1.flightrising.com/trading/"] div.alert-v2::after,
     :is(#alertlist, #alertwin, #fr-layout-alerts-content) a[href*="/auction-house/activity/"] div.alert-v2::after {
         content: '⟡' / 'Pinned';
         color: transparent;
@@ -6750,7 +6753,7 @@ EOT;
         background-image: url('https://www1.flightrising.com/static/cms/scene/46543.png') !important;
         background-position: top right;
     }
-    form[action*="/trading/gift/receive"] input {
+    #glorious-gift-text button {
         width: 98%;
     }
 }
@@ -7155,6 +7158,12 @@ EOT;
         background-color: rgba(var(--warning),0.2);
         border-color: rgb(var(--warning));
     }
+    [data-theme="default"] .crafter-recipe-currency-treasure,
+    [data-theme="default"] .swap-offer-currency-treasure {
+        color: var(--warning-text);
+        background-color: rgba(var(--warning),0.9);
+        border-color: var(--warning-text);
+    }
     .crafter-recipe-footer {
         background: var(--widget-med);
     }
@@ -7472,7 +7481,8 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         height: auto;
     }
     
-    .achievement-item[data-progress="100"], #achievements-recent-list .achievement-item {
+    .achievement-item[data-progress="100"],
+    #achievements-recent-list .achievement-item {
         border-color: rgb(var(--success));
         background: linear-gradient(to bottom, var(--widget) 20%, var(--widget-med) 50%, rgba(var(--success),0.15) 100%);
     }
@@ -10135,6 +10145,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #world-map-frame .world-map-poi-description {
         background: var(--widget);
         border-color: var(--borders);
+        color: var(--text);
     }
 }
 
@@ -10168,6 +10179,9 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     #higher-lower-turns strong {
         color: var(--accent-five)
+    }
+    #fr-layout[data-fullscreen="1"] #fairgrounds-page #fairgrounds-fullscreen-shade {
+        z-index: 20;
     }
 }
 
