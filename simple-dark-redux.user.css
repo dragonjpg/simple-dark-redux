@@ -2119,7 +2119,7 @@ EOT;
 @var range msg-line-height "Private Message Line Height" [120, 100, 250, 10, '%']
 @advanced dropdown clan-color-text "Clan Bios" {
 clan-color-text-1 "Theme Colors (Disallow User-set Colors)" <<<EOT
-.clan-profile-bio span[style*="color:"]:not([style*="transparent"], .bbcode_spoiler) {
+.clan-profile-bio span[style*="color:"]:not([style*="transparent"], [class]) {
     color: inherit !important;
 }
 .clan-profile-bio span[style*="transparent"] * {
@@ -2227,7 +2227,7 @@ EOT;
 }
 @advanced dropdown bio-color-text "Dragon Bios" {
 bio-color-text-1 "Theme Colors (Disallow User-Set Colors)" <<<EOT
-.dragon-profile-bio-text span:not([style*="transparent"], .bbcode_spoiler) {
+.dragon-profile-bio-text span:not([style*="transparent"], [class]) {
     color: var(--text) !important;
 }
 .dragon-profile-bio-text span[style*="transparent"] * {
@@ -2367,7 +2367,7 @@ EOT;
 
 @advanced dropdown forum-color-text "PMs & Forum Posts" {
 forum-color-text-1 "Theme Colors (Disallow User-set Colors)" <<<EOT
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) span[style*="color:"]:not(span[style*="transparent"], .bbcode_spoiler) {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) span[style*="color:"]:not(span[style*="transparent"], [class]) {
     color: var(--text) !important;
 }
 :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) span[style*="transparent"] * {
