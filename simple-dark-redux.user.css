@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.2.3
+@version        3.2.4
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -483,7 +483,7 @@ light5 "Beach" <<<EOT
         --divider: #7faab5;
 
         --tooltip-bg: #e6f2f5;
-        --tooltip-header: #cfe3e8;
+        --tooltip-header: #aee0ed;
 
         --energy-one: #7ec8e3;
         --energy-two: #b8e0d2;
@@ -586,7 +586,7 @@ light6 "Alucard" <<<EOT
         --divider: #cfc7a3;
 
         --tooltip-bg: #f6f1da;
-        --tooltip-header: #ebe5c9;
+        --tooltip-header: #c2b880;
 
         --energy-one: #036a96;
         --energy-two: #644ac9;
@@ -764,7 +764,7 @@ dark1 "Classic Blue" <<<EOT
         --borders-light: #527488;
         
         --text: #dae0e7;
-        --text-med: #8495a8;
+        --text-med: #8598ac;
         --text-dark: #2a3d49;
         --text-disabled: var(--text-med);
         --shadow: #000;
@@ -1433,14 +1433,22 @@ oldusertab2 "Enabled" <<<EOT
 #fr-layout-player-module {
 	height: 144px;
     border-bottom: 2px solid;
+    top: 15px;
 }
 #fr-layout-player-module-tray-icons {
 	position: absolute;
 	z-index: 6;
-	top: 70%;
+	top: 73%;
 	right: 10px;
 }
+#fr-layout.fr-theme[data-theme] circle.theme-svg-player-module-active-text-stroke {
+    stroke: var(--button-icon);
+}
 EOT;
+}
+@advanced dropdown usertabstroke "Add Stroke to Usertab Text" {
+usertabstroke1 "Disabled" <<<EOT  EOT;
+usertabstroke2 "Enabled" <<<EOT , #fr-layout-player-module-main .fr-layout-player-module-stats EOT;
 }
 @advanced dropdown usertabbglight "Light Usertab BG" {
 usertabbglight10 "Stormy" <<<EOT
@@ -2111,7 +2119,7 @@ EOT;
 @var range msg-line-height "Private Message Line Height" [120, 100, 250, 10, '%']
 @advanced dropdown clan-color-text "Clan Bios" {
 clan-color-text-1 "Theme Colors (Disallow User-set Colors)" <<<EOT
-.clan-profile-bio span[style*="color:"]:not([style*="transparent"], .bbcode_spoiler) {
+.clan-profile-bio span[style*="color:"]:not([style*="transparent"], [class]) {
     color: inherit !important;
 }
 .clan-profile-bio span[style*="transparent"] * {
@@ -2138,7 +2146,7 @@ EOT;
 clan-color-text-3 "Default Site Theme Colors" <<<EOT 
 /*general - we do not directly overwrite most vars to avoid breaking widgets *\/
 #fr-layout.fr-theme[data-theme] .clan-profile-bio {
-    --text-alt: #000;
+    --text-alt: #111;
     --em: var(--text-alt);
     --strong: var(--text-alt);
     --widget-med-alt: #F5F3ED;
@@ -2149,6 +2157,8 @@ clan-color-text-3 "Default Site Theme Colors" <<<EOT
     --quote-header: #874430;
     --link-hover-alt: #731d08;
     --link-alt: #96682C;
+    --text-subtle: #454139;
+    --accent-four: #731d08;
 
     color: var(--text-alt);
     border: 2px solid var(--borders-med-alt);
@@ -2217,7 +2227,7 @@ EOT;
 }
 @advanced dropdown bio-color-text "Dragon Bios" {
 bio-color-text-1 "Theme Colors (Disallow User-Set Colors)" <<<EOT
-.dragon-profile-bio-text span:not([style*="transparent"], .bbcode_spoiler) {
+.dragon-profile-bio-text span:not([style*="transparent"], [class]) {
     color: var(--text) !important;
 }
 .dragon-profile-bio-text span[style*="transparent"] * {
@@ -2255,7 +2265,9 @@ bio-color-text-3 "Default Site Theme Colors" <<<EOT
 /*general - we do not directly overwrite most vars to avoid breaking widgets *\/
 #fr-layout.fr-theme[data-theme] #dragon-profile-bio.dragon-profile-bio,
 #fr-layout.fr-theme[data-theme] #dragon-profile-bio.dragon-profile-vista-bio {
-    --text-alt: #000;
+    --text-alt: #111;
+    --text-subtle: #454139;
+    --accent-four: #731d08;
     --em: var(--text-alt);
     --strong: var(--text-alt);
     --widget-med-alt: #e9e6de;
@@ -2355,7 +2367,7 @@ EOT;
 
 @advanced dropdown forum-color-text "PMs & Forum Posts" {
 forum-color-text-1 "Theme Colors (Disallow User-set Colors)" <<<EOT
-:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) span[style*="color:"]:not(span[style*="transparent"], .bbcode_spoiler) {
+:is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) span[style*="color:"]:not(span[style*="transparent"], [class]) {
     color: var(--text) !important;
 }
 :is(.post-text-content, .post-text-signature, #topic-preview-text, #msg-text, #msg-preview-text) span[style*="transparent"] * {
@@ -2383,7 +2395,8 @@ forum-color-text-3 "Default Site Theme Colors" <<<EOT
 :is(.post-text-content, .post-text-signature, #topic-preview-text, .post-edited),
 #msg-preview-text, #msg-text {
     --text-alt: #111111;
-    --text-med: #555;
+    --text-med: #454139;
+    --accent-four: #731d08;
     --post-text: var(--text-alt);
     --em: inherit;
     --strong: inherit;
@@ -2476,7 +2489,7 @@ forum-color-text-3 "Default Site Theme Colors" <<<EOT
 #fr-layout.fr-theme[data-theme] .post-edited em,
 #fr-layout.fr-theme[data-theme] #msg-text :is(b, i, strong, em),
 #fr-layout.fr-theme[data-theme] #msg-text a :is(b, i, strong, em),
-#fr-layout.fr-theme[data-theme] #msg-preview-text :is(b, i, strong, em), #msg-preview-text a :is(b, i, strong, em){
+#fr-layout.fr-theme[data-theme] #msg-preview-text :is(b, i, strong, em), #msg-preview-text a :is(b, i, strong, em) {
     color: inherit;
 }
 /*bbcode quotes & code tags*\/
@@ -3088,13 +3101,25 @@ EOT;
     #fr-layout.fr-theme[data-theme] .theme-svg-player-module-active-glyph-stroke {
         fill: var(--button-icon);
     }
-    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-active-glyph-fill {
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-active-text-fill {
+        fill: var(--button-icon-text);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-active-glyph-fill,
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-active-text-stroke {
         fill: var(--button-stroke);
     }
-    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-inactive-glyph-stroke {
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-active-text-stroke {
+        stroke: var(--button-stroke);
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-inactive-glyph-stroke,
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-inactive-text-stroke {
         fill: var(--button-disabled-text);
     }
-    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-inactive-glyph-fill {
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-inactive-text-stroke {
+        stroke: var(--button-disabled-text)
+    }
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-inactive-glyph-fill,
+    #fr-layout.fr-theme[data-theme] .theme-svg-player-module-inactive-text-fill {
         fill: var(--button-disabled-stroke);
     }
     #fr-layout.fr-theme[data-theme] {
@@ -3213,12 +3238,14 @@ EOT;
         background-image: linear-gradient(to bottom, var(--energy-two) 0%, var(--energy-one) 100%);
     }
     /*locked hoard button & red buttons*/
-    #fr-layout.fr-theme[data-theme] .theme-ui-2 {
+    #fr-layout.fr-theme[data-theme] .theme-ui-2,
+    #fr-layout.fr-theme[data-theme] a.common-ui-button.theme-ui-2 {
         background: linear-gradient(to bottom, var(--red-button-one) 0%, var(--red-button-two) 100%);
         border-color: var(--border-two);
         color: var(--button-text-dark);
     }
-    #fr-layout.fr-theme[data-theme] .theme-ui-2:hover {
+    #fr-layout.fr-theme[data-theme] .theme-ui-2:hover,
+    #fr-layout.fr-theme[data-theme] a.common-ui-button.theme-ui-2:hover {
         background: linear-gradient(to top, var(--red-button-one) 0%, var(--red-button-two) 100%);
     }
     #fr-layout.fr-theme[data-theme] .theme-ui-2 a {
@@ -3578,30 +3605,26 @@ EOT;
     /*usertab fix ugly thing*/
     #fr-layout-player-module-main {
         padding-top: 4px;
-        height: 95px;
     }
     #fr-layout-player-module-main .fr-layout-player-module-left {
         padding-top: 5px;
     }
-    #fr-layout-player-module-main .fr-layout-player-module-username {
+    #fr-layout-player-module-main .fr-layout-player-module-username/*[[usertabstroke]]*/ {
         text-shadow: -1px 0 0 var(--shadow), 1px 0 0 var(--shadow), -1px 1px 0 var(--shadow), 1px 1px 0 var(--shadow), -1px 2px 0 var(--shadow), 1px 2px 0 var(--shadow), -1px -1px 0 var(--shadow), 1px -1px 0 var(--shadow), 0 -1px 0 var(--shadow);
     }
+    .fr-layout-player-module-username {
+        height: 22px;
+        padding-left: 2px;
+    }
     #fr-layout-player-module-energy-meter {
-        margin-top: 5px;
+        margin-top: 3px;
     }
     /*alerts*/
     #fr-layout-alerts-content > *  {
         background: var(--alt-one)
     }
-    #fr-layout-alerts circle[style*="fill"] {
-        fill: var(--strong) !important;
-    }
     .home-page-announcement-timestamp em {
         color: inherit;
-    }
-    #fr-layout.fr-theme[data-theme="default"] #fr-layout-alerts circle[style*="fill"] {
-        fill: var(--link) !important;
-        filter: brightness(300%);
     }
     #fr-layout-alerts-content > *:nth-child(2n+1) {
         background: var(--alt-two)
@@ -3810,6 +3833,10 @@ EOT;
     }
     em, i, span.whos-online-subtitle em, h4, h5, h6, .settings-hub-category-header, .dragon-profile-customize-category-header {
         color: var(--em);
+    }
+    .legacy-bbcode span:is(.theme-text-accent-1, .theme-text-subtle-1) :is(b, em, i, strong),
+    .post-text-content span:is(.theme-text-accent-1, .theme-text-subtle-1) :is(b, em, i, strong){
+        color: inherit;
     }
     .wws-toggle-label, .friend-requests-page-details-sub {
         color: var(--text-disabled);
@@ -5495,9 +5522,15 @@ EOT;
         background-color: rgba(var(--widget-rgb), 0.7);
         color: var(--text);
     }
-    #fr-layout.fr-theme[data-theme] div.bbcode_code_body, #fr-layout.fr-theme[data-theme] .legacy-bbcode div.bbcode_code_body {
+    #fr-layout.fr-theme[data-theme] div.bbcode_code_body,
+    #fr-layout.fr-theme[data-theme] .legacy-bbcode div.bbcode_code_body {
         background-color: #111;
-        color: lime;
+        color: #5cfe5c;
+    }
+    #fr-layout.fr-theme[data-theme="default"] div.bbcode_code_body,
+    #fr-layout.fr-theme[data-theme="default"] .legacy-bbcode div.bbcode_code_body {
+        background-color: #f1faea;
+        color: #032f03;
     }
     #fr-layout.fr-theme[data-theme] div.bbcode_quote_head, div.bbcode_code_head, #fr-layout.fr-theme[data-theme] .legacy-bbcode div.bbcode_quote_head, .legacy-bbcode div.bbcode_code_head {
         background-color: var(--tooltip-header);
@@ -7481,10 +7514,15 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         height: auto;
     }
     
-    .achievement-item[data-progress="100"],
-    #achievements-recent-list .achievement-item {
-        border-color: rgb(var(--success));
+    #fr-layout.fr-theme .achievement-item[data-progress="100"],
+    #fr-layout.fr-theme #achievements-recent-list .achievement-item {
+        border-color: rgba(var(--success),0.2);
         background: linear-gradient(to bottom, var(--widget) 20%, var(--widget-med) 50%, rgba(var(--success),0.15) 100%);
+    }
+    #fr-layout.fr-theme[data-theme="default"] .achievement-item[data-progress="100"],
+    #fr-layout.fr-theme[data-theme="default"] #achievements-recent-list .achievement-item {
+        border-color: var(--success-text);
+        background: linear-gradient(to bottom, var(--widget-med) 20%, var(--widget) 50%, rgba(var(--success),0.9) 100%);
     }
     .achievement-item-rewards-box {
         background: var(--widget-med);
@@ -8319,7 +8357,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .hoard-stack-functions {
         background: var(--widget);
         border: 3px solid var(--borders);
-        box-shadow: 0px 0px 10px 0px var(--shadow);
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
     }
     .user-hoard-dialog-items, .user-hoard-food-points, .dragon-picker-preview-name, .hoard-sale-buyback-item-name, .hoard-sale-buyback-item-price {
         color: var(--strong);
