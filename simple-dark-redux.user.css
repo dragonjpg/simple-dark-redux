@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.2.4
+@version        3.2.5
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -3619,6 +3619,17 @@ EOT;
     #fr-layout-player-module-energy-meter {
         margin-top: 3px;
     }
+    #fr-layout-player-module-energy-meter polygon[points="2 6 2 16 9 16 5 6 2 6"] {
+        fill: var(--energy-full-one) !important;
+        opacity: 0.65
+    }
+    #fr-layout-player-module-energy-meter polygon[points="6 6 12 6 16 16 10 16 6 6"] {
+        fill: var(--energy-full-one) !important;
+        opacity: 0.85;
+    }
+    #fr-layout-player-module-energy-meter polygon[points="20 16 20 6 13 6 17 16 20 16"] {
+        fill: var(--energy-full-one) !important;
+    }
     /*alerts*/
     #fr-layout-alerts-content > *  {
         background: var(--alt-one)
@@ -4928,10 +4939,20 @@ EOT;
         filter: brightness(0);
     }*/
     /*common meters*/
-    .common-meter-text, #crafter-meter .common-meter-text,
-    #fr-layout-player-module-energy-meter .common-meter-text, #fr-layout-player-module-energy-meter [data-state="full"] .common-meter-text {
+    .common-meter-text,
+    #crafter-meter .common-meter-text,
+    #fr-layout-player-module-energy-meter .common-meter-text,
+    #fr-layout-player-module-energy-meter [data-state="full"] .common-meter-text {
         color: var(--text);
-        text-shadow: -1px 0 0 var(--shadow), 1px 0 0 var(--shadow), -1px 1px 0 var(--shadow), 1px 1px 0 var(--shadow), -1px 2px 0 var(--shadow), 1px 2px 0 var(--shadow), -1px -1px 0 var(--shadow), 1px -1px 0 var(--shadow), 0 -1px 0 var(--shadow);
+        --ts: var(--shadow);
+        text-shadow: -1px 0 0 var(--ts), 1px 0 0 var(--ts), -1px 1px 0 var(--ts), 1px 1px 0 var(--ts), -1px 2px 0 var(--ts), 1px 2px 0 var(--ts), -1px -1px 0 var(--ts), 1px -1px 0 var(--ts), 0 -1px 0 var(--ts);
+    }
+    .fr-theme[data-theme="default"] .common-meter-text,
+    .fr-theme[data-theme="default"] #crafter-meter .common-meter-text,
+    .fr-theme[data-theme="default"] #fr-layout-player-module-energy-meter .common-meter-text,
+    .fr-theme[data-theme="default"] #fr-layout-player-module-energy-meter [data-state="full"] .common-meter-text {
+        color: var(--shadow);
+        --ts: var(--text);
     }
     .common-meter-full, #fr-layout #fr-layout-player-module-energy-meter .common-meter-full {
         background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
@@ -5893,9 +5914,6 @@ EOT;
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/dragon.*") {
     /* Dragon Profiles */
-    #fr-layout.fr-theme[data-theme] h2, #fr-layout.fr-theme[data-theme] h3, #fr-layout.fr-theme[data-theme] .dragon-profile-header-name {
-        text-shadow: 0 1px 1px var(--shadow);
-    }
     #fr-layout.fr-theme[data-theme] h3.dragon-profile-details-subheader a, #fr-layout.fr-theme[data-theme] .exalted-details-column a, #fr-layout.fr-theme[data-theme] .exalted-lineage-list li a  {
         color: var(--link);
     }
@@ -5914,6 +5932,9 @@ EOT;
     }
     .dragon-profile-battle-stat-buff {
         color: var(--success-text)
+    }
+    .dragon-profile-xp-meter-text {
+        font-weight: bold;
     }
     .choose-scene-current-name {
         font-size: 12px;
