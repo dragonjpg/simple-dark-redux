@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.2.4
+@version        3.2.5
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -1908,8 +1908,7 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 #dressing-outfit-loader > div:last-child,
 #delete-outfit-box > div:last-child,
 #forum-block-dialog > div,
-#forum-friend-start-dialog > div:has(button),
-#gather_collect_buttons form {
+#forum-friend-start-dialog > div:has(button) {
     display: flex;
     justify-content: space-between;
 }
@@ -1922,11 +1921,14 @@ div#purchase.ui-dialog-content > div:last-child button + button {
 #delete-confirm > div button,
 #forum-block-dialog > div button,
 #forum-friend-start-dialog > div button,
-.vista-options ~ div:last-of-type > input,
-#gather_collect_buttons input {
+.vista-options ~ div:last-of-type > input{
     width: 48%;
 }
-#baldwin-preview-container #baldwin-preview-button-tray, #newitem #pinkerton-button-tray, #pinkerton-button-tray, #name-dragon-start-dialog .common-dialog-section:last-child, #ah-cancel-verify-dlg p:last-child, #ah-cancel-ok-dlg p:last-child, #ah-sell-verify-dlg p:last-child, #ah-sell-ok-dlg p:last-child, #ah-sell-submit-container, .raffle-window-buttons, #blocked-by-user-close, .vista-options ~ div:last-of-type, .ui-dialog-content .common-dialog-section:has( > .common-ui-button) {
+#gather_collect_buttons .common-ui-button {
+    min-width: 33%;
+}
+#baldwin-preview-container #baldwin-preview-button-tray, #newitem #pinkerton-button-tray, #pinkerton-button-tray, #name-dragon-start-dialog .common-dialog-section:last-child, #ah-cancel-verify-dlg p:last-child, #ah-cancel-ok-dlg p:last-child, #ah-sell-verify-dlg p:last-child, #ah-sell-ok-dlg p:last-child, #ah-sell-submit-container, .raffle-window-buttons, #blocked-by-user-close, .vista-options ~ div:last-of-type, .ui-dialog-content .common-dialog-section:has( > .common-ui-button),
+#gather_collect_buttons form {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -3619,6 +3621,17 @@ EOT;
     #fr-layout-player-module-energy-meter {
         margin-top: 3px;
     }
+    #fr-layout-player-module-energy-meter polygon[points="2 6 2 16 9 16 5 6 2 6"] {
+        fill: var(--energy-full-one) !important;
+        opacity: 0.65
+    }
+    #fr-layout-player-module-energy-meter polygon[points="6 6 12 6 16 16 10 16 6 6"] {
+        fill: var(--energy-full-one) !important;
+        opacity: 0.85;
+    }
+    #fr-layout-player-module-energy-meter polygon[points="20 16 20 6 13 6 17 16 20 16"] {
+        fill: var(--energy-full-one) !important;
+    }
     /*alerts*/
     #fr-layout-alerts-content > *  {
         background: var(--alt-one)
@@ -4928,10 +4941,20 @@ EOT;
         filter: brightness(0);
     }*/
     /*common meters*/
-    .common-meter-text, #crafter-meter .common-meter-text,
-    #fr-layout-player-module-energy-meter .common-meter-text, #fr-layout-player-module-energy-meter [data-state="full"] .common-meter-text {
+    .common-meter-text,
+    #crafter-meter .common-meter-text,
+    #fr-layout-player-module-energy-meter .common-meter-text,
+    #fr-layout-player-module-energy-meter [data-state="full"] .common-meter-text {
         color: var(--text);
-        text-shadow: -1px 0 0 var(--shadow), 1px 0 0 var(--shadow), -1px 1px 0 var(--shadow), 1px 1px 0 var(--shadow), -1px 2px 0 var(--shadow), 1px 2px 0 var(--shadow), -1px -1px 0 var(--shadow), 1px -1px 0 var(--shadow), 0 -1px 0 var(--shadow);
+        --ts: var(--shadow);
+        text-shadow: -1px 0 0 var(--ts), 1px 0 0 var(--ts), -1px 1px 0 var(--ts), 1px 1px 0 var(--ts), -1px 2px 0 var(--ts), 1px 2px 0 var(--ts), -1px -1px 0 var(--ts), 1px -1px 0 var(--ts), 0 -1px 0 var(--ts);
+    }
+    .fr-theme[data-theme="default"] .common-meter-text,
+    .fr-theme[data-theme="default"] #crafter-meter .common-meter-text,
+    .fr-theme[data-theme="default"] #fr-layout-player-module-energy-meter .common-meter-text,
+    .fr-theme[data-theme="default"] #fr-layout-player-module-energy-meter [data-state="full"] .common-meter-text {
+        color: var(--shadow);
+        --ts: var(--text);
     }
     .common-meter-full, #fr-layout #fr-layout-player-module-energy-meter .common-meter-full {
         background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
@@ -5035,6 +5058,10 @@ EOT;
     .common-multiselect-pill:hover, .ah-multi-option:hover {
         background-color: var(--section);
         color: var(--text);
+    }
+    /*item picker tabs fix*/
+    .item-picker-common-tabs .common-tab {
+        cursor: pointer;
     }
     /*emoji picker*/
     #editor-emoji-dialog .editor-emoji-dialog-emoji-item, .pinglist-emoji-list-item {
@@ -5370,7 +5397,6 @@ EOT;
         font-weight: normal;
         color: var(--widget);
     }
-    
     .gather_container .lair-page-dragon-energy-meter-meter-full {
         background: linear-gradient(to right, var(--energy-one) 0%, var(--energy-two) 100%);
         border: 1px solid var(--energy-border);
@@ -5378,10 +5404,6 @@ EOT;
     .gather_container .lair-page-dragon-energy-meter-meter-full[style*="100%"] {
         background: linear-gradient(to right, var(--energy-full-one) 0%, var(--energy-full-two) 100%);
         border: 1px solid var(--energy-full-border);
-    }
-    /* full width gathering buttons */
-    .gatherbutton button {
-        width: 95%;
     }
 
     /*dark scry share widget & outfit widget & pinglist widget*/
@@ -5893,9 +5915,6 @@ EOT;
 }
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/dragon.*") {
     /* Dragon Profiles */
-    #fr-layout.fr-theme[data-theme] h2, #fr-layout.fr-theme[data-theme] h3, #fr-layout.fr-theme[data-theme] .dragon-profile-header-name {
-        text-shadow: 0 1px 1px var(--shadow);
-    }
     #fr-layout.fr-theme[data-theme] h3.dragon-profile-details-subheader a, #fr-layout.fr-theme[data-theme] .exalted-details-column a, #fr-layout.fr-theme[data-theme] .exalted-lineage-list li a  {
         color: var(--link);
     }
@@ -5914,6 +5933,9 @@ EOT;
     }
     .dragon-profile-battle-stat-buff {
         color: var(--success-text)
+    }
+    .dragon-profile-xp-meter-text {
+        font-weight: bold;
     }
     .choose-scene-current-name {
         font-size: 12px;
@@ -7082,11 +7104,17 @@ EOT;
     .crafter-status-description a {
         color: var(--link);
     }
-    .crafter-meter-header, .crafter-recipe-reward-name, .crafter-recipe-ingredient,
-    .swap-offer-requirement, .swap-offer-output-name {
+    #fr-layout.fr-theme[data-theme] .crafter-meter-header,
+    #fr-layout.fr-theme[data-theme] .crafter-recipe-ingredient,
+    #fr-layout.fr-theme[data-theme] .swap-offer-requirement {
         color: var(--accent-five)
     }
-    .crafter-recipe-footer-item {
+    
+    #fr-layout.fr-theme[data-theme] .crafter-recipe-reward-name,
+    #fr-layout.fr-theme[data-theme] .swap-offer-output-name {
+        color: var(--strong)
+    }
+    #fr-layout.fr-theme[data-theme] .crafter-recipe-footer-item {
         color: var(--text);
     }
     #crafter-timer-countdown, #crafter-timer-subtitle, #swap-timer-countdown {
@@ -7150,22 +7178,28 @@ EOT;
         margin: 0 0.5rem;
     }
     /*recipe*/
-    .crafter-recipe, .crafter-recipe[data-locked="1"], .swap-offer {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe,
+    #fr-layout.fr-theme[data-theme] .crafter-recipe[data-locked="1"],
+    #fr-layout.fr-theme[data-theme] .swap-offer {
         background: linear-gradient(to top, var(--section) 0%, var(--widget) 50%, var(--widget-med) 100%);
         color: var(--text);
         border: 2px solid var(--borders-light);
+        outline: 2px solid var(--borders);
     }
-    .crafter-recipe-ingredients, .swap-offer-requirements {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe-ingredients,
+    #fr-layout.fr-theme[data-theme] .swap-offer-requirements {
         background: var(--widget-med);
         color: var(--text);
         border-color: var(--borders);
     }
-    .crafter-recipe-ingredient-empty, .swap-offer-requirements-empty {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe-ingredient-empty,
+    #fr-layout.fr-theme[data-theme] .swap-offer-requirements-empty {
         background: none;
         position: relative;
         z-index: 2;
     }
-    .crafter-recipe-ingredient-empty::before, .swap-offer-requirements-empty::before {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe-ingredient-empty::before,
+    #fr-layout.fr-theme[data-theme] .swap-offer-requirements-empty::before {
         content: '';
         height: 20px;
         width: 20px;
@@ -7178,37 +7212,40 @@ EOT;
         z-index: -1;
         box-sizing: border-box;
     }
-    .crafter-recipe-ingredient[data-requirement-met="0"], .swap-offer-requirement[data-owned="0"] {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe-ingredient[data-requirement-met="0"],
+    #fr-layout.fr-theme[data-theme] .swap-offer-requirement[data-owned="0"] {
         opacity: 1;
         color: var(--error-text);
         filter: none;
     }
-    .crafter-recipe-ingredient[data-requirement-met="0"] img, .swap-offer-requirement[data-owned="0"] img {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe-ingredient[data-requirement-met="0"] img,
+    #fr-layout.fr-theme[data-theme] .swap-offer-requirement[data-owned="0"] img {
         filter: saturate(0%);
     }
-    .crafter-recipe-currency-treasure, .swap-offer-currency-treasure {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe-currency-treasure,
+    #fr-layout.fr-theme[data-theme] .swap-offer-currency-treasure {
         color: var(--warning-text);
         background-color: rgba(var(--warning),0.2);
         border-color: rgb(var(--warning));
     }
-    [data-theme="default"] .crafter-recipe-currency-treasure,
-    [data-theme="default"] .swap-offer-currency-treasure {
+    #fr-layout.fr-theme[data-theme="default"] .crafter-recipe-currency-treasure,
+    #fr-layout.fr-theme[data-theme="default"] .swap-offer-currency-treasure {
         color: var(--warning-text);
         background-color: rgba(var(--warning),0.9);
         border-color: var(--warning-text);
     }
-    .crafter-recipe-footer {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe-footer {
         background: var(--widget-med);
     }
-    .crafter-recipe-footer-item {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe-footer-item {
         border-color: var(--borders-light)
     }
     /*locked recipe*/
-    .crafter-recipe[data-locked="1"] {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe[data-locked="1"] {
         border-color: rgb(var(--error));
         position: relative;
     }
-    .crafter-recipe[data-locked="1"]::before {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe[data-locked="1"]::before {
         content: '';
         height: 100%;
         width: 100%;
@@ -7217,21 +7254,21 @@ EOT;
         top: 0px;
         left: 0px;
     }
-    .crafter-recipe[data-locked="1"] > * {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe[data-locked="1"] > * {
         z-index: 2;
         position: relative;
     }
-    .crafter-recipe[data-locked="1"] > .crafter-recipe-footer {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe[data-locked="1"] > .crafter-recipe-footer {
         position: absolute;
     }
-    .crafter-recipe[data-locked="1"] .crafter-recipe-ingredients {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe[data-locked="1"] .crafter-recipe-ingredients {
         border-color: rgba(var(--error),0.5);
     }
-    .crafter-recipe[data-locked="1"] .crafter-recipe-footer {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe[data-locked="1"] .crafter-recipe-footer {
         background: rgba(var(--error),0.1);
     }
-    .crafter-recipe[data-locked="1"] .crafter-recipe-footer-item,
-    .crafter-recipe[data-locked="1"] .crafter-recipe-footer-item * {
+    #fr-layout.fr-theme[data-theme] .crafter-recipe[data-locked="1"] .crafter-recipe-footer-item,
+    #fr-layout.fr-theme[data-theme] .crafter-recipe[data-locked="1"] .crafter-recipe-footer-item * {
         color: var(--error-text);
         border-color: rgba(var(--error),0.5);
     }
@@ -7317,11 +7354,11 @@ EOT;
 
 @-moz-document regexp("(http|https):\\/\\/(|www\\.|www1\\.)flightrising\\.com\\/gathering.*") {
     /* Gathering */
-    #fr-layout-main #fr-layout-legacy-content {
+    #fr-layout-main #fr-layout-content {
         z-index: 2;
         background: none !important;
     }
-    #fr-layout-main #fr-layout-legacy-content[style*="background-image"]::after {
+    #fr-layout-main #fr-layout-content[style*="background-image"]::after {
         content: '';
         background-image: url('https://www1.flightrising.com/static/cms/scene/43921.png') !important;
         position: absolute;
@@ -7334,7 +7371,7 @@ EOT;
         background-repeat: no-repeat;
         opacity: 0.2;
     }
-    #fr-layout-main #fr-layout-legacy-content::before {
+    #fr-layout-main #fr-layout-content::before {
         content: '';
         position: absolute;
         height: 525px;
@@ -7346,47 +7383,15 @@ EOT;
         background-repeat: no-repeat;
     }
     #gather_success_bg {
-        left: 145px;
-        top: 400px;
-    }
-    #gather_success_bg img {
-        mix-blend-mode: difference;
-        opacity: 0.8;
-        border-radius: 20px;
-        overflow: hidden;
-        min-width: 450px;
-        min-height: 315px;
         padding: 5px 5px 20px;
+        filter: var(--filter) hue-rotate(var(--hue)) brightness(80%) contrast(150%);
+        opacity: 0.15;
     }
-    .fr-theme[data-theme="default"] #gather_success_bg img {
-        mix-blend-mode: darken;
+    #fr-layout.fr-theme[data-theme="default"] #gather_success_bg {
+        opacity: 0.15;
     }
     .gatherblurb {
         margin-top: 30px;
-    }
-    #gather_success_bg::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--main);
-        z-index: -1;
-        box-shadow: 0px 0px 15px var(--main), 0px 0px 10px var(--main), 0px 0px 5px var(--main);
-        border-radius: 18px;
-    }
-    /*fix issue with gathering buttons being labeled as disabled when not disabled?*/
-    #fr-layout.fr-theme[data-theme] .gatherbutton button.common-ui-button-disabled:not([disabled="disabled"]) {
-        background: linear-gradient(to bottom, var(--beige-button-one) 0%, var(--beige-button-two) 100%);
-        color: var(--button-text);
-        cursor: pointer !important;
-    }
-    /*fix issue with gathering buttons being labeled as disabled when not disabled?*/
-    #fr-layout.fr-theme[data-theme] .gatherbutton button.common-ui-button-disabled:not([disabled="disabled"]):hover {
-        background: linear-gradient(to top, var(--beige-button-one) 0%, var(--beige-button-two) 100%);
-        color: var(--button-text);
-        cursor: pointer !important;
     }
 }
 
@@ -9624,65 +9629,23 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         --gems: 229, 236, 255;
         --gems-text: 61, 103, 151;
     }
-    #fr-layout-main #fr-layout-legacy-content[style="background-image:"]::after {
+    /*TODO: re-add background*/
+    #fr-layout-main #fr-layout-content[style="background-image:"]::after {
         background-image: url('https://www1.flightrising.com/static/cms/scene/50695.png') !important;
         filter: var(--filter) hue-rotate(var(--hue)) brightness(110%) contrast(150%);
         background-position: top right;
     }
-    .custom-shops-list-item {
-        height: auto;
-        padding: 2px;
-        position: relative;
-        overflow: visible;
-    }
-    .custom-shops-list-item:focus-within .custom-shops-list-item-description {
-        visibility: visible;
-    }
-    #trading-post-content .common-focus {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 5px;
-    }
-    .custom-shops-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-items: center;
-        grid-gap: 25px;
-        padding: 0 25px;
-        box-sizing: border-box;
-    }
-    .custom-shops-list-item-description {
-        position: absolute;
-        z-index: 2;
-        width: 100%;
-        top: 100%;
-        box-sizing: border-box;
-        padding: 15px;
-    }
-    .custom-shops-list::after {
-        display: none;
-    }
-    .custom-shops-list-item img {
-        outline: 0px solid transparent;
-        margin-top: 2px;
-    }
     [data-theme="/*[[darktheme]]*/"] [data-active="true"] .custom-shops-list-item img {
         opacity: 0.75;
     }
-    .custom-shops-list-item a:hover img,
-    .custom-shops-list-item a:focus img,
-    .custom-shops-list-item:focus-within a img {
-        outline: 2px solid var(--bar);
-        border-radius: 8px;
-    }
-    [data-theme="/*[[darktheme]]*/"] .custom-shops-list-item a:hover img,
-    [data-theme="/*[[darktheme]]*/"] .custom-shops-list-item a:focus img,
-    [data-theme="/*[[darktheme]]*/"] .custom-shops-list-item:focus-within a img {
+    [data-theme="/*[[darktheme]]*/"] .custom-shops-list-item-frame a:hover,
+    [data-theme="/*[[darktheme]]*/"] .custom-shops-list-item-frame a:focus,
+    [data-theme="/*[[darktheme]]*/"] .custom-shops-list-item-frame:focus-within a {
         outline: 2px solid var(--accent-five);
     }
-    [data-theme="/*[[darktheme]]*/"] [data-active="true"] .custom-shops-list-item a:hover img,
-    [data-theme="/*[[darktheme]]*/"] [data-active="true"] .custom-shops-list-item a:focus img,
-    [data-theme="/*[[darktheme]]*/"] [data-active="true"] .custom-shops-list-item:focus-within a img {
+    [data-theme="/*[[darktheme]]*/"] .custom-shops-list[data-active="true"] .custom-shops-list-item-frame a:hover img,
+    [data-theme="/*[[darktheme]]*/"] .custom-shops-list[data-active="true"] .custom-shops-list-item-frame a:focus img,
+    [data-theme="/*[[darktheme]]*/"] .custom-shops-list[data-active="true"] .custom-shops-list-item-frame:focus-within a img {
         opacity: 1;
     }
     /*shared bg stuff*//* TODO
@@ -9772,28 +9735,16 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         margin-top: 0;
     }
     
-    /*shop icons*/
-    .custom-shops-list-item > a {
-        display: block;
+    /*headers*/
+    .custom-shops-header {
+        font-size: 1.1rem;
     }
-    
-    /*divider headers*/
-    .custom-shops-divider-text {
-        background-color: var(--main);
-        color: var(--text);
-        font-weight: bold;
-    }
-    .custom-shops-divider {
-        border-color: var(--divider);
-    }
-    
     /*add bg to shop currency for easy reading*/
-    #custom-shop-currency {
+    #fr-layout.fr-theme[data-theme] .custom-shop-currency .custom-shop-currency-quantity {
         color: var(--strong);
         background: var(--widget);
         border: 2px solid var(--borders-med);
         outline: 2px solid var(--borders);
-        padding: 3px 10px 3px 5px;
         border-radius: 5px;
     }
     .dialog-button-tray > a.beigebutton.thingbutton, .dialog-button-tray > input {
@@ -9804,34 +9755,34 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     
     /*dark item bgs*/
-    .custom-shop-trade {
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade {
         background: linear-gradient(to top, var(--section) 0%, var(--widget) 50%, var(--widget-med) 100%);
         border: 2px solid var(--borders-light);
         outline: 2px solid var(--borders)
     }
     /*blue item name*/
-    .custom-shop-trade-reward-name {
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-reward-name {
         color: var(--strong);
     }
     /*darken item required items box*/
-    .custom-shop-trade-requirements {
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-requirements {
         background: var(--widget-med);
         color: var(--text);
         border-color: var(--borders);
     }
     /*darken completely empty item required items box*/
-    .custom-shop-trade-requirements.custom-shop-trade-requirements-empty {
-        background: var(--widget);
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-requirements.custom-shop-trade-requirements-empty {
+        opacity: 0.5;
     }
     /*replace bg images with pseudoelement square*/
-    .custom-shop-trade-requirements-empty .custom-shop-trade-requirement-empty,
-    .custom-shop-trade-requirement {
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-requirements-empty .custom-shop-trade-requirement-empty,
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-requirement {
         background: none;
         position: relative;
         z-index: 2;
     }
-    .custom-shop-trade-requirements-empty .custom-shop-trade-requirement-empty::before,
-    .custom-shop-trade-requirement::before {
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-requirements-empty .custom-shop-trade-requirement-empty::before,
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-requirement::before {
         content: '';
         height: 15px;
         width: 15px;
@@ -9845,51 +9796,55 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         box-sizing: border-box;
     }
     /*completely empty requirement boxes should be slightly darker*/
-    .custom-shop-trade-requirements-empty .custom-shop-trade-requirement-empty::before {
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-requirements-empty .custom-shop-trade-requirement-empty::before {
         opacity: 0.5;
         border-color: var(--borders);
     }
-    .custom-shop-trade-requirement {
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-requirement {
         color: var(--strong);
     }
     /*make text readable for items you don't own and also make it pink for fun*/
-    .custom-shop-trade-requirement[data-owned="0"] {
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-requirement[data-owned="0"] {
         opacity: 1;
         color: var(--error-text);
         filter: none;
     }
     /*make it so only the image is grayscale*/
-    .custom-shop-trade-requirement[data-owned="0"] img {
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-requirement[data-owned="0"] img {
         filter: saturate(0);
     }
+    /*hide empty currency box*/
+    .custom-shop-trade-currency:empty {
+        display: none;
+    }
     /*treasure box*/
-    .custom-shop-trade-currency-treasure {
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-currency-treasure {
         color: var(--warning-text);
         background-color: rgba(var(--warning),0.2);
         border-color: rgb(var(--warning));
     }
-    .custom-shop-trade-currency-gems {
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-currency-gems {
         color: rgb(var(--gems-text));
         background-color: rgba(var(--gems),0.2);
         border-color: rgb(var(--gems));
     }
-    [data-theme="default"] .custom-shop-trade-currency-treasure {
+    #fr-layout.fr-theme[data-theme="default"] .custom-shop-trade-currency-treasure {
         color: var(--warning-text);
         background-color: rgba(var(--warning),0.9);
         border-color: var(--warning-text);
     }
-    [data-theme="default"] .custom-shop-trade-currency-gems {
+    #fr-layout.fr-theme[data-theme="default"] .custom-shop-trade-currency-gems {
         color: rgb(var(--gems-text));
         background-color: rgba(var(--gems),0.9);
         border-color: rgb(var(--gems-text));
     }
     /*ap box*/
-    .custom-shop-trade-currency-achievement-tokens {
+    #fr-layout.fr-theme[data-theme] .custom-shop-trade-currency-achievement-tokens {
         color: var(--error-text);
         background-color: rgba(var(--error),0.15);
         border-color: rgb(var(--error));
     }
-    [data-theme="default"]  .custom-shop-trade-currency-achievement-tokens {
+    #fr-layout.fr-theme[data-theme="default"]  .custom-shop-trade-currency-achievement-tokens {
         color: var(--error-text);
         background-color: rgba(var(--error),0.9);
         border-color: var(--error-text);
