@@ -3611,6 +3611,9 @@ EOT;
     #fr-layout-player-module-main {
         padding-top: 4px;
     }
+    #fr-layout.fr-theme[data-theme] #fr-layout-player-module-tray-icons .theme-background-hover-1:hover {
+        --alt-one: var(--borders-light);
+    }
     #fr-layout-player-module-main .fr-layout-player-module-left {
         padding-top: 5px;
     }
@@ -3976,8 +3979,8 @@ EOT;
         border: 1px solid rgba(var(--success),0.25);
     }
     #fr-layout.fr-theme[data-theme="default"] #fr-layout-alerts-content div.alert-v2::after {
-        background-color: rgba(var(--success),0.6);
-        border-color: rgba(var(--success),1)
+        background-color: rgba(var(--success),1);
+        border-color: var(--borders-light);
     }
     :is(#alertlist, #alertwin, #fr-layout-alerts-content) a[href^="https://www1.flightrising.com/trading/"] div.alert-v2::after,
     :is(#alertlist, #alertwin, #fr-layout-alerts-content) a[href*="/auction-house/activity/"] div.alert-v2::after {
