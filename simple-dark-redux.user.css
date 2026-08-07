@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.2.5
+@version        3.2.6
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -1443,6 +1443,9 @@ oldusertab2 "Enabled" <<<EOT
 }
 #fr-layout.fr-theme[data-theme] circle.theme-svg-player-module-active-text-stroke {
     stroke: var(--button-icon);
+}
+#fr-layout.fr-theme[data-theme] #fr-layout-player-module .theme-background-hover-1:hover {
+    border-radius: 4px;
 }
 EOT;
 }
@@ -3187,7 +3190,7 @@ EOT;
     }
     #fr-layout.fr-theme[data-theme] .theme-ui-1 .common-ui-button-inset {
         color: var(--text);
-        background: var(--widget);
+        background-color: var(--widget);
     }
     #fr-layout.fr-theme[data-theme] .theme-ui-1 .common-tab-indicator {
         background: linear-gradient(to bottom, var(--energy-two) 0%, var(--energy-one) 100%);
@@ -3227,7 +3230,7 @@ EOT;
     }
     #fr-layout.fr-theme[data-theme] .theme-ui-1-disabled .common-ui-button-inset {
         color: var(--text-disabled);
-        background: var(--section);
+        background-color: var(--section);
     }
     #fr-layout.fr-theme[data-theme] .theme-ui-1-disabled .common-tab-indicator {
         background: linear-gradient(to bottom, var(--energy-full-two) 0%, var(--energy-full-one) 100%);
@@ -9543,12 +9546,16 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     #fr-layout.fr-theme[data-theme="default"] {
         --flash-item: #761b06;
         --flash-price: #761b06;
-        --flash-bg-one: #e2c44d;
-        --flash-bg-two: #deaf82;
+        --flash-bg-one: #f9e289;
+        --flash-bg-two: #ffc893;
         --flash-border: #b36f27;
     }
     /*bg*/
-     #fr-layout-main #fr-layout-legacy-content::before {
+    #fr-layout-main #fr-layout-content {
+        position: relative;
+        z-index: 2;
+    }
+    #fr-layout-main #fr-layout-content::before {
         content: '';
         position: absolute;
         height: 100%;
@@ -9560,9 +9567,14 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         left: 0;
         background-repeat: no-repeat;
         opacity: 0.15;
-         background-position: 330px -245px;
+        background-position: 240% -245px;
     }
-    #fr-layout-main #fr-layout-legacy-content[style*="/market/internal_bg.jpg"]::after {
+    @media screen and (max-width: 1400px) {
+        #fr-layout-main #fr-layout-content::before {
+            background-position: 360px -245px;
+        }
+    }
+    #fr-layout-main #fr-layout-content[style*="/market/internal_bg.jpg"]::after {
         display: none;
     }
     .flash_sale_tab_icon img {
@@ -9579,14 +9591,18 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         background: linear-gradient(to top, var(--section) 0%, var(--widget) 50%, var(--widget-med) 100%);
         border: 2px solid var(--borders-light);
     }
-    .market-item-result.market-ghost-box {
-        opacity: 0.5;
+    .market-item-result-frame.common-responsive-hide-phone {
+        opacity: 0.3;
     }
     #fr-layout.fr-theme[data-theme] .market-item-result.market-flash-result {
-        background:  linear-gradient(to bottom, #43211b 0%, #563926 50%, #695124 100%);
+        background: linear-gradient(to bottom, #43211b 0%, #563926 50%, #695124 100%);
         border: 2px solid var(--flash-border);
         position: relative;
         overflow: hidden;
+        z-index: 2;
+    }
+    #fr-layout.fr-theme[data-theme="default"] .market-item-result.market-flash-result {
+        background: linear-gradient(to bottom, #eee6cd 0%, #f2e7cd 50%, #ffe4e0 100%);
     }
     #fr-layout.fr-theme[data-theme] .market-item-result.market-flash-result::before {
         content: '';
@@ -9597,6 +9613,11 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
         width: 100%;
         height: 100%;
         opacity: 0.8;
+        z-index: -1;
+    }
+    #fr-layout.fr-theme[data-theme="default"] .market-item-result.market-flash-result::before {
+        opacity: 1;
+        mix-blend-mode: multiply;
     }
     #fr-layout.fr-theme[data-theme="/*[[darktheme]]*/"] .market-item-result.market-flash-result::before {
         filter: invert(100%) hue-rotate(180deg);
@@ -9608,6 +9629,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     #fr-layout.fr-theme[data-theme] .market-flash-result .market-item-price-container {
         --alt-one: var(--flash-bg-one);
+        --alt-two: var(--flash-bg-one);
         --border-one: var(--flash-border);
         --main: var(--flash-bg-two);
         color: var(--flash-price);
