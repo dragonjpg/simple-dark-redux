@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.2.6
+@version        3.2.7
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -3149,7 +3149,8 @@ EOT;
             background-size: 100%;
         }
     }
-    #fr-layout.fr-theme[data-theme] .theme-svg-glyph-fill {
+    #fr-layout.fr-theme[data-theme] .theme-svg-glyph-fill,
+    #fr-layout.fr-theme[data-theme] .theme-svg-glyph-accent {
         fill: var(--button-icon);
     }
     #fr-layout.fr-theme[data-theme] .theme-svg-glyph-stroke {
@@ -3691,7 +3692,8 @@ EOT;
     }
     .common-message:not(.common-message-info):not(.common-message-success):not(.common-message-error):not(.skin-system-message-buy-blueprints) {
         background: var(--alt-two);
-        border-color: var(--border-two)
+        border-color: var(--border-two);
+        color: var(--text)
     }
     .common-message li::marker, div.search-errors li::marker {
         color: inherit;
@@ -3788,10 +3790,14 @@ EOT;
     .common-svg-star-stroke {
         fill: var(--energy-full-border)
     }
+    /*forum alt border*/
+    .fr-theme[data-theme] .theme-border-alt1-1 {
+        border-color: var(--borders)
+    }
     /*patch for quickswitcher*/
     #fr-layout.fr-theme[data-theme] #themeswap :is(.day, .night) .theme-svg-player-module-logout-glyph-fill {
         fill: currentColor;
-    } 
+    }
 }
 
 
@@ -7996,6 +8002,23 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .ah-expired, .ah-search-error-header {
         color: rgb(var(--error));
     }
+    #fr-layout.fr-theme[data-theme="default"] .ah-expired,
+    #fr-layout.fr-theme[data-theme="default"] .ah-search-error-header {
+        color: var(--error-text);
+    }
+    #fr-layout.fr-theme[data-theme="default"] .ah-search-tab-container {
+        text-align: center;
+        background: var(--borders-light);
+        display: inline-block;
+        margin: auto calc(50% - 84px / 2);
+        border-radius: 0 0 9px 9px;
+        overflow: hidden;
+    }
+    #fr-layout.fr-theme[data-theme="default"] .ah-search-tab-up,
+    #fr-layout.fr-theme[data-theme="default"] .ah-search-tab-down {
+        mix-blend-mode: overlay;
+        filter: invert(100%) sepia(100%) brightness(300%) contrast(140%);
+    }
     #fr-layout.fr-theme[data-theme] .ah-listing-itemname,
     #fr-layout.fr-theme[data-theme] .ah-dlg-itemname,
     #fr-layout.fr-theme[data-theme] .ah-dlg-cost,
@@ -8072,7 +8095,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     div.ah-price-range-andor {
         width: 100%;
     }
-    img[src*="/static/layout/auctionhouse/settings_gear.png"] {
+    #fr-layout.fr-theme[data-theme="/*[[darktheme]]*/"] img[src*="/static/layout/auctionhouse/settings_gear.png"] {
         filter: brightness(200%);
     }
     .ah-search-option-name {
@@ -8523,7 +8546,7 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     .game-database-achievement-result-description {
         color: var(--text);
     }
-    .game-database-achievement-result-category {
+    .game-database-achievement-result-category, #game-database-search-results .game-database-search-result .game-database-search-result-type {
         color: var(--text-med);
     }
     .game-database-achievement-result-name {
