@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.2.7
+@version        3.2.8
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -3794,6 +3794,14 @@ EOT;
     .fr-theme[data-theme] .theme-border-alt1-1 {
         border-color: var(--borders)
     }
+    
+    div.fayt-search-item {
+        background: var(--widget-med);
+        color: var(--text)
+    }
+    div.fayt-search-item:hover {
+        background-color: var(--widget-light)
+    }
     /*patch for quickswitcher*/
     #fr-layout.fr-theme[data-theme] #themeswap :is(.day, .night) .theme-svg-player-module-logout-glyph-fill {
         fill: currentColor;
@@ -4956,7 +4964,7 @@ EOT;
     .common-meter-text,
     #crafter-meter .common-meter-text,
     #fr-layout-player-module-energy-meter .common-meter-text,
-    #fr-layout-player-module-energy-meter [data-state="full"] .common-meter-text {
+    #fr-layout-player-module-main #fr-layout-player-module-energy-meter [data-state] .common-meter-text {
         color: var(--text);
         --ts: var(--shadow);
         text-shadow: -1px 0 0 var(--ts), 1px 0 0 var(--ts), -1px 1px 0 var(--ts), 1px 1px 0 var(--ts), -1px 2px 0 var(--ts), 1px 2px 0 var(--ts), -1px -1px 0 var(--ts), 1px -1px 0 var(--ts), 0 -1px 0 var(--ts);
@@ -4964,7 +4972,7 @@ EOT;
     .fr-theme[data-theme="default"] .common-meter-text,
     .fr-theme[data-theme="default"] #crafter-meter .common-meter-text,
     .fr-theme[data-theme="default"] #fr-layout-player-module-energy-meter .common-meter-text,
-    .fr-theme[data-theme="default"] #fr-layout-player-module-energy-meter [data-state="full"] .common-meter-text {
+    #fr-layout-player-module-main .fr-theme[data-theme="default"] #fr-layout-player-module-energy-meter [data-state] .common-meter-text {
         color: var(--shadow);
         --ts: var(--text);
     }
@@ -6780,9 +6788,6 @@ EOT;
     #dr-apparel-widget #dr-apparel-search-results .items {
         display: flex;
         flex-wrap: wrap;
-    }
-    div.fayt-search-item {
-        background: var(--widget-med);
     }
     #dr-apparel-search-results .fayt-search-item:hover, #dr-apparel-selected .fayt-search-item:hover {
         background-color: var(--widget-light)
