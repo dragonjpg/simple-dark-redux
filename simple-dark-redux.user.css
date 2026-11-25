@@ -4,7 +4,7 @@
 @homepageURL    https://github.com/dragonjpg/simple-dark-redux
 @supportURL     https://github.com/dragonjpg/simple-dark-redux/issues
 @updateURL      https://raw.githubusercontent.com/dragonjpg/simple-dark-redux/refs/heads/main/simple-dark-redux.user.css
-@version        3.2.8
+@version        3.2.9
 @description    A rewrite of the Simple Dark Theme. Includes Simple Dark Tweaks and now supports the theme update, including light themes.
 @author         grr
 @preprocessor   uso
@@ -9610,9 +9610,6 @@ text-shadow: -2px -2px 0px var(--shadow), -2px -1px 0px var(--shadow), -2px 0px 
     }
     .flash_sale_tab_icon img {
         filter: drop-shadow(1px 1px 3px rgba(255, 174, 125, .569)) drop-shadow(-1px -1px 3px rgba(255, 186, 54, .459));
-    }
-    .market-item-result-name, .market-item-result-name-hot {
-        top: 13px;
     }
     #fr-layout.fr-theme[data-theme] .market-flash-result .market-item-result-name {
         color: var(--flash-item);
